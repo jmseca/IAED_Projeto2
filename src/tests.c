@@ -3,16 +3,22 @@
 #include <stdio.h>
 
 
-typedef struct ola {
-	int a;
-	int b;
-	long c;
-	char ola[10];
-} Ola;
+typedef struct oi {
+	int q;
+	int *oa;
+}Oi;
 
 
 int main(){
-	printf("%ld\n",sizeof(Ola));
-	printf("%ld\n",sizeof(Ola*));
+	Oi* ola;
+	Oi* ola2;
+	ola = (Oi*) malloc(sizeof(Oi));
+	ola->oa = (int*) malloc(sizeof(int)*20);
+	ola2 = (Oi*) malloc(sizeof(Oi));
+	ola2->oa = (int*) realloc(ola->oa,sizeof(int)*40);
+	/*free(ola->oa);*/
+	free(ola);
+	free(ola2->oa);
+	free(ola2);
 	return 0;
 }

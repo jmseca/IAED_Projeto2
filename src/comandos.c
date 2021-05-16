@@ -6,3 +6,12 @@
  *
 */
 
+#include "proj2.h"
+
+
+/*==========    HELP    ==========*/
+
+/*Funcao responsavel por imprimir todos os comandos disponiveis*/
+void handleHelp(){
+	printf(COMANDOS);
+}
