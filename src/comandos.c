@@ -68,7 +68,9 @@ void handleHelp(){
 /*Funcao responsavel por terminar o programa corretamente*/
 void handleQuit(buff *bf, comp* root){
         cleanWhite(); /*nao ha mais info na instrucao, limpa-se o input*/
+	printf("preparing to free");
 	freeBuffer(bf);
+	printf("buffer freed");
 	freeCompRec(root);
 }
 

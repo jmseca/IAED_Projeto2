@@ -119,7 +119,7 @@ void updateVpc(comp *c1, vpc *vetor, unsigned long ind){
 		vetor->info[i] = vetor->info[i-1];
 	}
 	vetor->info[ind] = c1;
-	vetor->occ++;
+	(*(vetor->occ))++;
 }
 
 /*Aumenta o numero de ponteiros de componentes que pode albergar*/
@@ -302,7 +302,7 @@ void freeCompRec(comp* c1){
 		freeComp(c1);
 	} else {
 		do {
-			*(c1->primeiros->occ) = *(c1->primeiros->occ)+1; /* indice do ultimo colocado*/
+			(*(c1->primeiros->occ))--; /* indice do ultimo colocado*/
 			freeCompRec(c1->primeiros->info[*(c1->primeiros->occ)]);
 		} while(*(c1->primeiros->occ)>0);
 		freeComp(c1);
