@@ -91,9 +91,9 @@ unsigned long binarySearch(char *cName, vpc *vetor, short *found,
 		unsigned short start, unsigned short end){
         short up=1;
         short res=0;
-	unsigned long size = *(vetor->size);
+	unsigned long size = *(vetor->occ);
 	unsigned long ind=0;
-        unsigned long maxInd = *(vetor->occ)-1;
+        unsigned long maxInd = *(vetor->occ);
 	found = 0; /*Evitar erros possiveis*/
 	if (size){
                 size += size%2 ? 0 : 1;
@@ -115,7 +115,7 @@ unsigned long binarySearch(char *cName, vpc *vetor, short *found,
 /*Adiciona a nova componente ao vpc*/
 void updateVpc(comp *c1, vpc *vetor, unsigned long ind){
 	unsigned long i;
-	for (i=*(vetor->occ);i>=ind;--i){
+	for (i=*(vetor->occ);i>ind;--i){
 		vetor->info[i] = vetor->info[i-1];
 	}
 	vetor->info[ind] = c1;
@@ -253,6 +253,7 @@ comp* getPathComp(char* path, comp* root){
 	while (*(path+start)!='\0'){
 		found = 0;
 		end = findSepar(path,start);
+		printf("start->%d__end->%d\n",start,end);
 		root = belongsToComp(root, path, &found, start, end);
 		start=end;
 		pathClean(path,&start);

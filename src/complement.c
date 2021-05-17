@@ -57,8 +57,9 @@ void pathClean(char* path, unsigned short *ind){
 
 /* Funcao que encontra o proximo '/' num caminho*/
 unsigned short findSepar(char* path, unsigned short ind){
-        while (*(path+ind)!='/'){
-                ind++;
+	char c =  *(path+ind);
+	while (c!='/' && c!='\0'){
+		c = *(path+(++ind));
         }
 	return ind;
 }
@@ -77,7 +78,10 @@ void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end){
 short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end){
 	unsigned short i=0;
 	short out=0;
+	printf("----------------");
+	printf("%s---%s",s1,s2);
 	while (start<end && !out){
+		printf("%c---%c\n",*(s1+start),*(s2+i));
 		out = *(s1+start) - *(s2+i);
 		i++;
 		start++;
