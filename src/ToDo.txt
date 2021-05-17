@@ -1,1 +1,3 @@
 - sera que ptr = realloc(ptr,...) dá erro?
+
+(Testar se mudou o user name)

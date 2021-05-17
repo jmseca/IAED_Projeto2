@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+read file
+
+size=${#file}
+
+Nfile=${file::(size-2)}
+
+
+gcc -o $Nfile $file -ansi -pedantic -g -Wall -Werror -Wextra
