@@ -76,9 +76,9 @@ unsigned long getBinInd(unsigned long *size, unsigned long ind,
 
 /* Devolve o valor que resulta de comparar o nome do componente em analise 
  *com o que se quer comparar*/
-long getBinRes(comp *c1, vpc *vetor, long ind){
+long getBinRes(char *cName, vpc *vetor, long ind){
         int out; 
-        out = strcmp(c1->nome,vetor->info[ind]->nome);
+        out = strcmp(cName,vetor->info[ind]->nome);
         return out;
 }
 
@@ -86,17 +86,18 @@ long getBinRes(comp *c1, vpc *vetor, long ind){
 
 /* Funcao de procura e insercao binaria responsavel por devolver
  *o indice pretendido (que seja para encontrar ou inserir)*/
-unsigned long binarySearch(comp *c1, vpc *vetor, short *found,
-	       unsigned	long size, unsigned long occ){
+unsigned long binarySearch(char *cName, vpc *vetor, short *found){
         short up=1;
         int res=0;
+	unsigned long size = *(vetor->size);
 	unsigned long ind=0;
-        unsigned long maxInd = occ-1;
+        unsigned long maxInd = *(vetor->occ)-1;
+	found = 0; /*Evitar erros possiveis*/
 	if (size){
                 size += size%2 ? 0 : 1;
                 do {
                         ind = getBinInd(&size, ind, up, maxInd);
-                        res = getBinRes(c1, vetor, ind);
+                        res = getBinRes(cName, vetor, ind);
                         if (!res){
                                 *found=1;
                         }
@@ -126,17 +127,20 @@ vpc* extendVpc(vpc *vetor, unsigned long newSize){
 	vetor2->info = (comp**) realloc(vetor->info,sizeof(comp*)*newSize);
 	*(vetor2->size) = newSize;
 	vetor2->occ = vetor->occ;
+	free(vetor->size);
+	free(vetor->occ);
 	free(vetor);
 	return vetor2;
 }
 
 
-/* Inicializa um ponteiro para um componente, alocando-lhe memoria
- *exceto para as strings*/
-comp* initComp(){
+/* Inicializa um ponteiro para um componente, alocando-lhe alguma memoria*/
+comp* initComp(char* nome, ){
 	comp* c1;
 	short i;
 	c1 = (comp*) malloc(sizeof(comp));
+	c1->valor = (char*) malloc(sizeof(char));
+	*(c1->valor) = '\0';
 	c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
 	for (i=0;i<HASH_MAX;i++){
 		c1->hash[i] = initVpc(FIRST_SIZE_H);
@@ -145,4 +149,32 @@ comp* initComp(){
 	return c1;
 }
 
+/* Verifica se a componente com nome "nome" esta nos 
+ *componentes seguintes de "c1"*/
+comp* belongsToComp(comp *c1, char *nome, short *found){
+	unsigned long size,occ,ind;
+	vpc *vetor;
+	ind = hashFun(nome);
+	vetor = c1->hash[ind];
+	size = *(vetor->size);
+	occ = *(vetor->occ);
+	ind = binarySearch(name,vetor,found);
+	if (*found){
+		return vetor[ind];
+	} else {
+		return c1
+	}
+}
 
+/* Verifica se existe valor associado a componente*/
+short compValNull(comp *c1){
+	return *(c1->valor[0])=='\0';
+}
+
+void printCompVal(comp *c1){
+	printf("%s\n",c1->valor);
+}
+
+
+/* Recebe */
+comp* goToPath(char* path){

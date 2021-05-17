@@ -35,23 +35,43 @@
 /*Tamanho inicial dos vetores que farao parte das Tabelas de Dispersao*/
 #define FIRST_SIZE_H 8
 
+/*Tamanho maximo de uma string que identifica um comando (inclui '\0')*/
+#define MAX_COMAND_SIZE 7
+
+/*Tamanho para o buffer que ira receber o caminho/valor (inclui '\0')*/
+#define BUFF_SIZE
+
+/*Comandos*/
+#define HELP "help"
+#define QUIT "quit"
+#define SET "set"
+#define PRINT "print"
+#define FIND "find"
+#define LIST "list"
+#define SEARCH "search"
+#define DELETE "delete"
 
 
 
 
 
+/*Buffer*/
 
+typedef struct {
+	char* command;
+	char* bigBuff;
+} buff ;
 
 /*Componentes*/
 
 typedef struct {
 	unsigned long *size;
 	unsigned long *occ;
-	struct compon **info;
+	struct componente **info;
 } vpc;
 
 
-typedef struct compon{
+typedef struct componente{
 	char* valor;
 	char* nome;
 	vpc** hash;
