@@ -5,6 +5,8 @@
  * o bom funcionamento do programa 
 */
 
+#include "proj2.h"
+
 /*Devolve o proximo char do stdin que nao seja ' ' ou '\t'*/
 char cleanWhite(){
 	char c=getchar();
@@ -16,7 +18,7 @@ char cleanWhite(){
 
 /* Verifica se 'c' nao e ' ', '\t' ou '\n'*/
 short notWhite(char c){
-	return (c==' ' || c=='\t' || c=='\n');
+	return !(c==' ' || c=='\t' || c=='\n');
 }
 
 /* Passa o que esta escrito no input para out, ate encontrar '\n' 
@@ -45,21 +47,41 @@ short inputGetNameW(char out[]){
         return 0;
 }
 
-/* Coloca em out o primeiro nome que aparecer no input,
- *dependendo do espaco do vetor out 
- *size -> tamanho do vetor out -1 (exclui '\0')
- *Devolve: 1(acacou no final de linha), 0(caso contrario)*/
-short inputGetSingleName(char out[], short size){
-        short n=0;
-        char c = getchar();
-        while ((c==' ' || c=='\t')){ /*Passar espacos brancos a frente*/
-                c = getchar();
+
+/* Funcao responsavel por ignorar os '/' num caminho*/
+void pathClean(char* path, unsigned short *ind){
+	while (*(path+(*ind))=='/'){
+		(*ind)++;
+	}
+}
+
+/* Funcao que encontra o proximo '/' num caminho*/
+unsigned short findSepar(char* path, unsigned short ind){
+        while (*(path+ind)!='/'){
+                ind++;
         }
-        while (!(c==' ' || c=='\t' || c=='\n') && n<size){
-                out[n++] = c;
-                c = getchar();
-        }
-        out[n] = '\0';
-        return c=='\n';
+	return ind;
+}
+
+
+/*Copia a string "src" do indice "start" ate "end" (exclusive) para "dest"*/
+void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end){
+	unsigned short i=0;
+	for(;start<end;start++){
+		*(dest+i) = *(src+start);
+		i++;
+	}
+}
+
+/*Compara a string "s1" do indice "start" ate "end" (exclusive) com "s2"*/
+short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end){
+	unsigned short i=0;
+	short out=0;
+	while (start<end && !out){
+		out = *(s1+start) - *(s2+i);
+		i++;
+		start++;
+	}
+	return out;
 }
 

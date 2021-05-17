@@ -36,23 +36,37 @@
 #define FIRST_SIZE_H 8
 
 /*Tamanho maximo de uma string que identifica um comando (inclui '\0')*/
-#define MAX_COMAND_SIZE 7
+#define MAX_COMMAND_SIZE 7
 
 /*Tamanho para o buffer que ira receber o caminho/valor (inclui '\0')*/
-#define BUFF_SIZE
+#define BUFF_SIZE 65532
 
-/*Comandos*/
-#define HELP "help"
-#define QUIT "quit"
-#define SET "set"
-#define PRINT "print"
-#define FIND "find"
-#define LIST "list"
-#define SEARCH "search"
-#define DELETE "delete"
+/*Comandos ID*/
+#define HELP 425
+#define QUIT 451
+#define SET 332
+#define PRINT 441
+#define FIND 417
+#define LIST 444
+#define SEARCH 427
+#define DELETE 410
 
 
+/*Complement*/
 
+char cleanWhite();
+
+short notWhite(char c);
+
+short inputGetNameW(char out[]);
+
+void pathClean(char* path, unsigned short *ind);
+
+unsigned short findSepar(char* path, unsigned short ind);
+
+void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end);
+
+short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end);
 
 
 /*Buffer*/
@@ -62,7 +76,19 @@ typedef struct {
 	char* bigBuff;
 } buff ;
 
-/*Componentes*/
+
+buff* initBuffer();
+
+void commandToBuff(buff *bf);
+
+void pathToBuff(buff *bf);
+
+void valToBuff(buff *bf);
+
+void freeBuffer(buff *bf);
+
+
+/*Vetores de Ponteiros de Componentes (vpc) e Componentes*/
 
 typedef struct {
 	unsigned long *size;
@@ -72,17 +98,72 @@ typedef struct {
 
 
 typedef struct componente{
-	char* valor;
-	char* nome;
-	vpc** hash;
-	vpc* primeiros;
+        char* valor;
+        char* nome;
+        vpc** hash;
+        vpc* primeiros;
 } comp;
 
 
-unsigned short hashFun(char* str);
+vpc* initVpc(short firstSize);
+
+vpc* extendVpc(vpc *vetor);
+
+comp* initRoot();
+
+comp* initComp(char* path, unsigned short start, unsigned short end);
+
+short compValNull(comp *c1);
+
+void compNewValue(comp* c1, char* val);
+
+void printCompVal(comp *c1);
+
+void updateVpc(comp *c1, vpc *vetor, unsigned long ind);
+
+void addToHashVpc(comp* cNew,vpc* vetor,unsigned long ind);
+
+void addToFirstVpc(comp* cNew, vpc* vetor);
+
+unsigned long getBinInd(unsigned long *size, unsigned long ind,
+                short up, unsigned long maxInd);
+
+short getBinRes(char *cName, vpc *vetor, long ind,unsigned short start,
+                unsigned short end);
+
+unsigned long binarySearch(char *cName, vpc *vetor, short *found,
+                unsigned short start, unsigned short end);
+
+comp* addNewComp(comp *c1, char* path, vpc *vetorHash, unsigned long ind,
+                unsigned short start, unsigned short end);
+
+comp* belongsToComp(comp *c1, char *path, short *found,
+                unsigned short start, unsigned short end);
+
+comp* getPathComp(char* path, comp* root);
+
+void freeVpc(vpc* vetor);
+
+void freeHash(vpc** hash);
+
+void freeHash(vpc** hash);
+
+void freeCompRec(comp* c1);
+
 
 
 /*Funcoes dos Comandos*/
 
+short commandId(char* str);
+
+short checkCommand(buff *bf,comp* root);
+
 void handleHelp();
+
+void handleQuit(buff *bf, comp* root);
+
+void handleSet(buff *bf, comp* root);
+
+
+
 

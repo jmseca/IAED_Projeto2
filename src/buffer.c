@@ -5,6 +5,7 @@
  * de dados buffer, que sera necessaria para receber o stdin
 */
 
+#include "proj2.h"
 
 /* Inicializa uma estrutura buffer, alocando-lhe memoria*/
 buff* initBuffer(){
@@ -28,6 +29,13 @@ void pathToBuff(buff *bf){
 }
 
 /* Guarda no buffer o valor recebido pelo input*/
-char* valToBuff(buff *bf){
+void valToBuff(buff *bf){
 	inputGetNameW(bf->bigBuff);
+}
+
+
+void freeBuffer(buff *bf){
+	free(bf->command);
+	free(bf->bigBuff);
+	free(bf);
 }

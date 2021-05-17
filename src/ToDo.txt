@@ -1,0 +1,1 @@
+- sera que ptr = realloc(ptr,...) dá erro?

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+
+gcc -o proj2 *.c  -ansi -pedantic -g -Wall -Werror -Wextra
