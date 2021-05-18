@@ -71,13 +71,29 @@ short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end);
 /*DELETE*/
 void myPrint(char* s1, unsigned short start, unsigned short end);
 
-/*Buffer*/
+/*STRUCTS*/
 
 typedef struct {
 	char* command;
 	char* bigBuff;
 } buff ;
 
+
+typedef struct {
+        unsigned long *size;
+        unsigned long *occ;
+        struct componente **info;
+} vpc;
+
+
+typedef struct componente{
+        char* valor;
+        char* nome;
+        vpc** hash;
+        vpc* primeiros;
+} comp;
+
+/*Buffer*/
 
 buff* initBuffer();
 
@@ -89,22 +105,11 @@ void valToBuff(buff *bf);
 
 void freeBuffer(buff *bf);
 
+void addToBuff(buff* bf, comp* c1);
+
+void removeFromBuff(buff*, comp* c1);
 
 /*Vetores de Ponteiros de Componentes (vpc) e Componentes*/
-
-typedef struct {
-	unsigned long *size;
-	unsigned long *occ;
-	struct componente **info;
-} vpc;
-
-
-typedef struct componente{
-        char* valor;
-        char* nome;
-        vpc** hash;
-        vpc* primeiros;
-} comp;
 
 
 vpc* initVpc(short firstSize);
@@ -140,9 +145,9 @@ comp* addNewComp(comp *c1, char* path, vpc *vetorHash, unsigned long ind,
                 unsigned short start, unsigned short end);
 
 comp* belongsToComp(comp *c1, char *path, short *found,
-                unsigned short start, unsigned short end);
+                unsigned short start, unsigned short end, short modo);
 
-comp* getPathComp(char* path, comp* root);
+comp* getPathComp(char* path, comp* root,short modo, short* succ);
 
 void freeVpc(vpc* vetor);
 
@@ -151,6 +156,8 @@ void freeHash(vpc** hash);
 void freeHash(vpc** hash);
 
 void freeCompRec(comp* c1);
+
+void printAll(comp* c1, buff* bf);
 
 
 
@@ -167,5 +174,7 @@ void handleQuit(buff *bf, comp* root);
 void handleSet(buff *bf, comp* root);
 
 void handlePrint(buff *bf,comp* root);
+
+void handleFind(buff *bf,comp* root);
 
 

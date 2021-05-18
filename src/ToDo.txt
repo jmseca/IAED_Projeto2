@@ -1,3 +1,4 @@
-- sera que ptr = realloc(ptr,...) dá erro?
+- Sera q vale a pena nao usar Hash Tables, pq na verdade
+log(10**2,2) = 39 e log(10**2/12,2)=36
 
-(Testar se mudou o user name)
+E a Hash Table gasta imeeeensa memoria

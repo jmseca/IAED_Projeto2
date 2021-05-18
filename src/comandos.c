@@ -79,22 +79,45 @@ void handleQuit(buff *bf, comp* root){
  *sempre que o comando "set" e recebido no stdin*/
 void handleSet(buff *bf,comp* root){
         comp *cpath;
+	short succ=1;
+	short modo=0;
 	pathToBuff(bf);
-	cpath = getPathComp(bf->bigBuff,root);
+	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
 	valToBuff(bf);
 	compNewValue(cpath,bf->bigBuff);
 }
 
 
+
 /*==========    PRINT    ==========*/
 
-/* Imprime o valor assocido ao caminho quando o programa recebe
- *a instrucao "print"*/
+/* Responsavel por imprimir todos os valores e caminhos quando o programa
+ * recebe a instrucao "print"*/
 void handlePrint(buff *bf,comp* root){
+	cleanWhite();
+	printAll(root,bf);
+
+
+}
+
+
+/*==========    FIND    ==========*/
+
+/* Imprime o valor assocido ao caminho quando o programa recebe
+ *a instrucao "find"*/
+void handleFind(buff *bf,comp* root){
 	comp* cpath;
+	short succ=1; /*Controla se o programa teve erros*/
+	short modo=1;
 	pathToBuff(bf);
-	cpath = getPathComp(bf->bigBuff,root);
-	printCompVal(cpath);
+	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
+	if (succ){
+		if (compValNull(root)){
+                printf("no data\n");
+        	} else {
+			printCompVal(cpath);
+        	}
+	}
 }
 
 

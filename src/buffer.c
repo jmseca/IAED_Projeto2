@@ -39,3 +39,27 @@ void freeBuffer(buff *bf){
 	free(bf->bigBuff);
 	free(bf);
 }
+
+/* Comandos para o printAll (onde usamos o bigBuff)*/
+
+/* Adiciona ao bigBuff o nome da componente no fim*/
+void addToBuff(buff* bf, comp* c1){
+	unsigned short i=0;
+	unsigned short a=0;
+	for (;bf->bigBuff[i]!='\0';i++){;}
+	bf->bigBuff[i++]='/'; /*1o addiciona-se o separador*/
+	do {
+		bf->bigBuff[i++] = c1->nome[a];
+	} while (c1->nome[a++] != '\0');
+}
+
+
+void removeFromBuff(buff* bf, comp* c1){
+	unsigned short i=0;
+	unsigned short a=0;
+	for (;bf->bigBuff[i]!='\0';i++){;}
+	for (;c1->nome[a]!='\0';a++){;}
+	i-=a;
+	bf->bigBuff[i] = '\0';
+
+}

@@ -181,6 +181,8 @@ comp* initRoot(){
 	comp* c1;
         short i;
         c1 = (comp*) malloc(sizeof(comp));
+	c1->nome = (char*) malloc(sizeof(char));
+	*(c1->nome) = '\0'; /* Da jeito no print*/
         /* Alocar memoria para a Tabela de Dispersao*/
         c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
         for (i=0;i<HASH_MAX;i++){
@@ -218,9 +220,10 @@ comp* addNewComp(comp *c1, char* path, vpc *vetorHash, unsigned long ind,
 
 /* Verifica se a componente que tem o nome em "path", limitada por start e end
  * esta nos componentes seguintes de "c1"
- * Se nao esta, cria uma nova componente e adiciona-la*/
+ * modo '0', se nao esta, cria uma nova componente e adiciona-la
+ * modo '1', se nao esta termina o programa.O aviso e transmitido pelo found*/
 comp* belongsToComp(comp *c1, char *path, short *found,
-		unsigned short start, unsigned short end){
+		unsigned short start, unsigned short end, short modo){
 	unsigned long ind;
 	comp* out; /* A devolver*/
 	vpc *vetor;
@@ -229,7 +232,7 @@ comp* belongsToComp(comp *c1, char *path, short *found,
 	ind = binarySearch(path,vetor,found,start,end);
 	if (*found){
 		out = vetor->info[ind];
-	} else {
+	} else if (!modo){
 		out = addNewComp(c1,path,vetor,ind,start,end);
 	}
 	return out;
@@ -241,15 +244,13 @@ short compValNull(comp *c1){
 }
 
 void printCompVal(comp *c1){
-	if (compValNull(c1)){
-		printf("no data\n");	
-	} else {
-		printf("%s\n",c1->valor);
-	}
+	printf("%s\n",c1->valor);
 }
 
-/* Devolve ponteiro para a componente final do caminho*/
-comp* getPathComp(char* path, comp* root){
+/* Devolve ponteiro para a componente final do caminho
+ * modo '0'-se o caminho nao existir, cria um novo
+ * modo '1'-se nao existir, nao cria */
+comp* getPathComp(char* path, comp* root, short modo, short* succ){
 	unsigned short start=0,end;
 	short found;
 	pathClean(path,&start);
@@ -257,7 +258,12 @@ comp* getPathComp(char* path, comp* root){
 		found = 0;
 		end = findSepar(path,start);
 		myPrint(path,start,end);
-		root = belongsToComp(root, path, &found, start, end);
+		root = belongsToComp(root, path, &found, start, end, modo);
+		if (!found && modo){
+			printf("not found\n");
+			*succ = 0; 
+			break;
+		}
 		start=end;
 		pathClean(path,&start);
 	}
@@ -311,4 +317,23 @@ void freeCompRec(comp* c1){
 		freeComp(c1);
 	}
 
+}
+
+/* Faz print de todos os valores associados a caminhos a 
+ *partir do componenente "c1"*/
+void printAll(comp* c1, buff* bf){	
+	static unsigned long ind=0;
+	if (!(compValNull(c1))){ /*se tem valor*/
+		printf("%s/",bf->bigBuff); /*O caminho que esta para tras*/
+		printf("%s ",c1->nome); /*nome da componente*/
+		printf("%s\n",c1->valor); 
+	}
+	if (*(c1->primeiros->occ)){ /*Se tem componentes "filho"*/
+		addToBuff(bf,c1);
+		for(;ind<*(c1->primeiros->occ);ind++){
+			printAll(c1->primeiros->info[ind],bf);
+		}
+		removeFromBuff(bf,c1);
+	}
+	
 }
