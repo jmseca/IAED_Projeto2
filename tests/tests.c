@@ -4,13 +4,16 @@
 
 
 
-int main(){
-	int *io;
-	io = (int*) malloc(sizeof(int));
-	*io=0;
-	io++;
+void f(){
+	static short oi;
+	oi++;
+	printf("%d\n",oi);
+}
 
-	printf("%d\n",(*io));
-	
+int main(){
+	f();
+	f();
+	f();
+
 	return 0;
 }
