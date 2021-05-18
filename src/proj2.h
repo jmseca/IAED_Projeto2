@@ -68,6 +68,8 @@ void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end);
 
 short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end);
 
+/*DELETE*/
+void myPrint(char* s1, unsigned short start, unsigned short end);
 
 /*Buffer*/
 

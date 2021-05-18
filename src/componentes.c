@@ -80,7 +80,7 @@ short getBinRes(char *cName, vpc *vetor, long ind,unsigned short start,
 		unsigned short end){
         short out; 
         out = myStrCmp(cName,vetor->info[ind]->nome,start,end);
-        return out;
+	return out;
 }
 
 
@@ -94,7 +94,6 @@ unsigned long binarySearch(char *cName, vpc *vetor, short *found,
 	unsigned long size = *(vetor->occ);
 	unsigned long ind=0;
         unsigned long maxInd = *(vetor->occ);
-	found = 0; /*Evitar erros possiveis*/
 	if (size){
                 size += size%2 ? 0 : 1;
                 do {
@@ -242,7 +241,11 @@ short compValNull(comp *c1){
 }
 
 void printCompVal(comp *c1){
-	printf("%s\n",c1->valor);
+	if (compValNull(c1)){
+		printf("no data\n");	
+	} else {
+		printf("%s\n",c1->valor);
+	}
 }
 
 /* Devolve ponteiro para a componente final do caminho*/
@@ -253,7 +256,7 @@ comp* getPathComp(char* path, comp* root){
 	while (*(path+start)!='\0'){
 		found = 0;
 		end = findSepar(path,start);
-		printf("start->%d__end->%d\n",start,end);
+		myPrint(path,start,end);
 		root = belongsToComp(root, path, &found, start, end);
 		start=end;
 		pathClean(path,&start);

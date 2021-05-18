@@ -78,10 +78,7 @@ void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end){
 short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end){
 	unsigned short i=0;
 	short out=0;
-	printf("----------------");
-	printf("%s---%s",s1,s2);
 	while (start<end && !out){
-		printf("%c---%c\n",*(s1+start),*(s2+i));
 		out = *(s1+start) - *(s2+i);
 		i++;
 		start++;
@@ -89,3 +86,10 @@ short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end){
 	return out;
 }
 
+
+/*APAGAR SE FOR O CASO*/
+void myPrint(char* s1, unsigned short start, unsigned short end){
+	for(;start<end;start++){
+		printf("%c",*(s1+start));
+	}printf("\n");
+}

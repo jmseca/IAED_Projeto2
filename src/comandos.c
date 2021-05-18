@@ -48,7 +48,7 @@ short checkCommand(buff *bf, comp* root){
 			handleDelete(bf, root);
 			break;*/
 		default:
-			printf("Erro Fatal - checkCommand");
+			printf("Erro Fatal - checkCommand\n");
 	}
 	return out;
 
