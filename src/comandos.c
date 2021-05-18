@@ -35,13 +35,13 @@ short checkCommand(buff *bf, comp* root){
 		case PRINT:
 			handlePrint(bf, root);
 			break;
-		/*case FIND:
+		case FIND:
 			handleFind(bf, root);
 			break;
 		case LIST:
 			handleList(bf, root);
 			break;
-		case SEARCH:
+		/*case SEARCH:
 			handleSearch(bf, root);
 			break;
 		case DELETE:
@@ -81,7 +81,8 @@ void handleSet(buff *bf,comp* root){
         comp *cpath;
 	short succ=1;
 	short modo=0;
-	pathToBuff(bf);
+	short modoB=0; /*Vai haver um path no stdin*/
+        pathToBuff(bf,modoB);
 	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
 	valToBuff(bf);
 	compNewValue(cpath,bf->bigBuff);
@@ -109,8 +110,9 @@ void handlePrint(buff *bf,comp* root){
 void handleFind(buff *bf,comp* root){
 	comp* cpath;
 	short succ=1; /*Controla se o programa teve erros*/
-	short modo=1;
-	pathToBuff(bf);
+	short modo=1; /* Se o caminho nao existir, ha erro*/
+	short modoB=0; /*Vai haver um path no stdin*/
+	pathToBuff(bf,modoB);
 	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
 	if (succ){
 		if (compValNull(root)){
@@ -119,7 +121,28 @@ void handleFind(buff *bf,comp* root){
 			printCompVal(cpath);
         	}
 	}
+	cleanWhite();
 }
 
 
+/*==========    LIST    ==========*/
+
+/* Responsavel pela execucao do programa no comando "list"
+ * Lista todos os componentes imediatos de um subcaminho*/
+void handleList(buff *bf,comp* root){
+	comp *cpath;
+	short succ=1;
+	short modo=1;
+        short modoB=1; /*Pode nao haver um path no stdin*/
+        pathToBuff(bf,modoB);
+	if (nullBuff(bf)){ /*invocado sem argumentos*/
+		listComp(root);
+	} else {
+		cpath = getPathComp(bf->bigBuff,root,modo,&succ);
+		listComp(cpath);	
+	}
+	if (!nullBuff(bf)){
+		cleanWhite();
+	} /*Se for null, entao ja se verificou que nao havia mais input*/	
+}
 

@@ -23,9 +23,23 @@ void commandToBuff(buff *bf){
 	
 }
 
-/* Guarda no buffer o caminho recebido pelo input*/
-void pathToBuff(buff *bf){
-	scanf("%s",bf->bigBuff);
+/* Guarda no buffer o caminho recebido pelo input
+ * modoB indica se e para verificar se ha path ou nao*/
+void pathToBuff(buff *bf, short modoB){
+	char c;
+	if (modoB){ /*verificar se o stdin nao esta "vazio"*/
+		c = cleanWhite();
+		if (c!='\n'){
+			*(bf->bigBuff) = c;
+			scanf("%s",&(bf->bigBuff[1]));
+			printf("o bigBuff ->%s<-\n",bf->bigBuff);
+		} else {
+			resetBuff(bf);
+		}
+			
+	} else {	
+		scanf("%s",bf->bigBuff);
+	}
 }
 
 /* Guarda no buffer o valor recebido pelo input*/
@@ -38,6 +52,13 @@ void resetBuff(buff *bf){
 	*(bf->bigBuff) = '\0';
 }
 
+/* Verifica se bigBuff e Null ou nao*/
+short nullBuff(buff* bf){
+	return *(bf->bigBuff)=='\0';
+}
+
+
+/* Faz free ao buffer*/
 void freeBuffer(buff *bf){
 	free(bf->command);
 	free(bf->bigBuff);

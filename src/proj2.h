@@ -99,11 +99,13 @@ buff* initBuffer();
 
 void commandToBuff(buff *bf);
 
-void pathToBuff(buff *bf);
+void pathToBuff(buff *bf, short modoB);
 
 void valToBuff(buff *bf);
 
 void resetBuff(buff *bf);
+
+short nullBuff(buff* bf);
 
 void freeBuffer(buff *bf);
 
@@ -129,6 +131,8 @@ void compNewValue(comp* c1, char* val);
 short isRoot(comp* c1);
 
 void printCompVal(comp *c1);
+
+void printCompName(comp *c1);
 
 void updateVpc(comp *c1, vpc *vetor, unsigned long ind);
 
@@ -161,6 +165,10 @@ void freeHash(vpc** hash);
 
 void freeCompRec(comp* c1);
 
+void printVpcComp(vpc* vetor);
+
+void listComp(comp* c1);
+
 void printAll(comp* c1, buff* bf);
 
 
@@ -181,4 +189,4 @@ void handlePrint(buff *bf,comp* root);
 
 void handleFind(buff *bf,comp* root);
 
-
+void handleList(buff *bf, comp* root);

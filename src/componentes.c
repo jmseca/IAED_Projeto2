@@ -253,8 +253,14 @@ short isRoot(comp* c1){
 	return (*(c1->nome))=='\0';
 }
 
+/*Imprime o valor de uma componente*/
 void printCompVal(comp *c1){
 	printf("%s\n",c1->valor);
+}
+
+/*Imprime o nome de uma componente*/
+void printCompName(comp *c1){
+	printf("%s\n",c1->nome);
 }
 
 /* Devolve ponteiro para a componente final do caminho
@@ -328,6 +334,22 @@ void freeCompRec(comp* c1){
 
 }
 
+
+/* Imprime os nomes das componentes associadas a um vpc*/
+void printVpcComp(vpc* vetor){
+	unsigned long i;
+	for (i=0;i<(*(vetor->occ));i++){
+		printCompName(vetor->info[i]);
+	}
+}
+
+/* Imprime todos os componentes imediatos a "c1" por ordem alfabetica*/
+void listComp(comp* c1){
+	short i=0;
+	for (;i<HASH_MAX;i++){
+		printVpcComp(c1->hash[i]);
+	}
+}
 
 
 /* Faz print de todos os valores associados a caminhos a 

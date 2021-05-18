@@ -4,3 +4,11 @@ log(10**2,2) = 39 e log(10**2/12,2)=36
 E a Hash Table gasta imeeeensa memoria
 
 - Criar constante NULL_STR e subtituir em todos os '\0'
+
+- Nao curto nada de ter de usar um long na recursao do print
+mas eh a vida :(
+
+
+- Tambem tenho de ver o null a devolver no malloc
+
+- AInda nao mudei o 33 do hashfun para FIRDT_ASCII 
