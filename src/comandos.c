@@ -32,10 +32,10 @@ short checkCommand(buff *bf, comp* root){
 		case SET:
 			handleSet(bf, root);
 			break;
-		/*case PRINT:
+		case PRINT:
 			handlePrint(bf, root);
 			break;
-		case FIND:
+		/*case FIND:
 			handleFind(bf, root);
 			break;
 		case LIST:
@@ -68,9 +68,7 @@ void handleHelp(){
 /*Funcao responsavel por terminar o programa corretamente*/
 void handleQuit(buff *bf, comp* root){
         cleanWhite(); /*nao ha mais info na instrucao, limpa-se o input*/
-	printf("preparing to free");
 	freeBuffer(bf);
-	printf("buffer freed");
 	freeCompRec(root);
 }
 
@@ -88,8 +86,16 @@ void handleSet(buff *bf,comp* root){
 }
 
 
+/*==========    PRINT    ==========*/
 
-
+/* Imprime o valor assocido ao caminho quando o programa recebe
+ *a instrucao "print"*/
+void handlePrint(buff *bf,comp* root){
+	comp* cpath;
+	pathToBuff(bf);
+	cpath = getPathComp(bf->bigBuff,root);
+	printCompVal(cpath);
+}
 
 
 

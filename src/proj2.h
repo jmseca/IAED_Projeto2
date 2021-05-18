@@ -164,6 +164,6 @@ void handleQuit(buff *bf, comp* root);
 
 void handleSet(buff *bf, comp* root);
 
-
+void handlePrint(buff *bf,comp* root);
 
 
