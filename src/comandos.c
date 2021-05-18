@@ -95,6 +95,7 @@ void handleSet(buff *bf,comp* root){
  * recebe a instrucao "print"*/
 void handlePrint(buff *bf,comp* root){
 	cleanWhite();
+	resetBuff(bf);
 	printAll(root,bf);
 
 

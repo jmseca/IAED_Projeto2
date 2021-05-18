@@ -103,6 +103,8 @@ void pathToBuff(buff *bf);
 
 void valToBuff(buff *bf);
 
+void resetBuff(buff *bf);
+
 void freeBuffer(buff *bf);
 
 void addToBuff(buff* bf, comp* c1);
@@ -123,6 +125,8 @@ comp* initComp(char* path, unsigned short start, unsigned short end);
 short compValNull(comp *c1);
 
 void compNewValue(comp* c1, char* val);
+
+short isRoot(comp* c1);
 
 void printCompVal(comp *c1);
 

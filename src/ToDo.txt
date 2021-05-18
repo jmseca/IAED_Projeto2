@@ -2,3 +2,5 @@
 log(10**2,2) = 39 e log(10**2/12,2)=36
 
 E a Hash Table gasta imeeeensa memoria
+
+- Criar constante NULL_STR e subtituir em todos os '\0'

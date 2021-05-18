@@ -33,6 +33,10 @@ void valToBuff(buff *bf){
 	inputGetNameW(bf->bigBuff);
 }
 
+/* Coloca bigBuff a Null String*/
+void resetBuff(buff *bf){
+	*(bf->bigBuff) = '\0';
+}
 
 void freeBuffer(buff *bf){
 	free(bf->command);
@@ -47,7 +51,9 @@ void addToBuff(buff* bf, comp* c1){
 	unsigned short i=0;
 	unsigned short a=0;
 	for (;bf->bigBuff[i]!='\0';i++){;}
-	bf->bigBuff[i++]='/'; /*1o addiciona-se o separador*/
+	if (!isRoot(c1)){
+		bf->bigBuff[i++]='/'; /*1o addiciona-se o separador*/
+	} /* No print, isto so ira acontecer na root*/
 	do {
 		bf->bigBuff[i++] = c1->nome[a];
 	} while (c1->nome[a++] != '\0');
@@ -59,7 +65,7 @@ void removeFromBuff(buff* bf, comp* c1){
 	unsigned short a=0;
 	for (;bf->bigBuff[i]!='\0';i++){;}
 	for (;c1->nome[a]!='\0';a++){;}
-	i-=a;
+	i=i-a+1;
 	bf->bigBuff[i] = '\0';
 
 }

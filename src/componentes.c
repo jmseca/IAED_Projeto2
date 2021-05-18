@@ -176,13 +176,18 @@ comp* initComp(char* path, unsigned short start, unsigned short end){
 	return c1;
 }
 
-/*Inicializa um ponteiro para a componente raiz*/
+/*Inicializa um ponteiro para a componente raiz
+ *Apesar de ser parecido com initComp, nao e necessario args
+ *Para iniciar uma root, dai a escolha de uma nova funcao*/
 comp* initRoot(){
 	comp* c1;
         short i;
+	/*Nome e val da raiz dao jeito no comando print*/
         c1 = (comp*) malloc(sizeof(comp));
 	c1->nome = (char*) malloc(sizeof(char));
-	*(c1->nome) = '\0'; /* Da jeito no print*/
+	*(c1->nome) = '\0'; 
+	c1->valor = (char*) malloc(sizeof(char));
+	*(c1->valor) = '\0';
         /* Alocar memoria para a Tabela de Dispersao*/
         c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
         for (i=0;i<HASH_MAX;i++){
@@ -240,7 +245,12 @@ comp* belongsToComp(comp *c1, char *path, short *found,
 
 /* Verifica se existe valor associado a componente*/
 short compValNull(comp *c1){
-	return (c1->valor[0])=='\0';
+	return (*(c1->valor))=='\0';
+}
+
+/* Verifica se a componente e a raiz ou nao*/
+short isRoot(comp* c1){
+	return (*(c1->nome))=='\0';
 }
 
 void printCompVal(comp *c1){
@@ -257,7 +267,6 @@ comp* getPathComp(char* path, comp* root, short modo, short* succ){
 	while (*(path+start)!='\0'){
 		found = 0;
 		end = findSepar(path,start);
-		myPrint(path,start,end);
 		root = belongsToComp(root, path, &found, start, end, modo);
 		if (!found && modo){
 			printf("not found\n");
@@ -319,10 +328,12 @@ void freeCompRec(comp* c1){
 
 }
 
+
+
 /* Faz print de todos os valores associados a caminhos a 
  *partir do componenente "c1"*/
 void printAll(comp* c1, buff* bf){	
-	static unsigned long ind=0;
+	unsigned long ind=0;	
 	if (!(compValNull(c1))){ /*se tem valor*/
 		printf("%s/",bf->bigBuff); /*O caminho que esta para tras*/
 		printf("%s ",c1->nome); /*nome da componente*/
