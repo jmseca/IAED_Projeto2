@@ -115,8 +115,8 @@ void handleFind(buff *bf,comp* root){
 	pathToBuff(bf,modoB);
 	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
 	if (succ){
-		if (compValNull(root)){
-                printf("no data\n");
+		if (compValNull(cpath)){
+                	printf("no data\n");
         	} else {
 			printCompVal(cpath);
         	}
