@@ -22,19 +22,6 @@
         "search: Procura o caminho dado um valor.\n"\
         "delete: Apaga um caminho e todos os subcaminhos.\n"
 
-
-/*Primeiro char ASCII que pode representar um valor ou componente*/
-#define FIRST_ASCII 33
-
-/*Dim das Tabelas de Dispersao para armazenar as componentes alfabeticamente*/
-#define HASH_MAX 12
-
-/*Tamanho inicial dos vetores que terao componentes por ordem de criacao*/
-#define FIRST_SIZE_C 20
-
-/*Tamanho inicial dos vetores que farao parte das Tabelas de Dispersao*/
-#define FIRST_SIZE_H 8
-
 /*Tamanho maximo de uma string que identifica um comando (inclui '\0')*/
 #define MAX_COMMAND_SIZE 7
 
@@ -79,19 +66,6 @@ typedef struct {
 } buff ;
 
 
-typedef struct {
-        unsigned long *size;
-        unsigned long *occ;
-        struct componente **info;
-} vpc;
-
-
-typedef struct componente{
-        char* valor;
-        char* nome;
-        vpc** hash;
-        vpc* primeiros;
-} comp;
 
 /*Buffer*/
 
@@ -113,63 +87,8 @@ void addToBuff(buff* bf, comp* c1);
 
 void removeFromBuff(buff*, comp* c1);
 
-/*Vetores de Ponteiros de Componentes (vpc) e Componentes*/
 
 
-vpc* initVpc(short firstSize);
-
-vpc* extendVpc(vpc *vetor);
-
-comp* initRoot();
-
-comp* initComp(char* path, unsigned short start, unsigned short end);
-
-short compValNull(comp *c1);
-
-void compNewValue(comp* c1, char* val);
-
-short isRoot(comp* c1);
-
-void printCompVal(comp *c1);
-
-void printCompName(comp *c1);
-
-void updateVpc(comp *c1, vpc *vetor, unsigned long ind);
-
-void addToHashVpc(comp* cNew,vpc* vetor,unsigned long ind);
-
-void addToFirstVpc(comp* cNew, vpc* vetor);
-
-unsigned long getBinInd(unsigned long *size, unsigned long ind,
-                short up, unsigned long maxInd);
-
-short getBinRes(char *cName, vpc *vetor, long ind,unsigned short start,
-                unsigned short end);
-
-unsigned long binarySearch(char *cName, vpc *vetor, short *found,
-                unsigned short start, unsigned short end);
-
-comp* addNewComp(comp *c1, char* path, vpc *vetorHash, unsigned long ind,
-                unsigned short start, unsigned short end);
-
-comp* belongsToComp(comp *c1, char *path, short *found,
-                unsigned short start, unsigned short end, short modo);
-
-comp* getPathComp(char* path, comp* root,short modo, short* succ);
-
-void freeVpc(vpc* vetor);
-
-void freeHash(vpc** hash);
-
-void freeHash(vpc** hash);
-
-void freeCompRec(comp* c1);
-
-void printVpcComp(vpc* vetor);
-
-void listComp(comp* c1);
-
-void printAll(comp* c1, buff* bf);
 
 
 

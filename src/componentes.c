@@ -15,10 +15,7 @@
  * - unsigned long* occ, quantos ponteiros de componentes ja tem
  * - char* valor, valor do caminho
  * - char* nome, nome do componente
- * - Hashtable de Dim 12 que guarda os ponteiros para os componentes 
- * seguintes. Colisoes resolvidas com uma especie de encadeamento externo,
- * onde os vetores estao ordenados por ordem alfabetica
- * em vez de por ordem de chegada.
+ * - Vetor com os ponteiros ordenados alfabeticamente
  * - Vetor com os ponteiros 
  * dos seguintes componentes ordenados por ordem de criacao
  * ============================================================================
@@ -35,14 +32,6 @@
 */
 
 	
-/*Funcao de Dispersao para a Hashtable dos componentes*/
-unsigned short hashFun(char* str,unsigned short start){
-	unsigned short out;
-	/*char ascii 33 eh o primeiro que se pode ter no nome*/
-	out = (*(str+start)-33)/8;
-	return out;
-	
-}
 
 /* Funcao que inicializa um vpc, alocando-lhe memoria*/
 vpc* initVpc(short firstSize){
@@ -137,16 +126,15 @@ vpc* extendVpc(vpc *vetor){
 
 /* Adiciona um novo elemento a um vpc da Tabela de Dispersao
  * (ordenado alfabeticamente)*/
-void addToHashVpc(comp* cNew,vpc* vetor,unsigned long ind){
+void addToAlfaVpc(comp* cNew,vpc* vetor,unsigned long ind){
 	if (*(vetor->size)==*(vetor->occ)){
 		vetor = extendVpc(vetor);
 	}
 	updateVpc(cNew,vetor,ind);
 }
 
-/* Adiciona um novo elemento a um vpc que tem as 
- * componenentes ordenadas por criacao*/
-void addToFirstVpc(comp* cNew, vpc* vetor){
+/* Adiciona um novo elemento a um vpc no indice "ind"*/
+void addToFVpc(comp* cNew, vpc* vetor, unsigned long ind){
 	if (*(vetor->size)==*(vetor->occ)){
                 vetor = extendVpc(vetor);
         }
@@ -166,11 +154,8 @@ comp* initComp(char* path, unsigned short start, unsigned short end){
 	/* Inicial o valor a Nulo*/
 	c1->valor = (char*) malloc(sizeof(char));
 	*(c1->valor) = '\0';
-	/* Alocar memoria para a Tabela de Dispersao*/
-	c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
-	for (i=0;i<HASH_MAX;i++){
-		c1->hash[i] = initVpc(FIRST_SIZE_H);
-	}
+	/* Alocar memoria para as componentes ordenadas alfabeticamente*/
+	c1->alfabeta = initVpc(FIRST_SIZE_C);
 	/* Memoria para as componentes ordenadas por criacao*/
 	c1->primeiros = initVpc(FIRST_SIZE_C);
 	return c1;
@@ -188,12 +173,9 @@ comp* initRoot(){
 	*(c1->nome) = '\0'; 
 	c1->valor = (char*) malloc(sizeof(char));
 	*(c1->valor) = '\0';
-        /* Alocar memoria para a Tabela de Dispersao*/
-        c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
-        for (i=0;i<HASH_MAX;i++){
-                c1->hash[i] = initVpc(FIRST_SIZE_H);
-        }
-        /* Memoria para as componentes ordenadas por criacao*/
+        /* Alocar memoria para as componentes ordenadas alfabeticamente*/
+        c1->alfabeta = initVpc(FIRST_SIZE_C);
+	/* Memoria para as componentes ordenadas por criacao*/
         c1->primeiros = initVpc(FIRST_SIZE_C);
         return c1;
 }
@@ -212,11 +194,11 @@ void compNewValue(comp* c1, char* val){
  *a nova componente criada. 
  * Ja se recebe o vpc e respetivo ind da tabela de dsipersao 
  *onde vamos adicionar*/
-comp* addNewComp(comp *c1, char* path, vpc *vetorHash, unsigned long ind,
+comp* addNewComp(comp *c1, char* path, unsigned long ind,
 		unsigned short start, unsigned short end){
 	comp* cNew;
 	cNew = initComp(path,start,end);
-	addToHashVpc(cNew,vetorHash,ind); 
+	addToAlfaVpc(cNew,c1->alfabeta,ind); 
 	addToFirstVpc(cNew,c1->primeiros);
 	return cNew;
 }

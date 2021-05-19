@@ -1,7 +1,8 @@
-- Sera q vale a pena nao usar Hash Tables, pq na verdade
-log(10**2,2) = 39 e log(10**2/12,2)=36
+- Vou fazer grande restruturacao
+No more vpc's, 
+Linked list para os valores de por criacao
+Bin Tree (AVL ou nao) para os ordenados alfabeticamente 
 
-E a Hash Table gasta imeeeensa memoria
 
 - Criar constante NULL_STR e subtituir em todos os '\0'
 
@@ -11,4 +12,3 @@ mas eh a vida :(
 
 - Tambem tenho de ver o null a devolver no malloc
 
-- AInda nao mudei o 33 do hashfun para FIRDT_ASCII 
