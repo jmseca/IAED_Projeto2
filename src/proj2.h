@@ -22,6 +22,17 @@
         "search: Procura o caminho dado um valor.\n"\
         "delete: Apaga um caminho e todos os subcaminhos.\n"
 
+/*0 e 1*/
+#define ZERO 0
+#define ONE 1
+
+/*Tamanhos de alguns tipos de dados*/
+#define SHORT 2
+#define INT 4
+#define LONG 8
+#define AVLHEAD 24
+#define COMP 80
+
 /*Tamanho maximo de uma string que identifica um comando (inclui '\0')*/
 #define MAX_COMMAND_SIZE 7
 
@@ -38,6 +49,36 @@
 #define SEARCH 427
 #define DELETE 410
 
+
+
+
+/*STRUCTS*/
+
+typedef struct {
+        char* command;
+        char* bigBuff;
+} buff ;
+
+typedef struct {
+	unsigned long occ;
+	struct componente *rootAlfa;
+	struct componente *rootOrder;
+} avlHead;
+
+typedef struct componente {
+	char* nome;
+	char* valor;
+	unsigned long occ;
+	comp *right;
+	comp *left;
+	avlHead* follow;
+}
+
+/* Estrutura para guardar o buffer e a raiz*/
+typedef struct {
+	buff* bf;
+	avlHead *motherRoot;
+} mother;
 
 /*Complement*/
 

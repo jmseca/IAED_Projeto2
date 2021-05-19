@@ -1,14 +1,8 @@
-- Vou fazer grande restruturacao
-No more vpc's, 
-Linked list para os valores de por criacao
-Bin Tree (AVL ou nao) para os ordenados alfabeticamente 
-
+- No myMalloc acho q nao liberto a memoria toda 
+por exemplo num init se da o erro a meio, o que esta para tras nao e libertado
 
 - Criar constante NULL_STR e subtituir em todos os '\0'
 
-- Nao curto nada de ter de usar um long na recursao do print
-mas eh a vida :(
 
 
-- Tambem tenho de ver o null a devolver no malloc
 

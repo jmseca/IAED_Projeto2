@@ -2,36 +2,108 @@
  * Ficheiro: componentes.c
  * Autor: Joao Fonseca
  * Descricao: Definicao das funcoes que vao manipular
- * os componentes, bem como as estruturas que formam os componentes.
+ * os componentes, bem como as estruturas que formam e guardam os componentes.
 */
 
 #include "proj2.h"
  
+/* ============================================================================
+ * Componentes
+ *
+ * -char* nome
+ * -char* valor
+ * -unsigned long occ
+ * -unsigned long alfaHeight
+ * -unsigned long orderHeight
+ * -componente* alfaRight
+ * -componente* alfaLeft
+ * -componente* orderRight
+ * -componente* orderLeft
+ * -AVLhead* follow (componentes seguintes)
+ ============================================================================*/
+
 
 /* ============================================================================
- * Componente (comp):
+ * avlHead
  *
- * - unsigned long* size, numero de ponteiros de componentes que pode receber
- * - unsigned long* occ, quantos ponteiros de componentes ja tem
- * - char* valor, valor do caminho
- * - char* nome, nome do componente
- * - Vetor com os ponteiros ordenados alfabeticamente
- * - Vetor com os ponteiros 
- * dos seguintes componentes ordenados por ordem de criacao
- * ============================================================================
-*/
+ * -unsigned long occ
+ * -componente* rootAlfa (avl ordenada alfabeticamente)
+ * -componente* rootOrder (avl ordenada por criacao)
+ ============================================================================*/
 
-/* ============================================================================
- * Vetores de Ponteiros de Componentes (vpc):
- *
- * - unsigned long* size, numero de ponteiros de componentes que pode receber
- * - unsigned long* occ, quantos ponteiros de componentes ja tem
- * - comp** info, vetor com os ponteiros
- * de componentes
- * ============================================================================
-*/
+
+avlHead* initHead(mother* M){
+	avlHead* head;
+	head = (avlHead*) myMalloc(AVLHEAD,ONE,M);
+       	head->occ = ZERO;
+	head->rootAlfa = NULL;
+	head->rootOrder = NULL;
+	return avlHead 
+}
+
+comp* initComp(char *path, unsigned short start,unsigned short end,mother* M){
+	comp* c1;
+	unsigned int vSize = end-start+ONE;
+	c1 = (comp*) myMalloc(COMP,ONE,M);
+	c1->nome = (char*) myMalloc(ONE,vSize,M);
+	c1->valor = (char*) myMalloc(ONE,ONE,M);
+	/*Refazer o malloc*/
+	c1->alfaRight = NULL;
+	c1->alfaLeft = NULL;
+	c1->orderRight = NULL;
+	c1->orderLeft = NULL;
+	c1->occ = ZERO;
+	c1->alfaHeight = ZERO;
+	c1->orderHeight = ZERO;
+	*(c1->valor) = ZERO;
+	myStrCpy(c1->nome,path,start,end);
+	return c1;
+	
+}
+
+/* Inicializa um ponteiro para um componente, alocando-lhe alguma memoria*/
+comp* initComp(char* path, unsigned short start, unsigned short end){
+        comp* c1;
+        short i,size;
+        size = end-start+1; /*tamanho do nome da componente em analise*/
+        c1 = (comp*) malloc(sizeof(comp));
+	/* Atribuir um nome*/
+        c1->nome = (char*) malloc(sizeof(char)*size);
+        myStrCpy(c1->nome,path,start,end); 
+	/* Inicial o valor a Nulo*/
+        c1->valor = (char*) malloc(sizeof(char));
+        *(c1->valor) = '\0';
+	c1->right = NULL; 
+	c1->left = NULL; /*Nao ha valores ainda para as componentes seguintes*/
+	/* Alocar memoria para as componentes ordenadas alfabeticamente*/
+        c1->alfabeta = initVpc(FIRST_SIZE_C);
+        /* Memoria para as componentes ordenadas por criacao*/
+        c1->first = initVpc(FIRST_SIZE_C);
+        return c1;
+}
+
+/* 0->str
+ * 1->order*/
+comp* findComp(avlHead *head, char* path,char* found, char modo, unsigned short start,
+		unsigned end end, mother *M){
+	comp* c2 = modo ? head->rootOrder : head->rootAlfa;
+	short res;
+	while (!found && c2!=NULL){
+		res = myStrCmp(path,c2->nome,start,end);
+		if (!res){
+			*found = 1
+		} else {
+			if (modo){
+			
+			} else {
+		
+			}
+		}
+	}
 
 	
+}
+
 
 /* Funcao que inicializa um vpc, alocando-lhe memoria*/
 vpc* initVpc(short firstSize){
