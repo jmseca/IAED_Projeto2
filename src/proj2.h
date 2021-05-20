@@ -57,6 +57,9 @@
 typedef struct {
         char* command;
         char* bigBuff;
+	unsigned short start;
+	unsigned short end;
+	unsigned long occ;
 } buff ;
 
 typedef struct {
@@ -69,8 +72,12 @@ typedef struct componente {
 	char* nome;
 	char* valor;
 	unsigned long occ;
-	comp *right;
-	comp *left;
+	unsigned long alfaHeight;
+	unsigned long orderHeight
+	comp *alfaRight;
+	comp *alfaLeft;
+	comp *orderRight;
+	comp *orderLeft;
 	avlHead* follow;
 }
 

@@ -3,6 +3,8 @@ por exemplo num init se da o erro a meio, o que esta para tras nao e libertado
 
 - Criar constante NULL_STR e subtituir em todos os '\0'
 
+- Ver q tipos de malloc faço, para ponderar mudar unsigned int para unsigned short
 
+- Se calhar (por um pequeno teste que fiz, mesmo com ponteiro Null, nao ha problema em fzr free)
 
 

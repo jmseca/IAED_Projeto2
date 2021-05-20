@@ -31,22 +31,33 @@
  * -componente* rootOrder (avl ordenada por criacao)
  ============================================================================*/
 
-
+/* Inicializa*/
 avlHead* initHead(mother* M){
 	avlHead* head;
-	head = (avlHead*) myMalloc(AVLHEAD,ONE,M);
-       	head->occ = ZERO;
+	char control = ZERO; /*controlar se ainda ha memoria*/	
+	head = (avlHead*) myMalloc(AVLHEAD,ONE,&control);
+       	if (control) /*ja nao ha memoria*/
+		exitProgram(M);
+	head->occ = ZERO;
 	head->rootAlfa = NULL;
 	head->rootOrder = NULL;
 	return avlHead 
 }
 
-comp* initComp(char *path, unsigned short start,unsigned short end,mother* M){
+
+comp* initComp(mother* M){
 	comp* c1;
-	unsigned int vSize = end-start+ONE;
-	c1 = (comp*) myMalloc(COMP,ONE,M);
-	c1->nome = (char*) myMalloc(ONE,vSize,M);
-	c1->valor = (char*) myMalloc(ONE,ONE,M);
+	char control = ZERO;
+	buff* bf = M->bf;
+	unsigned int vSize = getVsize(bf);
+	c1 = (comp*) myMalloc(COMP,ONE,M,control);
+	c1->nome = (char*) myMalloc(ONE,vSize,M,control);
+	c1->valor = (char*) myMalloc(ONE,ONE,M,control);
+
+	if (control){ /* ja nao ha memoria*/
+		freeComp(c1,ONE);
+		exitProgram(M);
+	}
 	/*Refazer o malloc*/
 	c1->alfaRight = NULL;
 	c1->alfaLeft = NULL;
@@ -56,223 +67,86 @@ comp* initComp(char *path, unsigned short start,unsigned short end,mother* M){
 	c1->alfaHeight = ZERO;
 	c1->orderHeight = ZERO;
 	*(c1->valor) = ZERO;
-	myStrCpy(c1->nome,path,start,end);
+	myStrCpy(c1->nome,bf);
 	return c1;
+}
+
+/* Faz free a uma componente
+ * modo 1 -> houve erro a alocar memoria da componente
+ * modo 0 -> fazer free da componente normalmente*/
+void freeComp(comp *c1, char modo){
+	if (modo) {
+		if ((c1->nome)!=NULL){
+			free(c1->nome);
+		}
+		if (c1 == NULL){
+			free(c1);
+		}
+	} else {
+		/* free all fica para dps*/
 	
+	}
 }
 
-/* Inicializa um ponteiro para um componente, alocando-lhe alguma memoria*/
-comp* initComp(char* path, unsigned short start, unsigned short end){
-        comp* c1;
-        short i,size;
-        size = end-start+1; /*tamanho do nome da componente em analise*/
-        c1 = (comp*) malloc(sizeof(comp));
-	/* Atribuir um nome*/
-        c1->nome = (char*) malloc(sizeof(char)*size);
-        myStrCpy(c1->nome,path,start,end); 
-	/* Inicial o valor a Nulo*/
-        c1->valor = (char*) malloc(sizeof(char));
-        *(c1->valor) = '\0';
-	c1->right = NULL; 
-	c1->left = NULL; /*Nao ha valores ainda para as componentes seguintes*/
-	/* Alocar memoria para as componentes ordenadas alfabeticamente*/
-        c1->alfabeta = initVpc(FIRST_SIZE_C);
-        /* Memoria para as componentes ordenadas por criacao*/
-        c1->first = initVpc(FIRST_SIZE_C);
-        return c1;
-}
-
-/* 0->str
- * 1->order*/
-comp* findComp(avlHead *head, char* path,char* found, char modo, unsigned short start,
-		unsigned end end, mother *M){
-	comp* c2 = modo ? head->rootOrder : head->rootAlfa;
+/* Funcao responsavel por indicar o caminho a funcao findComp*/
+short findFunc(comp *c1, char* found,char modo, buff* bf){
 	short res;
-	while (!found && c2!=NULL){
-		res = myStrCmp(path,c2->nome,start,end);
-		if (!res){
-			*found = 1
+	if (modo){ /* comparar nomes*/
+		res = myStrCmp(c1->nome,bf);
+	} else {
+		res = (bf->occ)>(c1->occ) ? 1 : -1;
+		res = (bf->occ)==(c1->occ) ? 0 : res;
+	}
+	if (!res){
+		*found = 1;
+	}
+	return res;
+}
+
+
+/* Encontra a componente, ou o lugar onde deveria estar
+ * modo 1 -> procurar por nome
+ * modo 0 -> procurar por ordem de chegada*/
+comp* findComp(comp* root,char* found, char modo, buff* bf){
+	short res;
+	comp* c1=root;
+	while (c1!=NULL){
+		res = findFunc(c1,found,modo,bf);
+		if (*found){
+			break;
+		}
+		if (res>ZERO){
+			c1 = modo ? c1->alfaRight : c1->orderRight;
 		} else {
-			if (modo){
-			
-			} else {
-		
-			}
+			c1 = modo ? c1->alfaLeft : c1->orderLeft;
 		}
 	}
-
-	
-}
-
-
-/* Funcao que inicializa um vpc, alocando-lhe memoria*/
-vpc* initVpc(short firstSize){
-	vpc* vetor;
-	vetor = (vpc*) malloc(sizeof(vpc));
-	vetor->info = (comp**) malloc((firstSize)*sizeof(comp*));
-	vetor->size = (unsigned long*) malloc(sizeof(unsigned long));
-	vetor->occ = (unsigned long*) malloc(sizeof(unsigned long));
-	*(vetor->size) = firstSize;
-	*(vetor->occ) = 0;
-	return vetor;
-}
-
-
-/* Funcao auxiliar do binarySearch que devolve o proximo
- *indice a verificar e atualiza o valor da
- *variavel size (atraves do uso de pointer)*/
-unsigned long getBinInd(unsigned long *size, unsigned long ind,
-	       	short up, unsigned long maxInd){
-        unsigned long soma;
-        soma = *size/2;
-        *size = *size%2 ? (*size/2)+1 : *size/2;
-        if (up){
-                ind += soma;
-        } else {
-                ind = ind>soma ? ind-soma : soma-ind;
-        }
-        return ind<maxInd ? ind : ind-1;
-}
-
-
-/* Devolve o valor que resulta de comparar o nome do componente em analise 
- *com o que se quer comparar*/
-short getBinRes(char *cName, vpc *vetor, long ind,unsigned short start, 
-		unsigned short end){
-        short out; 
-        out = myStrCmp(cName,vetor->info[ind]->nome,start,end);
-	return out;
-}
-
-
-
-/* Funcao de procura e insercao binaria responsavel por devolver
- *o indice pretendido (que seja para encontrar ou inserir)*/
-unsigned long binarySearch(char *cName, vpc *vetor, short *found,
-		unsigned short start, unsigned short end){
-        short up=1;
-        short res=0;
-	unsigned long size = *(vetor->occ);
-	unsigned long ind=0;
-        unsigned long maxInd = *(vetor->occ);
-	if (size){
-                size += size%2 ? 0 : 1;
-                do {
-                        ind = getBinInd(&size, ind, up, maxInd);
-                        res = getBinRes(cName, vetor, ind,start,end);
-                        if (!res){
-                                *found=1;
-                        }
-                        up = res>0 ? 1 : 0;
-                } while (size!=1 && !(*found));
-        }
-        if (ind<maxInd && !found){
-                ind = res>0 ? ind+1 : ind;
-        }
-        return ind;
-}
-
-/*Adiciona a nova componente ao vpc*/
-void updateVpc(comp *c1, vpc *vetor, unsigned long ind){
-	unsigned long i;
-	for (i=*(vetor->occ);i>ind;--i){
-		vetor->info[i] = vetor->info[i-1];
-	}
-	vetor->info[ind] = c1;
-	(*(vetor->occ))++;
-}
-
-/*Aumenta o numero de ponteiros de componentes que pode albergar*/
-vpc* extendVpc(vpc *vetor){
-	unsigned long newSize = *(vetor->size)*(1.5);
-	vpc *vetor2;
-	vetor2 = (vpc*) malloc(sizeof(vpc));
-	vetor2->info = (comp**) realloc(vetor->info,sizeof(comp*)*newSize);
-	*(vetor2->size) = newSize;
-	vetor2->occ = vetor->occ;
-	free(vetor->size);
-	free(vetor->occ);
-	free(vetor);
-	return vetor2;
-}
-
-/* Adiciona um novo elemento a um vpc da Tabela de Dispersao
- * (ordenado alfabeticamente)*/
-void addToAlfaVpc(comp* cNew,vpc* vetor,unsigned long ind){
-	if (*(vetor->size)==*(vetor->occ)){
-		vetor = extendVpc(vetor);
-	}
-	updateVpc(cNew,vetor,ind);
-}
-
-/* Adiciona um novo elemento a um vpc no indice "ind"*/
-void addToFVpc(comp* cNew, vpc* vetor, unsigned long ind){
-	if (*(vetor->size)==*(vetor->occ)){
-                vetor = extendVpc(vetor);
-        }
-	updateVpc(cNew,vetor,*(vetor->occ));
-}
-
-
-/* Inicializa um ponteiro para um componente, alocando-lhe alguma memoria*/
-comp* initComp(char* path, unsigned short start, unsigned short end){
-	comp* c1;
-	short i,size;
-	size = end-start+1; /*tamanho do nome da componente em analise*/
-	c1 = (comp*) malloc(sizeof(comp));
-	/* Atribuir um nome*/
-	c1->nome = (char*) malloc(sizeof(char)*size);
-	myStrCpy(c1->nome,path,start,end);
-	/* Inicial o valor a Nulo*/
-	c1->valor = (char*) malloc(sizeof(char));
-	*(c1->valor) = '\0';
-	/* Alocar memoria para as componentes ordenadas alfabeticamente*/
-	c1->alfabeta = initVpc(FIRST_SIZE_C);
-	/* Memoria para as componentes ordenadas por criacao*/
-	c1->primeiros = initVpc(FIRST_SIZE_C);
 	return c1;
+
 }
 
-/*Inicializa um ponteiro para a componente raiz
- *Apesar de ser parecido com initComp, nao e necessario args
- *Para iniciar uma root, dai a escolha de uma nova funcao*/
-comp* initRoot(){
-	comp* c1;
-        short i;
-	/*Nome e val da raiz dao jeito no comando print*/
-        c1 = (comp*) malloc(sizeof(comp));
-	c1->nome = (char*) malloc(sizeof(char));
-	*(c1->nome) = '\0'; 
-	c1->valor = (char*) malloc(sizeof(char));
-	*(c1->valor) = '\0';
-        /* Alocar memoria para as componentes ordenadas alfabeticamente*/
-        c1->alfabeta = initVpc(FIRST_SIZE_C);
-	/* Memoria para as componentes ordenadas por criacao*/
-        c1->primeiros = initVpc(FIRST_SIZE_C);
-        return c1;
-}
+
+
+
+
+
+
 
 
 /* Atribui um novo valor a uma componente*/
 void compNewValue(comp* c1, char* val){
-	size_t dim = strlen(val);
+	unsigned int dim = strlen(val);
+	char control;
 	dim++; /*incluir espaco para '\0'*/
 	c1->valor = (char*) realloc(c1->valor,dim*(sizeof(char)));
 	strcpy(c1->valor,val);
 
 }
 
-/* Adiciona uma nova componente a "c1" e devolve um ponteiro para
- *a nova componente criada. 
- * Ja se recebe o vpc e respetivo ind da tabela de dsipersao 
- *onde vamos adicionar*/
-comp* addNewComp(comp *c1, char* path, unsigned long ind,
-		unsigned short start, unsigned short end){
-	comp* cNew;
-	cNew = initComp(path,start,end);
-	addToAlfaVpc(cNew,c1->alfabeta,ind); 
-	addToFirstVpc(cNew,c1->primeiros);
-	return cNew;
+/* Adiciona uma nova componente ao ponteiro "c1", com os dados do buffer*/ 
+comp* addNewComp(comp *c1, mother *M){
+	c1 = initComp(M);
+	return c1;
 }
 
 
