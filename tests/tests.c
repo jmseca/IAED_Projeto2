@@ -2,18 +2,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
-
-void f(){
-	static short oi;
-	oi++;
-	printf("%d\n",oi);
+unsigned int f(char* str){
+	unsigned int size =  strlen(str);
+	return size;
 }
 
 int main(){
-	f();
-	f();
-	f();
-
+	char ola[20] = "Boa tarde pessoas";
+	unsigned int siz;
+	siz = f(ola);
+	printf("%d\n",siz);
 	return 0;
 }

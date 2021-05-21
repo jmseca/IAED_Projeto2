@@ -1,14 +1,15 @@
-- Sera q vale a pena nao usar Hash Tables, pq na verdade
-log(10**2,2) = 39 e log(10**2/12,2)=36
-
-E a Hash Table gasta imeeeensa memoria
+- No myMalloc acho q nao liberto a memoria toda 
+por exemplo num init se da o erro a meio, o que esta para tras nao e libertado
 
 - Criar constante NULL_STR e subtituir em todos os '\0'
 
-- Nao curto nada de ter de usar um long na recursao do print
-mas eh a vida :(
+- Ver q tipos de malloc faço, para ponderar mudar unsigned int para unsigned short
+
+- Se calhar (por um pequeno teste que fiz, mesmo com ponteiro Null, nao ha problema em fzr free)
+
+- Faltam as alturas
+
+- No componentes.c, no getPathComp, eu faco peqsuisa com os nomes, sqe ate era mais facil com occ'?
+(eh preciso, pq assim e universal, pq no insert, preciso mesmo do alfa)
 
 
-- Tambem tenho de ver o null a devolver no malloc
-
-- AInda nao mudei o 33 do hashfun para FIRDT_ASCII 

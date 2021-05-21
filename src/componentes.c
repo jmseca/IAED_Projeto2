@@ -2,245 +2,359 @@
  * Ficheiro: componentes.c
  * Autor: Joao Fonseca
  * Descricao: Definicao das funcoes que vao manipular
- * os componentes, bem como as estruturas que formam os componentes.
+ * os componentes, bem como as estruturas que formam e guardam os componentes.
 */
 
 #include "proj2.h"
  
+/* ============================================================================
+ * Componentes
+ *
+ * -char* nome
+ * -char* valor
+ * -unsigned long occ
+ * -unsigned long alfaHeight
+ * -unsigned long orderHeight
+ * -componente* alfaRight
+ * -componente* alfaLeft
+ * -componente* orderRight
+ * -componente* orderLeft
+ * -AVLhead* follow (componentes seguintes)
+ ============================================================================*/
+
 
 /* ============================================================================
- * Componente (comp):
+ * avlHead
  *
- * - unsigned long* size, numero de ponteiros de componentes que pode receber
- * - unsigned long* occ, quantos ponteiros de componentes ja tem
- * - char* valor, valor do caminho
- * - char* nome, nome do componente
- * - Hashtable de Dim 12 que guarda os ponteiros para os componentes 
- * seguintes. Colisoes resolvidas com uma especie de encadeamento externo,
- * onde os vetores estao ordenados por ordem alfabetica
- * em vez de por ordem de chegada.
- * - Vetor com os ponteiros 
- * dos seguintes componentes ordenados por ordem de criacao
- * ============================================================================
-*/
+ * -unsigned long occ
+ * -componente* rootAlfa (avl ordenada alfabeticamente)
+ * -componente* rootOrder (avl ordenada por criacao)
+ ============================================================================*/
 
-/* ============================================================================
- * Vetores de Ponteiros de Componentes (vpc):
- *
- * - unsigned long* size, numero de ponteiros de componentes que pode receber
- * - unsigned long* occ, quantos ponteiros de componentes ja tem
- * - comp** info, vetor com os ponteiros
- * de componentes
- * ============================================================================
-*/
-
-	
-/*Funcao de Dispersao para a Hashtable dos componentes*/
-unsigned short hashFun(char* str,unsigned short start){
-	unsigned short out;
-	/*char ascii 33 eh o primeiro que se pode ter no nome*/
-	out = (*(str+start)-33)/8;
-	return out;
-	
-}
-
-/* Funcao que inicializa um vpc, alocando-lhe memoria*/
-vpc* initVpc(short firstSize){
-	vpc* vetor;
-	vetor = (vpc*) malloc(sizeof(vpc));
-	vetor->info = (comp**) malloc((firstSize)*sizeof(comp*));
-	vetor->size = (unsigned long*) malloc(sizeof(unsigned long));
-	vetor->occ = (unsigned long*) malloc(sizeof(unsigned long));
-	*(vetor->size) = firstSize;
-	*(vetor->occ) = 0;
-	return vetor;
+/* Inicializa*/
+avlHead* initHead(mother* M){
+	avlHead* head;
+	char control = ZERO; /*controlar se ainda ha memoria*/	
+	head = (avlHead*) myMalloc(AVLHEAD,ONE,&control);
+       	if (control) /*ja nao ha memoria*/
+		exitProgram(M);
+	head->occ = ZERO;
+	head->rootAlfa = NULL;
+	head->rootOrder = NULL;
+	return avlHead 
 }
 
 
-/* Funcao auxiliar do binarySearch que devolve o proximo
- *indice a verificar e atualiza o valor da
- *variavel size (atraves do uso de pointer)*/
-unsigned long getBinInd(unsigned long *size, unsigned long ind,
-	       	short up, unsigned long maxInd){
-        unsigned long soma;
-        soma = *size/2;
-        *size = *size%2 ? (*size/2)+1 : *size/2;
-        if (up){
-                ind += soma;
-        } else {
-                ind = ind>soma ? ind-soma : soma-ind;
-        }
-        return ind<maxInd ? ind : ind-1;
-}
-
-
-/* Devolve o valor que resulta de comparar o nome do componente em analise 
- *com o que se quer comparar*/
-short getBinRes(char *cName, vpc *vetor, long ind,unsigned short start, 
-		unsigned short end){
-        short out; 
-        out = myStrCmp(cName,vetor->info[ind]->nome,start,end);
-	return out;
-}
-
-
-
-/* Funcao de procura e insercao binaria responsavel por devolver
- *o indice pretendido (que seja para encontrar ou inserir)*/
-unsigned long binarySearch(char *cName, vpc *vetor, short *found,
-		unsigned short start, unsigned short end){
-        short up=1;
-        short res=0;
-	unsigned long size = *(vetor->occ);
-	unsigned long ind=0;
-        unsigned long maxInd = *(vetor->occ);
-	if (size){
-                size += size%2 ? 0 : 1;
-                do {
-                        ind = getBinInd(&size, ind, up, maxInd);
-                        res = getBinRes(cName, vetor, ind,start,end);
-                        if (!res){
-                                *found=1;
-                        }
-                        up = res>0 ? 1 : 0;
-                } while (size!=1 && !(*found));
-        }
-        if (ind<maxInd && !found){
-                ind = res>0 ? ind+1 : ind;
-        }
-        return ind;
-}
-
-/*Adiciona a nova componente ao vpc*/
-void updateVpc(comp *c1, vpc *vetor, unsigned long ind){
-	unsigned long i;
-	for (i=*(vetor->occ);i>ind;--i){
-		vetor->info[i] = vetor->info[i-1];
-	}
-	vetor->info[ind] = c1;
-	(*(vetor->occ))++;
-}
-
-/*Aumenta o numero de ponteiros de componentes que pode albergar*/
-vpc* extendVpc(vpc *vetor){
-	unsigned long newSize = *(vetor->size)*(1.5);
-	vpc *vetor2;
-	vetor2 = (vpc*) malloc(sizeof(vpc));
-	vetor2->info = (comp**) realloc(vetor->info,sizeof(comp*)*newSize);
-	*(vetor2->size) = newSize;
-	vetor2->occ = vetor->occ;
-	free(vetor->size);
-	free(vetor->occ);
-	free(vetor);
-	return vetor2;
-}
-
-/* Adiciona um novo elemento a um vpc da Tabela de Dispersao
- * (ordenado alfabeticamente)*/
-void addToHashVpc(comp* cNew,vpc* vetor,unsigned long ind){
-	if (*(vetor->size)==*(vetor->occ)){
-		vetor = extendVpc(vetor);
-	}
-	updateVpc(cNew,vetor,ind);
-}
-
-/* Adiciona um novo elemento a um vpc que tem as 
- * componenentes ordenadas por criacao*/
-void addToFirstVpc(comp* cNew, vpc* vetor){
-	if (*(vetor->size)==*(vetor->occ)){
-                vetor = extendVpc(vetor);
-        }
-	updateVpc(cNew,vetor,*(vetor->occ));
-}
-
-
-/* Inicializa um ponteiro para um componente, alocando-lhe alguma memoria*/
-comp* initComp(char* path, unsigned short start, unsigned short end){
+comp* initComp(mother* M){
 	comp* c1;
-	short i,size;
-	size = end-start+1; /*tamanho do nome da componente em analise*/
-	c1 = (comp*) malloc(sizeof(comp));
-	/* Atribuir um nome*/
-	c1->nome = (char*) malloc(sizeof(char)*size);
-	myStrCpy(c1->nome,path,start,end);
-	/* Inicial o valor a Nulo*/
-	c1->valor = (char*) malloc(sizeof(char));
-	*(c1->valor) = '\0';
-	/* Alocar memoria para a Tabela de Dispersao*/
-	c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
-	for (i=0;i<HASH_MAX;i++){
-		c1->hash[i] = initVpc(FIRST_SIZE_H);
+	char control = ZERO;
+	buff* bf = M->bf;
+	unsigned int vSize = getVsize(bf);
+	c1 = (comp*) myMalloc(COMP,ONE,M,control);
+	c1->nome = (char*) myMalloc(ONE,vSize,M,control);
+	c1->valor = (char*) myMalloc(ONE,ONE,M,control);
+
+	if (control){ /* ja nao ha memoria*/
+		freeComp(c1,ONE);
+		exitProgram(M);
 	}
-	/* Memoria para as componentes ordenadas por criacao*/
-	c1->primeiros = initVpc(FIRST_SIZE_C);
+	/*Refazer o malloc*/
+	c1->alfaRight = NULL;
+	c1->alfaLeft = NULL;
+	c1->orderRight = NULL;
+	c1->orderLeft = NULL;
+	c1->occ = M->bf->occ; /* occ guardada no buffer*/
+	c1->alfaHeight = ONE;
+	c1->orderHeight = ONE;
+	*(c1->valor) = ZERO;
+	myStrCpy(c1->nome,bf);
 	return c1;
 }
 
-/*Inicializa um ponteiro para a componente raiz
- *Apesar de ser parecido com initComp, nao e necessario args
- *Para iniciar uma root, dai a escolha de uma nova funcao*/
-comp* initRoot(){
-	comp* c1;
-        short i;
-	/*Nome e val da raiz dao jeito no comando print*/
-        c1 = (comp*) malloc(sizeof(comp));
-	c1->nome = (char*) malloc(sizeof(char));
-	*(c1->nome) = '\0'; 
-	c1->valor = (char*) malloc(sizeof(char));
-	*(c1->valor) = '\0';
-        /* Alocar memoria para a Tabela de Dispersao*/
-        c1->hash = (vpc**) malloc(sizeof(vpc*)*HASH_MAX);
-        for (i=0;i<HASH_MAX;i++){
-                c1->hash[i] = initVpc(FIRST_SIZE_H);
-        }
-        /* Memoria para as componentes ordenadas por criacao*/
-        c1->primeiros = initVpc(FIRST_SIZE_C);
-        return c1;
+/* Faz free a uma componente
+ * modo 1 -> houve erro a alocar memoria da componente
+ * modo 0 -> fazer free da componente normalmente*/
+void freeComp(comp *c1, char modo){
+	if (modo) {
+		if ((c1->nome)!=NULL){
+			free(c1->nome);
+		}
+		if (c1 == NULL){
+			free(c1);
+		}
+	} else {
+		/* free all fica para dps*/
+	
+	}
 }
+
+
+
+/* Devolve a height do componente da arvore desejada
+ * modo 1->ordenada alfabeticamente
+ * modo 0->ordenada por criacao*/
+int height(comp* h, char modo){
+        if (h == NULL) return 0;
+	if (modo)
+        	return h->alfaHeight;
+	else
+		return h->orderHeight;
+}
+
+/* Rotacao a esquerda na arvore pretendida (modo)*/
+comp* rotL(comp* h, char modo){
+        int hleft, hright, xleft, xright;
+	comp* x,;
+	if (modo) {
+		x = h->alfaRight;
+        	h->alfaRight = x->alfaLeft;
+        	x->alfaLeft = h;
+
+        	hleft = height(h->alfaLeft);
+        	hright = height(h->alfaRight);
+        	h->height = hleft > hright ? hleft + 1 : hright + 1;
+
+        	xleft = height(x->alfaLeft);
+        	xright = height(x->alfaRight);
+        	x->height = xleft > xright ? xleft + 1 : xright + 1;
+	} else {
+		x = h->orderRight;
+                h->orderRight = x->orderLeft;
+                x->orderLeft = h;
+
+                hleft = height(h->orderLeft);
+                hright = height(h->orderRight);
+                h->height = hleft > hright ? hleft + 1 : hright + 1;
+
+                xleft = height(x->orderLeft);
+                xright = height(x->orderRight);
+                x->height = xleft > xright ? xleft + 1 : xright + 1;	
+	}
+        return x;
+}
+
+/* Rotacao a esquerda na arvore pretendida (modo)*/
+comp* rotR(comp* h, char modo){
+        int hleft, hright, xleft, xright;
+        comp* x;
+	if (modo) {
+		x = h->alfaLeft;
+        	h->alfaLeft = x->alfaRight;
+        	x->alfaRight = h;
+
+        	hleft = height(h->alfaLeft);
+        	hright = height(h->alfaRight);
+        	h->height = hleft > hright ? hleft + 1 : hright + 1;
+
+        	xleft = height(x->alfaLeft);
+        	xright = height(x->alfaRight);
+        	x->height = xleft > xright ? xleft + 1 : xright + 1;
+	} else {
+		x = h->orderLeft;
+                h->orderLeft = x->orderRight;
+                x->orderRight = h;
+
+                hleft = height(h->orderLeft);
+                hright = height(h->orderRight);
+                h->height = hleft > hright ? hleft + 1 : hright + 1;
+
+                xleft = height(x->orderLeft);
+                xright = height(x->orderRight);
+                x->height = xleft > xright ? xleft + 1 : xright + 1;
+	}
+        return x;
+}
+
+
+
+/* Devolve a componente maxima de uma AVL
+ * modo 0 -> AVL por ordem de criacao
+ * modo 1 -> AVL por ordem alfabetica*/
+comp* max(comp* h, char modo){
+	if (modo){
+        	while (h!=NULL && ((h->alfaRight) != NULL)){
+                	h = h->r;
+        	}
+	} else {
+		while (h!=NULL && ((h->orderRight) != NULL)){
+                        h = h->r;
+                }
+	}
+        return h;
+}
+
+
+/* Faz uma rotacao esquerda-direita, dependendo do modo como queremos fazer*/
+comp* rotLR(comp* h,char modo){ 
+        if (h == NULL){ 
+		return h;
+	}
+	if (modo){
+        	h->alfaLeft = rotL(h->alfaLeft);
+	} else {
+		h->orderLeft = rotL(h->orderLeft);
+	}
+        return rotR(h,modo);
+}
+
+/* Faz uma rotacao direita-esquerda, dependendo do modo como queremos fazer*/
+comp* rotRL(comp* h, char modo){ 
+        if (h == NULL){ 
+		return h;
+	}
+	if (modo){
+                h->alfaRight = rotL(h->alfaRight);
+        } else {
+                h->orderRight = rotL(h->orderRight);
+        }
+        return rotL(h,modo);
+}
+
+/* Balance factor, que tambem sera diferente, dependendo do modo*/
+int balance(comp* h, char modo) {
+        if(h == NULL){ 
+		return 0;
+	}
+        return modo ? height(h->alfaLeft) - height(h->alfaRight) :\
+	      	height(h->orderLeft) - height(h->orderRight);
+}
+
+/* Verifica se e necessario fazer rotates numa arvore dependendo do modo*/
+comp* AVLbalance(comp* h, char modo){
+        int balanceFactor, hleft, hright;
+	comp* left,right;
+	left = modo ? h->alfaLeft : h->orderLeft;
+	right = modo ? h->alfaRight : h->orderRight;
+        if (h == NULL) {
+		return h;
+	}
+        balanceFactor = balance(h,modo);
+        if(balanceFactor > 1) { /* mais peso para a esquerda */
+                if (balance(left) >= 0) h = rotR(h);
+                else h = rotLR(h);
+        }
+        else if(balanceFactor < -1){ /* mais peso para a direita*/
+                if (balance(right) <= 0) h = rotL(h);
+                else h = rotRL(h);
+        }
+        else{
+                hleft = height(left);
+                hright = height(right);
+		if (modo){
+                	h->alfaHeight = hleft > hright ? hleft + 1 : hright + 1;
+		} else {
+			h->orderHeight = hleft > hright ? hleft + 1 : hright + 1;
+		}
+        }
+        return h;
+}
+
+
+
+/* Funcao responsavel por indicar o caminho a funcao findComp*/
+short findFunc(comp *c1, char* found,char modo, buff* bf){
+	short res;
+	if (modo){ /* comparar nomes*/
+		res = myStrCmp(c1->nome,bf);
+	} else {
+		res = (bf->occ)>(c1->occ) ? 1 : -1;
+		res = (bf->occ)==(c1->occ) ? 0 : res;
+	}
+	if (!res){
+		*found = 1;
+	}
+	return res;
+}
+
+
+/* Devolve a componente com as mesmas caracteristicas do buffer
+ * Se nao encontrar, devolve NULL
+ * modo 1 -> procurar por nome
+ * modo 0 -> procurar por ordem de chegada*/
+comp* findComp(comp* root, char modo, buff* bf){
+	static short res;
+	res = findFunc(root,modo,bf);
+	if (root == NULL || !res){
+		return root;
+	}
+	else if (res>0){
+		if (modo){
+			return findComp(root->alfaRight, modo,bf);
+		} else {
+			return findComp(root->orderRight,modo,bf);
+		}
+	} else {
+		if (modo){
+                        return = findComp(root->alfaLeft, modo,bf);
+                } else {
+                        return = findComp(root->orderLeft,modo,bf);
+                }
+	}	
+}
+
+/* Insere a componente com as caracteristicas guardadas no buffer,
+ * faz os rotates necessarios. Devolve um pointer para a componente inserida
+ * Se ja existir devolve o seu ponteiro
+ * modo 1 -> procurar por nome
+ * modo 0 -> procurar por ordem de chegada*/ 
+comp* insertComp(comp* root, char modo,char* exists, mother* M){
+	static short res;
+	static comp* newC;
+	if (root == NULL){
+		newC = modo ? initComp(M) : root;
+                return newC;
+        }
+	if (modo){
+		res = findFunc(root,modo,M->bf);
+		if (!res){
+			*exists = ONE;
+			newC = root;
+			return newC
+		}
+		else if (res>0){
+                        root->alfaRight = insertComp(root->alfaRight, exists,modo,bf);	
+		} else {
+                        root->alfaLeft =  insertComp(root->alfaLeft,exists,modo,bf);	
+		}
+	} else { /* Por ordem de criacao, inserimos sempre no fim*/	
+        	root->orderRight = insertComp(root->orderRight,exists,modo,bf);
+	}
+	if (res){ /*se nao inserimos, nao precisamos de fzr rotate*/
+		root = AVLbalance(root,modo);
+	}
+        return newC;
+}
+
+/* Se o componente especificado no buffer nao existir, cria-o, adiciona-lo
+ * as duas AVL's
+ * Se ja existir devolve-o */
+comp* insertAll(avlHead* root, mother* M){
+	char* exists;
+	comp *c1, *c2;
+	c1 = insertComp(root->rootAlfa,ONE,exists,M);
+        if (!exists){
+        	c2 = insertComp(root->rootOrder,ZERO,exists,M);
+        	c2 = c1;
+	}
+	return c1;
+}
+
 
 
 /* Atribui um novo valor a uma componente*/
-void compNewValue(comp* c1, char* val){
-	size_t dim = strlen(val);
+void compNewValue(comp* c1, char* val, mother* M){
+	unsigned int dim = strlen(val);
+	char control;
+	char* safe;
 	dim++; /*incluir espaco para '\0'*/
-	c1->valor = (char*) realloc(c1->valor,dim*(sizeof(char)));
-	strcpy(c1->valor,val);
-
-}
-
-/* Adiciona uma nova componente a "c1" e devolve um ponteiro para
- *a nova componente criada. 
- * Ja se recebe o vpc e respetivo ind da tabela de dsipersao 
- *onde vamos adicionar*/
-comp* addNewComp(comp *c1, char* path, vpc *vetorHash, unsigned long ind,
-		unsigned short start, unsigned short end){
-	comp* cNew;
-	cNew = initComp(path,start,end);
-	addToHashVpc(cNew,vetorHash,ind); 
-	addToFirstVpc(cNew,c1->primeiros);
-	return cNew;
-}
-
-
-
-/* Verifica se a componente que tem o nome em "path", limitada por start e end
- * esta nos componentes seguintes de "c1"
- * modo '0', se nao esta, cria uma nova componente e adiciona-la
- * modo '1', se nao esta termina o programa.O aviso e transmitido pelo found*/
-comp* belongsToComp(comp *c1, char *path, short *found,
-		unsigned short start, unsigned short end, short modo){
-	unsigned long ind;
-	comp* out; /* A devolver*/
-	vpc *vetor;
-	ind = hashFun(path,start);
-	vetor = c1->hash[ind];
-	ind = binarySearch(path,vetor,found,start,end);
-	if (*found){
-		out = vetor->info[ind];
-	} else if (!modo){
-		out = addNewComp(c1,path,vetor,ind,start,end);
+	safe = (char*) realloc(c1->valor,dim*(sizeof(char)));
+	if (safe==NULL){
+		/* Esta funcao e chamada quando c1 ja pertence a uma AVL
+		 * c1 (e c1->valor) nao podem ser libertados agora*/
+		exitProgram(M);
 	}
-	return out;
+	c1->valor = safe;
+	strcpy(c1->valor,val);
 }
 
 /* Verifica se existe valor associado a componente*/
@@ -263,52 +377,38 @@ void printCompName(comp *c1){
 	printf("%s\n",c1->nome);
 }
 
-/* Devolve ponteiro para a componente final do caminho
+/* Devolve ponteiro para a componente final do caminho 
+ * no buffer da mother
  * modo '0'-se o caminho nao existir, cria um novo
  * modo '1'-se nao existir, nao cria */
-comp* getPathComp(char* path, comp* root, short modo, short* succ){
-	unsigned short start=0,end;
-	short found;
-	pathClean(path,&start);
+comp* getPathComp(short modo, short* succ, mother* M){
+	char* path = M->bf->bigBuff;
+	avlHead* root = M->motherRoot;
+	comp* c1;
+	pathClean(path,&(M->bf->start));
+	insertOccBuff(root);
 	while (*(path+start)!='\0'){
 		found = 0;
-		end = findSepar(path,start);
-		root = belongsToComp(root, path, &found, start, end, modo);
-		if (!found && modo){
-			printf("not found\n");
-			*succ = 0; 
-			break;
+		M->bf->end = findSepar(path,start);
+		if (modo){
+			c1 = findComp(root->rootOrder, ZERO, M->bf);
+			if (c1==NULL){
+				printf("not found\n");
+                        	*succ = 0;
+                        	break;
+			}
+		} else {
+			c1 = insertAll(root,M);
 		}
-		start=end;
-		pathClean(path,&start);
+		root = c1->follow;
+		insertOccBuff(root);	
+		M->bf->start = M->bf->end;
+		pathClean(path,&(M->bf->start));
 	}
-
-	return root;
+	return c1;
 }
 
 
-
-
-
-/* Liberta a memoria de um vpc, onde ja foi libertada
- *a memoria das componentes*/
-void freeVpc(vpc* vetor){
-	free(vetor->size);
-	free(vetor->occ);
-	free(vetor->info);
-	free(vetor);
-}
-
-/* Liberta a memoria da Tabela de Dispersao de um Componente
- *sem libertar a memoria dos componentes associados*/
-void freeHash(vpc** hash){
-	short i;
-	for (i=0;i<HASH_MAX;i++){
-		freeVpc(hash[i]);
-	}
-	free(hash);
-
-}
 
 
 /* Liberta a memoria de uma componente*/
@@ -332,23 +432,6 @@ void freeCompRec(comp* c1){
 		freeComp(c1);
 	}
 
-}
-
-
-/* Imprime os nomes das componentes associadas a um vpc*/
-void printVpcComp(vpc* vetor){
-	unsigned long i;
-	for (i=0;i<(*(vetor->occ));i++){
-		printCompName(vetor->info[i]);
-	}
-}
-
-/* Imprime todos os componentes imediatos a "c1" por ordem alfabetica*/
-void listComp(comp* c1){
-	short i=0;
-	for (;i<HASH_MAX;i++){
-		printVpcComp(c1->hash[i]);
-	}
 }
 
 

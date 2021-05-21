@@ -7,6 +7,61 @@
 
 #include "proj2.h"
 
+/* Termina o programa, libertanto toda a memoria
+ *Chamada quando nao ha mais memoria disponivel*/
+void endProgram(mother* M){
+	
+	/*freeAll(M);*/
+	printf("No Memory\n");
+	exit(0);
+}
+
+/* Funcao que corre o malloc e verifica se ainda ha memoria disponivel
+ *Se nao houver, "control" guarda essa informacao*/
+void* myMalloc(short typeSize, unsigned int vSizei, char* control){
+	/*Add condicao se for preciso para unsigned
+	 * e no fim apagar os que nao sao necessarios*/
+	void *p;
+	switch (typeSize){
+		case ONE: /*char*/
+			p = (char*) malloc(ONE*vSize);
+			break;
+		case SHORT:
+			p = (short*) malloc(SHORT*vSize);
+			break;
+		case INT:
+			p = (int*) malloc(INT*vSize);
+			break;
+		case LONG:
+			p = (long*) malloc(LONG*vSize);
+			break;
+		case AVLHEAD:
+			p = (avlHead*) malloc(AVLHEAD*vSize);
+			break;
+		case COMP:
+			p = (comp*) malloc(COMP*vSize);
+			break;
+		default:
+			printf("Oops, myMalloc nao tem todos os tipos\n")
+	}
+	if (p==NULL){
+		control = ONE;
+	}
+	return p;
+}
+
+/* Funcao que corre o realloc e verifica se ainda ha memoria disponivel*/
+char* myRealloc(char* old, unsigned int vSize, mother* M){
+	char* p;
+	p = (char*) realloc(old,ONE*vSize);
+	if (p==NULL){
+                endProgram(M)
+        }
+        return p;
+}
+
+
+
 /*Devolve o proximo char do stdin que nao seja ' ' ou '\t'*/
 char cleanWhite(){
 	char c=getchar();
@@ -65,21 +120,27 @@ unsigned short findSepar(char* path, unsigned short ind){
 }
 
 
-/*Copia a string "src" do indice "start" ate "end" (exclusive) para "dest"*/
-void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end){
+/*Copia a string que esta identificada no buffer para "dest"*/
+void myStrCpy(char* dest, buff* bf){
 	unsigned short i=0;
+	char* src = bf->bigBuff;
+	unsigned short start =bf->start;
+	unsigned short end = bf->end;
 	for(;start<end;start++){
 		*(dest+i) = *(src+start);
 		i++;
 	}
 }
 
-/*Compara a string "s1" do indice "start" ate "end" (exclusive) com "s2"*/
-short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end){
+/* Compara a string que esta identificada no buffer com "s1"*/
+short myStrCmp(char* s1, buff* bf){
 	unsigned short i=0;
+	char* s2 = bf->bigBuff;
+        unsigned short start =bf->start;
+        unsigned short end = bf->end;
 	short out=0;
 	while (start<end && !out){
-		out = *(s1+start) - *(s2+i);
+		out = *(s2+start) - *(s1+i);
 		i++;
 		start++;
 	}

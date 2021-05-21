@@ -18,19 +18,15 @@ short commandId(char* str){
 /* Funcao que, com base no comando indicado, direciona a execucao
  *do programa para realizar o comando pretendido
  * Tambem indica se o programa ja acabou (1) ou nao (0)*/
-short checkCommand(buff *bf, comp* root){
+char checkCommand(mother *M){
 	short id = commandId(bf->command);
-	short out=0;
+	char out=ZERO;
 	switch (id){
 		case HELP:
 			handleHelp();
 			break;
-		case QUIT:
-			handleQuit(bf, root);
-			out=1;
-			break;
-		case SET:
-			handleSet(bf, root);
+		/*case SET:
+			handleSet(M);
 			break;
 		case PRINT:
 			handlePrint(bf, root);
@@ -41,12 +37,16 @@ short checkCommand(buff *bf, comp* root){
 		case LIST:
 			handleList(bf, root);
 			break;
-		/*case SEARCH:
+		case SEARCH:
 			handleSearch(bf, root);
 			break;
 		case DELETE:
 			handleDelete(bf, root);
-			break;*/
+			break;
+		case QUIT:
+                        handleQuit(bf, root);
+                        out=ONE;
+                        break;*/
 		default:
 			printf("Erro Fatal - checkCommand\n");
 	}
@@ -66,7 +66,7 @@ void handleHelp(){
 /*==========    QUIT    ==========*/
 
 /*Funcao responsavel por terminar o programa corretamente*/
-void handleQuit(buff *bf, comp* root){
+void handleQuit(mother *M){
         cleanWhite(); /*nao ha mais info na instrucao, limpa-se o input*/
 	freeBuffer(bf);
 	freeCompRec(root);
@@ -77,13 +77,13 @@ void handleQuit(buff *bf, comp* root){
 
 /* Funcao responsavel por adicionar ou modificar um valor de um caminho,
  *sempre que o comando "set" e recebido no stdin*/
-void handleSet(buff *bf,comp* root){
+void handleSet(mother *M){
         comp *cpath;
-	short succ=1;
-	short modo=0;
-	short modoB=0; /*Vai haver um path no stdin*/
-        pathToBuff(bf,modoB);
-	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
+	char succ=ONE; /* Controla se o progama teve erros*/
+	char modo=ZERO; /* Se o caminho nao existir, cria*/
+	char modoB=ZERO; /*Vai haver um path no stdin*/
+        pathToBuff(M->bf,modoB);
+	cpath = getPathComp(modo,&succ,M);
 	valToBuff(bf);
 	compNewValue(cpath,bf->bigBuff);
 }
@@ -109,9 +109,9 @@ void handlePrint(buff *bf,comp* root){
  *a instrucao "find"*/
 void handleFind(buff *bf,comp* root){
 	comp* cpath;
-	short succ=1; /*Controla se o programa teve erros*/
-	short modo=1; /* Se o caminho nao existir, ha erro*/
-	short modoB=0; /*Vai haver um path no stdin*/
+	char succ=1; /*Controla se o programa teve erros*/
+	char modo=1; /* Se o caminho nao existir, ha erro*/
+	char modoB=0; /*Vai haver um path no stdin*/
 	pathToBuff(bf,modoB);
 	cpath = getPathComp(bf->bigBuff,root,modo,&succ);
 	if (succ){

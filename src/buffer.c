@@ -7,6 +7,19 @@
 
 #include "proj2.h"
 
+
+/* ============================================================================
+ * Buffer (buff)
+ *
+ *  - char* command (guarda o comando a executar)
+ *  - char* bigBuff (guarda a instrucao para alem do comando)
+ *  - unsigned short start (indice onde se comeca a analisar bigBuff)
+ *  - unsigned short end (indice onde se para de analisar bigBuff)
+ *  - unsigned long (guardar occ de uma componente, quando necessario)
+ * ==========================================================================*/
+
+
+
 /* Inicializa uma estrutura buffer, alocando-lhe memoria*/
 buff* initBuffer(){
 	buff* bf;
@@ -58,6 +71,13 @@ short nullBuff(buff* bf){
 }
 
 
+/* Devolve o tamanho da parte do bigBuff a analisar
+ *Inclui espaco para '\0'*/
+unsigned int getVsize(buff* bf){
+	return (bf->end)-(bf->start)+ONE;
+}
+
+
 /* Faz free ao buffer*/
 void freeBuffer(buff *bf){
 	free(bf->command);
@@ -80,7 +100,7 @@ void addToBuff(buff* bf, comp* c1){
 	} while (c1->nome[a++] != '\0');
 }
 
-
+/* Retira o nome da componente "c1" de BigBuff*/
 void removeFromBuff(buff* bf, comp* c1){
 	unsigned short i=0;
 	unsigned short a=0;
