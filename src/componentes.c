@@ -31,17 +31,16 @@
  * -componente* rootOrder (avl ordenada por criacao)
  ============================================================================*/
 
-/* Inicializa*/
-avlHead* initHead(mother* M){
+/* Inicializa uma avlHead*/
+avlHead* initHead(char* control){
 	avlHead* head;
-	char control = ZERO; /*controlar se ainda ha memoria*/	
-	head = (avlHead*) myMalloc(AVLHEAD,ONE,&control);
-       	if (control) /*ja nao ha memoria*/
-		exitProgram(M);
-	head->occ = ZERO;
-	head->rootAlfa = NULL;
-	head->rootOrder = NULL;
-	return avlHead 
+	head = (avlHead*) myMalloc(AVLHEAD,ONE,control);
+       	if (!control){ /*ha memoria*/
+		head->occ = ZERO;
+		head->rootAlfa = NULL;
+		head->rootOrder = NULL;
+	}
+	return head; 
 }
 
 
@@ -50,20 +49,19 @@ comp* initComp(mother* M){
 	char control = ZERO;
 	buff* bf = M->bf;
 	unsigned int vSize = getVsize(bf);
-	c1 = (comp*) myMalloc(COMP,ONE,M,control);
-	c1->nome = (char*) myMalloc(ONE,vSize,M,control);
-	c1->valor = (char*) myMalloc(ONE,ONE,M,control);
-
+	c1 = (comp*) myMalloc(COMP,ONE,&control);
+	c1->nome = (char*) myMalloc(ONE,vSize,&control);
+	c1->valor = (char*) myMalloc(ONE,ONE,&control);
+	c1->follow = initHead(&control);
 	if (control){ /* ja nao ha memoria*/
 		freeComp(c1,ONE);
-		exitProgram(M);
+		endProgram(M);
 	}
-	/*Refazer o malloc*/
 	c1->alfaRight = NULL;
 	c1->alfaLeft = NULL;
 	c1->orderRight = NULL;
 	c1->orderLeft = NULL;
-	c1->occ = M->bf->occ; /* occ guardada no buffer*/
+	c1->occ = getBuffOcc(M->bf); /* occ guardada no buffer*/
 	c1->alfaHeight = ONE;
 	c1->orderHeight = ONE;
 	*(c1->valor) = ZERO;
@@ -71,18 +69,28 @@ comp* initComp(mother* M){
 	return c1;
 }
 
+mother* initMother(){
+	char control=ZERO;
+	mother* M = (mother*) malloc(sizeof(mother));
+	M->bf = initBuffer();
+	M->motherRoot = initHead(&control);
+	return M;
+}
+
 /* Faz free a uma componente
  * modo 1 -> houve erro a alocar memoria da componente
  * modo 0 -> fazer free da componente normalmente*/
 void freeComp(comp *c1, char modo){
-	if (modo) {
+	if (modo) { /*Se houve erro, pelo menos c1->follow e NULL*/
+		if ((c1->valor)!=NULL){
+			free(c1->valor);
+		}
 		if ((c1->nome)!=NULL){
 			free(c1->nome);
 		}
-		if (c1 == NULL){
-			free(c1);
-		}
+		free(c1);
 	} else {
+		printf("In a place it shouldn't be\n");
 		/* free all fica para dps*/
 	
 	}
@@ -104,31 +112,31 @@ int height(comp* h, char modo){
 /* Rotacao a esquerda na arvore pretendida (modo)*/
 comp* rotL(comp* h, char modo){
         int hleft, hright, xleft, xright;
-	comp* x,;
+	comp* x;
 	if (modo) {
 		x = h->alfaRight;
         	h->alfaRight = x->alfaLeft;
         	x->alfaLeft = h;
 
-        	hleft = height(h->alfaLeft);
-        	hright = height(h->alfaRight);
-        	h->height = hleft > hright ? hleft + 1 : hright + 1;
+        	hleft = height(h->alfaLeft,modo);
+        	hright = height(h->alfaRight,modo);
+        	h->alfaHeight = hleft > hright ? hleft + 1 : hright + 1;
 
-        	xleft = height(x->alfaLeft);
-        	xright = height(x->alfaRight);
-        	x->height = xleft > xright ? xleft + 1 : xright + 1;
+        	xleft = height(x->alfaLeft,modo);
+        	xright = height(x->alfaRight,modo);
+		x->alfaHeight = xleft > xright ? xleft + 1 : xright + 1;
 	} else {
 		x = h->orderRight;
                 h->orderRight = x->orderLeft;
                 x->orderLeft = h;
 
-                hleft = height(h->orderLeft);
-                hright = height(h->orderRight);
-                h->height = hleft > hright ? hleft + 1 : hright + 1;
+                hleft = height(h->orderLeft,modo);
+                hright = height(h->orderRight,modo);
+                h->orderHeight = hleft > hright ? hleft + 1 : hright + 1;
 
-                xleft = height(x->orderLeft);
-                xright = height(x->orderRight);
-                x->height = xleft > xright ? xleft + 1 : xright + 1;	
+                xleft = height(x->orderLeft,modo);
+                xright = height(x->orderRight,modo);
+		x->orderHeight = xleft > xright ? xleft + 1 : xright + 1;
 	}
         return x;
 }
@@ -142,25 +150,25 @@ comp* rotR(comp* h, char modo){
         	h->alfaLeft = x->alfaRight;
         	x->alfaRight = h;
 
-        	hleft = height(h->alfaLeft);
-        	hright = height(h->alfaRight);
-        	h->height = hleft > hright ? hleft + 1 : hright + 1;
+        	hleft = height(h->alfaLeft,modo);
+        	hright = height(h->alfaRight,modo);
+        	h->alfaHeight = hleft > hright ? hleft + 1 : hright + 1;
 
-        	xleft = height(x->alfaLeft);
-        	xright = height(x->alfaRight);
-        	x->height = xleft > xright ? xleft + 1 : xright + 1;
+        	xleft = height(x->alfaLeft,modo);
+        	xright = height(x->alfaRight,modo);
+		x->alfaHeight = xleft > xright ? xleft + 1 : xright + 1;
 	} else {
 		x = h->orderLeft;
                 h->orderLeft = x->orderRight;
                 x->orderRight = h;
 
-                hleft = height(h->orderLeft);
-                hright = height(h->orderRight);
-                h->height = hleft > hright ? hleft + 1 : hright + 1;
+                hleft = height(h->orderLeft,modo);
+                hright = height(h->orderRight,modo);
+                h->orderHeight = hleft > hright ? hleft + 1 : hright + 1;
 
-                xleft = height(x->orderLeft);
-                xright = height(x->orderRight);
-                x->height = xleft > xright ? xleft + 1 : xright + 1;
+                xleft = height(x->orderLeft,modo);
+                xright = height(x->orderRight,modo);
+        	x->orderHeight = xleft > xright ? xleft + 1 : xright + 1;
 	}
         return x;
 }
@@ -173,11 +181,11 @@ comp* rotR(comp* h, char modo){
 comp* max(comp* h, char modo){
 	if (modo){
         	while (h!=NULL && ((h->alfaRight) != NULL)){
-                	h = h->r;
+                	h = h->alfaRight;
         	}
 	} else {
 		while (h!=NULL && ((h->orderRight) != NULL)){
-                        h = h->r;
+                        h = h->orderRight;
                 }
 	}
         return h;
@@ -190,9 +198,9 @@ comp* rotLR(comp* h,char modo){
 		return h;
 	}
 	if (modo){
-        	h->alfaLeft = rotL(h->alfaLeft);
+        	h->alfaLeft = rotL(h->alfaLeft,modo);
 	} else {
-		h->orderLeft = rotL(h->orderLeft);
+		h->orderLeft = rotL(h->orderLeft,modo);
 	}
         return rotR(h,modo);
 }
@@ -203,9 +211,9 @@ comp* rotRL(comp* h, char modo){
 		return h;
 	}
 	if (modo){
-                h->alfaRight = rotL(h->alfaRight);
+                h->alfaRight = rotR(h->alfaRight,modo);
         } else {
-                h->orderRight = rotL(h->orderRight);
+                h->orderRight = rotR(h->orderRight,modo);
         }
         return rotL(h,modo);
 }
@@ -215,14 +223,14 @@ int balance(comp* h, char modo) {
         if(h == NULL){ 
 		return 0;
 	}
-        return modo ? height(h->alfaLeft) - height(h->alfaRight) :\
-	      	height(h->orderLeft) - height(h->orderRight);
+        return modo ? height(h->alfaLeft,modo) - height(h->alfaRight,modo) :\
+	      	height(h->orderLeft,modo) - height(h->orderRight,modo);
 }
 
 /* Verifica se e necessario fazer rotates numa arvore dependendo do modo*/
 comp* AVLbalance(comp* h, char modo){
         int balanceFactor, hleft, hright;
-	comp* left,right;
+	comp *left,*right;
 	left = modo ? h->alfaLeft : h->orderLeft;
 	right = modo ? h->alfaRight : h->orderRight;
         if (h == NULL) {
@@ -230,16 +238,16 @@ comp* AVLbalance(comp* h, char modo){
 	}
         balanceFactor = balance(h,modo);
         if(balanceFactor > 1) { /* mais peso para a esquerda */
-                if (balance(left) >= 0) h = rotR(h);
-                else h = rotLR(h);
+                if (balance(left,modo) >= 0) h = rotR(h,modo);
+                else h = rotLR(h,modo);
         }
         else if(balanceFactor < -1){ /* mais peso para a direita*/
-                if (balance(right) <= 0) h = rotL(h);
-                else h = rotRL(h);
+                if (balance(right,modo) <= 0) h = rotL(h,modo);
+                else h = rotRL(h,modo);
         }
         else{
-                hleft = height(left);
-                hright = height(right);
+                hleft = height(left,modo);
+                hright = height(right,modo);
 		if (modo){
                 	h->alfaHeight = hleft > hright ? hleft + 1 : hright + 1;
 		} else {
@@ -252,16 +260,13 @@ comp* AVLbalance(comp* h, char modo){
 
 
 /* Funcao responsavel por indicar o caminho a funcao findComp*/
-short findFunc(comp *c1, char* found,char modo, buff* bf){
+short findFunc(comp *c1,char modo, buff* bf){
 	short res;
 	if (modo){ /* comparar nomes*/
 		res = myStrCmp(c1->nome,bf);
 	} else {
 		res = (bf->occ)>(c1->occ) ? 1 : -1;
 		res = (bf->occ)==(c1->occ) ? 0 : res;
-	}
-	if (!res){
-		*found = 1;
 	}
 	return res;
 }
@@ -285,9 +290,9 @@ comp* findComp(comp* root, char modo, buff* bf){
 		}
 	} else {
 		if (modo){
-                        return = findComp(root->alfaLeft, modo,bf);
+                        return findComp(root->alfaLeft, modo,bf);
                 } else {
-                        return = findComp(root->orderLeft,modo,bf);
+                        return findComp(root->orderLeft,modo,bf);
                 }
 	}	
 }
@@ -299,62 +304,56 @@ comp* findComp(comp* root, char modo, buff* bf){
  * modo 0 -> procurar por ordem de chegada*/ 
 comp* insertComp(comp* root, char modo,char* exists, mother* M){
 	static short res;
-	static comp* newC;
 	if (root == NULL){
-		newC = modo ? initComp(M) : root;
-                return newC;
+		compToBuff(initComp(M),M->bf);
+		return getBuffComp(M->bf);
         }
 	if (modo){
 		res = findFunc(root,modo,M->bf);
 		if (!res){
-			*exists = ONE;
-			newC = root;
-			return newC
+			compToBuff(root,M->bf);
+			return root;
 		}
 		else if (res>0){
-                        root->alfaRight = insertComp(root->alfaRight, exists,modo,bf);	
+                        root->alfaRight = insertComp(root->alfaRight,modo,exists,M);	
 		} else {
-                        root->alfaLeft =  insertComp(root->alfaLeft,exists,modo,bf);	
+                        root->alfaLeft =  insertComp(root->alfaLeft,modo,exists,M);	
 		}
 	} else { /* Por ordem de criacao, inserimos sempre no fim*/	
-        	root->orderRight = insertComp(root->orderRight,exists,modo,bf);
+        	root->orderRight = insertComp(root->orderRight,modo,exists,M);
 	}
 	if (res){ /*se nao inserimos, nao precisamos de fzr rotate*/
 		root = AVLbalance(root,modo);
 	}
-        return newC;
+        return root;
 }
 
-/* Se o componente especificado no buffer nao existir, cria-o, adiciona-lo
- * as duas AVL's
- * Se ja existir devolve-o */
+/* Insere uma componente nova nas AVL's por ordem de criacao e por 
+ * ordem alfabetica. Se ja existir, devolve a componente*/
 comp* insertAll(avlHead* root, mother* M){
-	char* exists;
-	comp *c1, *c2;
-	c1 = insertComp(root->rootAlfa,ONE,exists,M);
-        if (!exists){
-        	c2 = insertComp(root->rootOrder,ZERO,exists,M);
-        	c2 = c1;
+	char exists=ZERO;
+	insertComp(root->rootAlfa,ONE,&exists,M);
+        if (!exists){ /* Se a componente ainda nao existir*/
+        	insertComp(root->rootOrder,ZERO,&exists,M);
 	}
-	return c1;
+	return getBuffComp(M->bf);
 }
 
 
 
 /* Atribui um novo valor a uma componente*/
-void compNewValue(comp* c1, char* val, mother* M){
-	unsigned int dim = strlen(val);
-	char control;
+void compNewValue(comp* c1, mother* M){
+	unsigned int dim = strlen(M->bf->bigBuff);
 	char* safe;
 	dim++; /*incluir espaco para '\0'*/
 	safe = (char*) realloc(c1->valor,dim*(sizeof(char)));
 	if (safe==NULL){
 		/* Esta funcao e chamada quando c1 ja pertence a uma AVL
 		 * c1 (e c1->valor) nao podem ser libertados agora*/
-		exitProgram(M);
+		endProgram(M);
 	}
 	c1->valor = safe;
-	strcpy(c1->valor,val);
+	myStrCpy(c1->valor,M->bf);
 }
 
 /* Verifica se existe valor associado a componente*/
@@ -362,34 +361,18 @@ short compValNull(comp *c1){
 	return (*(c1->valor))=='\0';
 }
 
-/* Verifica se a componente e a raiz ou nao*/
-short isRoot(comp* c1){
-	return (*(c1->nome))=='\0';
-}
-
-/*Imprime o valor de uma componente*/
-void printCompVal(comp *c1){
-	printf("%s\n",c1->valor);
-}
-
-/*Imprime o nome de uma componente*/
-void printCompName(comp *c1){
-	printf("%s\n",c1->nome);
-}
-
 /* Devolve ponteiro para a componente final do caminho 
  * no buffer da mother
  * modo '0'-se o caminho nao existir, cria um novo
  * modo '1'-se nao existir, nao cria */
-comp* getPathComp(short modo, short* succ, mother* M){
+comp* getPathComp(short modo, char* succ, mother* M){
 	char* path = M->bf->bigBuff;
 	avlHead* root = M->motherRoot;
 	comp* c1;
 	pathClean(path,&(M->bf->start));
-	insertOccBuff(root);
-	while (*(path+start)!='\0'){
-		found = 0;
-		M->bf->end = findSepar(path,start);
+	occToBuff(root->occ,M->bf);
+	while (*(path+(M->bf->start))!='\0'){
+		M->bf->end = findSepar(path,M->bf->start);
 		if (modo){
 			c1 = findComp(root->rootOrder, ZERO, M->bf);
 			if (c1==NULL){
@@ -401,7 +384,7 @@ comp* getPathComp(short modo, short* succ, mother* M){
 			c1 = insertAll(root,M);
 		}
 		root = c1->follow;
-		insertOccBuff(root);	
+		occToBuff(root->occ,M->bf);	
 		M->bf->start = M->bf->end;
 		pathClean(path,&(M->bf->start));
 	}
@@ -411,45 +394,60 @@ comp* getPathComp(short modo, short* succ, mother* M){
 
 
 
-/* Liberta a memoria de uma componente*/
-void freeComp(comp *c1){
-	free(c1->valor);
-	free(c1->nome);
-	freeHash(c1->hash);
-	freeVpc(c1->primeiros);
-	free(c1);
+
+/* Travessia in-order da AVL alfabetica, com uma funcao a correr*/
+void avlSortAlfa(void (*f)(comp*),comp* c1){
+	if (c1==NULL) return;
+	avlSortAlfa(f,c1->alfaLeft);
+	(*f)(c1);
+	avlSortAlfa(f,c1->alfaRight);
 }
 
-/* Liberta a memoria da componente c1 e de todas as que lhe seguem*/
-void freeCompRec(comp* c1){
-	if (*(c1->primeiros->occ)==0){ /*se nao ha componentes que lhe seguem*/
-		freeComp(c1);
-	} else {
-		do {
-			(*(c1->primeiros->occ))--; /* indice do ultimo colocado*/
-			freeCompRec(c1->primeiros->info[*(c1->primeiros->occ)]);
-		} while(*(c1->primeiros->occ)>0);
-		freeComp(c1);
-	}
+/* Travessia in-order da AVL por criacao, com uma funcao a correr*/
+void avlSortOrder(void (*f)(comp*,buff*),comp* c1,buff* bf){
+	if (c1==NULL) return;
+        avlSortOrder(f,c1->orderLeft,bf);
+        (*f)(c1,bf);
+        avlSortOrder(f,c1->orderRight,bf);
+}
+
+/* Travessia post-order da AVL alfabetica, com uma funcao a correr*/
+void avlPostAlfa(void (*f)(comp*),comp* c1){
+	if (c1==NULL) return;
+        avlPostAlfa(f,c1->alfaLeft);
+        avlPostAlfa(f,c1->alfaRight);
+        (*f)(c1);
 
 }
 
+/* Travessia post-order da AVL por criacao, com uma funcao a correr*/
+void avlPostOrder(void (*f)(comp*),comp* c1){
+	if (c1==NULL) return;
+        avlPostOrder(f,c1->orderLeft);
+        avlPostOrder(f,c1->orderRight);
+        (*f)(c1);
+}
 
-/* Faz print de todos os valores associados a caminhos a 
- *partir do componenente "c1"*/
-void printAll(comp* c1, buff* bf){	
-	unsigned long ind=0;	
-	if (!(compValNull(c1))){ /*se tem valor*/
-		printf("%s/",bf->bigBuff); /*O caminho que esta para tras*/
-		printf("%s ",c1->nome); /*nome da componente*/
-		printf("%s\n",c1->valor); 
+
+/* Imprime o caminho da componente e o seu valor
+ * Parte do caminho esta guardado no buffer*/
+void printComp(comp *c1, buff *bf){
+	printf("%s/",bf->bigBuff); /*O caminho que esta para tras*/
+        printf("%s ",c1->nome); /*nome da componente*/
+        printf("%s\n",c1->valor);
+}
+
+
+/*Imprime as componentes recursivamente*/
+void printCompsR(comp* c1, buff* bf){
+	if (!(compValNull(c1))){ /* tem valor*/
+		printComp(c1,bf);	
 	}
-	if (*(c1->primeiros->occ)){ /*Se tem componentes "filho"*/
+	if ((c1->follow->occ)){ /*tem componentes filho*/
 		addToBuff(bf,c1);
-		for(;ind<*(c1->primeiros->occ);ind++){
-			printAll(c1->primeiros->info[ind],bf);
-		}
+		avlSortOrder(printCompsR,c1->follow->rootOrder,bf);
 		removeFromBuff(bf,c1);
 	}
-	
+		
 }
+

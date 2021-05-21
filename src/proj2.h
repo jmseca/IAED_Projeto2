@@ -73,8 +73,8 @@ typedef struct componente {
 	char* nome;
 	char* valor;
 	unsigned long occ;
-	unsigned long alfaHeight;
-	unsigned long orderHeight
+	unsigned int alfaHeight;
+	unsigned int orderHeight;
 	struct componente *alfaRight;
 	struct componente *alfaLeft;
 	struct componente *orderRight;
@@ -90,6 +90,10 @@ typedef struct {
 
 /*Complement*/
 
+void endProgram(mother* M);
+
+void* myMalloc(short typeSize, unsigned int vSizei, char* control);
+
 char cleanWhite();
 
 short notWhite(char c);
@@ -100,19 +104,12 @@ void pathClean(char* path, unsigned short *ind);
 
 unsigned short findSepar(char* path, unsigned short ind);
 
-void myStrCpy(char* dest, char* src, unsigned short start, unsigned short end);
+void myStrCpy(char* dest, buff* bf);
 
-short myStrCmp(char* s1, char* s2, unsigned short start, unsigned short end);
+short myStrCmp(char* s1, buff* bf);
 
 /*DELETE*/
 void myPrint(char* s1, unsigned short start, unsigned short end);
-
-/*STRUCTS*/
-
-typedef struct {
-	char* command;
-	char* bigBuff;
-} buff ;
 
 
 
@@ -130,14 +127,76 @@ void resetBuff(buff *bf);
 
 short nullBuff(buff* bf);
 
+unsigned int getVsize(buff* bf);
+
+void compToBuff(comp* c1, buff* bf);
+
+comp* getBuffComp(buff* bf);
+
+void occToBuff(unsigned long occ, buff* bf);
+
+unsigned long getBuffOcc(buff* bf);
+
 void freeBuffer(buff *bf);
+
+void prepareBuffPrint(buff* bf);
 
 void addToBuff(buff* bf, comp* c1);
 
 void removeFromBuff(buff*, comp* c1);
 
 
+/* AVL + Componentes*/
 
+avlHead* initHead(char* control);
+
+comp* initComp(mother* M);
+
+mother* initMother();
+
+void freeComp(comp *c1, char modo);
+
+int height(comp* h, char modo);
+
+comp* rotL(comp* h, char modo);
+
+comp* rotR(comp* h, char modo);
+
+comp* max(comp* h, char modo);
+
+comp* rotLR(comp* h,char modo);
+
+comp* rotRL(comp* h, char modo);
+
+int balance(comp* h, char modo);
+
+comp* AVLbalance(comp* h, char modo);
+
+short findFunc(comp *c1, char modo, buff* bf);
+
+comp* findComp(comp* root, char modo, buff* bf);
+
+comp* insertComp(comp* root, char modo,char* exists, mother* M);
+
+comp* insertAll(avlHead* root, mother* M);
+
+void compNewValue(comp* c1, mother* M);
+
+short compValNull(comp *c1);
+
+comp* getPathComp(short modo, char* succ, mother* M);
+
+void avlSortAlfa(void (*f)(comp*),comp* c1);
+
+void avlSortOrder(void (*f)(comp*i,buff*),comp* c1,buff* bf);
+
+void avlPostAlfa(void (*f)(comp*),comp* c1);
+
+void avlPostOrder(void (*f)(comp*),comp* c1);
+
+void printComp(comp *c1, buff *bf);
+
+void printCompsR(comp* c1, buff* bf);
 
 
 
@@ -145,16 +204,14 @@ void removeFromBuff(buff*, comp* c1);
 
 short commandId(char* str);
 
-short checkCommand(buff *bf,comp* root);
+void checkCommand(mother* M,char* control);
 
 void handleHelp();
 
-void handleQuit(buff *bf, comp* root);
+void handleSet(mother *M);
 
-void handleSet(buff *bf, comp* root);
+void handlePrint(mother *M);
 
-void handlePrint(buff *bf,comp* root);
+void handleFind(mother* M);
 
-void handleFind(buff *bf,comp* root);
-
-void handleList(buff *bf, comp* root);
+void handleList(buff *bf,comp* root);

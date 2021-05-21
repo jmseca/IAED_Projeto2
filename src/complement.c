@@ -10,7 +10,7 @@
 /* Termina o programa, libertanto toda a memoria
  *Chamada quando nao ha mais memoria disponivel*/
 void endProgram(mother* M){
-	
+	printf("Ending-%s\n",M->bf->bigBuff);	
 	/*freeAll(M);*/
 	printf("No Memory\n");
 	exit(0);
@@ -18,7 +18,7 @@ void endProgram(mother* M){
 
 /* Funcao que corre o malloc e verifica se ainda ha memoria disponivel
  *Se nao houver, "control" guarda essa informacao*/
-void* myMalloc(short typeSize, unsigned int vSizei, char* control){
+void* myMalloc(short typeSize, unsigned int vSize, char* control){
 	/*Add condicao se for preciso para unsigned
 	 * e no fim apagar os que nao sao necessarios*/
 	void *p;
@@ -42,24 +42,13 @@ void* myMalloc(short typeSize, unsigned int vSizei, char* control){
 			p = (comp*) malloc(COMP*vSize);
 			break;
 		default:
-			printf("Oops, myMalloc nao tem todos os tipos\n")
+			printf("Oops, myMalloc nao tem todos os tipos\n");
 	}
 	if (p==NULL){
-		control = ONE;
+		*control = ONE;
 	}
 	return p;
 }
-
-/* Funcao que corre o realloc e verifica se ainda ha memoria disponivel*/
-char* myRealloc(char* old, unsigned int vSize, mother* M){
-	char* p;
-	p = (char*) realloc(old,ONE*vSize);
-	if (p==NULL){
-                endProgram(M)
-        }
-        return p;
-}
-
 
 
 /*Devolve o proximo char do stdin que nao seja ' ' ou '\t'*/
@@ -78,7 +67,7 @@ short notWhite(char c){
 
 /* Passa o que esta escrito no input para out, ate encontrar '\n' 
  * Eliminando os espacos desnecessarios*/
-short inputGetNameW(char out[]){
+short inputGetNameW(char *out){
         short control=0,n=0;
         short wInd; /*Controla o indice do primeiro espaco*/
         char c=getchar();
@@ -94,11 +83,11 @@ short inputGetNameW(char out[]){
                 } else {
                         control = 0;
                 }
-                out[n++] = c;
+                *(out + n++) = c;
                 c = getchar();
         }
         n = control ? wInd : n; /*desta maneira eliminamos os espacos finais*/
-        out[n] = '\0';
+        *(out+n) = '\0';
         return 0;
 }
 
