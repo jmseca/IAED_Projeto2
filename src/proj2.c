@@ -1,22 +1,15 @@
 #include "proj2.h"
 
 
-
-
-
-
-
 int main(){
-	/*Inicializar as vars globais*/
-	short control;
-	comp* Root;
-	buff* Buffer;
-	Root = initRoot();
-	Buffer = initBuffer();
-	
+	char control=ZERO;
+	mother* M;
+
+	M = initMother();
+		
 	do {
-		commandToBuff(Buffer);
-		control = checkCommand(Buffer, Root);
+		commandToBuff(M->bf);
+		checkCommand(M,&control);
 	} while (!control);
 
 	return 0;
