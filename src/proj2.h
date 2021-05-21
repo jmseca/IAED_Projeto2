@@ -57,6 +57,7 @@
 typedef struct {
         char* command;
         char* bigBuff;
+	struct componente *c;
 	unsigned short start;
 	unsigned short end;
 	unsigned long occ;
@@ -74,12 +75,12 @@ typedef struct componente {
 	unsigned long occ;
 	unsigned long alfaHeight;
 	unsigned long orderHeight
-	comp *alfaRight;
-	comp *alfaLeft;
-	comp *orderRight;
-	comp *orderLeft;
+	struct componente *alfaRight;
+	struct componente *alfaLeft;
+	struct componente *orderRight;
+	struct componente *orderLeft;
 	avlHead* follow;
-}
+} comp;
 
 /* Estrutura para guardar o buffer e a raiz*/
 typedef struct {
