@@ -336,9 +336,11 @@ comp* insertAll(avlHead* root, mother* M){
 	char exists=ZERO;
 	root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
+		printf("nao existia\n");
         	root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
 		(root->occ)+=ONE;
 	}
+	printf("existed? - %d\nname? - %s\nvalor? - %s\n",exists,getBuffComp(M->bf)->nome,getBuffComp(M->bf)->valor);
 	return getBuffComp(M->bf);
 }
 
@@ -349,6 +351,11 @@ void compNewValue(comp* c1, mother* M){
 	unsigned int dim = strlen(M->bf->bigBuff);
 	char* safe;
 	dim++; /*incluir espaco para '\0'*/
+	if (c1==NULL){
+		printf("È NULL malandro\n");
+	} else {
+		printf("dim? - %d ||nome? - %s\n",dim,c1->nome);
+	}
 	safe = (char*) realloc(c1->valor,dim*(sizeof(char)));
 	if (safe==NULL){
 		/* Esta funcao e chamada quando c1 ja pertence a uma AVL
@@ -356,7 +363,6 @@ void compNewValue(comp* c1, mother* M){
 		endProgram(M);
 	}
 	c1->valor = safe;
-	printf("Whats in the buffer -%s-\n",M->bf->bigBuff);
 	strcpy(c1->valor,M->bf->bigBuff);
 }
 
@@ -375,7 +381,10 @@ comp* getPathComp(short modo, char* succ, mother* M){
 	comp* c1;
 	pathClean(path,&(M->bf->start));
 	occToBuff(root->occ,M->bf);
+	printf("Chegou aqui?\n");
+	printf("Buffer\nbigBuff->%s\nstart->%d, end->%d\n\n",M->bf->bigBuff,M->bf->start,M->bf->end);
 	while (*(path+(M->bf->start))!='\0'){
+		printf("Looping\n");
 		M->bf->end = findSepar(path,M->bf->start);
 		if (modo){
 			c1 = findComp(root->rootOrder, ZERO, M->bf);
@@ -392,6 +401,7 @@ comp* getPathComp(short modo, char* succ, mother* M){
 		M->bf->start = M->bf->end;
 		pathClean(path,&(M->bf->start));
 	}
+	printf("c1->%s\n",c1->nome);
 	return c1;
 }
 
@@ -446,11 +456,9 @@ void printComp(comp *c1, buff *bf){
 void printCompsR(comp* c1, buff* bf){
 	printf("comName - %s\n",c1->nome);
 	if (!(compValNull(c1))){ /* tem valor*/
-		printf("has value\n");
 		printComp(c1,bf);	
 	}
 	if ((c1->follow->occ)){ /*tem componentes filho*/
-		printf("has occ\n");
 		addToBuff(bf,c1);
 		avlSortOrder(printCompsR,c1->follow->rootOrder,bf);
 		removeFromBuff(bf,c1);

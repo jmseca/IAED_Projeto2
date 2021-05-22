@@ -55,7 +55,9 @@ void pathToBuff(buff *bf, short modoB){
 			resetBuff(bf);
 		}
 			
-	} else {	
+	} else {
+		bf->start = 0;
+		bf->end = 0;	
 		scanf("%s",bf->bigBuff);
 	}
 }
