@@ -28,6 +28,7 @@ buff* initBuffer(){
 	bf = (buff*) malloc(sizeof(buff));
 	bf->command = (char*) malloc(sizeof(char)*MAX_COMMAND_SIZE);
 	bf->bigBuff = (char*) malloc(sizeof(char)*BUFF_SIZE);
+	bf->bigBuff2 = (char*) malloc(sizeof(char)*BUFF_SIZE);
 	bf->start = 0;
 	bf->end = 0;
 	bf->occ = 0;
@@ -50,7 +51,6 @@ void pathToBuff(buff *bf, short modoB){
 		if (c!='\n'){
 			*(bf->bigBuff) = c;
 			scanf("%s",&(bf->bigBuff[1]));
-			printf("o bigBuff ->%s<-\n",bf->bigBuff);
 		} else {
 			resetBuff(bf);
 		}
@@ -64,7 +64,7 @@ void pathToBuff(buff *bf, short modoB){
 
 /* Guarda no buffer o valor recebido pelo input*/
 void valToBuff(buff *bf){
-	inputGetNameW(bf->bigBuff);
+	inputGetNameW(bf->bigBuff2);
 }
 
 /* Coloca bigBuff a Null String*/
@@ -98,6 +98,24 @@ comp* getBuffComp(buff* bf){
 /* insere uma "occ" na occ do buffer*/
 void occToBuff(unsigned long occ, buff* bf){
 	bf->occ = occ;
+}
+
+
+/* Inicializar a variavel do buffer que servira como
+ * condicao de paragem*/
+void buffStart(buff* bf){
+	occToBuff(ZERO,bf);
+}
+
+/* Colocar no buffer o valor que corresponde a condicao de paragem*/
+void buffStop(buff* bf){
+        occToBuff(ONE,bf);
+}
+
+
+/* Usado como condicao de paragem*/
+char buffCheckStop(buff* bf){
+	return bf->occ == ONE;
 }
 
 /* Devolve a occ do buffer*/

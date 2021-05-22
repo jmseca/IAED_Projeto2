@@ -19,3 +19,10 @@ por exemplo num init se da o erro a meio, o que esta para tras nao e libertado
 - No Find (getPathComp) em vez de usar o succ, acho que da para verificar se eh NULL ou nao
 
 - Mensagens de erros nos defines
+
+- Para nao repetir codigo, fazer o printCompVal sem if's (colocar os if's nos handles)
+assim podemos usar o printCompVal no printComp no comando Print
+
+- Dps para a abstracao fazer funcoes para o M (mother) em vez de ->...->...->....
+
+- Acho q nao da para fazer recursivamente, mas ver se da para o print do search
