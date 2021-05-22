@@ -44,6 +44,7 @@ avlHead* initHead(char* control){
 }
 
 
+/* Inicializa uma componente, alocando memoria*/
 comp* initComp(mother* M){
 	comp* c1;
 	char control = ZERO;
@@ -54,7 +55,7 @@ comp* initComp(mother* M){
 	c1->valor = (char*) myMalloc(ONE,ONE,&control);
 	c1->follow = initHead(&control);
 	if (control){ /* ja nao ha memoria*/
-		freeComp(c1,ONE);
+		freePreComp(c1);
 		endProgram(M);
 	}
 	c1->alfaRight = NULL;
@@ -77,23 +78,16 @@ mother* initMother(){
 	return M;
 }
 
-/* Faz free a uma componente
- * modo 1 -> houve erro a alocar memoria da componente
- * modo 0 -> fazer free da componente normalmente*/
-void freeComp(comp *c1, char modo){
-	if (modo) { /*Se houve erro, pelo menos c1->follow e NULL*/
-		if ((c1->valor)!=NULL){
-			free(c1->valor);
-		}
-		if ((c1->nome)!=NULL){
-			free(c1->nome);
-		}
-		free(c1);
-	} else {
-		printf("In a place it shouldn't be\n");
-		/* free all fica para dps*/
-	
+/* Faz free a uma componente que deu erro no malloc*/
+void freePreComp(comp *c1){
+	/*Se houve erro, pelo menos c1->follow e NULL*/
+	if ((c1->valor)!=NULL){
+		free(c1->valor);
 	}
+	if ((c1->nome)!=NULL){
+		free(c1->nome);
+	}
+	free(c1);
 }
 
 
@@ -347,6 +341,130 @@ comp* insertAll(avlHead* root, mother* M){
 
 
 
+/* Funcao auxiliar do delete, que devolve o novo
+ * caminho quando removemos uma componente da AVL*/
+comp* deleteAux(comp* c1,char modo, buff* bf){
+	if (c1!=NULL){
+		if (!findFunc(c1,modo,bf)){
+			if (modo){
+				c1 = c1->alfaLeft;
+			} else {
+				c1 = c1->orderLeft;
+			}
+		} else {
+			if (modo){
+				c1->alfaLeft = deleteAux(c1->alfaLeft,modo,bf);
+				c1->alfaRight = 
+					deleteAux(c1->alfaRight,modo,bf);
+			} else {
+				c1->orderLeft = 
+					deleteAux(c1->orderLeft,modo,bf);
+                                c1->orderRight =
+                                        deleteAux(c1->orderRight,modo,bf);	
+			}
+		c1 = AVLbalance(c1,modo);
+		}
+	}
+	return c1;
+
+}
+
+
+/* Delete a uma componente (cujo nome esta no buffer) 
+ * da AVL ordenada alfabeticamente */
+comp* delete1(comp* root, char* exists, buff* bf){
+	static short res;
+	static comp* aux;
+	if (root==NULL){ 
+		*exists = ZERO; /*nao existe*/
+		return root; 
+	}
+	res = findFunc(root,ONE,bf);
+	if (res<0){
+		root->alfaLeft = delete1(root->alfaLeft,exists,bf);
+	} else if (res>0){
+		root->alfaRight = delete1(root->alfaRight,exists,bf);
+	} else { /*encontrou-se o componente a apagar*/
+		aux = root;
+		if (root->alfaLeft!=NULL && root->alfaRight!=NULL){
+			root = max(root->alfaLeft,ONE);
+			strcpy(bf->bigBuff2,root->nome);
+			root->alfaLeft = deleteAux(aux->alfaLeft,ONE,bf);
+			root->alfaRight = deleteAux(aux->alfaRight,ONE,bf);
+		} else {
+			if (root->alfaLeft==NULL && root->alfaLeft==NULL){
+				root = NULL;
+			} else if (root->alfaLeft==NULL){
+				root = root->alfaRight;
+			} else {
+				root = root->alfaLeft;
+			}
+		}
+		/* Guardar a ocupacao da antiga root, para a apagar depois*/
+                occToBuff(aux->occ,bf);
+	}
+	root = AVLbalance(root,ONE);
+        return root;
+}
+
+
+
+
+/* Delete a uma componente (cujo nome esta no buffer) 
+ * da AVL ordenada por criacao */
+comp* delete2(comp* root, buff* bf){
+        static short res;
+        static comp* aux;
+        if (root==NULL) {
+		printf("Alguma coisa está mal, não devia estar aqui\n");
+		return root; 
+	}
+        res = findFunc(root,ZERO,bf);
+        if (res<0){
+                root->orderLeft = delete2(root->orderLeft,bf);
+        } else if (res>0){
+                root->orderRight = delete2(root->orderRight,bf);
+        } else { /*encontrou-se o componente a apagar*/
+                aux = root;
+                if (root->orderLeft!=NULL && root->orderRight!=NULL){
+                        root = max(root->orderLeft,ZERO);
+			occToBuff(root->occ,bf);
+                        root->orderLeft = deleteAux(aux->orderLeft,ZERO,bf);
+                        root->orderRight = deleteAux(aux->orderRight,ZERO,bf);
+                } else {
+                        if (root->orderLeft==NULL && root->orderLeft==NULL){
+                                root = NULL;
+                        } else if (root->orderLeft==NULL){
+                                root = root->orderRight;
+                        } else {
+                                root = root->orderLeft;
+                        }
+                }
+		/* Agr apagamos o componente*/
+		freeCompR(aux);
+        }
+        root = AVLbalance(root,ZERO);
+        return root;
+}
+
+
+
+/* Delete de um componente das duas AVL's
+ * O nome do componente para apagar esta no buffer*/
+avlHead* deleteComp(avlHead *head, buff *bf){
+	char exists = ONE; /*controla se o que queremos apagar existe*/
+	
+	head->rootAlfa = delete1(head->rootAlfa,&exists,bf);
+	if (exists){
+		head->rootOrder = delete2(head->rootOrder,bf);
+	} else {
+		printf("not found\n");
+	}
+	return head;
+}
+
+
+
 /* Atribui um novo valor a uma componente*/
 void compNewValue(comp* c1, mother* M){
 	unsigned int dim = strlen(M->bf->bigBuff);
@@ -505,4 +623,28 @@ void findValueR(comp* c1, buff* bf){
 
 
 
+/* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
+void freeHead(avlHead *head){
+	if (head->occ){ /*tem componentes*/
+		avlPostOrder(freeCompR,head->rootOrder);
+	}
+	free(head);
 
+}
+
+
+/* free a uma componente e dos seus constituintes, recursivamente*/
+void freeCompR(comp *c1){
+	freeHead(c1->follow);
+	free(c1->valor);
+	free(c1->nome);
+	free(c1);
+}
+
+
+
+void freeMother(mother *M){
+	freeBuffer(M->bf);
+	freeHead(M->motherRoot);
+	free(M);
+}

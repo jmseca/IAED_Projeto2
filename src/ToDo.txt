@@ -26,3 +26,9 @@ assim podemos usar o printCompVal no printComp no comando Print
 - Dps para a abstracao fazer funcoes para o M (mother) em vez de ->...->...->....
 
 - Acho q nao da para fazer recursivamente, mas ver se da para o print do search
+
+- Ver onde uso myStrCpy (ha um no initComp, se for o unico podemos dizer q serve para isso)
+
+- Ponderar fazer dois removeBuffer, um que so apagar, outro que copia tambem
+
+- Apagar a mensagem de aviso do delete2 se tudo correr bem

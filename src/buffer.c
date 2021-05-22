@@ -127,6 +127,8 @@ unsigned long getBuffOcc(buff* bf){
 void freeBuffer(buff *bf){
 	free(bf->command);
 	free(bf->bigBuff);
+	free(bf->bigBuff2);
+	free(bf->c);
 	free(bf);
 }
 
@@ -143,17 +145,21 @@ void addToBuff(buff* bf, comp* c1){
 	} while (c1->nome[a++] != '\0');
 }
 
-/* Retira a ultima componente de BigBuff*/
+/* Retira a ultima componente de BigBuff e
+ * coloca-la no bigBuff2 (importante para o "delete")*/
 void removeFromBuff(buff* bf){
 	unsigned short i=0;
 	unsigned short a=0;
-	/*
-	for (;bf->bigBuff[i]!='\0';i++){;}
-	for (;c1->nome[a]!='\0';a++){;}
-	i=i-a+1;*/
 	for (;bf->bigBuff[i]!='\0';i++){
-		if (bf->bigBuff[i]=='/')  a=i;
+		if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){  
+			a=i;
+		}
 	}
-	bf->bigBuff[a] = '\0';
-
+	bf->bigBuff[a++] = '\0';
+	strcpy(bf->bigBuff2,&(bf->bigBuff[a]));
+	
+	while (bf->bigBuff2[--i]!='/'){ 
+		/*so quero o nome do componente (sem '/')*/
+		bf->bigBuff2[i]='\0';
+	} 
 }

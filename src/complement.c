@@ -10,8 +10,7 @@
 /* Termina o programa, libertanto toda a memoria
  *Chamada quando nao ha mais memoria disponivel*/
 void endProgram(mother* M){
-	printf("Ending-%s\n",M->bf->bigBuff);	
-	/*freeAll(M);*/
+	freeMother(M);	
 	printf("No Memory\n");
 	exit(0);
 }
@@ -63,6 +62,11 @@ char cleanWhite(){
 /* Verifica se 'c' nao e ' ', '\t' ou '\n'*/
 short notWhite(char c){
 	return !(c==' ' || c=='\t' || c=='\n');
+}
+
+
+char notEndPath(char c){
+	return !(c==' '|| c=='/');
 }
 
 /* Passa o que esta escrito no input para out, ate encontrar '\n' 
