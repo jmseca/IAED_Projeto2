@@ -16,3 +16,4 @@ por exemplo num init se da o erro a meio, o que esta para tras nao e libertado
 
 - Fazer o my Malloc q devolver NULL se vir que ja houve erro (char* succ se nao me engano)
 
+- vamos ficar neste
