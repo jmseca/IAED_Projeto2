@@ -85,6 +85,19 @@ unsigned int getVsize(buff* bf){
 	return (bf->end)-(bf->start)+ONE;
 }
 
+
+/* Coloca o start a 0 e o end na posicao do primeiro '\0' do bigBuff (0)
+ * ou bigBuff2 (1) dependendo do modo*/
+void setSizeBuffStart(buff* bf,char modo){
+	bf->start = 0;
+	if (!modo){
+		bf->end = strlen(bf->bigBuff);
+	} else {
+		bf->end = strlen(bf->bigBuff2);
+	}
+}
+
+
 /* O ponteiro do buffer para componentes passa a apontar para "c1"*/
 void compToBuff(comp* c1, buff* bf){
 	bf->c = c1;

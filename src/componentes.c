@@ -225,11 +225,11 @@ int balance(comp* h, char modo) {
 comp* AVLbalance(comp* h, char modo){
         int balanceFactor, hleft, hright;
 	comp *left,*right;
-	left = modo ? h->alfaLeft : h->orderLeft;
-	right = modo ? h->alfaRight : h->orderRight;
         if (h == NULL) {
 		return h;
 	}
+	left = modo ? h->alfaLeft : h->orderLeft;
+	right = modo ? h->alfaRight : h->orderRight;
         balanceFactor = balance(h,modo);
         if(balanceFactor > 1) { /* mais peso para a esquerda */
                 if (balance(left,modo) >= 0) h = rotR(h,modo);
@@ -389,7 +389,8 @@ comp* delete1(comp* root, char* exists, buff* bf){
 		aux = root;
 		if (root->alfaLeft!=NULL && root->alfaRight!=NULL){
 			root = max(root->alfaLeft,ONE);
-			strcpy(bf->bigBuff2,root->nome);
+			strcpy(bf->bigBuff,root->nome);
+			setSizeBuffStart(bf,ZERO);
 			root->alfaLeft = deleteAux(aux->alfaLeft,ONE,bf);
 			root->alfaRight = deleteAux(aux->alfaRight,ONE,bf);
 		} else {
@@ -454,7 +455,6 @@ comp* delete2(comp* root, buff* bf){
  * O nome do componente para apagar esta no buffer*/
 avlHead* deleteComp(avlHead *head, buff *bf){
 	char exists = ONE; /*controla se o que queremos apagar existe*/
-	
 	head->rootAlfa = delete1(head->rootAlfa,&exists,bf);
 	if (exists){
 		head->rootOrder = delete2(head->rootOrder,bf);
@@ -536,7 +536,28 @@ comp* getPathComp(short modo, mother* M){
 	return c1;
 }
 
-
+/*Devolve a AVL onde esta o componente que se quer eliminar
+ * Semelhante a anterior, mas devolve-se um tipo diff
+ * (Em cima, se devolvesse "root", nao chegava a "c1" depois)*/
+avlHead* getDeleteAVL(mother* M){
+	char* path = M->bf->bigBuff;
+	comp* c1;
+	avlHead* root = M->motherRoot;
+	if (!nullBuff(M->bf)){
+        	pathClean(path,&(M->bf->start));
+		while (*(path+(M->bf->start))!='\0'){
+			c1 = findComp(root->rootAlfa, ONE, M->bf);
+                	if (c1==NULL){
+                        	printf("not found\n");
+				return NULL;
+                	}
+			root = c1->follow;
+                	M->bf->start = M->bf->end;
+                	pathClean(path,&(M->bf->start));
+		}
+	}
+	return root;
+}
 
 
 
