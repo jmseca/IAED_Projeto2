@@ -46,6 +46,8 @@ void commandToBuff(buff *bf){
  * modoB indica se e para verificar se ha path ou nao*/
 void pathToBuff(buff *bf, short modoB){
 	char c;
+	bf->start = 0;
+	bf->end = 0;	
 	if (modoB){ /*verificar se o stdin nao esta "vazio"*/
 		c = cleanWhite();
 		if (c!='\n'){
@@ -56,8 +58,6 @@ void pathToBuff(buff *bf, short modoB){
 		}
 			
 	} else {
-		bf->start = 0;
-		bf->end = 0;	
 		scanf("%s",bf->bigBuff);
 	}
 }
