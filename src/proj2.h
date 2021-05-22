@@ -132,6 +132,8 @@ short nullBuff(buff* bf);
 
 unsigned int getVsize(buff* bf);
 
+void setSizeBuffStart(buff* bf,char modo);
+
 void compToBuff(comp* c1, buff* bf);
 
 comp* getBuffComp(buff* bf);
@@ -206,6 +208,8 @@ void printCompVal(comp *c1);
 void printCompName(comp* c1);
 
 comp* getPathComp(short modo, mother* M);
+
+avlHead* getDeleteAVL(mother* M);
 
 void avlSortAlfa(void (*f)(comp*),comp* c1);
 

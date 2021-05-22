@@ -155,8 +155,7 @@ void handleSearch(mother *M){
 /* Responsavel pela execucao do programa no comando "delete"
  * Apaga o caminho recebido no stdin e todos os seus componentes filho*/
 void handleDelete(mother *M){
-	comp *cpath;
-        char modo=ONE;
+	avlHead *head;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
         pathToBuff(M->bf,modoB);
         if (nullBuff(M->bf)){ /*"delete" invocado sem argumentos*/
@@ -164,11 +163,12 @@ void handleDelete(mother *M){
 		/*Se for null, entao ja se verificou que nao havia mais input*/
         } else {
 		buffSwitchComp(M->bf);
-                cpath = getPathComp(modo,M);
-		if (cpath==NULL){
-			printf("not found\n");
-		} else {
-			cpath->follow = deleteComp(cpath->follow,M->bf);
+                head = getDeleteAVL(M);
+		if (head!=NULL){
+			/*Agr passa-se o valor do componente para bigBuff*/
+			strcpy(M->bf->bigBuff,M->bf->bigBuff2);
+			setSizeBuffStart(M->bf,ZERO);
+			head = deleteComp(head,M->bf);
 		}
                 cleanWhite();
         }
