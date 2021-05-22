@@ -56,9 +56,8 @@
 
 typedef struct {
         char* command;
-        char* bigBuff; /*guarda um caminho*/
-	char* bigBuff2; /*guarda um valor*/
-	/* Por causa do search, preciso de dois bigBuff*/
+        char* bigBuff; 
+	char* bigBuff2;
 	struct componente *c;
 	unsigned short start;
 	unsigned short end;
@@ -99,6 +98,8 @@ void* myMalloc(short typeSize, unsigned int vSizei, char* control);
 char cleanWhite();
 
 short notWhite(char c);
+
+char notEndPath(char c);
 
 short inputGetNameW(char out[]);
 
@@ -160,7 +161,7 @@ comp* initComp(mother* M);
 
 mother* initMother();
 
-void freeComp(comp *c1, char modo);
+void freePreComp(comp *c1);
 
 int height(comp* h, char modo);
 
@@ -185,6 +186,14 @@ comp* findComp(comp* root, char modo, buff* bf);
 comp* insertComp(comp* root, char modo,char* exists, mother* M);
 
 comp* insertAll(avlHead* root, mother* M);
+
+comp* deleteAux(comp *c1, char modo, buff* bf);
+
+comp* delete1(comp* root, char* exists, buff* bf);
+
+comp* delete2(comp* root, buff* bf);
+
+avlHead* deleteComp(avlHead *head, buff *bf);
 
 void compNewValue(comp* c1, mother* M);
 
@@ -212,6 +221,12 @@ void printCompsR(comp* c1, buff* bf);
 
 void findValueR(comp* c1, buff* bf);
 
+void freeHead(avlHead *head);
+
+void freeCompR(comp *c1);
+
+void freeMother(mother *M);
+
 /*Funcoes dos Comandos*/
 
 short commandId(char* str);
@@ -219,6 +234,8 @@ short commandId(char* str);
 void checkCommand(mother* M,char* control);
 
 void handleHelp();
+
+void handleQuit(mother *M);
 
 void handleSet(mother *M);
 
@@ -229,3 +246,5 @@ void handleFind(mother *M);
 void handleList(mother *M);
 
 void handleSearch(mother *M);
+
+void handleDelete(mother *M);

@@ -23,8 +23,11 @@ void checkCommand(mother *M, char* control){
 	switch (id){
 		case HELP:
 			handleHelp();
-			*control = ZERO; /*Obrigatorio APAGAR ANTES DE ENTREGAAAAAAAAR*/
 			break;
+		case QUIT:
+                        handleQuit(M);
+                        *control=ONE;
+                        break;
 		case SET:
 			handleSet(M);
 			break;
@@ -40,13 +43,9 @@ void checkCommand(mother *M, char* control){
 		case SEARCH:
 			handleSearch(M);
 			break;
-		/*case DELETE:
-			handleDelete(bf, root);
+		case DELETE:
+			handleDelete(M);
 			break;
-		case QUIT:
-                        handleQuit(bf, root);
-                        *control=ONE;
-                        break;*/
 		default:
 			printf("Erro Fatal - checkCommand\n");
 	}
@@ -62,15 +61,13 @@ void handleHelp(){
 }
 
 
-/*==========    QUIT    ==========
+/*==========    QUIT    ==========*/
 
-Funcao responsavel por terminar o programa corretamente
+/*Funcao responsavel por terminar o programa corretamente*/
 void handleQuit(mother *M){
-        cleanWhite(); nao ha mais info na instrucao, limpa-se o input
-	freeBuffer(bf);
-	freeCompRec(root);
+        cleanWhite();
+	freeMother(M);
 }
-*/
 
 /*==========    SET    ==========*/
 
@@ -153,4 +150,26 @@ void handleSearch(mother *M){
 		printf("not found\n");
 	}
 }
+
+
+/*==========    DELETE    ==========*/
+/* Responsavel pela execucao do programa no comando "delete"
+ * Apaga o caminho recebido no stdin e todos os seus componentes filho*/
+void handleDelete(mother *M){
+	comp *cpath;
+        char modo=ONE;
+        char modoB=ONE; /*Pode nao haver um path no stdin*/
+        pathToBuff(M->bf,modoB);
+        if (nullBuff(M->bf)){ /*"delete" invocado sem argumentos*/
+                avlPostOrder(freeCompR,M->motherRoot->rootOrder); 
+		/*Se for null, entao ja se verificou que nao havia mais input*/
+        } else {
+		removeFromBuff(M->bf);
+                cpath = getPathComp(modo,M); /*verificar se houve erro aqui*/
+		cpath->follow = deleteComp(cpath->follow,M->bf);
+                cleanWhite();
+        }
+
+}
+
 
