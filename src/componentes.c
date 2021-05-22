@@ -467,7 +467,7 @@ avlHead* deleteComp(avlHead *head, buff *bf){
 
 /* Atribui um novo valor a uma componente*/
 void compNewValue(comp* c1, mother* M){
-	unsigned int dim = strlen(M->bf->bigBuff);
+	unsigned int dim = strlen(M->bf->bigBuff2);
 	char* safe;
 	dim++; /*incluir espaco para '\0'*/
 	safe = (char*) realloc(c1->valor,dim*(sizeof(char)));
@@ -477,7 +477,7 @@ void compNewValue(comp* c1, mother* M){
 		endProgram(M);
 	}
 	c1->valor = safe;
-	strcpy(c1->valor,M->bf->bigBuff);
+	strcpy(c1->valor,M->bf->bigBuff2);
 }
 
 /* Verifica se existe valor associado a componente*/
@@ -526,10 +526,12 @@ comp* getPathComp(short modo, mother* M){
 		} else {
 			c1 = insertAll(root,M);
 		}
+		printf("c1-%s-%ld\n",c1->nome,c1->occ);
 		root = c1->follow;
-		occToBuff(root->occ,M->bf);	
+		occToBuff(root->occ,M->bf);
 		M->bf->start = M->bf->end;
 		pathClean(path,&(M->bf->start));
+	
 	}
 	return c1;
 }
@@ -558,7 +560,9 @@ void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf){
 /* Travessia in-order da AVL por criacao, com uma funcao a correr
  * Com condicao de paragem, indicada no buffer*/
 void avlSortOrderStop(void (*f)(comp*,buff*),comp* c1,buff* bf){
-        if (c1==NULL || buffCheckStop(bf)) return;
+        if (c1==NULL || buffCheckStop(bf)) {
+		return;
+	}
         avlSortOrderStop(f,c1->orderLeft,bf);
         (*f)(c1,bf);
         avlSortOrderStop(f,c1->orderRight,bf);
@@ -577,7 +581,9 @@ void avlPostAlfa(void (*f)(comp*),comp* c1){
 
 /* Travessia post-order da AVL por criacao, com uma funcao a correr*/
 void avlPostOrder(void (*f)(comp*),comp* c1){
-	if (c1==NULL) return;
+	if (c1==NULL){
+	       	return;
+	}
         avlPostOrder(f,c1->orderLeft);
         avlPostOrder(f,c1->orderRight);
         (*f)(c1);
@@ -611,12 +617,12 @@ void printCompsR(comp* c1, buff* bf){
 void findValueR(comp* c1, buff* bf){
         addToBuff(bf,c1);
         if (sameValue(bf->bigBuff2,c1)){ /* tem valor pretendido*/
-                printf("%s\n",bf->bigBuff2);
+                printf("%s\n",bf->bigBuff);
 		buffStop(bf);
         } else {
 		if ((c1->follow->occ)){ /*tem componentes filho*/
                 	avlSortOrderStop(findValueR,c1->follow->rootOrder,bf);
-        	}
+        	} 
 	}
         removeFromBuff(bf);
 }
@@ -625,7 +631,7 @@ void findValueR(comp* c1, buff* bf){
 
 /* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
 void freeHead(avlHead *head){
-	if (head->occ){ /*tem componentes*/
+	if (head->occ){ /*tem componentes filho*/
 		avlPostOrder(freeCompR,head->rootOrder);
 	}
 	free(head);

@@ -152,6 +152,8 @@ void addToBuff(buff* bf, comp* c1);
 
 void removeFromBuff(buff* bf);
 
+void buffSwitchComp(buff* bf);
+
 
 /* AVL + Componentes*/
 
@@ -211,7 +213,7 @@ void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf);
 
 void avlSortOrderStop(void (*f)(comp*,buff*),comp* c1,buff* bf);
 
-void avlPostAlfa(void (*f)(comp*),comp* c1);
+void avlPostAlfa(void (*f)(comp*),comp* c1); 
 
 void avlPostOrder(void (*f)(comp*),comp* c1);
 

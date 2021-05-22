@@ -70,6 +70,7 @@ void valToBuff(buff *bf){
 /* Coloca bigBuff a Null String*/
 void resetBuff(buff *bf){
 	*(bf->bigBuff) = '\0';
+	*(bf->bigBuff2) = '\0';
 }
 
 /* Verifica se bigBuff e Null ou nao*/
@@ -128,7 +129,6 @@ void freeBuffer(buff *bf){
 	free(bf->command);
 	free(bf->bigBuff);
 	free(bf->bigBuff2);
-	free(bf->c);
 	free(bf);
 }
 
@@ -145,21 +145,39 @@ void addToBuff(buff* bf, comp* c1){
 	} while (c1->nome[a++] != '\0');
 }
 
-/* Retira a ultima componente de BigBuff e
- * coloca-la no bigBuff2 (importante para o "delete")*/
+
+
+/* Retira a ultima componente de BigBuff*/
 void removeFromBuff(buff* bf){
 	unsigned short i=0;
 	unsigned short a=0;
 	for (;bf->bigBuff[i]!='\0';i++){
-		if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){  
-			a=i;
-		}
+		if (bf->bigBuff[i]=='/')  a=i;
 	}
-	bf->bigBuff[a++] = '\0';
-	strcpy(bf->bigBuff2,&(bf->bigBuff[a]));
-	
-	while (bf->bigBuff2[--i]!='/'){ 
-		/*so quero o nome do componente (sem '/')*/
-		bf->bigBuff2[i]='\0';
-	} 
+	bf->bigBuff[a] = '\0';
+}
+
+
+
+/* Retira a ultima componente de bigBuff1 e
+ * coloca-la no bigBuff2 (importante para o "delete")*/
+void buffSwitchComp(buff* bf){
+        unsigned short i=0;
+        unsigned short a=0;
+        for (;bf->bigBuff[i]!='\0';i++){
+                if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){
+                        a=i;
+                }
+        }
+        if (a==ZERO && bf->bigBuff[a] != '/'){
+                strcpy(bf->bigBuff2,bf->bigBuff);
+                bf->bigBuff[a] = '\0';
+        } else {
+                bf->bigBuff[a++] = '\0';
+                strcpy(bf->bigBuff2,&(bf->bigBuff[a]));
+        }
+        while (bf->bigBuff2[--i]=='/'){
+                /*so quero o nome do componente (sem '/')*/
+                bf->bigBuff2[i]='\0';
+        }
 }
