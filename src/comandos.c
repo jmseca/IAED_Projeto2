@@ -94,8 +94,7 @@ void handleSet(mother *M){
 void handlePrint(mother *M){
 	cleanWhite();
 	resetBuff(M->bf);
-	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);
-	/*aqui tenho de chamar o avlsortorder em vez do prinComps*/
+	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);	
 }
 
 
@@ -125,7 +124,7 @@ void handleList(mother *M){
 	comp *cpath;
 	char modo=ONE;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
-        pathToBuff(M->bf,modoB);
+	pathToBuff(M->bf,modoB);
 	if (nullBuff(M->bf)){ /*"list" invocado sem argumentos*/
 		avlSortAlfa(printCompName,M->motherRoot->rootAlfa);	
 		/*Se for null, entao ja se verificou que nao havia mais input*/
@@ -142,10 +141,10 @@ void handleList(mother *M){
 /* Responsavel pela execucao do programa no comando "search"
  * Devolve o primeiro caminho com o valor recebido no stdin*/
 void handleSearch(mother *M){
+	resetBuff(M->bf);
 	valToBuff(M->bf);
 	buffStart(M->bf); /* fazer reset à condicao de paragem*/
-	avlSortOrderStop(findValueR,M->motherRoot->rootOrder,M->bf);
-	
+	avlSortOrderStop(findValueR,M->motherRoot->rootOrder,M->bf);	
 	if (!buffCheckStop(M->bf)){ /*nao encontrou caminho*/
 		printf("not found\n");
 	}
@@ -164,9 +163,13 @@ void handleDelete(mother *M){
                 avlPostOrder(freeCompR,M->motherRoot->rootOrder); 
 		/*Se for null, entao ja se verificou que nao havia mais input*/
         } else {
-		removeFromBuff(M->bf);
-                cpath = getPathComp(modo,M); /*verificar se houve erro aqui*/
-		cpath->follow = deleteComp(cpath->follow,M->bf);
+		buffSwitchComp(M->bf);
+                cpath = getPathComp(modo,M);
+		if (cpath==NULL){
+			printf("not found\n");
+		} else {
+			cpath->follow = deleteComp(cpath->follow,M->bf);
+		}
                 cleanWhite();
         }
 

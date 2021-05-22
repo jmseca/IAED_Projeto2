@@ -66,7 +66,7 @@ short notWhite(char c){
 
 
 char notEndPath(char c){
-	return !(c==' '|| c=='/');
+	return !(c==' '|| c=='/' || c=='\n');
 }
 
 /* Passa o que esta escrito no input para out, ate encontrar '\n' 
