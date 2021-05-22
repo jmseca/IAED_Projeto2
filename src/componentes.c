@@ -231,26 +231,21 @@ int balance(comp* h, char modo) {
 comp* AVLbalance(comp* h, char modo){
         int balanceFactor, hleft, hright;
 	comp *left,*right;
-	printf("\n==Balance Summary==\n");
 	left = modo ? h->alfaLeft : h->orderLeft;
 	right = modo ? h->alfaRight : h->orderRight;
         if (h == NULL) {
-		printf("Nada (era NULL)\n\n");
 		return h;
 	}
         balanceFactor = balance(h,modo);
         if(balanceFactor > 1) { /* mais peso para a esquerda */
-		printf("Fez rotates\n\n");
                 if (balance(left,modo) >= 0) h = rotR(h,modo);
                 else h = rotLR(h,modo);
         }
         else if(balanceFactor < -1){ /* mais peso para a direita*/
-		printf("Fez rotates\n\n");
                 if (balance(right,modo) <= 0) h = rotL(h,modo);
                 else h = rotRL(h,modo);
         }
         else{
-		printf("Apenas vai alterar as alturas\n\n");
                 hleft = height(left,modo);
                 hright = height(right,modo);
 		if (modo){
@@ -330,7 +325,6 @@ comp* insertComp(comp* root, char modo,char* exists, mother* M){
 				insertComp(root->alfaLeft,modo,exists,M);	
 		}
 	} else { /* Por ordem de criacao, inserimos sempre no fim*/
-		/*printf("name? - %s\nocc? - %ld\n",root->nome,root->occ);*/	
         	root->orderRight = insertComp(root->orderRight,modo,exists,M);
 	}
 	if (res){ /*se nao inserimos, nao precisamos de fzr rotate*/
@@ -345,7 +339,6 @@ comp* insertAll(avlHead* root, mother* M){
 	char exists=ZERO;
 	root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
-		printf("A componente ->%s<- não existia\n",getBuffComp(M->bf)->nome);
         	root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
 		(root->occ)+=ONE;
 	}
@@ -374,6 +367,12 @@ short compValNull(comp *c1){
 	return (*(c1->valor))=='\0';
 }
 
+
+/* Verifica se o valor "value" eh igual ao valor da componente "c1"*/
+char sameValue(char* value, comp* c1){
+	return  !strcmp(value,c1->valor);
+}
+
 /* Imprime o valor de uma componente se existir*/
 void printCompVal(comp *c1){
 	if (compValNull(c1)){
@@ -381,6 +380,11 @@ void printCompVal(comp *c1){
 	} else {
 		printf("%s\n",c1->valor);
 	}
+}
+
+/* Imprime o nome da componente*/
+void printCompName(comp* c1){
+	printf("%s\n",c1->nome);
 }
 
 /* Devolve ponteiro para a componente final do caminho 
@@ -391,12 +395,6 @@ comp* getPathComp(short modo, mother* M){
 	char* path = M->bf->bigBuff;
 	avlHead* root = M->motherRoot;
 	comp* c1;
-	/*if (root->rootAlfa == NULL){
-                printf("Uau, rootAlfa é NULL\n");
-        } else {
-                printf("Cabeca Root pre getPath -> %s\n",M->motherRoot->rootAlfa->nome);
-        }*/
-
 	pathClean(path,&(M->bf->start));
 	occToBuff(root->occ,M->bf);
 	while (*(path+(M->bf->start))!='\0'){
@@ -430,13 +428,25 @@ void avlSortAlfa(void (*f)(comp*),comp* c1){
 	avlSortAlfa(f,c1->alfaRight);
 }
 
-/* Travessia in-order da AVL por criacao, com uma funcao a correr*/
-void avlSortOrder(void (*f)(comp*,buff*),comp* c1,buff* bf){
+/* Travessia in-order da AVL por criacao, com uma funcao a correr
+ * Sem condicao de paragem*/
+void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf){
 	if (c1==NULL) return;
-        avlSortOrder(f,c1->orderLeft,bf);
+        avlSortOrderDeep(f,c1->orderLeft,bf);
         (*f)(c1,bf);
-        avlSortOrder(f,c1->orderRight,bf);
+        avlSortOrderDeep(f,c1->orderRight,bf);
 }
+
+/* Travessia in-order da AVL por criacao, com uma funcao a correr
+ * Com condicao de paragem, indicada no buffer*/
+void avlSortOrderStop(void (*f)(comp*,buff*),comp* c1,buff* bf){
+        if (c1==NULL || buffCheckStop(bf)) return;
+        avlSortOrderStop(f,c1->orderLeft,bf);
+        (*f)(c1,bf);
+        avlSortOrderStop(f,c1->orderRight,bf);
+}
+
+
 
 /* Travessia post-order da AVL alfabetica, com uma funcao a correr*/
 void avlPostAlfa(void (*f)(comp*),comp* c1){
@@ -456,11 +466,12 @@ void avlPostOrder(void (*f)(comp*),comp* c1){
 }
 
 
+
+
 /* Imprime o caminho da componente e o seu valor
  * Parte do caminho esta guardado no buffer*/
 void printComp(comp *c1, buff *bf){
 	printf("%s ",bf->bigBuff); /*O caminho que esta para tras*/
-        /*printf("%s ",c1->nome); nome da componente*/
         printf("%s\n",c1->valor);
 }
 
@@ -472,9 +483,26 @@ void printCompsR(comp* c1, buff* bf){
 		printComp(c1,bf);	
 	}
 	if ((c1->follow->occ)){ /*tem componentes filho*/
-		avlSortOrder(printCompsR,c1->follow->rootOrder,bf);
+		avlSortOrderDeep(printCompsR,c1->follow->rootOrder,bf);
 	}
 	removeFromBuff(bf);
 		
 }
+
+/* Tenta encontrar o caminho com o mesmo valor encontrado no buffer*/
+void findValueR(comp* c1, buff* bf){
+        addToBuff(bf,c1);
+        if (sameValue(bf->bigBuff2,c1)){ /* tem valor pretendido*/
+                printf("%s\n",bf->bigBuff2);
+		buffStop(bf);
+        } else {
+		if ((c1->follow->occ)){ /*tem componentes filho*/
+                	avlSortOrderStop(findValueR,c1->follow->rootOrder,bf);
+        	}
+	}
+        removeFromBuff(bf);
+}
+
+
+
 

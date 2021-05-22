@@ -56,7 +56,9 @@
 
 typedef struct {
         char* command;
-        char* bigBuff;
+        char* bigBuff; /*guarda um caminho*/
+	char* bigBuff2; /*guarda um valor*/
+	/* Por causa do search, preciso de dois bigBuff*/
 	struct componente *c;
 	unsigned short start;
 	unsigned short end;
@@ -135,6 +137,12 @@ comp* getBuffComp(buff* bf);
 
 void occToBuff(unsigned long occ, buff* bf);
 
+void buffStart(buff* bf);
+
+void buffStop(buff* bf);
+
+char buffCheckStop(buff* bf);
+
 unsigned long getBuffOcc(buff* bf);
 
 void freeBuffer(buff *bf);
@@ -184,11 +192,15 @@ short compValNull(comp *c1);
 
 void printCompVal(comp *c1);
 
+void printCompName(comp* c1);
+
 comp* getPathComp(short modo, mother* M);
 
 void avlSortAlfa(void (*f)(comp*),comp* c1);
 
-void avlSortOrder(void (*f)(comp*i,buff*),comp* c1,buff* bf);
+void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf);
+
+void avlSortOrderStop(void (*f)(comp*,buff*),comp* c1,buff* bf);
 
 void avlPostAlfa(void (*f)(comp*),comp* c1);
 
@@ -198,7 +210,7 @@ void printComp(comp *c1, buff *bf);
 
 void printCompsR(comp* c1, buff* bf);
 
-
+void findValueR(comp* c1, buff* bf);
 
 /*Funcoes dos Comandos*/
 
@@ -212,6 +224,8 @@ void handleSet(mother *M);
 
 void handlePrint(mother *M);
 
-void handleFind(mother* M);
+void handleFind(mother *M);
 
-void handleList(buff *bf,comp* root);
+void handleList(mother *M);
+
+void handleSearch(mother *M);

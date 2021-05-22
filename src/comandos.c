@@ -31,16 +31,16 @@ void checkCommand(mother *M, char* control){
 		case PRINT:
 			handlePrint(M);
 			break;
-		/*case FIND:
-			handleFind(bf, root);
+		case FIND:
+			handleFind(M);
 			break;
 		case LIST:
-			handleList(bf, root);
+			handleList(M);
 			break;
 		case SEARCH:
-			handleSearch(bf, root);
+			handleSearch(M);
 			break;
-		case DELETE:
+		/*case DELETE:
 			handleDelete(bf, root);
 			break;
 		case QUIT:
@@ -86,7 +86,6 @@ void handleSet(mother *M){
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
-	printf("O que tem a RootAlfa?\nRootAlfa = %s\n",M->motherRoot->rootAlfa->nome);
 }
 
 
@@ -98,7 +97,7 @@ void handleSet(mother *M){
 void handlePrint(mother *M){
 	cleanWhite();
 	resetBuff(M->bf);
-	avlSortOrder(printCompsR,M->motherRoot->rootOrder,M->bf);
+	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);
 	/*aqui tenho de chamar o avlsortorder em vez do prinComps*/
 }
 
@@ -125,20 +124,33 @@ void handleFind(mother* M){
 
 /* Responsavel pela execucao do programa no comando "list"
  * Lista todos os componentes imediatos de um subcaminho*/
-/*void handleList(buff *bf,comp* root){*/
-	/*comp *cpath;*/
-	/*short succ=1;
-	short modo=1;
-        short modoB=1; Pode nao haver um path no stdin
-        pathToBuff(bf,modoB);
-	if (nullBuff(bf)){ invocado sem argumentos
-		printf("nao era suposto estar aqui\n")listComp(root);
+void handleList(mother *M){
+	comp *cpath;
+	char modo=ONE;
+        char modoB=ONE; /*Pode nao haver um path no stdin*/
+        pathToBuff(M->bf,modoB);
+	if (nullBuff(M->bf)){ /*"list" invocado sem argumentos*/
+		avlSortAlfa(printCompName,M->motherRoot->rootAlfa);	
+		/*Se for null, entao ja se verificou que nao havia mais input*/
 	} else {
-		cpath = getPathComp(bf->bigBuff,root,modo,&succ);
-		listComp(cpath);	
-	}
-	if (!nullBuff(bf)){
+		cpath = getPathComp(modo,M);
+		avlSortAlfa(printCompName,cpath->follow->rootAlfa);
 		cleanWhite();
-	}*/ /*Se for null, entao ja se verificou que nao havia mais input	
-}*/
+	}
+
+}	
+
+
+/*==========    SEARCH    ==========*/
+/* Responsavel pela execucao do programa no comando "search"
+ * Devolve o primeiro caminho com o valor recebido no stdin*/
+void handleSearch(mother *M){
+	valToBuff(M->bf);
+	buffStart(M->bf); /* fazer reset à condicao de paragem*/
+	avlSortOrderStop(findValueR,M->motherRoot->rootOrder,M->bf);
+	
+	if (!buffCheckStop(M->bf)){ /*nao encontrou caminho*/
+		printf("not found\n");
+	}
+}
 
