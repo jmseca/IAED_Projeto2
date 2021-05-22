@@ -231,21 +231,26 @@ int balance(comp* h, char modo) {
 comp* AVLbalance(comp* h, char modo){
         int balanceFactor, hleft, hright;
 	comp *left,*right;
+	printf("\n==Balance Summary==\n");
 	left = modo ? h->alfaLeft : h->orderLeft;
 	right = modo ? h->alfaRight : h->orderRight;
         if (h == NULL) {
+		printf("Nada (era NULL)\n\n");
 		return h;
 	}
         balanceFactor = balance(h,modo);
         if(balanceFactor > 1) { /* mais peso para a esquerda */
+		printf("Fez rotates\n\n");
                 if (balance(left,modo) >= 0) h = rotR(h,modo);
                 else h = rotLR(h,modo);
         }
         else if(balanceFactor < -1){ /* mais peso para a direita*/
+		printf("Fez rotates\n\n");
                 if (balance(right,modo) <= 0) h = rotL(h,modo);
                 else h = rotRL(h,modo);
         }
         else{
+		printf("Apenas vai alterar as alturas\n\n");
                 hleft = height(left,modo);
                 hright = height(right,modo);
 		if (modo){
@@ -305,12 +310,15 @@ comp* findComp(comp* root, char modo, buff* bf){
 comp* insertComp(comp* root, char modo,char* exists, mother* M){
 	static short res;
 	if (root == NULL){
-		compToBuff(initComp(M),M->bf);
+		if (modo){ /*só se cria a componente quando modo=1*/
+			compToBuff(initComp(M),M->bf);
+		}
 		return getBuffComp(M->bf);
         }
 	if (modo){
 		res = findFunc(root,modo,M->bf);
 		if (!res){
+			*exists = ONE;
 			compToBuff(root,M->bf);
 			return root;
 		}
@@ -321,7 +329,8 @@ comp* insertComp(comp* root, char modo,char* exists, mother* M){
                         root->alfaLeft = 
 				insertComp(root->alfaLeft,modo,exists,M);	
 		}
-	} else { /* Por ordem de criacao, inserimos sempre no fim*/	
+	} else { /* Por ordem de criacao, inserimos sempre no fim*/
+		/*printf("name? - %s\nocc? - %ld\n",root->nome,root->occ);*/	
         	root->orderRight = insertComp(root->orderRight,modo,exists,M);
 	}
 	if (res){ /*se nao inserimos, nao precisamos de fzr rotate*/
@@ -336,11 +345,10 @@ comp* insertAll(avlHead* root, mother* M){
 	char exists=ZERO;
 	root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
-		printf("nao existia\n");
+		printf("A componente ->%s<- não existia\n",getBuffComp(M->bf)->nome);
         	root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
 		(root->occ)+=ONE;
 	}
-	printf("existed? - %d\nname? - %s\nvalor? - %s\n",exists,getBuffComp(M->bf)->nome,getBuffComp(M->bf)->valor);
 	return getBuffComp(M->bf);
 }
 
@@ -351,11 +359,6 @@ void compNewValue(comp* c1, mother* M){
 	unsigned int dim = strlen(M->bf->bigBuff);
 	char* safe;
 	dim++; /*incluir espaco para '\0'*/
-	if (c1==NULL){
-		printf("È NULL malandro\n");
-	} else {
-		printf("dim? - %d ||nome? - %s\n",dim,c1->nome);
-	}
 	safe = (char*) realloc(c1->valor,dim*(sizeof(char)));
 	if (safe==NULL){
 		/* Esta funcao e chamada quando c1 ja pertence a uma AVL
@@ -379,12 +382,15 @@ comp* getPathComp(short modo, char* succ, mother* M){
 	char* path = M->bf->bigBuff;
 	avlHead* root = M->motherRoot;
 	comp* c1;
+	/*if (root->rootAlfa == NULL){
+                printf("Uau, rootAlfa é NULL\n");
+        } else {
+                printf("Cabeca Root pre getPath -> %s\n",M->motherRoot->rootAlfa->nome);
+        }*/
+
 	pathClean(path,&(M->bf->start));
 	occToBuff(root->occ,M->bf);
-	printf("Chegou aqui?\n");
-	printf("Buffer\nbigBuff->%s\nstart->%d, end->%d\n\n",M->bf->bigBuff,M->bf->start,M->bf->end);
 	while (*(path+(M->bf->start))!='\0'){
-		printf("Looping\n");
 		M->bf->end = findSepar(path,M->bf->start);
 		if (modo){
 			c1 = findComp(root->rootOrder, ZERO, M->bf);
@@ -401,7 +407,6 @@ comp* getPathComp(short modo, char* succ, mother* M){
 		M->bf->start = M->bf->end;
 		pathClean(path,&(M->bf->start));
 	}
-	printf("c1->%s\n",c1->nome);
 	return c1;
 }
 

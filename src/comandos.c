@@ -86,7 +86,7 @@ void handleSet(mother *M){
 	cpath = getPathComp(modo,&succ,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
-	printf("name-%s-\nvalue-%s-\n",cpath->nome,cpath->valor);
+	printf("O que tem a RootAlfa?\nRootAlfa = %s\n",M->motherRoot->rootAlfa->nome);
 }
 
 
