@@ -83,10 +83,10 @@ void handleSet(mother *M){
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
         pathToBuff(M->bf,modoB);
-	cpath = getPathComp(modo,&succ,M); 
+	cpath = getPathComp(modo,&succ,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
-	printf("name-%s-\nvalue-%s-\n",cpath->nome,cpath->valor);
+	printf("O que tem a RootAlfa?\nRootAlfa = %s\n",M->motherRoot->rootAlfa->nome);
 }
 
 
