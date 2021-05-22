@@ -315,9 +315,11 @@ comp* insertComp(comp* root, char modo,char* exists, mother* M){
 			return root;
 		}
 		else if (res>0){
-                        root->alfaRight = insertComp(root->alfaRight,modo,exists,M);	
+                        root->alfaRight = 
+				insertComp(root->alfaRight,modo,exists,M);	
 		} else {
-                        root->alfaLeft =  insertComp(root->alfaLeft,modo,exists,M);	
+                        root->alfaLeft = 
+				insertComp(root->alfaLeft,modo,exists,M);	
 		}
 	} else { /* Por ordem de criacao, inserimos sempre no fim*/	
         	root->orderRight = insertComp(root->orderRight,modo,exists,M);
@@ -332,9 +334,10 @@ comp* insertComp(comp* root, char modo,char* exists, mother* M){
  * ordem alfabetica. Se ja existir, devolve a componente*/
 comp* insertAll(avlHead* root, mother* M){
 	char exists=ZERO;
-	insertComp(root->rootAlfa,ONE,&exists,M);
+	root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
-        	insertComp(root->rootOrder,ZERO,&exists,M);
+        	root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
+		(root->occ)+=ONE;
 	}
 	return getBuffComp(M->bf);
 }
@@ -353,7 +356,8 @@ void compNewValue(comp* c1, mother* M){
 		endProgram(M);
 	}
 	c1->valor = safe;
-	myStrCpy(c1->valor,M->bf);
+	printf("Whats in the buffer -%s-\n",M->bf->bigBuff);
+	strcpy(c1->valor,M->bf->bigBuff);
 }
 
 /* Verifica se existe valor associado a componente*/
@@ -440,10 +444,13 @@ void printComp(comp *c1, buff *bf){
 
 /*Imprime as componentes recursivamente*/
 void printCompsR(comp* c1, buff* bf){
+	printf("comName - %s\n",c1->nome);
 	if (!(compValNull(c1))){ /* tem valor*/
+		printf("has value\n");
 		printComp(c1,bf);	
 	}
 	if ((c1->follow->occ)){ /*tem componentes filho*/
+		printf("has occ\n");
 		addToBuff(bf,c1);
 		avlSortOrder(printCompsR,c1->follow->rootOrder,bf);
 		removeFromBuff(bf,c1);
