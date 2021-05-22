@@ -272,8 +272,9 @@ short findFunc(comp *c1,char modo, buff* bf){
  * modo 0 -> procurar por ordem de chegada*/
 comp* findComp(comp* root, char modo, buff* bf){
 	static short res;
+	if (root==NULL) return root;
 	res = findFunc(root,modo,bf);
-	if (root == NULL || !res){
+	if (!res){
 		return root;
 	}
 	else if (res>0){
@@ -518,7 +519,7 @@ comp* getPathComp(short modo, mother* M){
 	while (*(path+(M->bf->start))!='\0'){
 		M->bf->end = findSepar(path,M->bf->start);
 		if (modo){
-			c1 = findComp(root->rootOrder, ZERO, M->bf);
+			c1 = findComp(root->rootAlfa, ONE, M->bf);
 			if (c1==NULL){
 				printf("not found\n");
                         	break;
@@ -526,7 +527,6 @@ comp* getPathComp(short modo, mother* M){
 		} else {
 			c1 = insertAll(root,M);
 		}
-		printf("c1-%s-%ld\n",c1->nome,c1->occ);
 		root = c1->follow;
 		occToBuff(root->occ,M->bf);
 		M->bf->start = M->bf->end;
