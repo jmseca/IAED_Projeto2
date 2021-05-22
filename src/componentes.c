@@ -374,11 +374,20 @@ short compValNull(comp *c1){
 	return (*(c1->valor))=='\0';
 }
 
+/* Imprime o valor de uma componente se existir*/
+void printCompVal(comp *c1){
+	if (compValNull(c1)){
+		printf("no data\n");
+	} else {
+		printf("%s\n",c1->valor);
+	}
+}
+
 /* Devolve ponteiro para a componente final do caminho 
  * no buffer da mother
  * modo '0'-se o caminho nao existir, cria um novo
  * modo '1'-se nao existir, nao cria */
-comp* getPathComp(short modo, char* succ, mother* M){
+comp* getPathComp(short modo, mother* M){
 	char* path = M->bf->bigBuff;
 	avlHead* root = M->motherRoot;
 	comp* c1;
@@ -396,7 +405,6 @@ comp* getPathComp(short modo, char* succ, mother* M){
 			c1 = findComp(root->rootOrder, ZERO, M->bf);
 			if (c1==NULL){
 				printf("not found\n");
-                        	*succ = 0;
                         	break;
 			}
 		} else {
@@ -451,23 +459,22 @@ void avlPostOrder(void (*f)(comp*),comp* c1){
 /* Imprime o caminho da componente e o seu valor
  * Parte do caminho esta guardado no buffer*/
 void printComp(comp *c1, buff *bf){
-	printf("%s/",bf->bigBuff); /*O caminho que esta para tras*/
-        printf("%s ",c1->nome); /*nome da componente*/
+	printf("%s ",bf->bigBuff); /*O caminho que esta para tras*/
+        /*printf("%s ",c1->nome); nome da componente*/
         printf("%s\n",c1->valor);
 }
 
 
 /*Imprime as componentes recursivamente*/
 void printCompsR(comp* c1, buff* bf){
-	printf("comName - %s\n",c1->nome);
+	addToBuff(bf,c1);
 	if (!(compValNull(c1))){ /* tem valor*/
 		printComp(c1,bf);	
 	}
 	if ((c1->follow->occ)){ /*tem componentes filho*/
-		addToBuff(bf,c1);
 		avlSortOrder(printCompsR,c1->follow->rootOrder,bf);
-		removeFromBuff(bf,c1);
 	}
+	removeFromBuff(bf);
 		
 }
 

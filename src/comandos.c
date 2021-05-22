@@ -78,12 +78,12 @@ void handleQuit(mother *M){
  *sempre que o comando "set" e recebido no stdin*/
 void handleSet(mother *M){
         comp *cpath;
-	/* Controla se o progama teve erros (apesar de nao se aplicar)*/
-	char succ=ONE; 
+	/* Controla se o progama teve erros (apesar de nao se aplicar)
+	char succ=ONE; */
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
         pathToBuff(M->bf,modoB);
-	cpath = getPathComp(modo,&succ,M);
+	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
 	printf("O que tem a RootAlfa?\nRootAlfa = %s\n",M->motherRoot->rootAlfa->nome);
@@ -97,8 +97,9 @@ void handleSet(mother *M){
  * recebe a instrucao "print"*/
 void handlePrint(mother *M){
 	cleanWhite();
-	prepareBuffPrint(M->bf);
-	printCompsR(M->motherRoot->rootOrder,M->bf);
+	resetBuff(M->bf);
+	avlSortOrder(printCompsR,M->motherRoot->rootOrder,M->bf);
+	/*aqui tenho de chamar o avlsortorder em vez do prinComps*/
 }
 
 
@@ -108,17 +109,13 @@ void handlePrint(mother *M){
  *a instrucao "find"*/
 void handleFind(mother* M){
 	comp* cpath;
-	char succ=1; /*Controla se o programa teve erros*/
-	char modo=1; /* Se o caminho nao existir, ha erro*/
-	char modoB=0; /*Vai haver um path no stdin*/
+	/*char succ=ONE; Controla se o programa teve erros*/
+	char modo=ONE; /* Se o caminho nao existir, ha erro*/
+	char modoB=ZERO; /*Vai haver um path no stdin*/
 	pathToBuff(M->bf,modoB);
-	cpath = getPathComp(modo,&succ,M);
-	if (succ){
-		if (compValNull(cpath)){
-                	printf("no data\n");
-        	} else {
-			printf("nao era suposto estar aqui\n");/*printCompVal(cpath);*/
-        	}
+	cpath = getPathComp(modo,M);
+	if (cpath!=NULL){ 
+		printCompVal(cpath);
 	}
 	cleanWhite();
 }

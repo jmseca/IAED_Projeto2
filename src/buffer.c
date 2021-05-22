@@ -113,30 +113,29 @@ void freeBuffer(buff *bf){
 }
 
 
-/* Prepara o buffer para o comando print*/
-void prepareBuffPrint(buff* bf){
-	*(bf->bigBuff) = '/';
-	*(bf->bigBuff + ONE) = '\0';
-}
-
 
 /* Adiciona ao bigBuff o nome da componente no fim*/
 void addToBuff(buff* bf, comp* c1){
 	unsigned short i=0;
 	unsigned short a=0;
 	for (;bf->bigBuff[i]!='\0';i++){;}
+	bf->bigBuff[i++] = '/';
 	do {
 		bf->bigBuff[i++] = c1->nome[a];
 	} while (c1->nome[a++] != '\0');
 }
 
-/* Retira o nome da componente "c1" de BigBuff*/
-void removeFromBuff(buff* bf, comp* c1){
+/* Retira a ultima componente de BigBuff*/
+void removeFromBuff(buff* bf){
 	unsigned short i=0;
 	unsigned short a=0;
+	/*
 	for (;bf->bigBuff[i]!='\0';i++){;}
 	for (;c1->nome[a]!='\0';a++){;}
-	i=i-a+1;
-	bf->bigBuff[i] = '\0';
+	i=i-a+1;*/
+	for (;bf->bigBuff[i]!='\0';i++){
+		if (bf->bigBuff[i]=='/')  a=i;
+	}
+	bf->bigBuff[a] = '\0';
 
 }

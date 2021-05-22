@@ -139,11 +139,9 @@ unsigned long getBuffOcc(buff* bf);
 
 void freeBuffer(buff *bf);
 
-void prepareBuffPrint(buff* bf);
-
 void addToBuff(buff* bf, comp* c1);
 
-void removeFromBuff(buff*, comp* c1);
+void removeFromBuff(buff* bf);
 
 
 /* AVL + Componentes*/
@@ -184,7 +182,9 @@ void compNewValue(comp* c1, mother* M);
 
 short compValNull(comp *c1);
 
-comp* getPathComp(short modo, char* succ, mother* M);
+void printCompVal(comp *c1);
+
+comp* getPathComp(short modo, mother* M);
 
 void avlSortAlfa(void (*f)(comp*),comp* c1);
 
