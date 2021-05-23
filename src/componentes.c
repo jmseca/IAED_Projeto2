@@ -95,7 +95,7 @@ void freePreComp(comp *c1){
 /* Devolve a height do componente da arvore desejada
  * modo 1->ordenada alfabeticamente
  * modo 0->ordenada por criacao*/
-int height(comp* h, char modo){
+unsigned short height(comp* h, char modo){
         if (h == NULL) return 0;
 	if (modo)
         	return h->alfaHeight;
@@ -105,7 +105,7 @@ int height(comp* h, char modo){
 
 /* Rotacao a esquerda na arvore pretendida (modo)*/
 comp* rotL(comp* h, char modo){
-        int hleft, hright, xleft, xright;
+        unsigned short hleft, hright, xleft, xright;
 	comp* x;
 	if (modo) {
 		x = h->alfaRight;
@@ -137,7 +137,7 @@ comp* rotL(comp* h, char modo){
 
 /* Rotacao a esquerda na arvore pretendida (modo)*/
 comp* rotR(comp* h, char modo){
-        int hleft, hright, xleft, xright;
+        unsigned short hleft, hright, xleft, xright;
         comp* x;
 	if (modo) {
 		x = h->alfaLeft;
