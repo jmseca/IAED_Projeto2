@@ -79,7 +79,8 @@ void handleSet(mother *M){
 	char succ=ONE; */
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
-        pathToBuff(M->bf,modoB);
+        printf("SET\n");
+	pathToBuff(M->bf,modoB);
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
@@ -93,6 +94,7 @@ void handleSet(mother *M){
  * recebe a instrucao "print"*/
 void handlePrint(mother *M){
 	cleanWhite();
+	printf("PRINT\n");
 	resetBuff(M->bf);
 	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);	
 }
@@ -107,6 +109,7 @@ void handleFind(mother* M){
 	/*char succ=ONE; Controla se o programa teve erros*/
 	char modo=ONE; /* Se o caminho nao existir, ha erro*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
+	printf("FIND\n");
 	pathToBuff(M->bf,modoB);
 	cpath = getPathComp(modo,M);
 	if (cpath!=NULL){ 
@@ -124,13 +127,16 @@ void handleList(mother *M){
 	comp *cpath;
 	char modo=ONE;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
+	printf("LIST\n");
 	pathToBuff(M->bf,modoB);
 	if (nullBuff(M->bf)){ /*"list" invocado sem argumentos*/
 		avlSortAlfa(printCompName,M->motherRoot->rootAlfa);	
 		/*Se for null, entao ja se verificou que nao havia mais input*/
 	} else {
 		cpath = getPathComp(modo,M);
-		avlSortAlfa(printCompName,cpath->follow->rootAlfa);
+		if (cpath!=NULL){
+			avlSortAlfa(printCompName,cpath->follow->rootAlfa);
+		}
 		cleanWhite();
 	}
 
@@ -141,6 +147,7 @@ void handleList(mother *M){
 /* Responsavel pela execucao do programa no comando "search"
  * Devolve o primeiro caminho com o valor recebido no stdin*/
 void handleSearch(mother *M){
+	printf("SEARCH\n");
 	resetBuff(M->bf);
 	valToBuff(M->bf);
 	buffStart(M->bf); /* fazer reset à condicao de paragem*/
@@ -157,9 +164,17 @@ void handleSearch(mother *M){
 void handleDelete(mother *M){
 	avlHead *head;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
+	printf("DELETE\n");
+
         pathToBuff(M->bf,modoB);
+	if (!(strcmp(APAGAR,M->bf->bigBuff))){
+                printf("OMGaaa\n");
+        }
+
         if (nullBuff(M->bf)){ /*"delete" invocado sem argumentos*/
-                avlPostOrder(freeCompR,M->motherRoot->rootOrder); 
+                avlPostOrder(freeCompR,M->motherRoot->rootOrder);
+		modoB = ZERO; /*reutilizacao da var*/
+		M->motherRoot = initHead(&modoB);
 		/*Se for null, entao ja se verificou que nao havia mais input*/
         } else {
 		buffSwitchComp(M->bf);

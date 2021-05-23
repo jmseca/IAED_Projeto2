@@ -177,11 +177,15 @@ void removeFromBuff(buff* bf){
 void buffSwitchComp(buff* bf){
         unsigned short i=0;
         unsigned short a=0;
+
+	printf("B1->%s\nB2->%s\n",bf->bigBuff,bf->bigBuff2);
+
         for (;bf->bigBuff[i]!='\0';i++){
                 if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){
                         a=i;
                 }
         }
+	printf("ok1\n");
         if (a==ZERO && bf->bigBuff[a] != '/'){
                 strcpy(bf->bigBuff2,bf->bigBuff);
                 bf->bigBuff[a] = '\0';
