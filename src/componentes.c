@@ -262,6 +262,28 @@ short findFunc(comp *c1,char modo, buff* bf){
 		res = (bf->occ)>(c1->occ) ? 1 : -1;
 		res = (bf->occ)==(c1->occ) ? 0 : res;
 	}
+/*
+	if (modo){
+		if (res<0){
+			printf("LLL\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
+		} else if (res>0){
+			printf("RRR\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
+		} else {
+			printf("000\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
+		}
+	} else {
+		if (res<0){
+                        printf("LLL\tComp(%ld)  Buff(%ld)\n",c1->occ,bf->occ);
+                } else if (res>0){
+                        printf("RRR\tComp(%ld)  Buff(%ld)\n",c1->occ,bf->occ);
+                } else {
+                        printf("000\tComp(%ld)  Buff(%ld)\n",c1->occ,bf->occ);
+                }
+
+	}
+*/
+
+
 	return res;
 }
 
@@ -394,7 +416,7 @@ comp* delete1(comp* root, char* exists, buff* bf){
 			root->alfaLeft = deleteAux(aux->alfaLeft,ONE,bf);
 			root->alfaRight = deleteAux(aux->alfaRight,ONE,bf);
 		} else {
-			if (root->alfaLeft==NULL && root->alfaLeft==NULL){
+			if (root->alfaLeft==NULL && root->alfaRight==NULL){
 				root = NULL;
 			} else if (root->alfaLeft==NULL){
 				root = root->alfaRight;
@@ -417,6 +439,7 @@ comp* delete1(comp* root, char* exists, buff* bf){
 comp* delete2(comp* root, buff* bf){
         static short res;
         static comp* aux;
+
         if (root==NULL) {
 		printf("Alguma coisa está mal, não devia estar aqui\n");
 		return root; 
@@ -434,8 +457,8 @@ comp* delete2(comp* root, buff* bf){
                         root->orderLeft = deleteAux(aux->orderLeft,ZERO,bf);
                         root->orderRight = deleteAux(aux->orderRight,ZERO,bf);
                 } else {
-                        if (root->orderLeft==NULL && root->orderLeft==NULL){
-                                root = NULL;
+                        if (root->orderLeft==NULL && root->orderRight==NULL){
+				root = NULL;
                         } else if (root->orderLeft==NULL){
                                 root = root->orderRight;
                         } else {
