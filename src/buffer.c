@@ -38,6 +38,7 @@ buff* initBuffer(){
 
 /* Guarda no buffer o comando recebido pelo input*/
 void commandToBuff(buff *bf){
+	printf("PREV Command->%s\n",bf->command);
 	scanf("%s",bf->command);
 	
 }
@@ -178,14 +179,12 @@ void buffSwitchComp(buff* bf){
         unsigned short i=0;
         unsigned short a=0;
 
-	printf("B1->%s\nB2->%s\n",bf->bigBuff,bf->bigBuff2);
 
         for (;bf->bigBuff[i]!='\0';i++){
                 if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){
                         a=i;
                 }
         }
-	printf("ok1\n");
         if (a==ZERO && bf->bigBuff[a] != '/'){
                 strcpy(bf->bigBuff2,bf->bigBuff);
                 bf->bigBuff[a] = '\0';
@@ -193,6 +192,8 @@ void buffSwitchComp(buff* bf){
                 bf->bigBuff[a++] = '\0';
                 strcpy(bf->bigBuff2,&(bf->bigBuff[a]));
         }
+	printf("B1->%s\nB2->%s\n",bf->bigBuff,bf->bigBuff2);
+	i = i-a;
         while (bf->bigBuff2[--i]=='/'){
                 /*so quero o nome do componente (sem '/')*/
                 bf->bigBuff2[i]='\0';

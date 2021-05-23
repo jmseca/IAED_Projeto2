@@ -62,9 +62,9 @@ void handleHelp(){
 
 
 /*==========    QUIT    ==========*/
-
 /*Funcao responsavel por terminar o programa corretamente*/
 void handleQuit(mother *M){
+	printf("QUIT\n");
         cleanWhite();
 	freeMother(M);
 }
@@ -165,12 +165,9 @@ void handleDelete(mother *M){
 	avlHead *head;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
 	printf("DELETE\n");
-
         pathToBuff(M->bf,modoB);
-	if (!(strcmp(APAGAR,M->bf->bigBuff))){
-                printf("OMGaaa\n");
-        }
-
+	
+	
         if (nullBuff(M->bf)){ /*"delete" invocado sem argumentos*/
                 avlPostOrder(freeCompR,M->motherRoot->rootOrder);
 		modoB = ZERO; /*reutilizacao da var*/
