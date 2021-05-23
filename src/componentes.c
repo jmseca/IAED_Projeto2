@@ -80,6 +80,7 @@ unsigned short getCompProf(comp* c1){
 		out++;
 		c1 = c1->motherComp;
 	}
+	return out;
 }
 
 mother* initMother(){

@@ -49,6 +49,8 @@
 #define SEARCH 427
 #define DELETE 410
 
+#define HASH_SIZE 3571 /*500º Primo*/
+
 
 /*STRUCTS*/
 
@@ -79,9 +81,9 @@ typedef struct componente {
 	struct componente *orderRight;
 	struct componente *orderLeft;
 	avlHead* follow;
-	struct componente *motherComp
+	struct componente *motherComp;
 	struct componente *nextValue;
-	unsigned short profundidade;
+	unsigned short prof;
 } comp;
 
 typedef struct {
