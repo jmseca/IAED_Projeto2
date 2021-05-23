@@ -1,22 +1,5 @@
-- No myMalloc acho q nao liberto a memoria toda 
-por exemplo num init se da o erro a meio, o que esta para tras nao e libertado
-
-- Criar constante NULL_STR e subtituir em todos os '\0'
 
 - Ver q tipos de malloc faço, para ponderar mudar unsigned int para unsigned short
-
-- Se calhar (por um pequeno teste que fiz, mesmo com ponteiro Null, nao ha problema em fzr free)
-
-- Faltam as alturas
-
-- No componentes.c, no getPathComp, eu faco peqsuisa com os nomes, sqe ate era mais facil com occ'?
-(eh preciso, pq assim e universal, pq no insert, preciso mesmo do alfa)
-
-- O insert ta mal
-
-- Fazer o my Malloc q devolver NULL se vir que ja houve erro (char* succ se nao me engano)
-
-- No Find (getPathComp) em vez de usar o succ, acho que da para verificar se eh NULL ou nao
 
 - Mensagens de erros nos defines
 
@@ -25,10 +8,8 @@ assim podemos usar o printCompVal no printComp no comando Print
 
 - Dps para a abstracao fazer funcoes para o M (mother) em vez de ->...->...->....
 
-- Acho q nao da para fazer recursivamente, mas ver se da para o print do search
-
 - Ver onde uso myStrCpy (ha um no initComp, se for o unico podemos dizer q serve para isso)
 
-- Ponderar fazer dois removeBuffer, um que so apagar, outro que copia tambem
-
 - Apagar a mensagem de aviso do delete2 se tudo correr bem
+
+- TWO e THREE pq uso na Hash
