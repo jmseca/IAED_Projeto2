@@ -35,7 +35,7 @@
 avlHead* initHead(char* control){
 	avlHead* head;
 	head = (avlHead*) myMalloc(AVLHEAD,ONE,control);
-       	if (!control){ /*ha memoria*/
+       	if (!(*control)){ /*ha memoria*/
 		head->occ = ZERO;
 		head->rootAlfa = NULL;
 		head->rootOrder = NULL;

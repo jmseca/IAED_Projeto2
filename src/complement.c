@@ -122,7 +122,7 @@ void myStrCpy(char* dest, buff* bf){
 	for(;start<end;start++){
 		*(dest+i) = *(src+start);
 		i++;
-	}
+	} *(dest+i)='\0';
 }
 
 /* Compara a string que esta identificada no buffer com "s1"*/
