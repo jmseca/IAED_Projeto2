@@ -56,6 +56,7 @@ void pathToBuff(buff *bf, short modoB){
 				*(bf->bigBuff +i) = c;
 				i++;	
 			}
+			*(bf->bigBuff +i)='\0';
 		} else {
 			resetBuff(bf);
 		}
@@ -180,13 +181,9 @@ void buffSwitchComp(buff* bf){
         unsigned short i=0;
         unsigned short a=0;
 	
-	printf("Buffer->%s\n",bf->bigBuff);
-	printf("Buffer2->%s\n",bf->bigBuff2);
-		
         for (;bf->bigBuff[i]!='\0';i++){
                 if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){
                         a=i;
-			printf("O que vem a seguir? ->%d\n",bf->bigBuff[i+1]);
                 }
         }
         if (a==ZERO && bf->bigBuff[a] != '/'){
@@ -196,18 +193,7 @@ void buffSwitchComp(buff* bf){
                 bf->bigBuff[a++] = '\0';
                 strcpy(bf->bigBuff2,&(bf->bigBuff[a]));
         }
-	printf("NEW\n");
-	printf("Buffer->%s\n",bf->bigBuff);
-        printf("Buffer2->%s\n",bf->bigBuff2);
-
 	i = i-a;
-	if (i<=0){
-		printf("Pai foi a um \n");
-		printf("i  = %d\n",i);
-	} else {
-		printf("maedoceu\n");
-	}
-	printf("b22 ->%s.\ni=%d\n",bf->bigBuff2,i);
         while (bf->bigBuff2[--i]=='/'){
                 /*so quero o nome do componente (sem '/')*/
                 bf->bigBuff2[i]='\0';
