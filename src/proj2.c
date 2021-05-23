@@ -4,7 +4,6 @@
 int main(){
 	char control=ZERO;
 	mother* M;
-
 	M = initMother();
 		
 	do {

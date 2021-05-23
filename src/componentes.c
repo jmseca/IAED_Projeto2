@@ -67,6 +67,9 @@ comp* initComp(mother* M){
 	c1->orderHeight = ONE;
 	*(c1->valor) = ZERO;
 	myStrCpy(c1->nome,bf);
+	c1->p1=NULL;
+	c1->p2=NULL;
+	c1->p3=ZERO;
 	return c1;
 }
 

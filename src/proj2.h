@@ -31,7 +31,7 @@
 #define INT 4
 #define LONG 8
 #define AVLHEAD 24
-#define COMP 80
+#define COMP 96
 
 /*Tamanho maximo de uma string que identifica um comando (inclui '\0')*/
 #define MAX_COMMAND_SIZE 7
@@ -79,6 +79,9 @@ typedef struct componente {
 	struct componente *orderRight;
 	struct componente *orderLeft;
 	avlHead* follow;
+	int* p1;
+	int* p2;
+	short p3;
 } comp;
 
 /* Estrutura para guardar o buffer e a raiz*/

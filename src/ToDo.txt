@@ -13,3 +13,6 @@ assim podemos usar o printCompVal no printComp no comando Print
 - Apagar a mensagem de aviso do delete2 se tudo correr bem
 
 - TWO e THREE pq uso na Hash
+
+- Se o que eu fizer na Hash nao funcionar, colocar pointer da Avl para a comp e vai-se verificando as 
+alturas de cada um (dos componentes pai)
