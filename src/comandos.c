@@ -78,6 +78,7 @@ void handleSet(mother *M){
 	char succ=ONE; */
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
+
 	pathToBuff(M->bf,modoB);
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
@@ -108,7 +109,7 @@ void handleFind(mother* M){
 	char modoB=ZERO; /*Vai haver um path no stdin*/
 	pathToBuff(M->bf,modoB);
 	cpath = getPathComp(modo,M);
-	if (cpath!=NULL){ 
+	if (cpath!=NULL){
 		printCompVal(cpath);
 	}
 	cleanWhite();

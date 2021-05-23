@@ -137,6 +137,10 @@ short myStrCmp(char* s1, buff* bf){
 		i++;
 		start++;
 	}
+	if (!out){
+		/*Verificar se s2 nao é subStr*/
+		out =*(s1+i)-ZERO;
+	}
 	return out;
 }
 
