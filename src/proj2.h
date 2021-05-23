@@ -79,15 +79,21 @@ typedef struct componente {
 	struct componente *orderRight;
 	struct componente *orderLeft;
 	avlHead* follow;
-	int* p1;
-	int* p2;
-	short p3;
+	struct componente *motherComp
+	struct componente *nextValue;
+	unsigned short profundidade;
 } comp;
 
-/* Estrutura para guardar o buffer e a raiz*/
+typedef struct {
+        comp **tabela;
+        unsigned long hSize;
+} hash;
+
+/* Estrutura para guardar o buffer a raiz e a hash*/
 typedef struct {
 	buff* bf;
 	avlHead *motherRoot;
+	hash* h;
 } mother;
 
 /*Complement*/
