@@ -257,6 +257,7 @@ comp* AVLbalance(comp* h, char modo){
 short findFunc(comp *c1,char modo, buff* bf){
 	short res;
 	if (modo){ /* comparar nomes*/
+		myPrint(bf->bigBuff,bf->start,bf->end);
 		res = myStrCmp(c1->nome,bf);
 	} else {
 		res = (bf->occ)>(c1->occ) ? 1 : -1;
@@ -546,6 +547,9 @@ avlHead* getDeleteAVL(mother* M){
 	if (!nullBuff(M->bf)){
         	pathClean(path,&(M->bf->start));
 		while (*(path+(M->bf->start))!='\0'){
+
+			M->bf->end = findSepar(path,M->bf->start);
+			myPrint(M->bf->bigBuff,M->bf->start,M->bf->end);
 			c1 = findComp(root->rootAlfa, ONE, M->bf);
                 	if (c1==NULL){
                         	printf("not found\n");
