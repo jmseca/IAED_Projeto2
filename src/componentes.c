@@ -67,16 +67,26 @@ comp* initComp(mother* M){
 	c1->orderHeight = ONE;
 	*(c1->valor) = ZERO;
 	myStrCpy(c1->nome,bf);
-	c1->p1=NULL;
-	c1->p2=NULL;
-	c1->p3=ZERO;
+	c1->motherComp=getBuffComp(M->bf);
+	addToHash(M->h,c1); /* Adiciona à Hash, inicializando c1->nextValue*/
+	c1->prof=getCompProf(c1);
 	return c1;
+}
+
+/*Devolve a profundidade dos caminhos a que se encontra a componente*/
+unsigned short getCompProf(comp* c1){
+	unsigned short out = ZERO;
+	while(c1->motherComp!=NULL){
+		out++;
+		c1 = c1->motherComp;
+	}
 }
 
 mother* initMother(){
 	char control=ZERO;
 	mother* M = (mother*) malloc(sizeof(mother));
 	M->bf = initBuffer();
+	M->h = initHash();
 	M->motherRoot = initHead(&control);
 	return M;
 }

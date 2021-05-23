@@ -121,7 +121,23 @@ short myStrCmp(char* s1, buff* bf);
 /*DELETE*/
 void myPrint(char* s1, unsigned short start, unsigned short end);
 
+/*Hash*/
 
+hash* initHash();
+
+void addToHash(hash *h,comp* c1);
+
+unsigned long hashU(char *v, int M);
+
+long coef(comp* c1,comp* c2);
+
+char compInsertOrder(comp *c1, comp *c2);
+
+comp* getItem(char* value,hash *h,mother *M);
+
+void removeFromHash(comp* c1, hash* h);
+
+comp* removeFromHashAux(comp *c1, comp *c2);
 
 /*Buffer*/
 
@@ -169,6 +185,8 @@ void buffSwitchComp(buff* bf);
 avlHead* initHead(char* control);
 
 comp* initComp(mother* M);
+
+unsigned short getCompProf(comp* c1);
 
 mother* initMother();
 

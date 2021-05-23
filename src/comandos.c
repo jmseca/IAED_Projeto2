@@ -80,7 +80,7 @@ void handleSet(mother *M){
 	char modoB=ZERO; /*Vai haver um path no stdin*/
 
 	pathToBuff(M->bf,modoB);
-
+	M->c = NULL; /*para a motherComp*/
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);

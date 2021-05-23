@@ -16,3 +16,17 @@ assim podemos usar o printCompVal no printComp no comando Print
 
 - Se o que eu fizer na Hash nao funcionar, colocar pointer da Avl para a comp e vai-se verificando as 
 alturas de cada um (dos componentes pai)
+
+
+
+HASH
+
+- Criar #define para o hashSize
+
+- Mudar InitComp, Mother (add init Hash)
+
+- Free Mother dar free a hash tambem
+
+- Se eu fizer Delete, o q faço aos meninos da Hash? (tenho de apagar como nas lista D:)
+
+- Nao esquecer do NULL  no M->c antes de comecarmos o insert no SET 
