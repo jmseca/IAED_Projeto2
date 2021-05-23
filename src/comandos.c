@@ -19,7 +19,7 @@ short commandId(char* str){
  *do programa para realizar o comando pretendido
  * Tambem indica se o programa ja acabou (1) ou nao (0)*/
 void checkCommand(mother *M, char* control){
-	short id = commandId(M->bf->command);
+	short id = commandId(M->bf->bigBuff);
 	switch (id){
 		case HELP:
 			handleHelp();
@@ -96,7 +96,7 @@ void handlePrint(mother *M){
 	cleanWhite();
 	printf("PRINT\n");
 	resetBuff(M->bf);
-	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);	
+	/*avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);*/
 }
 
 
@@ -130,14 +130,13 @@ void handleList(mother *M){
 	printf("LIST\n");
 	pathToBuff(M->bf,modoB);
 	if (nullBuff(M->bf)){ /*"list" invocado sem argumentos*/
-		avlSortAlfa(printCompName,M->motherRoot->rootAlfa);	
+		/*avlSortAlfa(printCompName,M->motherRoot->rootAlfa);*/	
 		/*Se for null, entao ja se verificou que nao havia mais input*/
 	} else {
 		cpath = getPathComp(modo,M);
 		if (cpath!=NULL){
-			avlSortAlfa(printCompName,cpath->follow->rootAlfa);
+			/*avlSortAlfa(printCompName,cpath->follow->rootAlfa);*/
 		}
-		cleanWhite();
 	}
 
 }	
@@ -165,14 +164,12 @@ void handleDelete(mother *M){
 	avlHead *head;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
 	printf("DELETE\n");
-        pathToBuff(M->bf,modoB);
-	
-	
+        pathToBuff(M->bf,modoB);	
         if (nullBuff(M->bf)){ /*"delete" invocado sem argumentos*/
                 avlPostOrder(freeCompR,M->motherRoot->rootOrder);
 		modoB = ZERO; /*reutilizacao da var*/
+		free(M->motherRoot);
 		M->motherRoot = initHead(&modoB);
-		/*Se for null, entao ja se verificou que nao havia mais input*/
         } else {
 		buffSwitchComp(M->bf);
                 head = getDeleteAVL(M);
@@ -182,7 +179,6 @@ void handleDelete(mother *M){
 			setSizeBuffStart(M->bf,ZERO);
 			head = deleteComp(head,M->bf);
 		}
-                cleanWhite();
         }
 
 }

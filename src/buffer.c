@@ -26,7 +26,6 @@ buff* initBuffer(){
 	 * Nunca havera "No Memory" neste processo*/
 	buff* bf;
 	bf = (buff*) malloc(sizeof(buff));
-	bf->command = (char*) malloc(sizeof(char)*MAX_COMMAND_SIZE);
 	bf->bigBuff = (char*) malloc(sizeof(char)*BUFF_SIZE);
 	bf->bigBuff2 = (char*) malloc(sizeof(char)*BUFF_SIZE);
 	bf->start = 0;
@@ -38,8 +37,7 @@ buff* initBuffer(){
 
 /* Guarda no buffer o comando recebido pelo input*/
 void commandToBuff(buff *bf){
-	printf("PREV Command->%s\n",bf->command);
-	scanf("%s",bf->command);
+	scanf("%s",bf->bigBuff);
 	
 }
 
@@ -47,13 +45,17 @@ void commandToBuff(buff *bf){
  * modoB indica se e para verificar se ha path ou nao*/
 void pathToBuff(buff *bf, short modoB){
 	char c;
+	unsigned short i=1;
 	bf->start = 0;
 	bf->end = 0;	
 	if (modoB){ /*verificar se o stdin nao esta "vazio"*/
 		c = cleanWhite();
 		if (c!='\n'){
 			*(bf->bigBuff) = c;
-			scanf("%s",&(bf->bigBuff[1]));
+			while ((c=getchar())!='\n'){
+				*(bf->bigBuff +i) = c;
+				i++;	
+			}
 		} else {
 			resetBuff(bf);
 		}
@@ -140,7 +142,6 @@ unsigned long getBuffOcc(buff* bf){
 
 /* Faz free ao buffer*/
 void freeBuffer(buff *bf){
-	free(bf->command);
 	free(bf->bigBuff);
 	free(bf->bigBuff2);
 	free(bf);
@@ -178,11 +179,14 @@ void removeFromBuff(buff* bf){
 void buffSwitchComp(buff* bf){
         unsigned short i=0;
         unsigned short a=0;
-
-
+	
+	printf("Buffer->%s\n",bf->bigBuff);
+	printf("Buffer2->%s\n",bf->bigBuff2);
+		
         for (;bf->bigBuff[i]!='\0';i++){
                 if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){
                         a=i;
+			printf("O que vem a seguir? ->%d\n",bf->bigBuff[i+1]);
                 }
         }
         if (a==ZERO && bf->bigBuff[a] != '/'){
@@ -192,10 +196,21 @@ void buffSwitchComp(buff* bf){
                 bf->bigBuff[a++] = '\0';
                 strcpy(bf->bigBuff2,&(bf->bigBuff[a]));
         }
-	printf("B1->%s\nB2->%s\n",bf->bigBuff,bf->bigBuff2);
+	printf("NEW\n");
+	printf("Buffer->%s\n",bf->bigBuff);
+        printf("Buffer2->%s\n",bf->bigBuff2);
+
 	i = i-a;
+	if (i<=0){
+		printf("Pai foi a um \n");
+		printf("i  = %d\n",i);
+	} else {
+		printf("maedoceu\n");
+	}
+	printf("b22 ->%s.\ni=%d\n",bf->bigBuff2,i);
         while (bf->bigBuff2[--i]=='/'){
                 /*so quero o nome do componente (sem '/')*/
                 bf->bigBuff2[i]='\0';
+		i--;
         }
 }

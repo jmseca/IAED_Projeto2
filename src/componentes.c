@@ -566,10 +566,8 @@ avlHead* getDeleteAVL(mother* M){
 /* Travessia in-order da AVL alfabetica, com uma funcao a correr*/
 void avlSortAlfa(void (*f)(comp*),comp* c1){
 	if (c1==NULL){ 
-		printf("Ta no Null\n");
 		return;
 	}
-	printf("bazou do NUll\n");
 	avlSortAlfa(f,c1->alfaLeft);
 	(*f)(c1);
 	avlSortAlfa(f,c1->alfaRight);
@@ -658,7 +656,6 @@ void findValueR(comp* c1, buff* bf){
 
 /* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
 void freeHead(avlHead *head){
-	printf("head occ->%ld\n",head->occ);
 	if (head->occ){ /*tem componentes filho*/
 		avlPostOrder(freeCompR,head->rootOrder);
 	}
@@ -678,9 +675,7 @@ void freeCompR(comp *c1){
 
 
 void freeMother(mother *M){
-	printf("is it buffer?\n");
 	freeBuffer(M->bf);
-	printf("Buffer is fine\n");
 	freeHead(M->motherRoot);
 	free(M);
 }

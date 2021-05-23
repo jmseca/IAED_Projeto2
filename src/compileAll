@@ -2,4 +2,4 @@
 
 
 
-gcc -o proj2 *.c  -ansi -pedantic -g -Wall -Werror -Wextra
+gcc -o proj2 *.c  -ansi -pedantic -g  -Wall -Werror -Wextra
