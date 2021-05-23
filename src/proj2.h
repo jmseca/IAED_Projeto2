@@ -72,8 +72,8 @@ typedef struct componente {
 	char* nome;
 	char* valor;
 	unsigned long occ;
-	unsigned int alfaHeight;
-	unsigned int orderHeight;
+	unsigned short alfaHeight;
+	unsigned short orderHeight;
 	struct componente *alfaRight;
 	struct componente *alfaLeft;
 	struct componente *orderRight;
@@ -165,7 +165,7 @@ mother* initMother();
 
 void freePreComp(comp *c1);
 
-int height(comp* h, char modo);
+unsigned short height(comp* h, char modo);
 
 comp* rotL(comp* h, char modo);
 
