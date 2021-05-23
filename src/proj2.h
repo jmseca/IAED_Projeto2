@@ -49,8 +49,6 @@
 #define SEARCH 427
 #define DELETE 410
 
-#define APAGAR "jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX/CIaBav[`ZTVcTCz/Lm@UZxDr]JKkaoV/Ix`CLC_Y`P_jcFI/xc[VcyzgQRAdhrt"
-
 
 /*STRUCTS*/
 

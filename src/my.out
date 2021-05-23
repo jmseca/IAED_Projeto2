@@ -1,108 +1,7698 @@
+==11179== Memcheck, a memory error detector
+==11179== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11179== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11179== Command: ./proj2
+==11179== 
 PRINT
 SET
 FIND
-Comp->GaIUwkkycqszB\V__compare->GaIUwkkycqszB\V
-Comp->XPUd^KoBnhVzPxw__compare->XPUd^KoBnhVzPxw
-Comp->]ZmYR@biaSzKKFN__compare->]ZmYR@biaSzKKFN
-Comp->muCCGoSw[@GYaiS__compare->muCCGoSw[@GYaiS
-Comp->AjcDytQYCJ]IfWG__compare->AjcDytQYCJ]IfWG
-Comp->zsZ]fdeYaRxuOhl__compare->zsZ]fdeYaRxuOhl
-Comp->@iF`F^iBdBTCBki__compare->@iF`F^iBdBTCBki
 1099
 SET
-Comp->GaIUwkkycqszB\V__compare->LrwSRphvpiXhrHa
 LIST
-Comp->GaIUwkkycqszB\V__compare->GaIUwkkycqszB\V
-Comp->XPUd^KoBnhVzPxw__compare->XPUd^KoBnhVzPxw
-Comp->]ZmYR@biaSzKKFN__compare->]ZmYR@biaSzKKFN
-Comp->muCCGoSw[@GYaiS__compare->muCCGoSw[@GYaiS
-AjcDytQYCJ]IfWG
 FIND
-Comp->GaIUwkkycqszB\V__compare->GaIUwkkycqszB\V
-Comp->XPUd^KoBnhVzPxw__compare->XPUd^KoBnhVzPxw
-Comp->]ZmYR@biaSzKKFN__compare->]ZmYR@biaSzKKFN
 no data
 SET
-Comp->GaIUwkkycqszB\V__compare->VIr_aVTxJEjiJGX
-Comp->LrwSRphvpiXhrHa__compare->VIr_aVTxJEjiJGX
 PRINT
-/GaIUwkkycqszB\V/XPUd^KoBnhVzPxw/]ZmYR@biaSzKKFN/muCCGoSw[@GYaiS/AjcDytQYCJ]IfWG/zsZ]fdeYaRxuOhl/@iF`F^iBdBTCBki 1099
-/LrwSRphvpiXhrHa 2909
-/VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG/k]B_^cSmAcpxfhZ 4925
 SET
-Comp->LrwSRphvpiXhrHa__compare->uVEtKsZbKZMaBiy
-Comp->VIr_aVTxJEjiJGX__compare->uVEtKsZbKZMaBiy
 FIND
-Comp->LrwSRphvpiXhrHa__compare->uVEtKsZbKZMaBiy
-Comp->VIr_aVTxJEjiJGX__compare->uVEtKsZbKZMaBiy
-Comp->uVEtKsZbKZMaBiy__compare->uVEtKsZbKZMaBiy
-Comp->\MRoznlWhfKFo[O__compare->\MRoznlWhfKFo[O
-Comp->CG@eq[qDPojL@OH__compare->CG@eq[qDPojL@OH
-Comp->uV^fqYOgRnHYQiW__compare->uV^fqYOgRnHYQiW
-Comp->lvANf[[CocYuvlC__compare->lvANf[[CocYuvlC
-Comp->JRsrtpKbxszkk____compare->JRsrtpKbxszkk__
 no data
 SET
-Comp->LrwSRphvpiXhrHa__compare->yyt^IVLWFvuqgL`
-Comp->VIr_aVTxJEjiJGX__compare->yyt^IVLWFvuqgL`
-Comp->uVEtKsZbKZMaBiy__compare->yyt^IVLWFvuqgL`
 FIND
-Comp->LrwSRphvpiXhrHa__compare->yyt^IVLWFvuqgL`
-Comp->uVEtKsZbKZMaBiy__compare->yyt^IVLWFvuqgL`
-Comp->yyt^IVLWFvuqgL`__compare->yyt^IVLWFvuqgL`
-Comp->cfyimffJx^VZPVu__compare->cfyimffJx^VZPVu
 no data
 SET
-Comp->LrwSRphvpiXhrHa__compare->aQxvSviBzdBGu[x
-Comp->uVEtKsZbKZMaBiy__compare->aQxvSviBzdBGu[x
-Comp->VIr_aVTxJEjiJGX__compare->aQxvSviBzdBGu[x
 FIND
-Comp->VIr_aVTxJEjiJGX__compare->uVEtKsZbKZMaBiy
-Comp->uVEtKsZbKZMaBiy__compare->uVEtKsZbKZMaBiy
-Comp->\MRoznlWhfKFo[O__compare->\MRoznlWhfKFo[O
-Comp->CG@eq[qDPojL@OH__compare->CG@eq[qDPojL@OH
 no data
 SET
-Comp->VIr_aVTxJEjiJGX__compare->tgF\kHScOl@Eg^[
-Comp->uVEtKsZbKZMaBiy__compare->tgF\kHScOl@Eg^[
-Comp->aQxvSviBzdBGu[x__compare->tgF\kHScOl@Eg^[
 DELETE
-Dell normal
-Root Alfa name -> VIr_aVTxJEjiJGX
-Buff->VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG
-Start = 0, End = 15
-VIr_aVTxJEjiJGX
-Comp->VIr_aVTxJEjiJGX__compare->VIr_aVTxJEjiJGX
-Buff->VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG
-Start = 16, End = 31
-wrM]tk@e\wlZ]rG
-Comp->wrM]tk@e\wlZ]rG__compare->wrM]tk@e\wlZ]rG
-Comp->k]B_^cSmAcpxfhZ__compare->k]B_^cSmAcpxfhZ
+Buffer->VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG/k]B_^cSmAcpxfhZwetPdH/OgsdeIIeZ\BypVT/CfSfFmjYjaSliwn//H_eOIb]s^_H`bMU/QtxSWxNjP@THOd^///v^o]SBYMSCrBfAC//DBTBJ_NIBm\VWAD/bvvcImagYGaK]RV
+Buffer2->7969
+O que vem a seguir? ->119
+O que vem a seguir? ->107
+O que vem a seguir? ->79
+O que vem a seguir? ->67
+O que vem a seguir? ->72
+O que vem a seguir? ->81
+O que vem a seguir? ->118
+O que vem a seguir? ->68
+O que vem a seguir? ->98
+NEW
+Buffer->VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG/k]B_^cSmAcpxfhZwetPdH/OgsdeIIeZ\BypVT/CfSfFmjYjaSliwn//H_eOIb]s^_H`bMU/QtxSWxNjP@THOd^///v^o]SBYMSCrBfAC//DBTBJ_NIBm\VWAD
+Buffer2->bvvcImagYGaK]RV
+maedoceu
+b22 ->bvvcImagYGaK]RV.
+i=15
+not found
 SET
-Comp->VIr_aVTxJEjiJGX__compare->CLYOgcATbefZNpm
-Comp->LrwSRphvpiXhrHa__compare->CLYOgcATbefZNpm
-Comp->GaIUwkkycqszB\V__compare->CLYOgcATbefZNpm
 SET
-Comp->VIr_aVTxJEjiJGX__compare->f@SkPO[ClpTCqTi
-Comp->uVEtKsZbKZMaBiy__compare->f@SkPO[ClpTCqTi
-Comp->aQxvSviBzdBGu[x__compare->f@SkPO[ClpTCqTi
-Comp->tgF\kHScOl@Eg^[__compare->f@SkPO[ClpTCqTi
 LIST
-CLYOgcATbefZNpm
-GaIUwkkycqszB\V
-LrwSRphvpiXhrHa
-VIr_aVTxJEjiJGX
-aQxvSviBzdBGu[x
-f@SkPO[ClpTCqTi
-tgF\kHScOl@Eg^[
-uVEtKsZbKZMaBiy
-yyt^IVLWFvuqgL`
 PRINT
-/GaIUwkkycqszB\V/XPUd^KoBnhVzPxw/]ZmYR@biaSzKKFN/muCCGoSw[@GYaiS/AjcDytQYCJ]IfWG/zsZ]fdeYaRxuOhl/@iF`F^iBdBTCBki 1099
-/LrwSRphvpiXhrHa 2909
-/uVEtKsZbKZMaBiy/\MRoznlWhfKFo[O/CG@eq[qDPojL@OH/uV^fqYOgRnHYQiW/lvANf[[CocYuvlC/JRsrtpKbxszkk__/BK@NQ\RNbzYEsB` 8552
-/yyt^IVLWFvuqgL`/cfyimffJx^VZPVu/tJAxQe]@BWdjX`k/X\eWaVUInXXWQfL/KeU\gZfkPKvZWxP 1619
-/aQxvSviBzdBGu[x/_HcmmSyaZcvxrLZ/^nUbd^QtCezMAQw/j`JSD_qWXRplyMJ/T[DikAQAsHDgc`u/Iu@akRIdmnjY^ML/F]O@q@EISlAW@Ix 4621
-/tgF\kHScOl@Eg^[/wcAs@v[nnc`j_`r/VMahrWnjGwetPdH/OgsdeIIeZ\BypVT/CfSfFmjYjaSliwn/H_eOIb]s^_H`bMU/QtxSWxNjP@THOd^/v^o]SBYMSCrBfAC/DBTBJ_NIBm\VWAD/bvvcImagYGaK]RV 7969
-/CLYOgcATbefZNpm/[RBS]n@]lhaPNHu/LWuS`tuT]\o]^nF/UACMteSPKXHRBiO/BUMsqKdUHWFEmTU/H\\[EXHl@rpzCso 3927
-/f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaena
+SET
+PRINT
+SET
+PRINT
+DELETE
+FIND
+not found
+FIND
+not found
+DELETE
+Buffer->tgF\kHScOl@Eg^[/wcAs@v[nnc`j_`r/VMahrWnjGwetPdH/OgsdeIIeZ\BypVT/BUMsqKdUHWFEmTU/H\\[EXHl@rpzCso
+Buffer2->
+O que vem a seguir? ->119
+O que vem a seguir? ->86
+O que vem a seguir? ->79
+O que vem a seguir? ->66
+O que vem a seguir? ->72
+NEW
+Buffer->tgF\kHScOl@Eg^[/wcAs@v[nnc`j_`r/VMahrWnjGwetPdH/OgsdeIIeZ\BypVT/BUMsqKdUHWFEmTU
+Buffer2->H\\[EXHl@rpzCso
+maedoceu
+b22 ->H\\[EXHl@rpzCso.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->yyt^IVLWFvuqgL`/cfyimffJx^VZPVu/tJAxQe]@BWdjX`k/X\eWaVUInXXWQfLs]UM`uXm^///VahZhyiNsf`cpfH///XoN\\DXqoybTfXX//BdKfwRwS[WIPCCL/yfrnRiXHYMQzGJi//D_x`FdV]_Icmo_N//`@tokaBe]OMB@Pi
+Buffer2->787
+O que vem a seguir? ->99
+O que vem a seguir? ->116
+O que vem a seguir? ->88
+O que vem a seguir? ->86
+O que vem a seguir? ->88
+O que vem a seguir? ->66
+O que vem a seguir? ->121
+O que vem a seguir? ->68
+O que vem a seguir? ->96
+NEW
+Buffer->yyt^IVLWFvuqgL`/cfyimffJx^VZPVu/tJAxQe]@BWdjX`k/X\eWaVUInXXWQfLs]UM`uXm^///VahZhyiNsf`cpfH///XoN\\DXqoybTfXX//BdKfwRwS[WIPCCL/yfrnRiXHYMQzGJi//D_x`FdV]_Icmo_N/
+Buffer2->`@tokaBe]OMB@Pi
+maedoceu
+b22 ->`@tokaBe]OMB@Pi.
+i=15
+not found
+SET
+FIND
+not found
+FIND
+no data
+SET
+DELETE
+FIND
+not found
+SET
+SET
+SET
+SET
+LIST
+not found
+PRINT
+LIST
+not found
+DELETE
+Buffer->AMiXmNeRQBCGeXr/kP\HZbzOnPsf@ri/Emmk\_E@uasnv]s/siZhOQs]UM`uXm^/VahZhyiNsf`cpfH/XoN\\DXqoybTfXX/BdKfwRwS[WIPCCLCC^Y_^\//YScqW^ZAWyzOhUL//wkNvaL_[snIOeBT
+Buffer2->
+O que vem a seguir? ->107
+O que vem a seguir? ->69
+O que vem a seguir? ->115
+O que vem a seguir? ->86
+O que vem a seguir? ->88
+O que vem a seguir? ->66
+O que vem a seguir? ->89
+O que vem a seguir? ->119
+NEW
+Buffer->AMiXmNeRQBCGeXr/kP\HZbzOnPsf@ri/Emmk\_E@uasnv]s/siZhOQs]UM`uXm^/VahZhyiNsf`cpfH/XoN\\DXqoybTfXX/BdKfwRwS[WIPCCLCC^Y_^\//YScqW^ZAWyzOhUL/
+Buffer2->wkNvaL_[snIOeBT
+maedoceu
+b22 ->wkNvaL_[snIOeBT.
+i=15
+not found
+LIST
+DELETE
+PRINT
+LIST
+not found
+SET
+DELETE
+SET
+SET
+LIST
+not found
+PRINT
+DELETE
+Buffer->tS^@UkDyNzmWo]e/jAXboEfCFncIoWY/`m]hGbD^EK[Ktlw/@EyZwpN_]Ylc`U`/sUgGnjvhdbnZSmw/BERsrzqeIwiBdAC/ZXlY\ZR_rP`ptmT/YGgndOw^iRivcGd/Vh`vJYKzbDOBUlv/d`SLDK`EuzA[hPsK`EuzA[hPs
+Buffer2->
+O que vem a seguir? ->106
+O que vem a seguir? ->96
+O que vem a seguir? ->64
+O que vem a seguir? ->115
+O que vem a seguir? ->66
+O que vem a seguir? ->90
+O que vem a seguir? ->89
+O que vem a seguir? ->86
+O que vem a seguir? ->100
+NEW
+Buffer->tS^@UkDyNzmWo]e/jAXboEfCFncIoWY/`m]hGbD^EK[Ktlw/@EyZwpN_]Ylc`U`/sUgGnjvhdbnZSmw/BERsrzqeIwiBdAC/ZXlY\ZR_rP`ptmT/YGgndOw^iRivcGd/Vh`vJYKzbDOBUlv
+Buffer2->d`SLDK`EuzA[hPsK`EuzA[hPs
+maedoceu
+b22 ->d`SLDK`EuzA[hPsK`EuzA[hPs.
+i=25
+not found
+SET
+SET
+DELETE
+Buffer->uVEtKsZbKZMaBiy/\MRoznlWhfKFo[O/CG@eq[qDPojL@OH/uV^fqYOgRnHYQiW/lvANf[[CocYuvlCdeMray
+Buffer2->8753
+O que vem a seguir? ->92
+O que vem a seguir? ->67
+O que vem a seguir? ->117
+O que vem a seguir? ->108
+NEW
+Buffer->uVEtKsZbKZMaBiy/\MRoznlWhfKFo[O/CG@eq[qDPojL@OH/uV^fqYOgRnHYQiW
+Buffer2->lvANf[[CocYuvlCdeMray
+maedoceu
+b22 ->lvANf[[CocYuvlCdeMray.
+i=21
+not found
+PRINT
+SET
+FIND
+not found
+SET
+SET
+SET
+SET
+LIST
+not found
+SET
+SET
+SET
+FIND
+not found
+FIND
+not found
+SET
+SET
+LIST
+not found
+SET
+PRINT
+FIND
+not found
+SET
+DELETE
+PRINT
+SET
+SET
+FIND
+not found
+FIND
+not found
+SET
+PRINT
+SET
+SET
+SET
+SET
+SET
+SET
+PRINT
+PRINT
+FIND
+not found
+SET
+LIST
+not found
+LIST
+not found
+SET
+DELETE
+Buffer->`JPjmC_IeaGRuvG/eRk\dKuHJJTMc]T/[yDcAv[qkcOFcaU/M^_rSGozbECFu_n/EcePOojhunYSFzr/AAdUbhDGiNNrYZe/ocBYPDZgRkXaRDS
+Buffer2->5468
+O que vem a seguir? ->101
+O que vem a seguir? ->91
+O que vem a seguir? ->77
+O que vem a seguir? ->69
+O que vem a seguir? ->65
+O que vem a seguir? ->111
+NEW
+Buffer->`JPjmC_IeaGRuvG/eRk\dKuHJJTMc]T/[yDcAv[qkcOFcaU/M^_rSGozbECFu_n/EcePOojhunYSFzr/AAdUbhDGiNNrYZe
+Buffer2->ocBYPDZgRkXaRDS
+maedoceu
+b22 ->ocBYPDZgRkXaRDS.
+i=15
+not found
+SET
+LIST
+not found
+FIND
+not found
+SET
+DELETE
+SET
+SET
+FIND
+not found
+SET
+LIST
+not found
+FIND
+not found
+LIST
+LIST
+not found
+LIST
+not found
+FIND
+no data
+SET
+SET
+SET
+SET
+DELETE
+Buffer->upvOkRzbnCTZDOp/^hMQfaGBObeSfD_/ujMTJoVQ[FpbuURqtGUul//Alr^drZr\dCfOJb//msLLzafKZGHgJ`\/locj_v`RgXpskXI///WanhubtV@OZe_ws//AmaXuBgGwAOzCu_//hS]AtgXspRliBgO///dbM@\d@WFGLJIhL
+Buffer2->1747
+O que vem a seguir? ->94
+O que vem a seguir? ->117
+O que vem a seguir? ->65
+O que vem a seguir? ->109
+O que vem a seguir? ->108
+O que vem a seguir? ->87
+O que vem a seguir? ->65
+O que vem a seguir? ->104
+O que vem a seguir? ->100
+NEW
+Buffer->upvOkRzbnCTZDOp/^hMQfaGBObeSfD_/ujMTJoVQ[FpbuURqtGUul//Alr^drZr\dCfOJb//msLLzafKZGHgJ`\/locj_v`RgXpskXI///WanhubtV@OZe_ws//AmaXuBgGwAOzCu_//hS]AtgXspRliBgO//
+Buffer2->dbM@\d@WFGLJIhL
+maedoceu
+b22 ->dbM@\d@WFGLJIhL.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+FIND
+not found
+SET
+FIND
+not found
+SET
+SET
+SET
+FIND
+not found
+DELETE
+FIND
+not found
+SET
+SET
+DELETE
+Buffer->GuC^FrVDb]XeGyc/tW]C^xyzZT_@Z[n/_`pMEeJI`tbjLEZ/k^rcJUIWrmSmopS/GKfjKnMaw`Z]okXT\jvT/kjbpV\JyYVBdz[V/[Fj`tDiSAsiOcny///GUfFnVEAUHlrWib//ELKws_AumMHvwvU
+Buffer2->6767
+O que vem a seguir? ->116
+O que vem a seguir? ->95
+O que vem a seguir? ->107
+O que vem a seguir? ->71
+O que vem a seguir? ->107
+O que vem a seguir? ->91
+O que vem a seguir? ->71
+O que vem a seguir? ->69
+NEW
+Buffer->GuC^FrVDb]XeGyc/tW]C^xyzZT_@Z[n/_`pMEeJI`tbjLEZ/k^rcJUIWrmSmopS/GKfjKnMaw`Z]okXT\jvT/kjbpV\JyYVBdz[V/[Fj`tDiSAsiOcny///GUfFnVEAUHlrWib/
+Buffer2->ELKws_AumMHvwvU
+maedoceu
+b22 ->ELKws_AumMHvwvU.
+i=15
+not found
+LIST
+not found
+SET
+SET
+SET
+SET
+LIST
+not found
+DELETE
+Buffer->AMiXmNeRQBCGeXr/kP\HZbzOnPsf@ri/tQchGAzSjwql@Sl/zQrJftYzauueqlU/h\DPqlJ@mrLNv[]\`mp_eYH//WM`APZkUjvCcY`O///BbRoGLyDKqKEliI
+Buffer2->2539
+O que vem a seguir? ->107
+O que vem a seguir? ->116
+O que vem a seguir? ->122
+O que vem a seguir? ->104
+O que vem a seguir? ->87
+O que vem a seguir? ->66
+NEW
+Buffer->AMiXmNeRQBCGeXr/kP\HZbzOnPsf@ri/tQchGAzSjwql@Sl/zQrJftYzauueqlU/h\DPqlJ@mrLNv[]\`mp_eYH//WM`APZkUjvCcY`O//
+Buffer2->BbRoGLyDKqKEliI
+maedoceu
+b22 ->BbRoGLyDKqKEliI.
+i=15
+not found
+SET
+LIST
+SET
+PRINT
+SET
+SET
+SET
+PRINT
+SET
+LIST
+SET
+SET
+SET
+LIST
+not found
+SET
+SET
+SET
+DELETE
+SET
+FIND
+not found
+SET
+FIND
+not found
+SET
+FIND
+not found
+SET
+LIST
+not found
+SET
+SET
+PRINT
+SET
+DELETE
+Buffer->nnAYWL[zsr`kNXw/BrDwHVXeqtgrcuW/EwCZMVr@cqtGUul/Alr^drZr\dCfOJb/msLLzafKZGHgJ`\/locj_v`RgXpskXI/WanhubtV@OZe_ws/AmaXuBgGwAOzCu_^Vwhzegdd/lccx\QvZB^g_mcJ///ZBOoP^Wes`XcFgE
+Buffer2->7125
+O que vem a seguir? ->66
+O que vem a seguir? ->69
+O que vem a seguir? ->65
+O que vem a seguir? ->109
+O que vem a seguir? ->108
+O que vem a seguir? ->87
+O que vem a seguir? ->65
+O que vem a seguir? ->108
+O que vem a seguir? ->90
+NEW
+Buffer->nnAYWL[zsr`kNXw/BrDwHVXeqtgrcuW/EwCZMVr@cqtGUul/Alr^drZr\dCfOJb/msLLzafKZGHgJ`\/locj_v`RgXpskXI/WanhubtV@OZe_ws/AmaXuBgGwAOzCu_^Vwhzegdd/lccx\QvZB^g_mcJ//
+Buffer2->ZBOoP^Wes`XcFgE
+maedoceu
+b22 ->ZBOoP^Wes`XcFgE.
+i=15
+not found
+SET
+SET
+SET
+FIND
+not found
+PRINT
+SET
+PRINT
+FIND
+not found
+FIND
+not found
+SET
+LIST
+not found
+LIST
+SET
+SET
+SET
+LIST
+not found
+DELETE
+SET
+SET
+DELETE
+Buffer->f@SkPO[ClpTCqTiF
+Buffer2->5327
+NEW
+Buffer->
+Buffer2->f@SkPO[ClpTCqTiF
+maedoceu
+b22 ->f@SkPO[ClpTCqTiF.
+i=16
+not found
+FIND
+not found
+SET
+SET
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ@eEar^v/FccouubraUXPji]/BQcUKdFoLGHOtrD/A^rjkWtNosxPTYZ/RI@fLG`KRdLjsLl/WZtP]JnDjKxqgDR///HlO[Z^ye^N]qNPY
+Buffer2->685
+O que vem a seguir? ->65
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+O que vem a seguir? ->70
+O que vem a seguir? ->66
+O que vem a seguir? ->65
+O que vem a seguir? ->82
+O que vem a seguir? ->87
+O que vem a seguir? ->72
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ@eEar^v/FccouubraUXPji]/BQcUKdFoLGHOtrD/A^rjkWtNosxPTYZ/RI@fLG`KRdLjsLl/WZtP]JnDjKxqgDR//
+Buffer2->HlO[Z^ye^N]qNPY
+maedoceu
+b22 ->HlO[Z^ye^N]qNPY.
+i=15
+not found
+PRINT
+FIND
+not found
+SET
+SET
+SET
+DELETE
+Buffer->O@zIiXfbEG`LARW/twNOJR^ta_sGxHRcrIL
+Buffer2->4305
+O que vem a seguir? ->116
+NEW
+Buffer->O@zIiXfbEG`LARW
+Buffer2->twNOJR^ta_sGxHRcrIL
+maedoceu
+b22 ->twNOJR^ta_sGxHRcrIL.
+i=19
+not found
+PRINT
+LIST
+SET
+SET
+LIST
+not found
+SET
+SET
+SET
+FIND
+not found
+SET
+SET
+PRINT
+FIND
+not found
+SET
+LIST
+not found
+SET
+SET
+SET
+SET
+PRINT
+LIST
+not found
+SET
+SET
+LIST
+not found
+DELETE
+Buffer->ndXXljtdY[kmLEo/UMvV\\nAQoXgRzh/RKFsDEQVLEbUz_t/Q`PEwLXlqA_yByEMylHD/nXMmrf^odKSr^Dv//kMAFOOmxEOJ\Dl^
+Buffer2->621
+O que vem a seguir? ->85
+O que vem a seguir? ->82
+O que vem a seguir? ->81
+O que vem a seguir? ->110
+O que vem a seguir? ->107
+NEW
+Buffer->ndXXljtdY[kmLEo/UMvV\\nAQoXgRzh/RKFsDEQVLEbUz_t/Q`PEwLXlqA_yByEMylHD/nXMmrf^odKSr^Dv/
+Buffer2->kMAFOOmxEOJ\Dl^
+maedoceu
+b22 ->kMAFOOmxEOJ\Dl^.
+i=15
+not found
+LIST
+not found
+DELETE
+PRINT
+DELETE
+Buffer->tsJ^roN[vLd^KWI/]ZfDsDsHHJbseMC/zHk]xxiHxEwqKQm/MAUesvSpHfHeOVt/ZFRGzwdhoIN^CZ_/blOAK_LwH]ptjRO/BNMuuttHvOgztJbTINcBSNpOO///EVBBDsmWqOMu@lf///ZZHlBbCVRrYGEZy/ibe\oBHdY`yMcDf
+Buffer2->
+O que vem a seguir? ->93
+O que vem a seguir? ->122
+O que vem a seguir? ->77
+O que vem a seguir? ->90
+O que vem a seguir? ->98
+O que vem a seguir? ->66
+O que vem a seguir? ->69
+O que vem a seguir? ->90
+O que vem a seguir? ->105
+NEW
+Buffer->tsJ^roN[vLd^KWI/]ZfDsDsHHJbseMC/zHk]xxiHxEwqKQm/MAUesvSpHfHeOVt/ZFRGzwdhoIN^CZ_/blOAK_LwH]ptjRO/BNMuuttHvOgztJbTINcBSNpOO///EVBBDsmWqOMu@lf///ZZHlBbCVRrYGEZy
+Buffer2->ibe\oBHdY`yMcDf
+maedoceu
+b22 ->ibe\oBHdY`yMcDf.
+i=15
+not found
+SET
+SET
+SET
+PRINT
+SET
+SET
+LIST
+not found
+PRINT
+SET
+LIST
+not found
+SET
+PRINT
+DELETE
+Buffer->U]`vAEKMU__aG`R/R]^_M[alZC_AZVc/tQchGAzSjwql@Sl/zQrJftYzauueqlU/h\DPqlJ@mrLNv[]/XkYiw\DPEAxVfPg/`rfh[_]FazA@AmMYJQvKIjkse///zSjBk@pRqH]v\n_/dqbOFnvrC@MaqFe/LE`ow^d_uJYHVnO
+Buffer2->
+O que vem a seguir? ->82
+O que vem a seguir? ->116
+O que vem a seguir? ->122
+O que vem a seguir? ->104
+O que vem a seguir? ->88
+O que vem a seguir? ->96
+O que vem a seguir? ->122
+O que vem a seguir? ->100
+O que vem a seguir? ->76
+NEW
+Buffer->U]`vAEKMU__aG`R/R]^_M[alZC_AZVc/tQchGAzSjwql@Sl/zQrJftYzauueqlU/h\DPqlJ@mrLNv[]/XkYiw\DPEAxVfPg/`rfh[_]FazA@AmMYJQvKIjkse///zSjBk@pRqH]v\n_/dqbOFnvrC@MaqFe
+Buffer2->LE`ow^d_uJYHVnO
+maedoceu
+b22 ->LE`ow^d_uJYHVnO.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+PRINT
+DELETE
+Buffer->AC[qdZ[hld\\TVU/oUbUe@LgiKQpQpgRILwV///K_IODl`UcvIxtrU///MxNNdGMyVl[S^BV///RWRZlF\zUl^YAdH/sZUbchYRLtIOaod///rpEsHHUJtjJBl^@
+Buffer2->
+O que vem a seguir? ->111
+O que vem a seguir? ->75
+O que vem a seguir? ->77
+O que vem a seguir? ->82
+O que vem a seguir? ->115
+O que vem a seguir? ->114
+NEW
+Buffer->AC[qdZ[hld\\TVU/oUbUe@LgiKQpQpgRILwV///K_IODl`UcvIxtrU///MxNNdGMyVl[S^BV///RWRZlF\zUl^YAdH/sZUbchYRLtIOaod//
+Buffer2->rpEsHHUJtjJBl^@
+maedoceu
+b22 ->rpEsHHUJtjJBl^@.
+i=15
+not found
+PRINT
+DELETE
+Buffer->lYJLKKoN`JvFBZc/fURzJi]cEWRr_PU/SeDLvZzAEczbsfL/FjBrKSriyKO_dGX/mdkAMhIAsY^wIWYlF\zUl^YAdH/sZUbchYRLtIOaod//
+Buffer2->
+O que vem a seguir? ->102
+O que vem a seguir? ->83
+O que vem a seguir? ->70
+O que vem a seguir? ->109
+O que vem a seguir? ->115
+NEW
+Buffer->lYJLKKoN`JvFBZc/fURzJi]cEWRr_PU/SeDLvZzAEczbsfL/FjBrKSriyKO_dGX/mdkAMhIAsY^wIWYlF\zUl^YAdH
+Buffer2->sZUbchYRLtIOaod//
+maedoceu
+b22 ->sZUbchYRLtIOaod//.
+i=17
+not found
+SET
+SET
+SET
+DELETE
+Buffer->bzXkSyvK[AXDkSR/]hCcUiHMsFGqO[Q/BTrXgIJKBbXCLVI/LiOo@fCGUhAvYjfkaoV/Ix`CLC_Y`P_jcFI/xc[VcyzgQRAdhrt///[VLqNsAnMEji]FN//yNxxzqCOT_eyBf]
+Buffer2->7049
+O que vem a seguir? ->93
+O que vem a seguir? ->66
+O que vem a seguir? ->76
+O que vem a seguir? ->73
+O que vem a seguir? ->120
+O que vem a seguir? ->91
+O que vem a seguir? ->121
+NEW
+Buffer->bzXkSyvK[AXDkSR/]hCcUiHMsFGqO[Q/BTrXgIJKBbXCLVI/LiOo@fCGUhAvYjfkaoV/Ix`CLC_Y`P_jcFI/xc[VcyzgQRAdhrt///[VLqNsAnMEji]FN/
+Buffer2->yNxxzqCOT_eyBf]
+maedoceu
+b22 ->yNxxzqCOT_eyBf].
+i=15
+not found
+PRINT
+DELETE
+SET
+PRINT
+SET
+FIND
+not found
+SET
+SET
+SET
+FIND
+not found
+PRINT
+SET
+SET
+SET
+PRINT
+PRINT
+DELETE
+SET
+SET
+SET
+DELETE
+Buffer->jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX/CIaBav[`ZTVcTCz/Lm@UZxDr]JKkaoV/Ix`CLC_Y`P_jcFI/xc[VcyzgQRAdhrtuDYCWrqK/EhNxV_LGoLJr^wL///U@WDEKlsdqQtBMO
+Buffer2->813
+O que vem a seguir? ->72
+O que vem a seguir? ->67
+O que vem a seguir? ->76
+O que vem a seguir? ->73
+O que vem a seguir? ->120
+O que vem a seguir? ->69
+O que vem a seguir? ->85
+NEW
+Buffer->jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX/CIaBav[`ZTVcTCz/Lm@UZxDr]JKkaoV/Ix`CLC_Y`P_jcFI/xc[VcyzgQRAdhrtuDYCWrqK/EhNxV_LGoLJr^wL//
+Buffer2->U@WDEKlsdqQtBMO
+maedoceu
+b22 ->U@WDEKlsdqQtBMO.
+i=15
+not found
+FIND
+not found
+SET
+FIND
+not found
+SET
+SET
+SET
+SET
+FIND
+not found
+SET
+PRINT
+PRINT
+SET
+PRINT
+SET
+LIST
+LIST
+SET
+SET
+DELETE
+Buffer->l`uGx]KdHmbzlZxmCQ
+Buffer2->1373
+NEW
+Buffer->
+Buffer2->l`uGx]KdHmbzlZxmCQ
+maedoceu
+b22 ->l`uGx]KdHmbzlZxmCQ.
+i=18
+not found
+SET
+DELETE
+Buffer->Zb`YtjmGZZbOYVG/b__f`czrx`rGZxm/c``ao_zLINoNKc]AnK//xooRHEvErDUTFIT/mliS]g[qLmEYVci//zmmhAQQgZuX_PJW
+Buffer2->2226
+O que vem a seguir? ->98
+O que vem a seguir? ->99
+O que vem a seguir? ->120
+O que vem a seguir? ->109
+O que vem a seguir? ->122
+NEW
+Buffer->Zb`YtjmGZZbOYVG/b__f`czrx`rGZxm/c``ao_zLINoNKc]AnK//xooRHEvErDUTFIT/mliS]g[qLmEYVci/
+Buffer2->zmmhAQQgZuX_PJW
+maedoceu
+b22 ->zmmhAQQgZuX_PJW.
+i=15
+not found
+LIST
+not found
+SET
+PRINT
+FIND
+not found
+DELETE
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ/lSFQGxTRAEYvTGA/L_stkhSj@eEar^v/FccouubraUXPji]/BQcUKdFoLGHOtrD/A^rjkWtNosxPTYZ/RI@fLG`KRdLjsLl
+Buffer2->
+O que vem a seguir? ->70
+O que vem a seguir? ->108
+O que vem a seguir? ->76
+O que vem a seguir? ->70
+O que vem a seguir? ->66
+O que vem a seguir? ->65
+O que vem a seguir? ->82
+NEW
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ/lSFQGxTRAEYvTGA/L_stkhSj@eEar^v/FccouubraUXPji]/BQcUKdFoLGHOtrD/A^rjkWtNosxPTYZ
+Buffer2->RI@fLG`KRdLjsLl
+maedoceu
+b22 ->RI@fLG`KRdLjsLl.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+PRINT
+DELETE
+Buffer->XQrJzSjsZmScOkX/hVCzLIZpQxrCS@LpHv/ecvnlnFcXMnxF@o/gsGNBE[dtUph[r@///N`HAtbDNiMGMGDU/JIoWbgGrd]rOCy[///njHFADjFhHXDI_k/DbsIsbW]MMz[r_v///SQD^nMo`@QX`Qqe
+Buffer2->
+O que vem a seguir? ->104
+O que vem a seguir? ->101
+O que vem a seguir? ->103
+O que vem a seguir? ->78
+O que vem a seguir? ->74
+O que vem a seguir? ->110
+O que vem a seguir? ->68
+O que vem a seguir? ->83
+NEW
+Buffer->XQrJzSjsZmScOkX/hVCzLIZpQxrCS@LpHv/ecvnlnFcXMnxF@o/gsGNBE[dtUph[r@///N`HAtbDNiMGMGDU/JIoWbgGrd]rOCy[///njHFADjFhHXDI_k/DbsIsbW]MMz[r_v//
+Buffer2->SQD^nMo`@QX`Qqe
+maedoceu
+b22 ->SQD^nMo`@QX`Qqe.
+i=15
+not found
+SET
+SET
+SET
+SET
+LIST
+SET
+PRINT
+DELETE
+Buffer->d\mNnUTPegrrSir/GondbSLAKBc]VZ]/\F`]VKQVkGBJ_zz/m_jxE@fkSyE\[D^/roPnJATPg@cUpnzKIwuRM@g//XvxXP[OdAHk^HYB/[vvLFyjhYpSmlgy/nMu_wVOnQO`qo\L///EOSYg\sITfzvRDV/hPOshKkAu@cw@Wh
+Buffer2->
+O que vem a seguir? ->71
+O que vem a seguir? ->92
+O que vem a seguir? ->109
+O que vem a seguir? ->114
+O que vem a seguir? ->88
+O que vem a seguir? ->91
+O que vem a seguir? ->110
+O que vem a seguir? ->69
+O que vem a seguir? ->104
+NEW
+Buffer->d\mNnUTPegrrSir/GondbSLAKBc]VZ]/\F`]VKQVkGBJ_zz/m_jxE@fkSyE\[D^/roPnJATPg@cUpnzKIwuRM@g//XvxXP[OdAHk^HYB/[vvLFyjhYpSmlgy/nMu_wVOnQO`qo\L///EOSYg\sITfzvRDV
+Buffer2->hPOshKkAu@cw@Wh
+maedoceu
+b22 ->hPOshKkAu@cw@Wh.
+i=15
+not found
+SET
+LIST
+DELETE
+Buffer->KvNPiyIwYURhc@f/SeiPVjKvrUT^CHj/X@bAsTKXIdbTnYohM///NIgBGwRt_^ddomm/YtByOa]RC_]WOab
+Buffer2->
+O que vem a seguir? ->83
+O que vem a seguir? ->88
+O que vem a seguir? ->78
+O que vem a seguir? ->89
+NEW
+Buffer->KvNPiyIwYURhc@f/SeiPVjKvrUT^CHj/X@bAsTKXIdbTnYohM///NIgBGwRt_^ddomm
+Buffer2->YtByOa]RC_]WOab
+maedoceu
+b22 ->YtByOa]RC_]WOab.
+i=15
+not found
+PRINT
+LIST
+not found
+DELETE
+LIST
+not found
+DELETE
+SET
+SET
+DELETE
+Buffer->\KRzOAXshzV]FG_/fNqPXfizeavmMC\yGg/SLHWBO_`vCird@G/QqaWpFXDrJcwXox
+Buffer2->2187
+O que vem a seguir? ->102
+O que vem a seguir? ->83
+O que vem a seguir? ->81
+NEW
+Buffer->\KRzOAXshzV]FG_/fNqPXfizeavmMC\yGg/SLHWBO_`vCird@G
+Buffer2->QqaWpFXDrJcwXox
+maedoceu
+b22 ->QqaWpFXDrJcwXox.
+i=15
+not found
+SET
+PRINT
+FIND
+not found
+PRINT
+SET
+SET
+DELETE
+Buffer->K`TEAxiQMxbehYc/i^GTcIjvBBYVKw@/m\KOQeBROW^yFOU/avVwtzGJNPzWipF/K\\NZzdjGfRxRGS/VZFMoUoYFBHunug/F]MJfYKyxI]KWCkjGVw_CV//]zJMx\ViAgKtdom/vMHtS@SswqyXWNY/JM@VKDaQ\Q^r@PW
+Buffer2->4284
+O que vem a seguir? ->105
+O que vem a seguir? ->109
+O que vem a seguir? ->97
+O que vem a seguir? ->75
+O que vem a seguir? ->86
+O que vem a seguir? ->70
+O que vem a seguir? ->93
+O que vem a seguir? ->118
+O que vem a seguir? ->74
+NEW
+Buffer->K`TEAxiQMxbehYc/i^GTcIjvBBYVKw@/m\KOQeBROW^yFOU/avVwtzGJNPzWipF/K\\NZzdjGfRxRGS/VZFMoUoYFBHunug/F]MJfYKyxI]KWCkjGVw_CV//]zJMx\ViAgKtdom/vMHtS@SswqyXWNY
+Buffer2->JM@VKDaQ\Q^r@PW
+maedoceu
+b22 ->JM@VKDaQ\Q^r@PW.
+i=15
+not found
+SET
+SET
+PRINT
+LIST
+not found
+SET
+SET
+LIST
+LIST
+not found
+LIST
+DELETE
+Buffer->pCwUaAJrD_KlI`z/tJHRs\vldRbzXiJ/`TYHZAJjqxrp@yI/flWshpe[yGpyhsZ/IbDSWTcFbjsyI]H/v\_AxbRwvALi^@NJauCrHFse
+Buffer2->
+O que vem a seguir? ->116
+O que vem a seguir? ->96
+O que vem a seguir? ->102
+O que vem a seguir? ->73
+O que vem a seguir? ->118
+NEW
+Buffer->pCwUaAJrD_KlI`z/tJHRs\vldRbzXiJ/`TYHZAJjqxrp@yI/flWshpe[yGpyhsZ/IbDSWTcFbjsyI]H
+Buffer2->v\_AxbRwvALi^@NJauCrHFse
+maedoceu
+b22 ->v\_AxbRwvALi^@NJauCrHFse.
+i=24
+not found
+LIST
+not found
+LIST
+not found
+SET
+SET
+SET
+DELETE
+DELETE
+Buffer->sBrBm_zAgccnDHG/wt\]MGgO_pStj[F/iTlTsXzjYDiWmxO^xThL//]hhiDQEhqAJuddR
+Buffer2->
+O que vem a seguir? ->119
+O que vem a seguir? ->105
+O que vem a seguir? ->93
+NEW
+Buffer->sBrBm_zAgccnDHG/wt\]MGgO_pStj[F/iTlTsXzjYDiWmxO^xThL/
+Buffer2->]hhiDQEhqAJuddR
+maedoceu
+b22 ->]hhiDQEhqAJuddR.
+i=15
+not found
+SET
+FIND
+not found
+SET
+LIST
+not found
+SET
+LIST
+not found
+SET
+SET
+SET
+SET
+FIND
+not found
+SET
+SET
+SET
+PRINT
+PRINT
+SET
+DELETE
+Buffer->wnDK_`bEUKNmcPkXo///\\KjQogcivpkIfq///bXclyQ@OL^O^IF`//ch]hmqlhxXy]fhM//dbibSGfd\RsFTeR///uyvcjx_yWS^EX^b///ZEXxyCc@[O[^AkR/qkOYfUvEjUSYvhs
+Buffer2->2020
+O que vem a seguir? ->92
+O que vem a seguir? ->98
+O que vem a seguir? ->99
+O que vem a seguir? ->100
+O que vem a seguir? ->117
+O que vem a seguir? ->90
+O que vem a seguir? ->113
+NEW
+Buffer->wnDK_`bEUKNmcPkXo///\\KjQogcivpkIfq///bXclyQ@OL^O^IF`//ch]hmqlhxXy]fhM//dbibSGfd\RsFTeR///uyvcjx_yWS^EX^b///ZEXxyCc@[O[^AkR
+Buffer2->qkOYfUvEjUSYvhs
+maedoceu
+b22 ->qkOYfUvEjUSYvhs.
+i=15
+not found
+PRINT
+PRINT
+PRINT
+PRINT
+SET
+SET
+SET
+SET
+PRINT
+DELETE
+Buffer->Mz[DX`rIraPjSyd/Vbq@jWngljCYlQ[/ejc]IdVpkikuzHk/GsfNcTotBEYcvjQ/fZIl]wxW_DgpyB[/S[vCvqgvGcOp@Hb/kLCs`sOEmhJozUbp[^Df@Kb\///mLWWKEwb^tDAqJd
+Buffer2->
+O que vem a seguir? ->86
+O que vem a seguir? ->101
+O que vem a seguir? ->71
+O que vem a seguir? ->102
+O que vem a seguir? ->83
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+NEW
+Buffer->Mz[DX`rIraPjSyd/Vbq@jWngljCYlQ[/ejc]IdVpkikuzHk/GsfNcTotBEYcvjQ/fZIl]wxW_DgpyB[/S[vCvqgvGcOp@Hb/kLCs`sOEmhJozUbp[^Df@Kb\//
+Buffer2->mLWWKEwb^tDAqJd
+maedoceu
+b22 ->mLWWKEwb^tDAqJd.
+i=15
+not found
+SET
+LIST
+PRINT
+DELETE
+Buffer->dGLTEB^OkQXv^bw/^qNYyRia_@RILwV/K_IODl`UcvIxtrU/MxNNdGMyVl[S^BV/RWRZlF\zUl^YAdHNPRtp//Oy\JWSNMYUgleMO
+Buffer2->
+O que vem a seguir? ->94
+O que vem a seguir? ->75
+O que vem a seguir? ->77
+O que vem a seguir? ->82
+O que vem a seguir? ->79
+NEW
+Buffer->dGLTEB^OkQXv^bw/^qNYyRia_@RILwV/K_IODl`UcvIxtrU/MxNNdGMyVl[S^BV/RWRZlF\zUl^YAdHNPRtp/
+Buffer2->Oy\JWSNMYUgleMO
+maedoceu
+b22 ->Oy\JWSNMYUgleMO.
+i=15
+not found
+SET
+SET
+LIST
+not found
+LIST
+not found
+SET
+DELETE
+SET
+LIST
+not found
+PRINT
+DELETE
+FIND
+not found
+PRINT
+FIND
+not found
+SET
+SET
+FIND
+not found
+SET
+SET
+PRINT
+SET
+DELETE
+Buffer->[[ZpJ`BJntjuwKoFQ//kbDvcDzvQEzKfam///mUniAYgbF[fRH@w//`DP__s_Ruf]RiPv///aDKQzxu[xJ^bKlL///RAJ]ZVFkSOm][FL/PDJ]SgQEwbMVLcn
+Buffer2->6251
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+O que vem a seguir? ->96
+O que vem a seguir? ->97
+O que vem a seguir? ->82
+O que vem a seguir? ->80
+NEW
+Buffer->[[ZpJ`BJntjuwKoFQ//kbDvcDzvQEzKfam///mUniAYgbF[fRH@w//`DP__s_Ruf]RiPv///aDKQzxu[xJ^bKlL///RAJ]ZVFkSOm][FL
+Buffer2->PDJ]SgQEwbMVLcn
+maedoceu
+b22 ->PDJ]SgQEwbMVLcn.
+i=15
+not found
+PRINT
+DELETE
+Buffer->PZUgXHbLulpLcCV/^Qo@N_vtrdHSjHV/ZUorCD`BRx^xThLfRH@w//`DP__s_Ruf]RiPv///aDKQzxu[xJ^bKlL///RAJ]ZVFkSOm][FL
+Buffer2->
+O que vem a seguir? ->94
+O que vem a seguir? ->90
+O que vem a seguir? ->96
+O que vem a seguir? ->97
+O que vem a seguir? ->82
+NEW
+Buffer->PZUgXHbLulpLcCV/^Qo@N_vtrdHSjHV/ZUorCD`BRx^xThLfRH@w//`DP__s_Ruf]RiPv///aDKQzxu[xJ^bKlL//
+Buffer2->RAJ]ZVFkSOm][FL
+maedoceu
+b22 ->RAJ]ZVFkSOm][FL.
+i=15
+not found
+FIND
+not found
+SET
+DELETE
+Buffer->\m@IAYxxqdomNT^DU/wa[glRPnGOuFn_F///XvD@jSZ^bSukoET///wKjwaWpMm[hYquv/wKPD@emLeSBwBaz///g]t[E`gRff^Z@[J//XjKAkJbfredRKOQ//oOOC@Kg[ocBQuYY//mqh^tOeUIfCNm^A
+Buffer2->5871
+O que vem a seguir? ->119
+O que vem a seguir? ->88
+O que vem a seguir? ->119
+O que vem a seguir? ->119
+O que vem a seguir? ->103
+O que vem a seguir? ->88
+O que vem a seguir? ->111
+O que vem a seguir? ->109
+NEW
+Buffer->\m@IAYxxqdomNT^DU/wa[glRPnGOuFn_F///XvD@jSZ^bSukoET///wKjwaWpMm[hYquv/wKPD@emLeSBwBaz///g]t[E`gRff^Z@[J//XjKAkJbfredRKOQ//oOOC@Kg[ocBQuYY/
+Buffer2->mqh^tOeUIfCNm^A
+maedoceu
+b22 ->mqh^tOeUIfCNm^A.
+i=15
+not found
+DELETE
+Buffer->atFEaodQSGtNZyq/@iD`knjW\]^NepD/lt\GWaZGsyCYsEKkoET///wKjwaWpMm[hYquv/wKPD@emLeSBwBaz///g]t[E`gRff^Z@[J//XjKAkJbfredRKOQ//oOOC@Kg[ocBQuYY/
+Buffer2->mqh^tOeUIfCNm^A
+O que vem a seguir? ->64
+O que vem a seguir? ->108
+O que vem a seguir? ->119
+O que vem a seguir? ->119
+O que vem a seguir? ->103
+O que vem a seguir? ->88
+O que vem a seguir? ->111
+NEW
+Buffer->atFEaodQSGtNZyq/@iD`knjW\]^NepD/lt\GWaZGsyCYsEKkoET///wKjwaWpMm[hYquv/wKPD@emLeSBwBaz///g]t[E`gRff^Z@[J//XjKAkJbfredRKOQ/
+Buffer2->oOOC@Kg[ocBQuYY/
+maedoceu
+b22 ->oOOC@Kg[ocBQuYY/.
+i=16
+not found
+SET
+SET
+DELETE
+PRINT
+SET
+FIND
+not found
+SET
+DELETE
+SET
+SET
+SET
+PRINT
+SET
+LIST
+not found
+LIST
+not found
+SET
+PRINT
+SET
+SET
+PRINT
+FIND
+not found
+FIND
+not found
+SET
+DELETE
+Buffer->jSpPMrnJuC]KaOH/DgmUKrI[p]M`pHv/ecvnlnFcXMnxF@o/gsGNBE[dtUph[r@pO@`@oV/lkMWoyoB^wkwcLB///VduROA`CniLS]R^//goosb@LcFBP@wWX
+Buffer2->7772
+O que vem a seguir? ->68
+O que vem a seguir? ->101
+O que vem a seguir? ->103
+O que vem a seguir? ->108
+O que vem a seguir? ->86
+O que vem a seguir? ->103
+NEW
+Buffer->jSpPMrnJuC]KaOH/DgmUKrI[p]M`pHv/ecvnlnFcXMnxF@o/gsGNBE[dtUph[r@pO@`@oV/lkMWoyoB^wkwcLB///VduROA`CniLS]R^/
+Buffer2->goosb@LcFBP@wWX
+maedoceu
+b22 ->goosb@LcFBP@wWX.
+i=15
+not found
+FIND
+not found
+PRINT
+SET
+SET
+FIND
+not found
+PRINT
+FIND
+not found
+SET
+SET
+SET
+DELETE
+Buffer->K`TEAxiQMxbehYc/i^GTcIjvBBYVKw@Uq@///`QuKv`_`qggR^hb
+Buffer2->1980
+O que vem a seguir? ->105
+O que vem a seguir? ->96
+NEW
+Buffer->K`TEAxiQMxbehYc/i^GTcIjvBBYVKw@Uq@//
+Buffer2->`QuKv`_`qggR^hb
+maedoceu
+b22 ->`QuKv`_`qggR^hb.
+i=15
+not found
+LIST
+not found
+LIST
+not found
+FIND
+not found
+SET
+PRINT
+SET
+FIND
+not found
+DELETE
+Buffer->gCyZlsHXAXYR]xg
+Buffer2->3994
+NEW
+Buffer->
+Buffer2->gCyZlsHXAXYR]xg
+maedoceu
+b22 ->gCyZlsHXAXYR]xg.
+i=15
+not found
+LIST
+not found
+FIND
+not found
+FIND
+not found
+SET
+SET
+SET
+SET
+SET
+FIND
+not found
+FIND
+not found
+DELETE
+LIST
+FIND
+not found
+LIST
+not found
+SET
+DELETE
+Buffer->vihRUjyGJka@WtD/DNPzFFT[\BIVgj]/DbRhJDUVVrq`Lr\/rGqzKHx@sbdRzrT`c///TEuqbvUOlyV`CuL///ynINE^Q]ZZ^fzyL///gwpnr[iZfxIFMp^
+Buffer2->4523
+O que vem a seguir? ->68
+O que vem a seguir? ->68
+O que vem a seguir? ->114
+O que vem a seguir? ->84
+O que vem a seguir? ->121
+O que vem a seguir? ->103
+NEW
+Buffer->vihRUjyGJka@WtD/DNPzFFT[\BIVgj]/DbRhJDUVVrq`Lr\/rGqzKHx@sbdRzrT`c///TEuqbvUOlyV`CuL///ynINE^Q]ZZ^fzyL//
+Buffer2->gwpnr[iZfxIFMp^
+maedoceu
+b22 ->gwpnr[iZfxIFMp^.
+i=15
+not found
+SET
+SET
+FIND
+not found
+SET
+SET
+DELETE
+Buffer->MCntZesimrOF]]L/cE^AHakEgREUvfA/wh]EWIV]gGxwjDb/Ir]\BQp@qmlCqSn/Xp]TKoInX\GnTfrQIB@mM/AvskFGBbeD@Xcxu///TMMbM[GAuOntqyy
+Buffer2->4398
+O que vem a seguir? ->99
+O que vem a seguir? ->119
+O que vem a seguir? ->73
+O que vem a seguir? ->88
+O que vem a seguir? ->65
+O que vem a seguir? ->84
+NEW
+Buffer->MCntZesimrOF]]L/cE^AHakEgREUvfA/wh]EWIV]gGxwjDb/Ir]\BQp@qmlCqSn/Xp]TKoInX\GnTfrQIB@mM/AvskFGBbeD@Xcxu//
+Buffer2->TMMbM[GAuOntqyy
+maedoceu
+b22 ->TMMbM[GAuOntqyy.
+i=15
+not found
+SET
+SET
+FIND
+not found
+SET
+PRINT
+LIST
+not found
+SET
+SET
+PRINT
+FIND
+no data
+PRINT
+SET
+SET
+DELETE
+Buffer->tS^@UkDyNzmWo]e/jAXboEfCFncIoWY/`m]hGbD^EK[Ktlw/@EyZwpN_]Ylc`U`/sUgGnjvhdbnZSmw/BERsrzqeIwiBdACuupIGAnr/wLL@LDkthpRVWsm///UlTqfxpBrkKWae_//stUv@DyUSTKhA^R/uBSwNvaQRAACyXA
+Buffer2->1462
+O que vem a seguir? ->106
+O que vem a seguir? ->96
+O que vem a seguir? ->64
+O que vem a seguir? ->115
+O que vem a seguir? ->66
+O que vem a seguir? ->119
+O que vem a seguir? ->85
+O que vem a seguir? ->115
+O que vem a seguir? ->117
+NEW
+Buffer->tS^@UkDyNzmWo]e/jAXboEfCFncIoWY/`m]hGbD^EK[Ktlw/@EyZwpN_]Ylc`U`/sUgGnjvhdbnZSmw/BERsrzqeIwiBdACuupIGAnr/wLL@LDkthpRVWsm///UlTqfxpBrkKWae_//stUv@DyUSTKhA^R
+Buffer2->uBSwNvaQRAACyXA
+maedoceu
+b22 ->uBSwNvaQRAACyXA.
+i=15
+not found
+LIST
+not found
+SET
+SET
+PRINT
+SET
+LIST
+not found
+PRINT
+DELETE
+Buffer->xXywS_Gn[WDFOPk/ficyM_Cuv]cQFZe/BWCOG_`lneWGewc/SRKZZmGWAJ\lx@v/RbLUiOkVPr]xLlM/JpmPeWWQSARZRvi/U^skBAeSp`AGOd^/xRVqMWjm\iNiEks[SzAHC///qM_JyQpeNawlLPL
+Buffer2->
+O que vem a seguir? ->102
+O que vem a seguir? ->66
+O que vem a seguir? ->83
+O que vem a seguir? ->82
+O que vem a seguir? ->74
+O que vem a seguir? ->85
+O que vem a seguir? ->120
+O que vem a seguir? ->113
+NEW
+Buffer->xXywS_Gn[WDFOPk/ficyM_Cuv]cQFZe/BWCOG_`lneWGewc/SRKZZmGWAJ\lx@v/RbLUiOkVPr]xLlM/JpmPeWWQSARZRvi/U^skBAeSp`AGOd^/xRVqMWjm\iNiEks[SzAHC//
+Buffer2->qM_JyQpeNawlLPL
+maedoceu
+b22 ->qM_JyQpeNawlLPL.
+i=15
+not found
+LIST
+not found
+PRINT
+DELETE
+Buffer->Mz[DX`rIraPjSyd/Vbq@jWngljCYlQ[/oY_urkjMJkeGay[/^J`zjmK`SkMIyTX/RbLUiOkVPr]xLlM/JpmPeWWQSARZRvi/U^skBAeSp`AGOd^/xRVqMWjm\iNiEks[SzAHC//
+Buffer2->
+O que vem a seguir? ->86
+O que vem a seguir? ->111
+O que vem a seguir? ->94
+O que vem a seguir? ->82
+O que vem a seguir? ->74
+O que vem a seguir? ->85
+O que vem a seguir? ->120
+NEW
+Buffer->Mz[DX`rIraPjSyd/Vbq@jWngljCYlQ[/oY_urkjMJkeGay[/^J`zjmK`SkMIyTX/RbLUiOkVPr]xLlM/JpmPeWWQSARZRvi/U^skBAeSp`AGOd^
+Buffer2->xRVqMWjm\iNiEks[SzAHC//
+maedoceu
+b22 ->xRVqMWjm\iNiEks[SzAHC//.
+i=23
+not found
+FIND
+not found
+SET
+SET
+DELETE
+Buffer->mz@_bRIfSI\lHEW/O@lrpiDQPJHrjwe/XrIyw@VXjIrVnMGocyE//]ueX`T@dIAfassS///ysDrJcuZL`iJR_z/kVrofDtzpCasyiI/hElwfLXwPZGHEuC
+Buffer2->1526
+O que vem a seguir? ->79
+O que vem a seguir? ->88
+O que vem a seguir? ->93
+O que vem a seguir? ->121
+O que vem a seguir? ->107
+O que vem a seguir? ->104
+NEW
+Buffer->mz@_bRIfSI\lHEW/O@lrpiDQPJHrjwe/XrIyw@VXjIrVnMGocyE//]ueX`T@dIAfassS///ysDrJcuZL`iJR_z/kVrofDtzpCasyiI
+Buffer2->hElwfLXwPZGHEuC
+maedoceu
+b22 ->hElwfLXwPZGHEuC.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->NOODhxsfCB`FIGi/BAYfKVkVAedhwwD/bpaxlG@OblQhwrI/jwwk\VrgM]SuPDGwlV^/Gxo]mbFRiJjgjJi/SfLe@vVea\i\BiN
+Buffer2->1503
+O que vem a seguir? ->66
+O que vem a seguir? ->98
+O que vem a seguir? ->106
+O que vem a seguir? ->71
+O que vem a seguir? ->83
+NEW
+Buffer->NOODhxsfCB`FIGi/BAYfKVkVAedhwwD/bpaxlG@OblQhwrI/jwwk\VrgM]SuPDGwlV^/Gxo]mbFRiJjgjJi
+Buffer2->SfLe@vVea\i\BiN
+maedoceu
+b22 ->SfLe@vVea\i\BiN.
+i=15
+not found
+PRINT
+SET
+SET
+LIST
+not found
+DELETE
+Buffer->jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX^iiP///VZePDNu`^aW\pvd
+Buffer2->9673
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+NEW
+Buffer->jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX^iiP//
+Buffer2->VZePDNu`^aW\pvd
+maedoceu
+b22 ->VZePDNu`^aW\pvd.
+i=15
+not found
+SET
+LIST
+not found
+DELETE
+Buffer->tvpTBRG[vL\j@q`/YrIZGi^^MZETJpS/cpNZgXWrYWTerfE/Lg@tuT@WnKnit[ahDwFF]/aokMJrJA^br]tYY///UiCgCOJAL[qhV`Z//YtpNO[OqFKoSVcd//ueV_N\uW@Uhee[v//j]V_XTmdryuw^Yn
+Buffer2->623
+O que vem a seguir? ->89
+O que vem a seguir? ->99
+O que vem a seguir? ->76
+O que vem a seguir? ->97
+O que vem a seguir? ->85
+O que vem a seguir? ->89
+O que vem a seguir? ->117
+O que vem a seguir? ->106
+NEW
+Buffer->tvpTBRG[vL\j@q`/YrIZGi^^MZETJpS/cpNZgXWrYWTerfE/Lg@tuT@WnKnit[ahDwFF]/aokMJrJA^br]tYY///UiCgCOJAL[qhV`Z//YtpNO[OqFKoSVcd//ueV_N\uW@Uhee[v/
+Buffer2->j]V_XTmdryuw^Yn
+maedoceu
+b22 ->j]V_XTmdryuw^Yn.
+i=15
+not found
+SET
+SET
+SET
+SET
+PRINT
+LIST
+LIST
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->bBfeCGt\GNEIwE[/MMw_G[JVq@LTpNRN//jwv_AUzIcEJY^gj/]mUtgI]aTq[wxky///][o`GopZ`d`FuwO//HIBmyxq\LfwkgXu/aheduvGFfiMkjQh//ZaKz]PIRCeogD\q//r_]iGLuTKub`SeT
+Buffer2->5539
+O que vem a seguir? ->77
+O que vem a seguir? ->106
+O que vem a seguir? ->93
+O que vem a seguir? ->93
+O que vem a seguir? ->72
+O que vem a seguir? ->97
+O que vem a seguir? ->90
+O que vem a seguir? ->114
+NEW
+Buffer->bBfeCGt\GNEIwE[/MMw_G[JVq@LTpNRN//jwv_AUzIcEJY^gj/]mUtgI]aTq[wxky///][o`GopZ`d`FuwO//HIBmyxq\LfwkgXu/aheduvGFfiMkjQh//ZaKz]PIRCeogD\q/
+Buffer2->r_]iGLuTKub`SeT
+maedoceu
+b22 ->r_]iGLuTKub`SeT.
+i=15
+not found
+FIND
+not found
+SET
+DELETE
+Buffer->_IhOKdOq^WIRCM@/PxRnFFlF]yaHCVH/d]YhWNiQX`ShqyhNmy///fLAGyvPIrBoZfwu
+Buffer2->7695
+O que vem a seguir? ->80
+O que vem a seguir? ->100
+O que vem a seguir? ->102
+NEW
+Buffer->_IhOKdOq^WIRCM@/PxRnFFlF]yaHCVH/d]YhWNiQX`ShqyhNmy//
+Buffer2->fLAGyvPIrBoZfwu
+maedoceu
+b22 ->fLAGyvPIrBoZfwu.
+i=15
+not found
+DELETE
+Buffer->szYhGNRBQBHhNh_/vjz^HsqiWjvxIYW/d]YhWNiQX`ShqyhNmy//
+Buffer2->fLAGyvPIrBoZfwu
+O que vem a seguir? ->118
+O que vem a seguir? ->100
+NEW
+Buffer->szYhGNRBQBHhNh_/vjz^HsqiWjvxIYW
+Buffer2->d]YhWNiQX`ShqyhNmy//
+maedoceu
+b22 ->d]YhWNiQX`ShqyhNmy//.
+i=20
+not found
+DELETE
+Buffer->ezwW[Tq`qCUeKPt/^ebsNLnwgVNgw\T
+Buffer2->d]YhWNiQX`ShqyhNmy/
+O que vem a seguir? ->94
+NEW
+Buffer->ezwW[Tq`qCUeKPt
+Buffer2->^ebsNLnwgVNgw\T
+maedoceu
+b22 ->^ebsNLnwgVNgw\T.
+i=15
+not found
+SET
+PRINT
+LIST
+FIND
+not found
+DELETE
+Buffer->eQGPCbTd@LVBeBh/v@Ccc[Bq]slqODk/DZry`IUSBlgmoY^/jOGzk^cQwFhulb^/eYMrqjhHslT\jvT
+Buffer2->
+O que vem a seguir? ->118
+O que vem a seguir? ->68
+O que vem a seguir? ->106
+O que vem a seguir? ->101
+NEW
+Buffer->eQGPCbTd@LVBeBh/v@Ccc[Bq]slqODk/DZry`IUSBlgmoY^/jOGzk^cQwFhulb^
+Buffer2->eYMrqjhHslT\jvT
+maedoceu
+b22 ->eYMrqjhHslT\jvT.
+i=15
+not found
+PRINT
+DELETE
+Buffer->GuC^FrVDb]XeGyc/tW]C^xyzZT_@Z[n/_`pMEeJI`tbjLEZ/jOGzk^cQwFhulb^
+Buffer2->
+O que vem a seguir? ->116
+O que vem a seguir? ->95
+O que vem a seguir? ->106
+NEW
+Buffer->GuC^FrVDb]XeGyc/tW]C^xyzZT_@Z[n/_`pMEeJI`tbjLEZ
+Buffer2->jOGzk^cQwFhulb^
+maedoceu
+b22 ->jOGzk^cQwFhulb^.
+i=15
+not found
+SET
+SET
+PRINT
+DELETE
+Buffer->eQGPCbTd@LVBeBh/v@Ccc[Bq]slqODk/DZry`IUSBlgmoY^/jOGzk^cQwFhulb^/eYMrqjhHslT\jvT/kjbpV\JyYVBdz[V/[Fj`tDiSAsiOcny/GUfFnVEAUHlrWibeogD\q/
+Buffer2->
+O que vem a seguir? ->118
+O que vem a seguir? ->68
+O que vem a seguir? ->106
+O que vem a seguir? ->101
+O que vem a seguir? ->107
+O que vem a seguir? ->91
+O que vem a seguir? ->71
+NEW
+Buffer->eQGPCbTd@LVBeBh/v@Ccc[Bq]slqODk/DZry`IUSBlgmoY^/jOGzk^cQwFhulb^/eYMrqjhHslT\jvT/kjbpV\JyYVBdz[V/[Fj`tDiSAsiOcny
+Buffer2->GUfFnVEAUHlrWibeogD\q/
+maedoceu
+b22 ->GUfFnVEAUHlrWibeogD\q/.
+i=22
+not found
+DELETE
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/DZry`IUSBlgmoY^/jOGzk^cQwFhulb^/eYMrqjhHslT\jvT/kjbpV\JyYVBdz[V/[Fj`tDiSAsiOcny
+Buffer2->GUfFnVEAUHlrWibeogD\q
+O que vem a seguir? ->67
+O que vem a seguir? ->68
+O que vem a seguir? ->106
+O que vem a seguir? ->101
+O que vem a seguir? ->107
+O que vem a seguir? ->91
+NEW
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/DZry`IUSBlgmoY^/jOGzk^cQwFhulb^/eYMrqjhHslT\jvT/kjbpV\JyYVBdz[V
+Buffer2->[Fj`tDiSAsiOcny
+maedoceu
+b22 ->[Fj`tDiSAsiOcny.
+i=15
+not found
+LIST
+not found
+SET
+DELETE
+Buffer->gSB_OgnVlVjGdQc/kNzKbsfUsXDt]iD/NKWefw^wpsATFWb/ZZ@`[nXReacE[RS/LgdYKRuRBjVKRc]/@pYiXH@Uo^FFNww/zEa[LqirjGVw_CV/]zJMx\ViAgKtdomeogD\q/
+Buffer2->2245
+O que vem a seguir? ->107
+O que vem a seguir? ->78
+O que vem a seguir? ->90
+O que vem a seguir? ->76
+O que vem a seguir? ->64
+O que vem a seguir? ->122
+O que vem a seguir? ->93
+NEW
+Buffer->gSB_OgnVlVjGdQc/kNzKbsfUsXDt]iD/NKWefw^wpsATFWb/ZZ@`[nXReacE[RS/LgdYKRuRBjVKRc]/@pYiXH@Uo^FFNww/zEa[LqirjGVw_CV
+Buffer2->]zJMx\ViAgKtdomeogD\q/
+maedoceu
+b22 ->]zJMx\ViAgKtdomeogD\q/.
+i=22
+not found
+FIND
+not found
+LIST
+SET
+SET
+SET
+SET
+PRINT
+SET
+SET
+DELETE
+LIST
+not found
+SET
+DELETE
+Buffer->HKelIEC\e]qpATzY//saA^COS[h@ODhoc///ZfOkCpvOiIKuaUo///GbcBu_oDOdficL]/gvOY[YahZ_XnTnG//SI_azcKgJArUEON/jlvLqMqrrgyrMw]///z`hPGRpslmaXu\Z/vhA]UBiIRGGrSY\
+Buffer2->5047
+O que vem a seguir? ->115
+O que vem a seguir? ->90
+O que vem a seguir? ->71
+O que vem a seguir? ->103
+O que vem a seguir? ->83
+O que vem a seguir? ->106
+O que vem a seguir? ->122
+O que vem a seguir? ->118
+NEW
+Buffer->HKelIEC\e]qpATzY//saA^COS[h@ODhoc///ZfOkCpvOiIKuaUo///GbcBu_oDOdficL]/gvOY[YahZ_XnTnG//SI_azcKgJArUEON/jlvLqMqrrgyrMw]///z`hPGRpslmaXu\Z
+Buffer2->vhA]UBiIRGGrSY\
+maedoceu
+b22 ->vhA]UBiIRGGrSY\.
+i=15
+not found
+DELETE
+Buffer->tgF\kHScOl@Eg^[Y//saA^COS[h@ODhoc///ZfOkCpvOiIKuaUo///GbcBu_oDOdficL]/gvOY[YahZ_XnTnG//SI_azcKgJArUEON/jlvLqMqrrgyrMw]///z`hPGRpslmaXu\Z
+Buffer2->vhA]UBiIRGGrSY\
+O que vem a seguir? ->115
+O que vem a seguir? ->90
+O que vem a seguir? ->71
+O que vem a seguir? ->103
+O que vem a seguir? ->83
+O que vem a seguir? ->106
+O que vem a seguir? ->122
+NEW
+Buffer->tgF\kHScOl@Eg^[Y//saA^COS[h@ODhoc///ZfOkCpvOiIKuaUo///GbcBu_oDOdficL]/gvOY[YahZ_XnTnG//SI_azcKgJArUEON/jlvLqMqrrgyrMw]//
+Buffer2->z`hPGRpslmaXu\Z
+maedoceu
+b22 ->z`hPGRpslmaXu\Z.
+i=15
+not found
+SET
+PRINT
+DELETE
+Buffer->\m@IAYxxqdomNT^/uMk^AEbXNOnfp@M/xipSwIJ@]duA_zE/iPXynvPV@AgNrck/i@ZEdqG_KrKQOX]/ByboXqj]kYgsvKHZpeMtL//pTDDvewwBpu[hjA//E[^jfbug^yHHQUe
+Buffer2->
+O que vem a seguir? ->117
+O que vem a seguir? ->120
+O que vem a seguir? ->105
+O que vem a seguir? ->105
+O que vem a seguir? ->66
+O que vem a seguir? ->112
+O que vem a seguir? ->69
+NEW
+Buffer->\m@IAYxxqdomNT^/uMk^AEbXNOnfp@M/xipSwIJ@]duA_zE/iPXynvPV@AgNrck/i@ZEdqG_KrKQOX]/ByboXqj]kYgsvKHZpeMtL//pTDDvewwBpu[hjA/
+Buffer2->E[^jfbug^yHHQUe
+maedoceu
+b22 ->E[^jfbug^yHHQUe.
+i=15
+not found
+DELETE
+Buffer->fPvEYu[KRj_cOVu/Z\MGEyewY\DeWgY/[ty_HXqTPEaMIIw/kYmu_gSoJ[\IRzW/CKnnq`vzRqFgmLN/[SadruKZs^LRXna/XHtYPUfduDvbavp/xCmU\UrXLAJtrRGg^yHHQUe
+Buffer2->E[^jfbug^yHHQUe
+O que vem a seguir? ->90
+O que vem a seguir? ->91
+O que vem a seguir? ->107
+O que vem a seguir? ->67
+O que vem a seguir? ->91
+O que vem a seguir? ->88
+O que vem a seguir? ->120
+NEW
+Buffer->fPvEYu[KRj_cOVu/Z\MGEyewY\DeWgY/[ty_HXqTPEaMIIw/kYmu_gSoJ[\IRzW/CKnnq`vzRqFgmLN/[SadruKZs^LRXna/XHtYPUfduDvbavp
+Buffer2->xCmU\UrXLAJtrRGg^yHHQUe
+maedoceu
+b22 ->xCmU\UrXLAJtrRGg^yHHQUe.
+i=23
+not found
+SET
+FIND
+not found
+SET
+SET
+FIND
+not found
+SET
+SET
+SET
+SET
+SET
+LIST
+not found
+DELETE
+Buffer->pDdQPsgWUdRnqcV/vjz^HsqiWjvxIYW/TUCTFcGEzyXphsO/\I]pFy^urbShWyzUZbXlKt///kAUTYOgetdxrOLB/zDNRtggJxr^UALB//yYeyonjwgkIl_Dg
+Buffer2->7262
+O que vem a seguir? ->118
+O que vem a seguir? ->84
+O que vem a seguir? ->92
+O que vem a seguir? ->107
+O que vem a seguir? ->122
+O que vem a seguir? ->121
+NEW
+Buffer->pDdQPsgWUdRnqcV/vjz^HsqiWjvxIYW/TUCTFcGEzyXphsO/\I]pFy^urbShWyzUZbXlKt///kAUTYOgetdxrOLB/zDNRtggJxr^UALB/
+Buffer2->yYeyonjwgkIl_Dg
+maedoceu
+b22 ->yYeyonjwgkIl_Dg.
+i=15
+not found
+SET
+SET
+FIND
+not found
+SET
+LIST
+not found
+LIST
+not found
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/rYu`AtYGpPLR\lT/WkeCy\nCVMnZzqn/itXOkzyTtAouuCx/vlaki`rofUzaDhA_hVMCNun/hAAQsWpd^VHKq[u
+Buffer2->6438
+O que vem a seguir? ->65
+O que vem a seguir? ->114
+O que vem a seguir? ->87
+O que vem a seguir? ->105
+O que vem a seguir? ->118
+O que vem a seguir? ->104
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/rYu`AtYGpPLR\lT/WkeCy\nCVMnZzqn/itXOkzyTtAouuCx/vlaki`rofUzaDhA_hVMCNun
+Buffer2->hAAQsWpd^VHKq[u
+maedoceu
+b22 ->hAAQsWpd^VHKq[u.
+i=15
+not found
+FIND
+not found
+SET
+FIND
+not found
+SET
+PRINT
+SET
+SET
+SET
+DELETE
+Buffer->PG_fIvmErHGV]jQXpB/ApCcQYwH^JYVNiO
+Buffer2->6808
+O que vem a seguir? ->65
+NEW
+Buffer->PG_fIvmErHGV]jQXpB
+Buffer2->ApCcQYwH^JYVNiO
+maedoceu
+b22 ->ApCcQYwH^JYVNiO.
+i=15
+not found
+LIST
+DELETE
+Buffer->_IhOKdOq^WIRCM@/PxRnFFlF]yaHCVH/d]YhWNiQX`Shqyh/IjkgVxphnhDwFF]/aokMJrJA^br]tYY/UiCgCOJAL[qhV`Z/YtpNO[OqFKoSVcd/ueV_N\uW@Uhee[v[mz_W^BjvS///^z\kuhHezXTSU@H
+Buffer2->
+O que vem a seguir? ->80
+O que vem a seguir? ->100
+O que vem a seguir? ->73
+O que vem a seguir? ->97
+O que vem a seguir? ->85
+O que vem a seguir? ->89
+O que vem a seguir? ->117
+O que vem a seguir? ->94
+NEW
+Buffer->_IhOKdOq^WIRCM@/PxRnFFlF]yaHCVH/d]YhWNiQX`Shqyh/IjkgVxphnhDwFF]/aokMJrJA^br]tYY/UiCgCOJAL[qhV`Z/YtpNO[OqFKoSVcd/ueV_N\uW@Uhee[v[mz_W^BjvS//
+Buffer2->^z\kuhHezXTSU@H
+maedoceu
+b22 ->^z\kuhHezXTSU@H.
+i=15
+not found
+DELETE
+LIST
+not found
+PRINT
+SET
+SET
+SET
+PRINT
+PRINT
+DELETE
+Buffer->uJPkqepFvfQxRri/tHdoyEJCfGnzdN[/Yp_FqqZhRIvsTHQ/QvIasbfY\sEPOKd/hniaTBnczXIYAuh/ESlzUdIaGw[t[FT/DsAXeiKqOdgZwXJ/Y^cdJZjXafmEryV/aAVJbZxEps[Ttks/GLWRMCteu[[\u@UusssgKpwBMv_Dzs
+Buffer2->
+O que vem a seguir? ->116
+O que vem a seguir? ->89
+O que vem a seguir? ->81
+O que vem a seguir? ->104
+O que vem a seguir? ->69
+O que vem a seguir? ->68
+O que vem a seguir? ->89
+O que vem a seguir? ->97
+O que vem a seguir? ->71
+NEW
+Buffer->uJPkqepFvfQxRri/tHdoyEJCfGnzdN[/Yp_FqqZhRIvsTHQ/QvIasbfY\sEPOKd/hniaTBnczXIYAuh/ESlzUdIaGw[t[FT/DsAXeiKqOdgZwXJ/Y^cdJZjXafmEryV/aAVJbZxEps[Ttks
+Buffer2->GLWRMCteu[[\u@UusssgKpwBMv_Dzs
+maedoceu
+b22 ->GLWRMCteu[[\u@UusssgKpwBMv_Dzs.
+i=30
+not found
+SET
+LIST
+not found
+SET
+SET
+SET
+FIND
+not found
+FIND
+not found
+FIND
+not found
+SET
+SET
+SET
+FIND
+not found
+SET
+DELETE
+SET
+SET
+SET
+FIND
+not found
+SET
+SET
+FIND
+not found
+LIST
+not found
+FIND
+not found
+SET
+SET
+LIST
+not found
+SET
+SET
+LIST
+FIND
+not found
+LIST
+not found
+LIST
+not found
+SET
+SET
+DELETE
+Buffer->AC[qdZ[hld\\TVU/oUbUe@LgiKQpQpgD[V/rqgVDyUqHv_tEiX//Na^WrqCUAwNlPYW//hJcMBsJRXkqX\nr///OIhI]IUpzibSm`K//XgwrEa@SzgKR[W^/bGUxOZkfE\^AUGy
+Buffer2->5473
+O que vem a seguir? ->111
+O que vem a seguir? ->114
+O que vem a seguir? ->78
+O que vem a seguir? ->104
+O que vem a seguir? ->79
+O que vem a seguir? ->88
+O que vem a seguir? ->98
+NEW
+Buffer->AC[qdZ[hld\\TVU/oUbUe@LgiKQpQpgD[V/rqgVDyUqHv_tEiX//Na^WrqCUAwNlPYW//hJcMBsJRXkqX\nr///OIhI]IUpzibSm`K//XgwrEa@SzgKR[W^
+Buffer2->bGUxOZkfE\^AUGy
+maedoceu
+b22 ->bGUxOZkfE\^AUGy.
+i=15
+not found
+SET
+SET
+FIND
+no data
+DELETE
+Buffer->LikYZzlj^]XgJTs
+Buffer2->570
+NEW
+Buffer->
+Buffer2->LikYZzlj^]XgJTs
+maedoceu
+b22 ->LikYZzlj^]XgJTs.
+i=15
+not found
+LIST
+not found
+SET
+SET
+LIST
+not found
+PRINT
+SET
+SET
+SET
+PRINT
+DELETE
+Buffer->bzXkSyvK[AXDkSR/]hCcUiHMsFGqO[Q/BTrXgIJKBbXCLVI/LiOo@fCGUhAvYjflm`yb[V
+Buffer2->
+O que vem a seguir? ->93
+O que vem a seguir? ->66
+O que vem a seguir? ->76
+NEW
+Buffer->bzXkSyvK[AXDkSR/]hCcUiHMsFGqO[Q/BTrXgIJKBbXCLVI
+Buffer2->LiOo@fCGUhAvYjflm`yb[V
+maedoceu
+b22 ->LiOo@fCGUhAvYjflm`yb[V.
+i=22
+not found
+LIST
+not found
+SET
+SET
+SET
+PRINT
+SET
+SET
+SET
+SET
+DELETE
+Buffer->XQrJzSjsZmScOkXv[/oo`WKhZce@z`kuG/FXpJWHnhrhg]x[T///v_uqVImoVAP\FNd/QsMIPbimqrRoqzL///]CaxNeCHCvSjuGR/UQnjskN[THwzH\m//cz]`mN[S[iKB^\]//jNBKjuj[UsqXZXZ//xqalB[VQcDbFReJ
+Buffer2->1939
+O que vem a seguir? ->111
+O que vem a seguir? ->70
+O que vem a seguir? ->118
+O que vem a seguir? ->81
+O que vem a seguir? ->93
+O que vem a seguir? ->85
+O que vem a seguir? ->99
+O que vem a seguir? ->106
+O que vem a seguir? ->120
+NEW
+Buffer->XQrJzSjsZmScOkXv[/oo`WKhZce@z`kuG/FXpJWHnhrhg]x[T///v_uqVImoVAP\FNd/QsMIPbimqrRoqzL///]CaxNeCHCvSjuGR/UQnjskN[THwzH\m//cz]`mN[S[iKB^\]//jNBKjuj[UsqXZXZ/
+Buffer2->xqalB[VQcDbFReJ
+maedoceu
+b22 ->xqalB[VQcDbFReJ.
+i=15
+not found
+SET
+SET
+LIST
+not found
+FIND
+not found
+DELETE
+Buffer->ywlrmuqmDv\lSPH/JcFEUjj@vG@u_pu/]DEEHTMGGOrZgow/BcAytpG^DneGKhv/qDuZLoDECFc`erJMSrlFLR/sTD_upzt`mKirHO/ZIdKSZYh]HWz^XK//NoMc\abvNUqFvjM
+Buffer2->2734
+O que vem a seguir? ->74
+O que vem a seguir? ->93
+O que vem a seguir? ->66
+O que vem a seguir? ->113
+O que vem a seguir? ->115
+O que vem a seguir? ->90
+O que vem a seguir? ->78
+NEW
+Buffer->ywlrmuqmDv\lSPH/JcFEUjj@vG@u_pu/]DEEHTMGGOrZgow/BcAytpG^DneGKhv/qDuZLoDECFc`erJMSrlFLR/sTD_upzt`mKirHO/ZIdKSZYh]HWz^XK/
+Buffer2->NoMc\abvNUqFvjM
+maedoceu
+b22 ->NoMc\abvNUqFvjM.
+i=15
+not found
+SET
+DELETE
+LIST
+not found
+SET
+SET
+SET
+SET
+DELETE
+Buffer->iMatqBtQXhUcJMl/bfIMbWRgr@_lF`F/xGfqCYrWtTRvuEP/pd^uS][aEFaZlEJ/unIhyfSPJy]qydT/SaI_zu`xXeogbWh/PrVOPlPu_`O_atN/klSMmmDuKLoyYutmXHDsiRZ///i@GwJ@`sO[ZxWV`
+Buffer2->4679
+O que vem a seguir? ->98
+O que vem a seguir? ->120
+O que vem a seguir? ->112
+O que vem a seguir? ->117
+O que vem a seguir? ->83
+O que vem a seguir? ->80
+O que vem a seguir? ->107
+O que vem a seguir? ->105
+NEW
+Buffer->iMatqBtQXhUcJMl/bfIMbWRgr@_lF`F/xGfqCYrWtTRvuEP/pd^uS][aEFaZlEJ/unIhyfSPJy]qydT/SaI_zu`xXeogbWh/PrVOPlPu_`O_atN/klSMmmDuKLoyYutmXHDsiRZ//
+Buffer2->i@GwJ@`sO[ZxWV`
+maedoceu
+b22 ->i@GwJ@`sO[ZxWV`.
+i=15
+not found
+SET
+FIND
+not found
+PRINT
+PRINT
+FIND
+not found
+LIST
+not found
+SET
+FIND
+not found
+SET
+SET
+FIND
+not found
+LIST
+not found
+SET
+DELETE
+SET
+FIND
+not found
+DELETE
+Buffer->nVmqY@RYf[hfvHw/CCKEvAdl`ARy[kl/sGqsuDaWa\iPIHf/ghqeCj^RHCmjmhX
+Buffer2->7405
+O que vem a seguir? ->67
+O que vem a seguir? ->115
+O que vem a seguir? ->103
+NEW
+Buffer->nVmqY@RYf[hfvHw/CCKEvAdl`ARy[kl/sGqsuDaWa\iPIHf
+Buffer2->ghqeCj^RHCmjmhX
+maedoceu
+b22 ->ghqeCj^RHCmjmhX.
+i=15
+not found
+DELETE
+Buffer->AC[qdZ[hld\\TVU/oUbUe@LgiKQpQpg/SmROjz`xAvFtstw/YoxOjZ`UJaC[hQ_
+Buffer2->ghqeCj^RHCmjmhX
+O que vem a seguir? ->111
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+NEW
+Buffer->AC[qdZ[hld\\TVU/oUbUe@LgiKQpQpg/SmROjz`xAvFtstw
+Buffer2->YoxOjZ`UJaC[hQ_
+maedoceu
+b22 ->YoxOjZ`UJaC[hQ_.
+i=15
+not found
+SET
+SET
+FIND
+not found
+LIST
+not found
+FIND
+not found
+PRINT
+LIST
+not found
+LIST
+not found
+SET
+SET
+DELETE
+Buffer->^MCEmkP^ErTchTBsT///ZmiVA\rRKKZXa`C
+Buffer2->5180
+O que vem a seguir? ->90
+NEW
+Buffer->^MCEmkP^ErTchTBsT//
+Buffer2->ZmiVA\rRKKZXa`C
+maedoceu
+b22 ->ZmiVA\rRKKZXa`C.
+i=15
+not found
+DELETE
+Buffer->_jMcWEOpFPiwHVy/cMkzxuPhotLf`RNXa`C
+Buffer2->ZmiVA\rRKKZXa`C
+O que vem a seguir? ->99
+NEW
+Buffer->_jMcWEOpFPiwHVy
+Buffer2->cMkzxuPhotLf`RNXa`C
+maedoceu
+b22 ->cMkzxuPhotLf`RNXa`C.
+i=19
+not found
+LIST
+not found
+SET
+FIND
+not found
+SET
+LIST
+not found
+SET
+SET
+DELETE
+Buffer->sAHQjgI[YayT[ipY@D///NhFu[RJAiybBl^L
+Buffer2->5704
+O que vem a seguir? ->78
+NEW
+Buffer->sAHQjgI[YayT[ipY@D//
+Buffer2->NhFu[RJAiybBl^L
+maedoceu
+b22 ->NhFu[RJAiybBl^L.
+i=15
+not found
+SET
+FIND
+not found
+SET
+FIND
+not found
+DELETE
+Buffer->Mbs@GbjpICUvlXo/\\KjQogcivpkIfq
+Buffer2->9580
+O que vem a seguir? ->92
+NEW
+Buffer->Mbs@GbjpICUvlXo
+Buffer2->\\KjQogcivpkIfq
+maedoceu
+b22 ->\\KjQogcivpkIfq.
+i=15
+not found
+SET
+SET
+SET
+PRINT
+SET
+PRINT
+SET
+SET
+PRINT
+SET
+SET
+DELETE
+Buffer->a[iawBOr[YLvWWn/[xVfJxV\UBaadUt/vCErLHOtQZfxDBt/SdkGBK^W@VXlr_N@[xx//Kz`mX@iIGzns]ny
+Buffer2->4433
+O que vem a seguir? ->91
+O que vem a seguir? ->118
+O que vem a seguir? ->83
+O que vem a seguir? ->75
+NEW
+Buffer->a[iawBOr[YLvWWn/[xVfJxV\UBaadUt/vCErLHOtQZfxDBt/SdkGBK^W@VXlr_N@[xx/
+Buffer2->Kz`mX@iIGzns]ny
+maedoceu
+b22 ->Kz`mX@iIGzns]ny.
+i=15
+not found
+SET
+DELETE
+FIND
+not found
+LIST
+not found
+PRINT
+LIST
+FIND
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+FIND
+not found
+LIST
+not found
+DELETE
+Buffer->q@OggUGfYs_[CdV/\MtE[KHxVQucjKW/p\HXXtIwd^lPHLg/vNGrldRjQWczPQy/YTWMpnBuNsQOtLU/yqMsTjhz@oenXbv
+Buffer2->1929
+O que vem a seguir? ->92
+O que vem a seguir? ->112
+O que vem a seguir? ->118
+O que vem a seguir? ->89
+O que vem a seguir? ->121
+NEW
+Buffer->q@OggUGfYs_[CdV/\MtE[KHxVQucjKW/p\HXXtIwd^lPHLg/vNGrldRjQWczPQy/YTWMpnBuNsQOtLU
+Buffer2->yqMsTjhz@oenXbv
+maedoceu
+b22 ->yqMsTjhz@oenXbv.
+i=15
+not found
+PRINT
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->SzbOeuOYdmyuSFQ/kbDvcDzvQEzKfam/mUniAYgbF[fRH@whHhS///g[PcouWegqPtk@i///QvOp]kmMjxB][Xa/OFSHlCiINRGhf[J
+Buffer2->7820
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+O que vem a seguir? ->103
+O que vem a seguir? ->81
+O que vem a seguir? ->79
+NEW
+Buffer->SzbOeuOYdmyuSFQ/kbDvcDzvQEzKfam/mUniAYgbF[fRH@whHhS///g[PcouWegqPtk@i///QvOp]kmMjxB][Xa
+Buffer2->OFSHlCiINRGhf[J
+maedoceu
+b22 ->OFSHlCiINRGhf[J.
+i=15
+not found
+PRINT
+FIND
+not found
+SET
+SET
+SET
+SET
+PRINT
+SET
+SET
+FIND
+not found
+SET
+LIST
+LIST
+not found
+LIST
+not found
+SET
+SET
+SET
+DELETE
+Buffer->jMnxfIE``^`uXc_/sqpCg]VhiIQzrwM/cr\qLQKrWQgv]zh/WSqadUsmPzhNfEL/ddPjMugxwV\HBrY/xwjy[[WvoYEigo\MF`
+Buffer2->2942
+O que vem a seguir? ->115
+O que vem a seguir? ->99
+O que vem a seguir? ->87
+O que vem a seguir? ->100
+O que vem a seguir? ->120
+NEW
+Buffer->jMnxfIE``^`uXc_/sqpCg]VhiIQzrwM/cr\qLQKrWQgv]zh/WSqadUsmPzhNfEL/ddPjMugxwV\HBrY
+Buffer2->xwjy[[WvoYEigo\MF`
+maedoceu
+b22 ->xwjy[[WvoYEigo\MF`.
+i=18
+not found
+SET
+SET
+FIND
+not found
+SET
+PRINT
+DELETE
+Buffer->U]`vAEKMU__aG`R/R]^_M[alZC_AZVc/tQchGAzSjwql@Sl/zQrJftYzauueqlUmHZ
+Buffer2->
+O que vem a seguir? ->82
+O que vem a seguir? ->116
+O que vem a seguir? ->122
+NEW
+Buffer->U]`vAEKMU__aG`R/R]^_M[alZC_AZVc/tQchGAzSjwql@Sl
+Buffer2->zQrJftYzauueqlUmHZ
+maedoceu
+b22 ->zQrJftYzauueqlUmHZ.
+i=18
+not found
+SET
+FIND
+not found
+PRINT
+SET
+SET
+DELETE
+SET
+SET
+SET
+SET
+DELETE
+Buffer->AV]jCQNIcGVhFwo/[SqqqDObfaIbkIgk@I/@QNpi]lvMSKZbPs//mdvQrm`pQMEZ\ca/hswDTnnJvFkdShE/rGKy\spIQVtkxaT//K^q\Kj^^VBshHT_
+Buffer2->2866
+O que vem a seguir? ->91
+O que vem a seguir? ->64
+O que vem a seguir? ->109
+O que vem a seguir? ->104
+O que vem a seguir? ->114
+O que vem a seguir? ->75
+NEW
+Buffer->AV]jCQNIcGVhFwo/[SqqqDObfaIbkIgk@I/@QNpi]lvMSKZbPs//mdvQrm`pQMEZ\ca/hswDTnnJvFkdShE/rGKy\spIQVtkxaT/
+Buffer2->K^q\Kj^^VBshHT_
+maedoceu
+b22 ->K^q\Kj^^VBshHT_.
+i=15
+not found
+PRINT
+SET
+SET
+SET
+SET
+PRINT
+PRINT
+SET
+PRINT
+PRINT
+SET
+DELETE
+Buffer->VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG/k]B_^cSmAcpxfhZw@]YwX/CNiVyDW\@VqfuBb//@Dw`UvCQshysTWa//urxwEouexDOz]lx//vxMxqIuYWMbuTzh///fUavVIQDUEtT^Fy/QxwELpldwYKTXEW//meX[YmuYBkKa\_`
+Buffer2->4774
+O que vem a seguir? ->119
+O que vem a seguir? ->107
+O que vem a seguir? ->67
+O que vem a seguir? ->64
+O que vem a seguir? ->117
+O que vem a seguir? ->118
+O que vem a seguir? ->102
+O que vem a seguir? ->81
+O que vem a seguir? ->109
+NEW
+Buffer->VIr_aVTxJEjiJGX/wrM]tk@e\wlZ]rG/k]B_^cSmAcpxfhZw@]YwX/CNiVyDW\@VqfuBb//@Dw`UvCQshysTWa//urxwEouexDOz]lx//vxMxqIuYWMbuTzh///fUavVIQDUEtT^Fy/QxwELpldwYKTXEW/
+Buffer2->meX[YmuYBkKa\_`
+maedoceu
+b22 ->meX[YmuYBkKa\_`.
+i=15
+not found
+SET
+DELETE
+Buffer->zgHYgs`\sXTka[J/yhEBh]cenVvumYa/`IklNjHZHeIdtyB/OoLOcKEpSXMylHDIrj[u//QUcjqJFKovXAOAe/PAfRpMwROqQldbJ///NHHkJz^vbWfuxtZ//OiBHHppxt@SWYgz///riCoQCFrHLzN^qo///vhBzZDWQm]N\pdo
+Buffer2->1544
+O que vem a seguir? ->121
+O que vem a seguir? ->96
+O que vem a seguir? ->79
+O que vem a seguir? ->81
+O que vem a seguir? ->80
+O que vem a seguir? ->78
+O que vem a seguir? ->79
+O que vem a seguir? ->114
+O que vem a seguir? ->118
+NEW
+Buffer->zgHYgs`\sXTka[J/yhEBh]cenVvumYa/`IklNjHZHeIdtyB/OoLOcKEpSXMylHDIrj[u//QUcjqJFKovXAOAe/PAfRpMwROqQldbJ///NHHkJz^vbWfuxtZ//OiBHHppxt@SWYgz///riCoQCFrHLzN^qo//
+Buffer2->vhBzZDWQm]N\pdo
+maedoceu
+b22 ->vhBzZDWQm]N\pdo.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->NdgaynBdg_^gyNS_n[//EhC[RTNsPApDe[H//KfFUZzNdQoNd_Uo/MAHWfRsSZtk_Bka///oKXLvQCHHQw@zcV/ZdiJykLHQamo]yE/euxRSegzhHWannf//pGjIY`ogAfmV@DT///QXEZgoIeeSJOvKE//WLRB@`DoXtAljZS
+Buffer2->2016
+O que vem a seguir? ->69
+O que vem a seguir? ->75
+O que vem a seguir? ->77
+O que vem a seguir? ->111
+O que vem a seguir? ->90
+O que vem a seguir? ->101
+O que vem a seguir? ->112
+O que vem a seguir? ->81
+O que vem a seguir? ->87
+NEW
+Buffer->NdgaynBdg_^gyNS_n[//EhC[RTNsPApDe[H//KfFUZzNdQoNd_Uo/MAHWfRsSZtk_Bka///oKXLvQCHHQw@zcV/ZdiJykLHQamo]yE/euxRSegzhHWannf//pGjIY`ogAfmV@DT///QXEZgoIeeSJOvKE/
+Buffer2->WLRB@`DoXtAljZS
+maedoceu
+b22 ->WLRB@`DoXtAljZS.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+DELETE
+Buffer->PVBHVnh_ISkklMnl/savV\Ol[I_vwt]i
+Buffer2->829
+O que vem a seguir? ->115
+NEW
+Buffer->PVBHVnh_ISkklMnl
+Buffer2->savV\Ol[I_vwt]i
+maedoceu
+b22 ->savV\Ol[I_vwt]i.
+i=15
+not found
+DELETE
+Buffer->BXL_QRbLHDYnb^T/@JNkmgYYeDFBzta/ZpoDerTbhRlUJmk/kwzJVnpNTDdpbzr/nglc]rZ_yp^yBqG/aXquCnvNyWVyMjfuW^W///yZyoOvyy^tb\DON/nbQ`dloOvWGqF[E//qyIy`]iF]M[KGGB
+Buffer2->savV\Ol[I_vwt]i
+O que vem a seguir? ->64
+O que vem a seguir? ->90
+O que vem a seguir? ->107
+O que vem a seguir? ->110
+O que vem a seguir? ->97
+O que vem a seguir? ->121
+O que vem a seguir? ->110
+O que vem a seguir? ->113
+NEW
+Buffer->BXL_QRbLHDYnb^T/@JNkmgYYeDFBzta/ZpoDerTbhRlUJmk/kwzJVnpNTDdpbzr/nglc]rZ_yp^yBqG/aXquCnvNyWVyMjfuW^W///yZyoOvyy^tb\DON/nbQ`dloOvWGqF[E/
+Buffer2->qyIy`]iF]M[KGGB
+maedoceu
+b22 ->qyIy`]iF]M[KGGB.
+i=15
+not found
+SET
+SET
+SET
+SET
+DELETE
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/wYpaCrdlCbHpLVh/XmyiuDobFpUgAav/W^BEKmXnHGarPNAdC\PUCy///x@v_kpLUWYxSbZJ
+Buffer2->7362
+O que vem a seguir? ->67
+O que vem a seguir? ->119
+O que vem a seguir? ->88
+O que vem a seguir? ->87
+O que vem a seguir? ->120
+NEW
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/wYpaCrdlCbHpLVh/XmyiuDobFpUgAav/W^BEKmXnHGarPNAdC\PUCy//
+Buffer2->x@v_kpLUWYxSbZJ
+maedoceu
+b22 ->x@v_kpLUWYxSbZJ.
+i=15
+not found
+SET
+DELETE
+Buffer->Mbs@GbjpICUvlXo/\\KjQogcivpkIfq/bXclyQ@OL^O^IF`/ch]hmqlhxXy]fhM/dbibSGfd\RsFTeR/uyvcjx_yWS^EX^b/ZEXxyCc@[O[^AkR/qkOYfUvEjUSYvhsWGqF[E/
+Buffer2->3865
+O que vem a seguir? ->92
+O que vem a seguir? ->98
+O que vem a seguir? ->99
+O que vem a seguir? ->100
+O que vem a seguir? ->117
+O que vem a seguir? ->90
+O que vem a seguir? ->113
+NEW
+Buffer->Mbs@GbjpICUvlXo/\\KjQogcivpkIfq/bXclyQ@OL^O^IF`/ch]hmqlhxXy]fhM/dbibSGfd\RsFTeR/uyvcjx_yWS^EX^b/ZEXxyCc@[O[^AkR
+Buffer2->qkOYfUvEjUSYvhsWGqF[E/
+maedoceu
+b22 ->qkOYfUvEjUSYvhsWGqF[E/.
+i=22
+not found
+DELETE
+SET
+SET
+SET
+SET
+DELETE
+Buffer->MBcH^R`PF^oITZj/dcoN\_FmNmzeiTS/J`t@u_^THy`vnRgbezLW
+Buffer2->7281
+O que vem a seguir? ->100
+O que vem a seguir? ->74
+NEW
+Buffer->MBcH^R`PF^oITZj/dcoN\_FmNmzeiTS
+Buffer2->J`t@u_^THy`vnRgbezLW
+maedoceu
+b22 ->J`t@u_^THy`vnRgbezLW.
+i=20
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->_LSvsYN@c[_[rw`/UtQfJ^PjPEETsyN/JP_D@qb`l]L_m`H/Dxis`omOqvIBGCIxFPMTt
+Buffer2->1358
+O que vem a seguir? ->85
+O que vem a seguir? ->74
+O que vem a seguir? ->68
+NEW
+Buffer->_LSvsYN@c[_[rw`/UtQfJ^PjPEETsyN/JP_D@qb`l]L_m`H
+Buffer2->Dxis`omOqvIBGCIxFPMTt
+maedoceu
+b22 ->Dxis`omOqvIBGCIxFPMTt.
+i=21
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->NceyjLD`eTtnfXy/a@ZFfEJgjAl`h[n/_\yNMwixcS_W`tO/YjvTREby_nlil^aGqoI/b_``FMWdIkie_Fq/gvDlgNbOlmazvCE///IVavZFZNCBMjO]G//SiRBFzkHmqphNK]//pTN]dChzWEVl\g\
+Buffer2->1019
+O que vem a seguir? ->97
+O que vem a seguir? ->95
+O que vem a seguir? ->89
+O que vem a seguir? ->98
+O que vem a seguir? ->103
+O que vem a seguir? ->73
+O que vem a seguir? ->83
+O que vem a seguir? ->112
+NEW
+Buffer->NceyjLD`eTtnfXy/a@ZFfEJgjAl`h[n/_\yNMwixcS_W`tO/YjvTREby_nlil^aGqoI/b_``FMWdIkie_Fq/gvDlgNbOlmazvCE///IVavZFZNCBMjO]G//SiRBFzkHmqphNK]/
+Buffer2->pTN]dChzWEVl\g\
+maedoceu
+b22 ->pTN]dChzWEVl\g\.
+i=15
+not found
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtHhllWjYSAM/mkvbsMNu\s@PyAU///cIz`rPSZuTM`IAA//HDVWSh`axmhKaoa/zYCQWFnsCOUBokU
+Buffer2->9712
+O que vem a seguir? ->65
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->109
+O que vem a seguir? ->99
+O que vem a seguir? ->72
+O que vem a seguir? ->122
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtHhllWjYSAM/mkvbsMNu\s@PyAU///cIz`rPSZuTM`IAA//HDVWSh`axmhKaoa
+Buffer2->zYCQWFnsCOUBokU
+maedoceu
+b22 ->zYCQWFnsCOUBokU.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->_eKfrNL_Cnlv]ep/ySBVHrEwnuH^O[x/Gi\gu_qbuHDLuka/[rMSAKsjqH^XFhx/BKrvqqPxK\yBhbb/GS\PvZmwhhIdQgLaTdrxj//rkmGwRs^L_tHgkR
+Buffer2->4341
+O que vem a seguir? ->121
+O que vem a seguir? ->71
+O que vem a seguir? ->91
+O que vem a seguir? ->66
+O que vem a seguir? ->71
+O que vem a seguir? ->114
+NEW
+Buffer->_eKfrNL_Cnlv]ep/ySBVHrEwnuH^O[x/Gi\gu_qbuHDLuka/[rMSAKsjqH^XFhx/BKrvqqPxK\yBhbb/GS\PvZmwhhIdQgLaTdrxj/
+Buffer2->rkmGwRs^L_tHgkR
+maedoceu
+b22 ->rkmGwRs^L_tHgkR.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->nB@ApqNPweviYoY/xNdyjwa`LDMtVxO/A@n_M_w@zCy]qak/Ex]cs]c`fXSHD\@/BFGcVFjDhklNUuAVJjgNHB/BlIktqBRpTbNHM@//@VYvtp_mzqRGJ^T
+Buffer2->9718
+O que vem a seguir? ->120
+O que vem a seguir? ->65
+O que vem a seguir? ->69
+O que vem a seguir? ->66
+O que vem a seguir? ->66
+O que vem a seguir? ->64
+NEW
+Buffer->nB@ApqNPweviYoY/xNdyjwa`LDMtVxO/A@n_M_w@zCy]qak/Ex]cs]c`fXSHD\@/BFGcVFjDhklNUuAVJjgNHB/BlIktqBRpTbNHM@/
+Buffer2->@VYvtp_mzqRGJ^T
+maedoceu
+b22 ->@VYvtp_mzqRGJ^T.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->TZoWFPW^F]yUqXq/[kMlZhQDVpNAAkh/wcLbt_cIZHyiAnK/xooRHEvErDUTFIT/mliS]g[qLmEYVci/zmmhAQQgZuX_PJWga@k@GnJks//[W@@gsWSeByUyFl
+Buffer2->8303
+O que vem a seguir? ->91
+O que vem a seguir? ->119
+O que vem a seguir? ->120
+O que vem a seguir? ->109
+O que vem a seguir? ->122
+O que vem a seguir? ->91
+NEW
+Buffer->TZoWFPW^F]yUqXq/[kMlZhQDVpNAAkh/wcLbt_cIZHyiAnK/xooRHEvErDUTFIT/mliS]g[qLmEYVci/zmmhAQQgZuX_PJWga@k@GnJks/
+Buffer2->[W@@gsWSeByUyFl
+maedoceu
+b22 ->[W@@gsWSeByUyFl.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+SET
+DELETE
+Buffer->ANujgihWCjMAtAK/txTgKlIPgsmep^H/KfsalPYnglIVQDw/CqUPyl_FNKlTvxKJPo///B_xlkORImdaZRRr
+Buffer2->1776
+O que vem a seguir? ->116
+O que vem a seguir? ->75
+O que vem a seguir? ->67
+O que vem a seguir? ->66
+NEW
+Buffer->ANujgihWCjMAtAK/txTgKlIPgsmep^H/KfsalPYnglIVQDw/CqUPyl_FNKlTvxKJPo//
+Buffer2->B_xlkORImdaZRRr
+maedoceu
+b22 ->B_xlkORImdaZRRr.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->CrnoRfCnGcivFuz/LbXMSiOeaM[j]Rs^HL/gXIqLQJxvWjlATY///PhPvbIvKJKEUhsS/eWsbLaxuImsRZkf
+Buffer2->1702
+O que vem a seguir? ->76
+O que vem a seguir? ->103
+O que vem a seguir? ->80
+O que vem a seguir? ->101
+NEW
+Buffer->CrnoRfCnGcivFuz/LbXMSiOeaM[j]Rs^HL/gXIqLQJxvWjlATY///PhPvbIvKJKEUhsS
+Buffer2->eWsbLaxuImsRZkf
+maedoceu
+b22 ->eWsbLaxuImsRZkf.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->vdKBGoprFLIRhWp/JoGTvIJyTPicGuH/eBwlPeYwbstTIMG/YogHwqyk[TqQUnR/ouflU]OqyhEj]Y]/jCCqDZmEyxEqDxC/fA]rivXcWbK@elZ/ICsZNGKSSQAnwBJ/d]xSZ_YxLdDsLEM/Yd_rHJixysJgRk^DDbYRAHxHF
+Buffer2->2653
+O que vem a seguir? ->74
+O que vem a seguir? ->101
+O que vem a seguir? ->89
+O que vem a seguir? ->111
+O que vem a seguir? ->106
+O que vem a seguir? ->102
+O que vem a seguir? ->73
+O que vem a seguir? ->100
+O que vem a seguir? ->89
+NEW
+Buffer->vdKBGoprFLIRhWp/JoGTvIJyTPicGuH/eBwlPeYwbstTIMG/YogHwqyk[TqQUnR/ouflU]OqyhEj]Y]/jCCqDZmEyxEqDxC/fA]rivXcWbK@elZ/ICsZNGKSSQAnwBJ/d]xSZ_YxLdDsLEM
+Buffer2->Yd_rHJixysJgRk^DDbYRAHxHF
+maedoceu
+b22 ->Yd_rHJixysJgRk^DDbYRAHxHF.
+i=25
+not found
+SET
+DELETE
+Buffer->atFEaodQSGtNZyq/@iD`knjW\]^NepD/lt\GWaZGsyCYsEKejw///wcJpdUirORIajIC/b]iVXAHkZIbxg`E//auxw]zjgDdZY]B`/aUpoFFMOcN\_ElD///enzzoMqEtG`mFUv//DfGNez_misNH_Lb
+Buffer2->8192
+O que vem a seguir? ->64
+O que vem a seguir? ->108
+O que vem a seguir? ->119
+O que vem a seguir? ->98
+O que vem a seguir? ->97
+O que vem a seguir? ->97
+O que vem a seguir? ->101
+O que vem a seguir? ->68
+NEW
+Buffer->atFEaodQSGtNZyq/@iD`knjW\]^NepD/lt\GWaZGsyCYsEKejw///wcJpdUirORIajIC/b]iVXAHkZIbxg`E//auxw]zjgDdZY]B`/aUpoFFMOcN\_ElD///enzzoMqEtG`mFUv/
+Buffer2->DfGNez_misNH_Lb
+maedoceu
+b22 ->DfGNez_misNH_Lb.
+i=15
+not found
+SET
+SET
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->mRt^QMRnSThaH`C/JV^ZNSiWdgQKalL/YMMHcd`fykHMl[WiAx///jfuTGuHGGbSyCyT//g\qoQNTSMYhffbn//WFo@OPFNAnKBCuv/@ZtbKJEjFshrKIx///[MzukYWIBIUI[BT///nIj@z]^LDEKNSrs
+Buffer2->7921
+O que vem a seguir? ->74
+O que vem a seguir? ->89
+O que vem a seguir? ->106
+O que vem a seguir? ->103
+O que vem a seguir? ->87
+O que vem a seguir? ->64
+O que vem a seguir? ->91
+O que vem a seguir? ->110
+NEW
+Buffer->mRt^QMRnSThaH`C/JV^ZNSiWdgQKalL/YMMHcd`fykHMl[WiAx///jfuTGuHGGbSyCyT//g\qoQNTSMYhffbn//WFo@OPFNAnKBCuv/@ZtbKJEjFshrKIx///[MzukYWIBIUI[BT//
+Buffer2->nIj@z]^LDEKNSrs
+maedoceu
+b22 ->nIj@z]^LDEKNSrs.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->^cEneHSl`CPSaaq/@Kn@mM^AUX^@uIE/jdTBIOURO^ax`IF/ZaWRPOuuhB]aTLT/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ/R`sKF_JCszlwPXmTau]t
+Buffer2->3947
+O que vem a seguir? ->64
+O que vem a seguir? ->106
+O que vem a seguir? ->90
+O que vem a seguir? ->86
+O que vem a seguir? ->67
+O que vem a seguir? ->115
+O que vem a seguir? ->79
+O que vem a seguir? ->82
+NEW
+Buffer->^cEneHSl`CPSaaq/@Kn@mM^AUX^@uIE/jdTBIOURO^ax`IF/ZaWRPOuuhB]aTLT/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ
+Buffer2->R`sKF_JCszlwPXmTau]t
+maedoceu
+b22 ->R`sKF_JCszlwPXmTau]t.
+i=20
+not found
+SET
+DELETE
+Buffer->ikM`OSkh`ZbEg_F/sBnUaypHRJ\lCbU/cTppBFdvD[BuvBb/rdj]]qqOfaNZ\uB/KQvjwvtbLk^HU\_/yjlRbMhCJFdPGCLTZSrgonwu/qCDERJsiJlWPIBi//lsbHFkHFp]NGTSn///keQTQjnN@vPkkql//XWcxMqXTZumFdQz
+Buffer2->5637
+O que vem a seguir? ->115
+O que vem a seguir? ->99
+O que vem a seguir? ->114
+O que vem a seguir? ->75
+O que vem a seguir? ->121
+O que vem a seguir? ->113
+O que vem a seguir? ->108
+O que vem a seguir? ->107
+O que vem a seguir? ->88
+NEW
+Buffer->ikM`OSkh`ZbEg_F/sBnUaypHRJ\lCbU/cTppBFdvD[BuvBb/rdj]]qqOfaNZ\uB/KQvjwvtbLk^HU\_/yjlRbMhCJFdPGCLTZSrgonwu/qCDERJsiJlWPIBi//lsbHFkHFp]NGTSn///keQTQjnN@vPkkql/
+Buffer2->XWcxMqXTZumFdQz
+maedoceu
+b22 ->XWcxMqXTZumFdQz.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+DELETE
+Buffer->_U@gCWacUsfryqmNQX//jqX[@LtUx]raP^m//afP@PqoMWlR[Btf///XTKr[kcLJwP[NDV
+Buffer2->1416
+O que vem a seguir? ->106
+O que vem a seguir? ->97
+O que vem a seguir? ->88
+NEW
+Buffer->_U@gCWacUsfryqmNQX//jqX[@LtUx]raP^m//afP@PqoMWlR[Btf//
+Buffer2->XTKr[kcLJwP[NDV
+maedoceu
+b22 ->XTKr[kcLJwP[NDV.
+i=15
+not found
+SET
+DELETE
+Buffer->tnvTgR]@d@JpYl^/ffrmrXkvUVwimCJ/BjFDDfkKA\GUj\o/CncECtRYxAzQpzc/SwooL]XSgQBmJWu/muCo]VIFm\Oa\gF/QcSmn_nACdbsOcc/IDwiXzfy_`B@NMcoLYhvSwva//e[x`Jaz\UPwEYEs
+Buffer2->7333
+O que vem a seguir? ->102
+O que vem a seguir? ->66
+O que vem a seguir? ->67
+O que vem a seguir? ->83
+O que vem a seguir? ->109
+O que vem a seguir? ->81
+O que vem a seguir? ->73
+O que vem a seguir? ->101
+NEW
+Buffer->tnvTgR]@d@JpYl^/ffrmrXkvUVwimCJ/BjFDDfkKA\GUj\o/CncECtRYxAzQpzc/SwooL]XSgQBmJWu/muCo]VIFm\Oa\gF/QcSmn_nACdbsOcc/IDwiXzfy_`B@NMcoLYhvSwva/
+Buffer2->e[x`Jaz\UPwEYEs
+maedoceu
+b22 ->e[x`Jaz\UPwEYEs.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->jZ]O_D_aVnoVcJy/]xm`TpsxdQLyZoD/GMbQPCe@\^]aeZR/_PkPlNfHHxldczV/YyIB`znhaJrTHwp]qkXqy//`aqtDnDWiFSxxlt//BdZZgVrFiSiV`Ya//BRrRYvPLeuUKgUF
+Buffer2->6618
+O que vem a seguir? ->93
+O que vem a seguir? ->71
+O que vem a seguir? ->95
+O que vem a seguir? ->89
+O que vem a seguir? ->96
+O que vem a seguir? ->66
+O que vem a seguir? ->66
+NEW
+Buffer->jZ]O_D_aVnoVcJy/]xm`TpsxdQLyZoD/GMbQPCe@\^]aeZR/_PkPlNfHHxldczV/YyIB`znhaJrTHwp]qkXqy//`aqtDnDWiFSxxlt//BdZZgVrFiSiV`Ya/
+Buffer2->BRrRYvPLeuUKgUF
+maedoceu
+b22 ->BRrRYvPLeuUKgUF.
+i=15
+not found
+DELETE
+Buffer->zmwu_]OZeObzVYZ/E^QuDTDZHqMCST[/GMbQPCe@\^]aeZR/_PkPlNfHHxldczV/YyIB`znhaJrTHwp]qkXqy//`aqtDnDWiFSxxlt//BdZZgVrFiSiV`Ya/
+Buffer2->BRrRYvPLeuUKgUF
+O que vem a seguir? ->69
+O que vem a seguir? ->71
+O que vem a seguir? ->95
+O que vem a seguir? ->89
+O que vem a seguir? ->96
+O que vem a seguir? ->66
+NEW
+Buffer->zmwu_]OZeObzVYZ/E^QuDTDZHqMCST[/GMbQPCe@\^]aeZR/_PkPlNfHHxldczV/YyIB`znhaJrTHwp]qkXqy//`aqtDnDWiFSxxlt/
+Buffer2->BdZZgVrFiSiV`Ya/
+maedoceu
+b22 ->BdZZgVrFiSiV`Ya/.
+i=16
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->ioFdZw\\KCEOmBRIi/A`kJ`\kTfoVggI]//qmkKiTxWa^MbJBi///\TcbZivUMPFr\ea/hCD[OeToZVirs^z//Iy`^vZKjkQt^hds/pQpZOxX\BRsKiEm
+Buffer2->2341
+O que vem a seguir? ->65
+O que vem a seguir? ->113
+O que vem a seguir? ->92
+O que vem a seguir? ->104
+O que vem a seguir? ->73
+O que vem a seguir? ->112
+NEW
+Buffer->ioFdZw\\KCEOmBRIi/A`kJ`\kTfoVggI]//qmkKiTxWa^MbJBi///\TcbZivUMPFr\ea/hCD[OeToZVirs^z//Iy`^vZKjkQt^hds
+Buffer2->pQpZOxX\BRsKiEm
+maedoceu
+b22 ->pQpZOxX\BRsKiEm.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->NdgaynBdg_^gyNS/ARX]@iPsXwlgC]J/aH_Em][UpDj`YbI/E_FbLhFgaktsAWh/Yt]zHMWDdoFcn\GE`JKeRLL//GH[EWMlRJLbjJsG/zk_gKwiKFhAR@c`/`YkbMVLgc^][]Vj//BRmC@YqgpUzGpff
+Buffer2->4631
+O que vem a seguir? ->65
+O que vem a seguir? ->97
+O que vem a seguir? ->69
+O que vem a seguir? ->89
+O que vem a seguir? ->71
+O que vem a seguir? ->122
+O que vem a seguir? ->96
+O que vem a seguir? ->66
+NEW
+Buffer->NdgaynBdg_^gyNS/ARX]@iPsXwlgC]J/aH_Em][UpDj`YbI/E_FbLhFgaktsAWh/Yt]zHMWDdoFcn\GE`JKeRLL//GH[EWMlRJLbjJsG/zk_gKwiKFhAR@c`/`YkbMVLgc^][]Vj/
+Buffer2->BRmC@YqgpUzGpff
+maedoceu
+b22 ->BRmC@YqgpUzGpff.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->Af^HLwvQocqRm[Y/saA^COS[h@ODhoc/ZfOkCpvOiIKuaUo/GbcBu_oDOdficL]/gvOY[YahZ_XnTnG/SI_azcKgJArUEON/jlvLqMqrrgyrMw]P[gImw///nz[XYXhntHS^DkQ///CeSejJ`oojFFlhh//TUHlQ_KPCcKg\Ya
+Buffer2->3735
+O que vem a seguir? ->115
+O que vem a seguir? ->90
+O que vem a seguir? ->71
+O que vem a seguir? ->103
+O que vem a seguir? ->83
+O que vem a seguir? ->106
+O que vem a seguir? ->110
+O que vem a seguir? ->67
+O que vem a seguir? ->84
+NEW
+Buffer->Af^HLwvQocqRm[Y/saA^COS[h@ODhoc/ZfOkCpvOiIKuaUo/GbcBu_oDOdficL]/gvOY[YahZ_XnTnG/SI_azcKgJArUEON/jlvLqMqrrgyrMw]P[gImw///nz[XYXhntHS^DkQ///CeSejJ`oojFFlhh/
+Buffer2->TUHlQ_KPCcKg\Ya
+maedoceu
+b22 ->TUHlQ_KPCcKg\Ya.
+i=15
+not found
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->nB@ApqNPweviYoY/xNdyjwa`LDMtVxO/A@n_M_w@zCy]qak/Ex]cs]c`fXSHD\@/BFGcVFjDhklNUuA/l@SHzGvJnwxTlhVYWX[dAhQ
+Buffer2->411
+O que vem a seguir? ->120
+O que vem a seguir? ->65
+O que vem a seguir? ->69
+O que vem a seguir? ->66
+O que vem a seguir? ->108
+NEW
+Buffer->nB@ApqNPweviYoY/xNdyjwa`LDMtVxO/A@n_M_w@zCy]qak/Ex]cs]c`fXSHD\@/BFGcVFjDhklNUuA
+Buffer2->l@SHzGvJnwxTlhVYWX[dAhQ
+maedoceu
+b22 ->l@SHzGvJnwxTlhVYWX[dAhQ.
+i=23
+not found
+SET
+SET
+DELETE
+SET
+SET
+DELETE
+Buffer->pOifbO_jL^aUCBC/dYuaju\RIsRaFrk/zMPfAtWvUkTMbQt/gZz\jpE]ZocC[bSnYAZA///zAxw@vLloGaNXxD/]BBgienqSF[sXIC//`yFUvihQQ_poofZ//V^whRGNIZARca[r
+Buffer2->6835
+O que vem a seguir? ->100
+O que vem a seguir? ->122
+O que vem a seguir? ->103
+O que vem a seguir? ->122
+O que vem a seguir? ->93
+O que vem a seguir? ->96
+O que vem a seguir? ->86
+NEW
+Buffer->pOifbO_jL^aUCBC/dYuaju\RIsRaFrk/zMPfAtWvUkTMbQt/gZz\jpE]ZocC[bSnYAZA///zAxw@vLloGaNXxD/]BBgienqSF[sXIC//`yFUvihQQ_poofZ/
+Buffer2->V^whRGNIZARca[r
+maedoceu
+b22 ->V^whRGNIZARca[r.
+i=15
+not found
+DELETE
+Buffer->\KRzOAXshzV]FG_/fNqPXfizeavmMC\/zMPfAtWvUkTMbQt/gZz\jpE]ZocC[bSnYAZA///zAxw@vLloGaNXxD/]BBgienqSF[sXIC//`yFUvihQQ_poofZ/
+Buffer2->V^whRGNIZARca[r
+O que vem a seguir? ->102
+O que vem a seguir? ->122
+O que vem a seguir? ->103
+O que vem a seguir? ->122
+O que vem a seguir? ->93
+O que vem a seguir? ->96
+NEW
+Buffer->\KRzOAXshzV]FG_/fNqPXfizeavmMC\/zMPfAtWvUkTMbQt/gZz\jpE]ZocC[bSnYAZA///zAxw@vLloGaNXxD/]BBgienqSF[sXIC/
+Buffer2->`yFUvihQQ_poofZ/
+maedoceu
+b22 ->`yFUvihQQ_poofZ/.
+i=16
+not found
+DELETE
+Buffer->x`[tCzdbwM]P[UW/fNqPXfizeavmMC\/zMPfAtWvUkTMbQt/gZz\jpE]ZocC[bSnYAZA///zAxw@vLloGaNXxD/]BBgienqSF[sXIC/
+Buffer2->`yFUvihQQ_poofZ
+O que vem a seguir? ->102
+O que vem a seguir? ->122
+O que vem a seguir? ->103
+O que vem a seguir? ->122
+O que vem a seguir? ->93
+NEW
+Buffer->x`[tCzdbwM]P[UW/fNqPXfizeavmMC\/zMPfAtWvUkTMbQt/gZz\jpE]ZocC[bSnYAZA///zAxw@vLloGaNXxD
+Buffer2->]BBgienqSF[sXIC/
+maedoceu
+b22 ->]BBgienqSF[sXIC/.
+i=16
+not found
+SET
+DELETE
+Buffer->xPzRa@b^QImauor/daktOruTMoQUEYP/SsmiMtsN]\^wGjX/rfvWSSiUHHE[zOG/ekyhNAThTIsvyhM/f`mKju^Pn^]ZD_tSF[sXIC/
+Buffer2->3577
+O que vem a seguir? ->100
+O que vem a seguir? ->83
+O que vem a seguir? ->114
+O que vem a seguir? ->101
+O que vem a seguir? ->102
+NEW
+Buffer->xPzRa@b^QImauor/daktOruTMoQUEYP/SsmiMtsN]\^wGjX/rfvWSSiUHHE[zOG/ekyhNAThTIsvyhM
+Buffer2->f`mKju^Pn^]ZD_tSF[sXIC/
+maedoceu
+b22 ->f`mKju^Pn^]ZD_tSF[sXIC/.
+i=23
+not found
+SET
+DELETE
+Buffer->GRwKdsNvwzf_cAs/eV]_efyp\q\bCEL/CFKAvdWOxOuSeLb/T[dBNiNpZdIrj[uJFxb
+Buffer2->7218
+O que vem a seguir? ->101
+O que vem a seguir? ->67
+O que vem a seguir? ->84
+NEW
+Buffer->GRwKdsNvwzf_cAs/eV]_efyp\q\bCEL/CFKAvdWOxOuSeLb
+Buffer2->T[dBNiNpZdIrj[uJFxb
+maedoceu
+b22 ->T[dBNiNpZdIrj[uJFxb.
+i=19
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->PbgVxHrZHKKiU@z/jmp^inoX\Kv]FTC/@UgFXS[bfDmDEY\Mb/KgpdihPMlSMCJqh///UishbXTLTuvQj@V
+Buffer2->6851
+O que vem a seguir? ->106
+O que vem a seguir? ->64
+O que vem a seguir? ->75
+O que vem a seguir? ->85
+NEW
+Buffer->PbgVxHrZHKKiU@z/jmp^inoX\Kv]FTC/@UgFXS[bfDmDEY\Mb/KgpdihPMlSMCJqh//
+Buffer2->UishbXTLTuvQj@V
+maedoceu
+b22 ->UishbXTLTuvQj@V.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->^GGPUjYzNPDcX_P/nVmYlEtoEaaTVwwcL///FEpyZI^XzQvZBa[///\qkVXXVDIZZDinw///GDAI@\wf^RfeTUp
+Buffer2->4219
+O que vem a seguir? ->110
+O que vem a seguir? ->70
+O que vem a seguir? ->92
+O que vem a seguir? ->71
+NEW
+Buffer->^GGPUjYzNPDcX_P/nVmYlEtoEaaTVwwcL///FEpyZI^XzQvZBa[///\qkVXXVDIZZDinw//
+Buffer2->GDAI@\wf^RfeTUp
+maedoceu
+b22 ->GDAI@\wf^RfeTUp.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->uLHexCmtPWOcYvc/evkm_RCJuJGFr`[/jSMa^\DO\iB[pT^/v[n@KPPKFmYD\iv@jlIJi/B@jDf`kALwzLkAS
+Buffer2->4255
+O que vem a seguir? ->101
+O que vem a seguir? ->106
+O que vem a seguir? ->118
+O que vem a seguir? ->66
+NEW
+Buffer->uLHexCmtPWOcYvc/evkm_RCJuJGFr`[/jSMa^\DO\iB[pT^/v[n@KPPKFmYD\iv@jlIJi
+Buffer2->B@jDf`kALwzLkAS
+maedoceu
+b22 ->B@jDf`kALwzLkAS.
+i=15
+not found
+SET
+SET
+DELETE
+SET
+SET
+DELETE
+Buffer->zYM`wyF\dlFsTed/PXLhySU^tDzzGja/rF]Pafx[LuPmrMb/KgpdihPMlSMCJqh/UishbXTLTuvQj@V]///VCA^upk[bSkI@mS//vYklObAyOLmcWGn//ZTP_lwiv]qd@khe//`Pw`Re@@epnHik\
+Buffer2->1312
+O que vem a seguir? ->80
+O que vem a seguir? ->114
+O que vem a seguir? ->75
+O que vem a seguir? ->85
+O que vem a seguir? ->86
+O que vem a seguir? ->118
+O que vem a seguir? ->90
+O que vem a seguir? ->96
+NEW
+Buffer->zYM`wyF\dlFsTed/PXLhySU^tDzzGja/rF]Pafx[LuPmrMb/KgpdihPMlSMCJqh/UishbXTLTuvQj@V]///VCA^upk[bSkI@mS//vYklObAyOLmcWGn//ZTP_lwiv]qd@khe/
+Buffer2->`Pw`Re@@epnHik\
+maedoceu
+b22 ->`Pw`Re@@epnHik\.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->IH[HUpJdm]EAuqs/QPFoSxKIcxYylDK/]SMsTeI[_ToQDr]HzNp///VY^pXeCqc^GcE]]/OJKjazGbnnSoMOV/rTavVoSIj]E[Vdz///ui[bXPAe]KAGIfs///CQgEX\EJlWOdx`w
+Buffer2->8184
+O que vem a seguir? ->81
+O que vem a seguir? ->93
+O que vem a seguir? ->86
+O que vem a seguir? ->79
+O que vem a seguir? ->114
+O que vem a seguir? ->117
+O que vem a seguir? ->67
+NEW
+Buffer->IH[HUpJdm]EAuqs/QPFoSxKIcxYylDK/]SMsTeI[_ToQDr]HzNp///VY^pXeCqc^GcE]]/OJKjazGbnnSoMOV/rTavVoSIj]E[Vdz///ui[bXPAe]KAGIfs//
+Buffer2->CQgEX\EJlWOdx`w
+maedoceu
+b22 ->CQgEX\EJlWOdx`w.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->_iPW^YZ]Irniblk/ekdmISagocXDcLs/JL]IlzeNoEbqwJb/tv`AUIyXXLXTpCV/Yd\]Yry[tghIhiw/PGIZ_ZzIAMwUHAq/FIKV\YJQvKIjkse/zSjBk@pRqH]v\n_/dqbOFnvrC@MaqFe/LE`ow^d_uJYHVnOdsdqqpn
+Buffer2->3284
+O que vem a seguir? ->101
+O que vem a seguir? ->74
+O que vem a seguir? ->116
+O que vem a seguir? ->89
+O que vem a seguir? ->80
+O que vem a seguir? ->70
+O que vem a seguir? ->122
+O que vem a seguir? ->100
+O que vem a seguir? ->76
+NEW
+Buffer->_iPW^YZ]Irniblk/ekdmISagocXDcLs/JL]IlzeNoEbqwJb/tv`AUIyXXLXTpCV/Yd\]Yry[tghIhiw/PGIZ_ZzIAMwUHAq/FIKV\YJQvKIjkse/zSjBk@pRqH]v\n_/dqbOFnvrC@MaqFe
+Buffer2->LE`ow^d_uJYHVnOdsdqqpn
+maedoceu
+b22 ->LE`ow^d_uJYHVnOdsdqqpn.
+i=22
+not found
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+DELETE
+Buffer->tLtoD@sSTR[R^wZ/UK^dXIRVlfItqag/wGbnuQ]SIOQgrLY/Ds\GGmzqoAeclxb/Up`U^UgH`GHpE`s/SyIPT\TPgfDwVeN/hTC_rArDyc]uHINWUaWZabIDdcd//qDu_DTjdCjSqWY@//dUP]eqSiFEcS^zT
+Buffer2->4949
+O que vem a seguir? ->85
+O que vem a seguir? ->119
+O que vem a seguir? ->68
+O que vem a seguir? ->85
+O que vem a seguir? ->83
+O que vem a seguir? ->104
+O que vem a seguir? ->113
+O que vem a seguir? ->100
+NEW
+Buffer->tLtoD@sSTR[R^wZ/UK^dXIRVlfItqag/wGbnuQ]SIOQgrLY/Ds\GGmzqoAeclxb/Up`U^UgH`GHpE`s/SyIPT\TPgfDwVeN/hTC_rArDyc]uHINWUaWZabIDdcd//qDu_DTjdCjSqWY@/
+Buffer2->dUP]eqSiFEcS^zT
+maedoceu
+b22 ->dUP]eqSiFEcS^zT.
+i=15
+not found
+SET
+DELETE
+Buffer->AKyvm[XSASiapCI/`xOXMmZ[hgNdMkekb/eaGuOTv\YJ@_@ME/p[^ak[HMkVtpXNe///fmbo[OMLDFZmxAB//@OtJA@MBMbCobBf
+Buffer2->3879
+O que vem a seguir? ->96
+O que vem a seguir? ->101
+O que vem a seguir? ->112
+O que vem a seguir? ->102
+O que vem a seguir? ->64
+NEW
+Buffer->AKyvm[XSASiapCI/`xOXMmZ[hgNdMkekb/eaGuOTv\YJ@_@ME/p[^ak[HMkVtpXNe///fmbo[OMLDFZmxAB/
+Buffer2->@OtJA@MBMbCobBf
+maedoceu
+b22 ->@OtJA@MBMbCobBf.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->Ygin`koDpleXBDc/@WOAWcqS@DKpnBxDJK/`VIFLXdEpjQZHEC///HDLHOoWYviPe`X@/ik\izVIMsjRJKQq///Y_[[xNoQDZhFGbG/WUHrFzW\Ecr^\IA
+Buffer2->1981
+O que vem a seguir? ->64
+O que vem a seguir? ->96
+O que vem a seguir? ->72
+O que vem a seguir? ->105
+O que vem a seguir? ->89
+O que vem a seguir? ->87
+NEW
+Buffer->Ygin`koDpleXBDc/@WOAWcqS@DKpnBxDJK/`VIFLXdEpjQZHEC///HDLHOoWYviPe`X@/ik\izVIMsjRJKQq///Y_[[xNoQDZhFGbG
+Buffer2->WUHrFzW\Ecr^\IA
+maedoceu
+b22 ->WUHrFzW\Ecr^\IA.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->NceyjLD`eTtnfXy/a@ZFfEJgjAl`h[nYE//`n[ZcbUbQ@\JRND/]qaRbjnTvF\ddS@//[EQLcDpBvfg^@Dh//qc\BXVvJv\vxijX
+Buffer2->8747
+O que vem a seguir? ->97
+O que vem a seguir? ->96
+O que vem a seguir? ->93
+O que vem a seguir? ->91
+O que vem a seguir? ->113
+NEW
+Buffer->NceyjLD`eTtnfXy/a@ZFfEJgjAl`h[nYE//`n[ZcbUbQ@\JRND/]qaRbjnTvF\ddS@//[EQLcDpBvfg^@Dh/
+Buffer2->qc\BXVvJv\vxijX
+maedoceu
+b22 ->qc\BXVvJv\vxijX.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->UYiwlWHysoNSG]]VCS///JLoJbXv\IbV\fvr///eT_egXrXYzLkSst///FPTAVGUkOKSgeG[//AOviOHxZovbhDGE/tlnXGoqcUIC\ad]///hZ[CNpwWPu^shkH//MsXDgASLCvqMten///WmPgPKfyv\s\@_P
+Buffer2->8980
+O que vem a seguir? ->74
+O que vem a seguir? ->101
+O que vem a seguir? ->70
+O que vem a seguir? ->65
+O que vem a seguir? ->116
+O que vem a seguir? ->104
+O que vem a seguir? ->77
+O que vem a seguir? ->87
+NEW
+Buffer->UYiwlWHysoNSG]]VCS///JLoJbXv\IbV\fvr///eT_egXrXYzLkSst///FPTAVGUkOKSgeG[//AOviOHxZovbhDGE/tlnXGoqcUIC\ad]///hZ[CNpwWPu^shkH//MsXDgASLCvqMten//
+Buffer2->WmPgPKfyv\s\@_P
+maedoceu
+b22 ->WmPgPKfyv\s\@_P.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+DELETE
+Buffer->f[srUSp^Gc@iLii/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE/u[aj[NSYWCz`uMm/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuyGHVZT\DI//xQpcikPXqz@Kw\i/wbLzQwuQaye_uDF
+Buffer2->3400
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+O que vem a seguir? ->117
+O que vem a seguir? ->120
+O que vem a seguir? ->72
+O que vem a seguir? ->83
+O que vem a seguir? ->87
+O que vem a seguir? ->120
+O que vem a seguir? ->119
+NEW
+Buffer->f[srUSp^Gc@iLii/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE/u[aj[NSYWCz`uMm/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuyGHVZT\DI//xQpcikPXqz@Kw\i
+Buffer2->wbLzQwuQaye_uDF
+maedoceu
+b22 ->wbLzQwuQaye_uDF.
+i=15
+not found
+DELETE
+Buffer->d\mNnUTPegrrSir/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE/u[aj[NSYWCz`uMm/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuyGHVZT\DI//xQpcikPXqz@Kw\i
+Buffer2->wbLzQwuQaye_uDF
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+O que vem a seguir? ->117
+O que vem a seguir? ->120
+O que vem a seguir? ->72
+O que vem a seguir? ->83
+O que vem a seguir? ->87
+O que vem a seguir? ->120
+NEW
+Buffer->d\mNnUTPegrrSir/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE/u[aj[NSYWCz`uMm/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuyGHVZT\DI/
+Buffer2->xQpcikPXqz@Kw\i
+maedoceu
+b22 ->xQpcikPXqz@Kw\i.
+i=15
+not found
+DELETE
+Buffer->_lHTuPvxGLPXH`J/pTFXmlnAc_cVOV]/TNLqFizwBF]OR`_/wCJqS^GoXF`AuQj/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuyGHVZT\DI/
+Buffer2->xQpcikPXqz@Kw\i
+O que vem a seguir? ->112
+O que vem a seguir? ->84
+O que vem a seguir? ->119
+O que vem a seguir? ->120
+O que vem a seguir? ->72
+O que vem a seguir? ->83
+O que vem a seguir? ->87
+NEW
+Buffer->_lHTuPvxGLPXH`J/pTFXmlnAc_cVOV]/TNLqFizwBF]OR`_/wCJqS^GoXF`AuQj/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR
+Buffer2->WqSpBlYe_[wuPuyGHVZT\DI/
+maedoceu
+b22 ->WqSpBlYe_[wuPuyGHVZT\DI/.
+i=24
+not found
+SET
+DELETE
+Buffer->KvNPiyIwYURhc@f`Y//[Qp`m]Z^BbbTgbS//KO_lztkvr@oKOWA//`t_fKClYTZDnddu
+Buffer2->1006
+O que vem a seguir? ->91
+O que vem a seguir? ->75
+O que vem a seguir? ->96
+NEW
+Buffer->KvNPiyIwYURhc@f`Y//[Qp`m]Z^BbbTgbS//KO_lztkvr@oKOWA/
+Buffer2->`t_fKClYTZDnddu
+maedoceu
+b22 ->`t_fKClYTZDnddu.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->OFCTjkJZOZssV[n/cAUvm]iW[xbOrL_/gsHhEmuzSuWh@`d/CJsW^s]Xf`xVFhWnAm[[//VnyhO^L`yRu^nRX//ukSAMuFMJ[bHPPk
+Buffer2->1542
+O que vem a seguir? ->99
+O que vem a seguir? ->103
+O que vem a seguir? ->67
+O que vem a seguir? ->86
+O que vem a seguir? ->117
+NEW
+Buffer->OFCTjkJZOZssV[n/cAUvm]iW[xbOrL_/gsHhEmuzSuWh@`d/CJsW^s]Xf`xVFhWnAm[[//VnyhO^L`yRu^nRX/
+Buffer2->ukSAMuFMJ[bHPPk
+maedoceu
+b22 ->ukSAMuFMJ[bHPPk.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->F\pzXs_wpq^BJfR/ElHcyRDpnAIdlLv/EodYUCxLceQaYiX/kfYfALu_BOX^sGglRtPOKt/dpayUu]vdHsNPg[/uje[Ru]vgwBJpcc//vMsSGp^[fpZpPpK//GUbdrBAEG[z[sRQ///VnECYZgTImiPod[
+Buffer2->9599
+O que vem a seguir? ->69
+O que vem a seguir? ->69
+O que vem a seguir? ->107
+O que vem a seguir? ->100
+O que vem a seguir? ->117
+O que vem a seguir? ->118
+O que vem a seguir? ->71
+O que vem a seguir? ->86
+NEW
+Buffer->F\pzXs_wpq^BJfR/ElHcyRDpnAIdlLv/EodYUCxLceQaYiX/kfYfALu_BOX^sGglRtPOKt/dpayUu]vdHsNPg[/uje[Ru]vgwBJpcc//vMsSGp^[fpZpPpK//GUbdrBAEG[z[sRQ//
+Buffer2->VnECYZgTImiPod[
+maedoceu
+b22 ->VnECYZgTImiPod[.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->bsHGBUgSjxLzgBh/FiwsHTh@^z@MbHsZps//SmlOfyJ[dLq`uta///zqXriMtCOJ^IVMr///[SqiNdMdSXltDjz/`NwjEsVO_d`b@zr/AhxlXUFvY_]SreJ///fd`NQVyizzvVPjz//xAPfvirjYZ`xmeS
+Buffer2->8864
+O que vem a seguir? ->70
+O que vem a seguir? ->83
+O que vem a seguir? ->122
+O que vem a seguir? ->91
+O que vem a seguir? ->96
+O que vem a seguir? ->65
+O que vem a seguir? ->102
+O que vem a seguir? ->120
+NEW
+Buffer->bsHGBUgSjxLzgBh/FiwsHTh@^z@MbHsZps//SmlOfyJ[dLq`uta///zqXriMtCOJ^IVMr///[SqiNdMdSXltDjz/`NwjEsVO_d`b@zr/AhxlXUFvY_]SreJ///fd`NQVyizzvVPjz/
+Buffer2->xAPfvirjYZ`xmeS
+maedoceu
+b22 ->xAPfvirjYZ`xmeS.
+i=15
+not found
+DELETE
+Buffer->slUlBn^MBPwGidy/sOmqiyJehbmWw[s/nn@YbbiGGa^@[eB/]NxsUQBluz^REQdJ^IVMr///[SqiNdMdSXltDjz/`NwjEsVO_d`b@zr/AhxlXUFvY_]SreJ///fd`NQVyizzvVPjz/
+Buffer2->xAPfvirjYZ`xmeS
+O que vem a seguir? ->115
+O que vem a seguir? ->110
+O que vem a seguir? ->93
+O que vem a seguir? ->91
+O que vem a seguir? ->96
+O que vem a seguir? ->65
+O que vem a seguir? ->102
+NEW
+Buffer->slUlBn^MBPwGidy/sOmqiyJehbmWw[s/nn@YbbiGGa^@[eB/]NxsUQBluz^REQdJ^IVMr///[SqiNdMdSXltDjz/`NwjEsVO_d`b@zr/AhxlXUFvY_]SreJ//
+Buffer2->fd`NQVyizzvVPjz/
+maedoceu
+b22 ->fd`NQVyizzvVPjz/.
+i=16
+not found
+DELETE
+Buffer->TmNZsYcoGBjiHbH/[@iiFznRlKoDbjw/TQoti]zFqLZLgOb/V]ELBKBxhMKgzUr/t@qJnvEtGSjlktt/aRoIZeHUkzxe_TA/LB^[vvMwJyZYa[M/aGTxSwuvYqalDSbVyizzvVPjz/
+Buffer2->fd`NQVyizzvVPjz
+O que vem a seguir? ->91
+O que vem a seguir? ->84
+O que vem a seguir? ->86
+O que vem a seguir? ->116
+O que vem a seguir? ->97
+O que vem a seguir? ->76
+O que vem a seguir? ->97
+NEW
+Buffer->TmNZsYcoGBjiHbH/[@iiFznRlKoDbjw/TQoti]zFqLZLgOb/V]ELBKBxhMKgzUr/t@qJnvEtGSjlktt/aRoIZeHUkzxe_TA/LB^[vvMwJyZYa[M
+Buffer2->aGTxSwuvYqalDSbVyizzvVPjz/
+maedoceu
+b22 ->aGTxSwuvYqalDSbVyizzvVPjz/.
+i=26
+not found
+SET
+SET
+SET
+DELETE
+Buffer->UpnHWXjvKvLX`UC/IqBQ]CAOwF]OOqD/pzY_tLoyCKAFIvC/hYwTcimNwrzJ]hi/_HqXL^tw@vgvq`f]ezF@hy///EKhv_siy\nxY^ww//hzfgUA^TXlgMEdC
+Buffer2->7994
+O que vem a seguir? ->73
+O que vem a seguir? ->112
+O que vem a seguir? ->104
+O que vem a seguir? ->95
+O que vem a seguir? ->69
+O que vem a seguir? ->104
+NEW
+Buffer->UpnHWXjvKvLX`UC/IqBQ]CAOwF]OOqD/pzY_tLoyCKAFIvC/hYwTcimNwrzJ]hi/_HqXL^tw@vgvq`f]ezF@hy///EKhv_siy\nxY^ww/
+Buffer2->hzfgUA^TXlgMEdC
+maedoceu
+b22 ->hzfgUA^TXlgMEdC.
+i=15
+not found
+DELETE
+Buffer->TPno_^lKC_Csg@D/t^ocjYUISKbY[Ti/k]DqDnTTLJlzmmd/h`THZrmy_UuYSeA/LerNhsihtoycdjz]ezF@hy///EKhv_siy\nxY^ww/
+Buffer2->hzfgUA^TXlgMEdC
+O que vem a seguir? ->116
+O que vem a seguir? ->107
+O que vem a seguir? ->104
+O que vem a seguir? ->76
+O que vem a seguir? ->69
+NEW
+Buffer->TPno_^lKC_Csg@D/t^ocjYUISKbY[Ti/k]DqDnTTLJlzmmd/h`THZrmy_UuYSeA/LerNhsihtoycdjz]ezF@hy//
+Buffer2->EKhv_siy\nxY^ww/
+maedoceu
+b22 ->EKhv_siy\nxY^ww/.
+i=16
+not found
+DELETE
+Buffer->jkIQorkBR`bHGKT/o`JdvRZ^o`lKwrC/tgZbkCCXRdhnJUr/h`THZrmy_UuYSeA/LerNhsihtoycdjz]ezF@hy//
+Buffer2->EKhv_siy\nxY^ww
+O que vem a seguir? ->111
+O que vem a seguir? ->116
+O que vem a seguir? ->104
+O que vem a seguir? ->76
+NEW
+Buffer->jkIQorkBR`bHGKT/o`JdvRZ^o`lKwrC/tgZbkCCXRdhnJUr/h`THZrmy_UuYSeA
+Buffer2->LerNhsihtoycdjz]ezF@hy//
+maedoceu
+b22 ->LerNhsihtoycdjz]ezF@hy//.
+i=24
+not found
+DELETE
+Buffer->hQZ]UUUEPis[gsG/bB^uVOcao`AAFQQ/JUc\@dZCCDk[Ctx/h`THZrmy_UuYSeA
+Buffer2->LerNhsihtoycdjz]ezF@hy/
+O que vem a seguir? ->98
+O que vem a seguir? ->74
+O que vem a seguir? ->104
+NEW
+Buffer->hQZ]UUUEPis[gsG/bB^uVOcao`AAFQQ/JUc\@dZCCDk[Ctx
+Buffer2->h`THZrmy_UuYSeA
+maedoceu
+b22 ->h`THZrmy_UuYSeA.
+i=15
+not found
+DELETE
+Buffer->[ckQHlOMjGIUxOV/UGbs]EENHwQ]ClU/JUc\@dZCCDk[Ctx
+Buffer2->h`THZrmy_UuYSeA
+O que vem a seguir? ->85
+O que vem a seguir? ->74
+NEW
+Buffer->[ckQHlOMjGIUxOV/UGbs]EENHwQ]ClU
+Buffer2->JUc\@dZCCDk[Ctx
+maedoceu
+b22 ->JUc\@dZCCDk[Ctx.
+i=15
+not found
+SET
+DELETE
+Buffer->hQZ]UUUEPis[gsG/bB^uVOcao`AAFQQ/JUc\@dZCCDk[CtxVU//T^LOfCeLMaQORU]//AVrvifWuOliJhTc/UJb^PkWc`EMnJeb/GXb^tuyDXWafZXX//lVyzJKD[AwrPgah///IcrzOI[fr_XHBnv
+Buffer2->2744
+O que vem a seguir? ->98
+O que vem a seguir? ->74
+O que vem a seguir? ->84
+O que vem a seguir? ->65
+O que vem a seguir? ->85
+O que vem a seguir? ->71
+O que vem a seguir? ->108
+O que vem a seguir? ->73
+NEW
+Buffer->hQZ]UUUEPis[gsG/bB^uVOcao`AAFQQ/JUc\@dZCCDk[CtxVU//T^LOfCeLMaQORU]//AVrvifWuOliJhTc/UJb^PkWc`EMnJeb/GXb^tuyDXWafZXX//lVyzJKD[AwrPgah//
+Buffer2->IcrzOI[fr_XHBnv
+maedoceu
+b22 ->IcrzOI[fr_XHBnv.
+i=15
+not found
+DELETE
+Buffer->NIw[WgpDqsbawvz/oWBdcsCrYJR@yxL/JUc\@dZCCDk[CtxVU//T^LOfCeLMaQORU]//AVrvifWuOliJhTc/UJb^PkWc`EMnJeb/GXb^tuyDXWafZXX//lVyzJKD[AwrPgah//
+Buffer2->IcrzOI[fr_XHBnv
+O que vem a seguir? ->111
+O que vem a seguir? ->74
+O que vem a seguir? ->84
+O que vem a seguir? ->65
+O que vem a seguir? ->85
+O que vem a seguir? ->71
+O que vem a seguir? ->108
+NEW
+Buffer->NIw[WgpDqsbawvz/oWBdcsCrYJR@yxL/JUc\@dZCCDk[CtxVU//T^LOfCeLMaQORU]//AVrvifWuOliJhTc/UJb^PkWc`EMnJeb/GXb^tuyDXWafZXX/
+Buffer2->lVyzJKD[AwrPgah//
+maedoceu
+b22 ->lVyzJKD[AwrPgah//.
+i=17
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->uMxNSA\@PgfhkbdEC//psh^pSXWWxk`ubT
+Buffer2->3340
+O que vem a seguir? ->112
+NEW
+Buffer->uMxNSA\@PgfhkbdEC/
+Buffer2->psh^pSXWWxk`ubT
+maedoceu
+b22 ->psh^pSXWWxk`ubT.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->gOVZqLZigE`CiGN/TfBKeyJkYaGuehH]\
+Buffer2->7696
+O que vem a seguir? ->84
+NEW
+Buffer->gOVZqLZigE`CiGN
+Buffer2->TfBKeyJkYaGuehH]\
+maedoceu
+b22 ->TfBKeyJkYaGuehH]\.
+i=17
+not found
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->MBcH^R`PF^oITZj/dcoN\_FmNmzeiTS/J`t@u_^THy`vnRgtU///GJTBdqgZ@ttLk^p///CkJCeJKtznDnb`i
+Buffer2->5671
+O que vem a seguir? ->100
+O que vem a seguir? ->74
+O que vem a seguir? ->71
+O que vem a seguir? ->67
+NEW
+Buffer->MBcH^R`PF^oITZj/dcoN\_FmNmzeiTS/J`t@u_^THy`vnRgtU///GJTBdqgZ@ttLk^p//
+Buffer2->CkJCeJKtznDnb`i
+maedoceu
+b22 ->CkJCeJKtznDnb`i.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->GRwKdsNvwzf_cAs/eV]_efyp\q\bCEL/CFKAvdWOxOuSeLb/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAeV^gOgI/V[NBsFXsYfcAfYS///\cnp_Pn^nyUiKJY//abmsODimL[AdtdF//ZQu\PmjLdtpgbsc/cKS@gUgmJwzVrvV
+Buffer2->264
+O que vem a seguir? ->101
+O que vem a seguir? ->67
+O que vem a seguir? ->84
+O que vem a seguir? ->81
+O que vem a seguir? ->86
+O que vem a seguir? ->92
+O que vem a seguir? ->97
+O que vem a seguir? ->90
+O que vem a seguir? ->99
+NEW
+Buffer->GRwKdsNvwzf_cAs/eV]_efyp\q\bCEL/CFKAvdWOxOuSeLb/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAeV^gOgI/V[NBsFXsYfcAfYS///\cnp_Pn^nyUiKJY//abmsODimL[AdtdF//ZQu\PmjLdtpgbsc
+Buffer2->cKS@gUgmJwzVrvV
+maedoceu
+b22 ->cKS@gUgmJwzVrvV.
+i=15
+not found
+DELETE
+SET
+SET
+DELETE
+Buffer->MXRO`KEqWFpOold/VokMelfoCzXyOkG/w\cBxhzcAwCjfsb/[GnKwFgr\wl_Hen[og__hZR///VlmyGFzz]GvHMKt///W^CtxRLfZ\NjVye/pLrjrNXxcgsTFaj//XDQUjnPs]nXPfh^///B_iejvH_iYv_]CB
+Buffer2->2280
+O que vem a seguir? ->86
+O que vem a seguir? ->119
+O que vem a seguir? ->91
+O que vem a seguir? ->86
+O que vem a seguir? ->87
+O que vem a seguir? ->112
+O que vem a seguir? ->88
+O que vem a seguir? ->66
+NEW
+Buffer->MXRO`KEqWFpOold/VokMelfoCzXyOkG/w\cBxhzcAwCjfsb/[GnKwFgr\wl_Hen[og__hZR///VlmyGFzz]GvHMKt///W^CtxRLfZ\NjVye/pLrjrNXxcgsTFaj//XDQUjnPs]nXPfh^//
+Buffer2->B_iejvH_iYv_]CB
+maedoceu
+b22 ->B_iejvH_iYv_]CB.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->UYiwlWHysoNSG]]iwj///z\IZZDlgLVGAcE[/WTcxfhyrPjIfAv]///vtVpPvdrtS^rvhh//yTu\IGlpgpggXKy/f]xWgxnHpvzINje
+Buffer2->4741
+O que vem a seguir? ->122
+O que vem a seguir? ->87
+O que vem a seguir? ->118
+O que vem a seguir? ->121
+O que vem a seguir? ->102
+NEW
+Buffer->UYiwlWHysoNSG]]iwj///z\IZZDlgLVGAcE[/WTcxfhyrPjIfAv]///vtVpPvdrtS^rvhh//yTu\IGlpgpggXKy
+Buffer2->f]xWgxnHpvzINje
+maedoceu
+b22 ->f]xWgxnHpvzINje.
+i=15
+not found
+SET
+SET
+SET
+SET
+DELETE
+Buffer->a[iawBOr[YLvWWn/[xVfJxV\UBaadUt/vCErLHOtQZfxDBt/SdkGBK^W@VXlr_N/UeP[Rk]UWqZMmhB/h@VoXFGLghlqRot/cyCyeBnCbw[OqcvR[dQlj
+Buffer2->8523
+O que vem a seguir? ->91
+O que vem a seguir? ->118
+O que vem a seguir? ->83
+O que vem a seguir? ->85
+O que vem a seguir? ->104
+O que vem a seguir? ->99
+NEW
+Buffer->a[iawBOr[YLvWWn/[xVfJxV\UBaadUt/vCErLHOtQZfxDBt/SdkGBK^W@VXlr_N/UeP[Rk]UWqZMmhB/h@VoXFGLghlqRot
+Buffer2->cyCyeBnCbw[OqcvR[dQlj
+maedoceu
+b22 ->cyCyeBnCbw[OqcvR[dQlj.
+i=21
+not found
+DELETE
+Buffer->coxCYkFLIyFIKCo/GyybmoGZRAaTjJv/UCqAOMGklogYyvP/SdkGBK^W@VXlr_N/UeP[Rk]UWqZMmhB/h@VoXFGLghlqRot
+Buffer2->cyCyeBnCbw[OqcvR[dQlj
+O que vem a seguir? ->71
+O que vem a seguir? ->85
+O que vem a seguir? ->83
+O que vem a seguir? ->85
+O que vem a seguir? ->104
+NEW
+Buffer->coxCYkFLIyFIKCo/GyybmoGZRAaTjJv/UCqAOMGklogYyvP/SdkGBK^W@VXlr_N/UeP[Rk]UWqZMmhB
+Buffer2->h@VoXFGLghlqRot
+maedoceu
+b22 ->h@VoXFGLghlqRot.
+i=15
+not found
+DELETE
+Buffer->loMzdYCLCyUsbyf/@UFs_Wio@rkJDwY/dMN_\d_tEKjfHqI/SeQ]tc\RhQtN[EZ/YfmivunponFHyeg/r_sdOo^Nt^Uc]Hu/kRuJFK_nknXOU_dR[dQlj
+Buffer2->h@VoXFGLghlqRot
+O que vem a seguir? ->64
+O que vem a seguir? ->100
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+O que vem a seguir? ->114
+O que vem a seguir? ->107
+NEW
+Buffer->loMzdYCLCyUsbyf/@UFs_Wio@rkJDwY/dMN_\d_tEKjfHqI/SeQ]tc\RhQtN[EZ/YfmivunponFHyeg/r_sdOo^Nt^Uc]Hu
+Buffer2->kRuJFK_nknXOU_dR[dQlj
+maedoceu
+b22 ->kRuJFK_nknXOU_dR[dQlj.
+i=21
+not found
+SET
+DELETE
+Buffer->tsJ^roN[vLd^KWIrq///IEjlUJYaaREhWiA/cMWjfrTRGZxb]Xj/sA@@ggtb]GPp^Dr///Xna_pyTP_yL@NW\//rCgERIvy]btswHY
+Buffer2->5897
+O que vem a seguir? ->73
+O que vem a seguir? ->99
+O que vem a seguir? ->115
+O que vem a seguir? ->88
+O que vem a seguir? ->114
+NEW
+Buffer->tsJ^roN[vLd^KWIrq///IEjlUJYaaREhWiA/cMWjfrTRGZxb]Xj/sA@@ggtb]GPp^Dr///Xna_pyTP_yL@NW\/
+Buffer2->rCgERIvy]btswHY
+maedoceu
+b22 ->rCgERIvy]btswHY.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->FxUhW_ouRvABo_tAcE/Z@buvnniTTAhYbW/MapIOq\xqXhS^j@
+Buffer2->3342
+O que vem a seguir? ->90
+O que vem a seguir? ->77
+NEW
+Buffer->FxUhW_ouRvABo_tAcE/Z@buvnniTTAhYbW
+Buffer2->MapIOq\xqXhS^j@
+maedoceu
+b22 ->MapIOq\xqXhS^j@.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->vkFCyC[BRBm_oWJ/fwFGFAMwQBgpDQa/xidXaj[dpOcelme/LbHMompULveqWWNFryY/INjrwkeBHLUWPv\//fSovKCkxcx@zvrK
+Buffer2->3646
+O que vem a seguir? ->102
+O que vem a seguir? ->120
+O que vem a seguir? ->76
+O que vem a seguir? ->73
+O que vem a seguir? ->102
+NEW
+Buffer->vkFCyC[BRBm_oWJ/fwFGFAMwQBgpDQa/xidXaj[dpOcelme/LbHMompULveqWWNFryY/INjrwkeBHLUWPv\/
+Buffer2->fSovKCkxcx@zvrK
+maedoceu
+b22 ->fSovKCkxcx@zvrK.
+i=15
+not found
+DELETE
+SET
+DELETE
+Buffer->HWm_GPQpRtuMmHK/a\UXb^TJACEuHG`/U_^KfZaxYKdrxKik\^m///IfyDON\Xi]s]JVI///EtByCNIEm`ALNSL///Zzzqu]HmKDshzFT
+Buffer2->6776
+O que vem a seguir? ->97
+O que vem a seguir? ->85
+O que vem a seguir? ->73
+O que vem a seguir? ->69
+O que vem a seguir? ->90
+NEW
+Buffer->HWm_GPQpRtuMmHK/a\UXb^TJACEuHG`/U_^KfZaxYKdrxKik\^m///IfyDON\Xi]s]JVI///EtByCNIEm`ALNSL//
+Buffer2->Zzzqu]HmKDshzFT
+maedoceu
+b22 ->Zzzqu]HmKDshzFT.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->EcabNh_gI@WdvdR/yvsEFRlcL^zVMqW/iaph@FefhZiG[IRFeB///rn]MAEkBMJZSWwO
+Buffer2->9338
+O que vem a seguir? ->121
+O que vem a seguir? ->105
+O que vem a seguir? ->114
+NEW
+Buffer->EcabNh_gI@WdvdR/yvsEFRlcL^zVMqW/iaph@FefhZiG[IRFeB//
+Buffer2->rn]MAEkBMJZSWwO
+maedoceu
+b22 ->rn]MAEkBMJZSWwO.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->N]CjnVSKFM_TZlk/FUq`qDo@YxKpU\o/D\Ryd_\MP[BfzhG/rVUvg^URGBD_JDD/hJ@K\c@r\]qkXqyPgm_Y//toXZFrJtiWjgmVx//LXlldiAJtjCMvEH
+Buffer2->1942
+O que vem a seguir? ->70
+O que vem a seguir? ->68
+O que vem a seguir? ->114
+O que vem a seguir? ->104
+O que vem a seguir? ->116
+O que vem a seguir? ->76
+NEW
+Buffer->N]CjnVSKFM_TZlk/FUq`qDo@YxKpU\o/D\Ryd_\MP[BfzhG/rVUvg^URGBD_JDD/hJ@K\c@r\]qkXqyPgm_Y//toXZFrJtiWjgmVx/
+Buffer2->LXlldiAJtjCMvEH
+maedoceu
+b22 ->LXlldiAJtjCMvEH.
+i=15
+not found
+SET
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD/flfbpxrlLRtwyHp\IwNDtTPoO/facJEVLUSXSxJBj
+Buffer2->7963
+O que vem a seguir? ->65
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+O que vem a seguir? ->78
+O que vem a seguir? ->102
+O que vem a seguir? ->102
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD/flfbpxrlLRtwyHp\IwNDtTPoO
+Buffer2->facJEVLUSXSxJBj
+maedoceu
+b22 ->facJEVLUSXSxJBj.
+i=15
+not found
+DELETE
+Buffer->XWtatob`GbnrZTd/HTjCasURcHKaaQy/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD/flfbpxrlLRtwyHp\IwNDtTPoO
+Buffer2->facJEVLUSXSxJBj
+O que vem a seguir? ->72
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+O que vem a seguir? ->78
+O que vem a seguir? ->102
+NEW
+Buffer->XWtatob`GbnrZTd/HTjCasURcHKaaQy/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD
+Buffer2->flfbpxrlLRtwyHp\IwNDtTPoO
+maedoceu
+b22 ->flfbpxrlLRtwyHp\IwNDtTPoO.
+i=25
+not found
+SET
+DELETE
+Buffer->zmwu_]OZeObzVYZ/E^QuDTDZHqMCST[/b\eTzoPIybonTQ^/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD
+Buffer2->7044
+O que vem a seguir? ->69
+O que vem a seguir? ->98
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+O que vem a seguir? ->78
+NEW
+Buffer->zmwu_]OZeObzVYZ/E^QuDTDZHqMCST[/b\eTzoPIybonTQ^/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V
+Buffer2->NK[werfODBiWcPD
+maedoceu
+b22 ->NK[werfODBiWcPD.
+i=15
+not found
+DELETE
+Buffer->hEXT@gJDubWyBJH/^ZzNr_DpBuqCvrJ/MGGJhIWdZnlnQLY/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V
+Buffer2->NK[werfODBiWcPD
+O que vem a seguir? ->94
+O que vem a seguir? ->77
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+NEW
+Buffer->hEXT@gJDubWyBJH/^ZzNr_DpBuqCvrJ/MGGJhIWdZnlnQLY/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH
+Buffer2->VgNCqPwaenaRD@V
+maedoceu
+b22 ->VgNCqPwaenaRD@V.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->KcEStILqWQynyHw]/Ai\SICsbAf]kfks//\ON_XfGWDK`nZHv/zMYqVZwSnHWTh_P
+Buffer2->1776
+O que vem a seguir? ->65
+O que vem a seguir? ->92
+O que vem a seguir? ->122
+NEW
+Buffer->KcEStILqWQynyHw]/Ai\SICsbAf]kfks//\ON_XfGWDK`nZHv
+Buffer2->zMYqVZwSnHWTh_P
+maedoceu
+b22 ->zMYqVZwSnHWTh_P.
+i=15
+not found
+DELETE
+Buffer->hQoSgW[[FAeSCtv/^]O_ZsciTdkRgJB/`FZTvqn]CeYhtLq/XEYhascAohbBjPd/_YtiMoLZTyenxiV/qmUVQzn`tr]qI[`/klTb@PiL[Ln_qfIiepuxdT/YOxQXlCuiupOIYv
+Buffer2->zMYqVZwSnHWTh_P
+O que vem a seguir? ->94
+O que vem a seguir? ->96
+O que vem a seguir? ->88
+O que vem a seguir? ->95
+O que vem a seguir? ->113
+O que vem a seguir? ->107
+O que vem a seguir? ->89
+NEW
+Buffer->hQoSgW[[FAeSCtv/^]O_ZsciTdkRgJB/`FZTvqn]CeYhtLq/XEYhascAohbBjPd/_YtiMoLZTyenxiV/qmUVQzn`tr]qI[`/klTb@PiL[Ln_qfIiepuxdT
+Buffer2->YOxQXlCuiupOIYv
+maedoceu
+b22 ->YOxQXlCuiupOIYv.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->NzfJ_UzuOPchvyG/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhSwjbs//fyQwGUqNsP_xc@C//ytjEAva@`J_TOiX/IymR\gKLuLNC@L_
+Buffer2->7451
+O que vem a seguir? ->70
+O que vem a seguir? ->71
+O que vem a seguir? ->102
+O que vem a seguir? ->121
+O que vem a seguir? ->73
+NEW
+Buffer->NzfJ_UzuOPchvyG/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhSwjbs//fyQwGUqNsP_xc@C//ytjEAva@`J_TOiX
+Buffer2->IymR\gKLuLNC@L_
+maedoceu
+b22 ->IymR\gKLuLNC@L_.
+i=15
+not found
+DELETE
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->UWhnQMl@XVfCdqf/kgeNr]`ThO`y_XT/Kd^jwcthhFp_aMZ/NywaSL@MzKBLkZaHdWXftX/ohmXkRA`Beo]nwZ///tVFLfnVnI[BOdLf///ZfibjOyAfKFO@Mf//OlLqUh]qhXVB`xF//Dyck[hEnDxVWjJ]
+Buffer2->1230
+O que vem a seguir? ->107
+O que vem a seguir? ->75
+O que vem a seguir? ->78
+O que vem a seguir? ->111
+O que vem a seguir? ->116
+O que vem a seguir? ->90
+O que vem a seguir? ->79
+O que vem a seguir? ->68
+NEW
+Buffer->UWhnQMl@XVfCdqf/kgeNr]`ThO`y_XT/Kd^jwcthhFp_aMZ/NywaSL@MzKBLkZaHdWXftX/ohmXkRA`Beo]nwZ///tVFLfnVnI[BOdLf///ZfibjOyAfKFO@Mf//OlLqUh]qhXVB`xF/
+Buffer2->Dyck[hEnDxVWjJ]
+maedoceu
+b22 ->Dyck[hEnDxVWjJ].
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->qoo`oxIuiuImMDU/wa[glRPnGOuFn_F/XvD@jSZ^bSukoET/wKjwaWpMm[hYquv/wKPD@emLeSBwBaz/g]t[E`gRff^Z@[JuYpCZnHcsK/Biwmbmdd\IqdFs_/lhxl^WJGJeWZLJ]///pWrJjWiFPoPSNLm
+Buffer2->9342
+O que vem a seguir? ->119
+O que vem a seguir? ->88
+O que vem a seguir? ->119
+O que vem a seguir? ->119
+O que vem a seguir? ->103
+O que vem a seguir? ->66
+O que vem a seguir? ->108
+O que vem a seguir? ->112
+NEW
+Buffer->qoo`oxIuiuImMDU/wa[glRPnGOuFn_F/XvD@jSZ^bSukoET/wKjwaWpMm[hYquv/wKPD@emLeSBwBaz/g]t[E`gRff^Z@[JuYpCZnHcsK/Biwmbmdd\IqdFs_/lhxl^WJGJeWZLJ]//
+Buffer2->pWrJjWiFPoPSNLm
+maedoceu
+b22 ->pWrJjWiFPoPSNLm.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->quVqHsMq@sNBrvd/[B`kK@BRsirKWLk/CkrOnfRSN^BcGWT/yrrMoUStG@HzDUt/DJwFkJIIMLXdDoc/x_wBrRNYaJMsmEU/MkzHQrzzVB^xOte[nxqaG]//G@gTD[DJUTxaogA/uGo]kmhEqnTrrGz//^OLU@W`jdYVTnFN
+Buffer2->9643
+O que vem a seguir? ->91
+O que vem a seguir? ->67
+O que vem a seguir? ->121
+O que vem a seguir? ->68
+O que vem a seguir? ->120
+O que vem a seguir? ->77
+O que vem a seguir? ->71
+O que vem a seguir? ->117
+O que vem a seguir? ->94
+NEW
+Buffer->quVqHsMq@sNBrvd/[B`kK@BRsirKWLk/CkrOnfRSN^BcGWT/yrrMoUStG@HzDUt/DJwFkJIIMLXdDoc/x_wBrRNYaJMsmEU/MkzHQrzzVB^xOte[nxqaG]//G@gTD[DJUTxaogA/uGo]kmhEqnTrrGz/
+Buffer2->^OLU@W`jdYVTnFN
+maedoceu
+b22 ->^OLU@W`jdYVTnFN.
+i=15
+not found
+DELETE
+DELETE
+Buffer->pDdQPsgWUdRnqcV/FOEpeRm^fvATDSj/\uRwXCAZ[vxx_Lx/yrrMoUStG@HzDUt/DJwFkJIIMLXdDoc/x_wBrRNYaJMsmEU/MkzHQrzzVB^xOte[nxqaG]//G@gTD[DJUTxaogA/uGo]kmhEqnTrrGz/
+Buffer2->
+O que vem a seguir? ->70
+O que vem a seguir? ->92
+O que vem a seguir? ->121
+O que vem a seguir? ->68
+O que vem a seguir? ->120
+O que vem a seguir? ->77
+O que vem a seguir? ->71
+O que vem a seguir? ->117
+NEW
+Buffer->pDdQPsgWUdRnqcV/FOEpeRm^fvATDSj/\uRwXCAZ[vxx_Lx/yrrMoUStG@HzDUt/DJwFkJIIMLXdDoc/x_wBrRNYaJMsmEU/MkzHQrzzVB^xOte[nxqaG]//G@gTD[DJUTxaogA
+Buffer2->uGo]kmhEqnTrrGz/
+maedoceu
+b22 ->uGo]kmhEqnTrrGz/.
+i=16
+not found
+SET
+SET
+DELETE
+Buffer->itllJVt`rgLqRon/IiZ\H@pa@Asydf\/@rUsJ]hd\\WLfnF/HY^Ewv_YZGEDkW]/fvKwXmhllWjYSAM/mkvbsMNu\s@PyAU/cIz`rPSZuTM`IAAs\sG[rZO//JUclhxQx`cZ^DHx
+Buffer2->7865
+O que vem a seguir? ->73
+O que vem a seguir? ->64
+O que vem a seguir? ->72
+O que vem a seguir? ->102
+O que vem a seguir? ->109
+O que vem a seguir? ->99
+O que vem a seguir? ->74
+NEW
+Buffer->itllJVt`rgLqRon/IiZ\H@pa@Asydf\/@rUsJ]hd\\WLfnF/HY^Ewv_YZGEDkW]/fvKwXmhllWjYSAM/mkvbsMNu\s@PyAU/cIz`rPSZuTM`IAAs\sG[rZO/
+Buffer2->JUclhxQx`cZ^DHx
+maedoceu
+b22 ->JUclhxQx`cZ^DHx.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->L\RuY`p@xBwiQ^iXxT
+Buffer2->6955
+NEW
+Buffer->
+Buffer2->L\RuY`p@xBwiQ^iXxT
+maedoceu
+b22 ->L\RuY`p@xBwiQ^iXxT.
+i=18
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->zb\kOxMDLrJ\var/gcXfWhRMFWijNhlpXb///WuQdC@tgQnlKXLO///voMALpgCO\F^aaE///DXtJHxhkoCylIjs/DqXQi@ewrcP[foh//f]LI\TrSqGSk]fc/KpK`Qrs]lswpPwp/`d_R`UlbZO`[WCj
+Buffer2->4850
+O que vem a seguir? ->103
+O que vem a seguir? ->87
+O que vem a seguir? ->118
+O que vem a seguir? ->68
+O que vem a seguir? ->68
+O que vem a seguir? ->102
+O que vem a seguir? ->75
+O que vem a seguir? ->96
+NEW
+Buffer->zb\kOxMDLrJ\var/gcXfWhRMFWijNhlpXb///WuQdC@tgQnlKXLO///voMALpgCO\F^aaE///DXtJHxhkoCylIjs/DqXQi@ewrcP[foh//f]LI\TrSqGSk]fc/KpK`Qrs]lswpPwp
+Buffer2->`d_R`UlbZO`[WCj
+maedoceu
+b22 ->`d_R`UlbZO`[WCj.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/wYpaCrdlCbHpLVh/XmyiuDobFpUgAavZKf//TBl[YptHfXm@Im]///fybmvpMNnvwOfjT///QLoNtKo@LApMPPH///C`AdKjZssgQeMkY/Qx]n[id@V@kQ\Df
+Buffer2->9481
+O que vem a seguir? ->67
+O que vem a seguir? ->119
+O que vem a seguir? ->88
+O que vem a seguir? ->84
+O que vem a seguir? ->102
+O que vem a seguir? ->81
+O que vem a seguir? ->67
+O que vem a seguir? ->81
+NEW
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/wYpaCrdlCbHpLVh/XmyiuDobFpUgAavZKf//TBl[YptHfXm@Im]///fybmvpMNnvwOfjT///QLoNtKo@LApMPPH///C`AdKjZssgQeMkY
+Buffer2->Qx]n[id@V@kQ\Df
+maedoceu
+b22 ->Qx]n[id@V@kQ\Df.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->phawyIys]jdNiXh/sEJVNsOrNKJgX_A/WVAouo[o[hoeozX/m_PGPTDkiihwWrdrNZIwWV///nd]BDBQIwGZXCPl///tYGntaMi_akf@zp/t]bcctE@IISnvbc/bRlH[@EJVsRvJdt/vaktUcLNVpHC@dm
+Buffer2->8948
+O que vem a seguir? ->115
+O que vem a seguir? ->87
+O que vem a seguir? ->109
+O que vem a seguir? ->110
+O que vem a seguir? ->116
+O que vem a seguir? ->116
+O que vem a seguir? ->98
+O que vem a seguir? ->118
+NEW
+Buffer->phawyIys]jdNiXh/sEJVNsOrNKJgX_A/WVAouo[o[hoeozX/m_PGPTDkiihwWrdrNZIwWV///nd]BDBQIwGZXCPl///tYGntaMi_akf@zp/t]bcctE@IISnvbc/bRlH[@EJVsRvJdt
+Buffer2->vaktUcLNVpHC@dm
+maedoceu
+b22 ->vaktUcLNVpHC@dm.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->_ftEHFnPfDkU`S[/xMi@`iGFpZDyIRdv//@AXZSfz]qVNXFmA//syquSuskpLUt_nP///m[gGovYgj[QqIxr
+Buffer2->5304
+O que vem a seguir? ->120
+O que vem a seguir? ->64
+O que vem a seguir? ->115
+O que vem a seguir? ->109
+NEW
+Buffer->_ftEHFnPfDkU`S[/xMi@`iGFpZDyIRdv//@AXZSfz]qVNXFmA//syquSuskpLUt_nP//
+Buffer2->m[gGovYgj[QqIxr
+maedoceu
+b22 ->m[gGovYgj[QqIxr.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->UrSg[kPngwkLLCh/PdgjykPyg\vvmDO/fvqQiGoXocjGGCh/QWInJW[OtBWXWAU/BxCRmCkXdVdWjVM/gMSUOd]^VPJmAjxHXJaBLxQ/hxJFtrnxkALJevO
+Buffer2->5590
+O que vem a seguir? ->80
+O que vem a seguir? ->102
+O que vem a seguir? ->81
+O que vem a seguir? ->66
+O que vem a seguir? ->103
+O que vem a seguir? ->104
+NEW
+Buffer->UrSg[kPngwkLLCh/PdgjykPyg\vvmDO/fvqQiGoXocjGGCh/QWInJW[OtBWXWAU/BxCRmCkXdVdWjVM/gMSUOd]^VPJmAjxHXJaBLxQ
+Buffer2->hxJFtrnxkALJevO
+maedoceu
+b22 ->hxJFtrnxkALJevO.
+i=15
+not found
+SET
+DELETE
+Buffer->mi`HxutXASMOgir/\ZkOX`JsBmZRjiX/WYDTpvWxmyq]^WZ/r]AaPYtmYIqDIUc/W]wlIMwuuQWRoYT/OKIYmDThieLiRDGBP`\
+Buffer2->9317
+O que vem a seguir? ->92
+O que vem a seguir? ->87
+O que vem a seguir? ->114
+O que vem a seguir? ->87
+O que vem a seguir? ->79
+NEW
+Buffer->mi`HxutXASMOgir/\ZkOX`JsBmZRjiX/WYDTpvWxmyq]^WZ/r]AaPYtmYIqDIUc/W]wlIMwuuQWRoYT
+Buffer2->OKIYmDThieLiRDGBP`\
+maedoceu
+b22 ->OKIYmDThieLiRDGBP`\.
+i=19
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+DELETE
+Buffer->CfrpSRrRleYhD_`/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmmeEJu
+Buffer2->
+O que vem a seguir? ->82
+O que vem a seguir? ->119
+NEW
+Buffer->CfrpSRrRleYhD_`/Ru]WdPSNivXeuAO
+Buffer2->wGdPOqGsvXpfDmmeEJu
+maedoceu
+b22 ->wGdPOqGsvXpfDmmeEJu.
+i=19
+not found
+SET
+DELETE
+Buffer->\\PtuNB]wKin^UH/QAhCJbVwDupJelN/OonBeGTC^^mlmUx/^qCJk@@WTRPiwTP/jGyovwpBOJqWHhu/PbnxB_m`Hmc_stJCXVgMN
+Buffer2->4297
+O que vem a seguir? ->81
+O que vem a seguir? ->79
+O que vem a seguir? ->94
+O que vem a seguir? ->106
+O que vem a seguir? ->80
+NEW
+Buffer->\\PtuNB]wKin^UH/QAhCJbVwDupJelN/OonBeGTC^^mlmUx/^qCJk@@WTRPiwTP/jGyovwpBOJqWHhu
+Buffer2->PbnxB_m`Hmc_stJCXVgMN
+maedoceu
+b22 ->PbnxB_m`Hmc_stJCXVgMN.
+i=21
+not found
+SET
+DELETE
+Buffer->wevbQQmVriMPy^]/LlZUhqkb\HuzSCL/Rohumk^C@]kPXqy/JqdNJpbpICVWc_F/UOixivthpQarcv\GgB_Z///mdztATS@@mTBiTP
+Buffer2->7936
+O que vem a seguir? ->76
+O que vem a seguir? ->82
+O que vem a seguir? ->74
+O que vem a seguir? ->85
+O que vem a seguir? ->109
+NEW
+Buffer->wevbQQmVriMPy^]/LlZUhqkb\HuzSCL/Rohumk^C@]kPXqy/JqdNJpbpICVWc_F/UOixivthpQarcv\GgB_Z//
+Buffer2->mdztATS@@mTBiTP
+maedoceu
+b22 ->mdztATS@@mTBiTP.
+i=15
+not found
+DELETE
+Buffer->ywlrmuqmDv\lSPH/JcFEUjj@vG@u_pu/]DEEHTMGGOrZgow/JqdNJpbpICVWc_F/UOixivthpQarcv\GgB_Z//
+Buffer2->mdztATS@@mTBiTP
+O que vem a seguir? ->74
+O que vem a seguir? ->93
+O que vem a seguir? ->74
+O que vem a seguir? ->85
+NEW
+Buffer->ywlrmuqmDv\lSPH/JcFEUjj@vG@u_pu/]DEEHTMGGOrZgow/JqdNJpbpICVWc_F
+Buffer2->UOixivthpQarcv\GgB_Z//
+maedoceu
+b22 ->UOixivthpQarcv\GgB_Z//.
+i=22
+not found
+DELETE
+Buffer->CkcOZSwZd\JOuql/JcFEUjj@vG@u_pu/]DEEHTMGGOrZgow/JqdNJpbpICVWc_F
+Buffer2->UOixivthpQarcv\GgB_Z/
+O que vem a seguir? ->74
+O que vem a seguir? ->93
+O que vem a seguir? ->74
+NEW
+Buffer->CkcOZSwZd\JOuql/JcFEUjj@vG@u_pu/]DEEHTMGGOrZgow
+Buffer2->JqdNJpbpICVWc_F
+maedoceu
+b22 ->JqdNJpbpICVWc_F.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->Slqum`DmAnCvkjs/BKySZv]RnGdFGPutv//B[j]`mvrWUQ@jKt/Rz]Fy\qtuGzNGzB///BR@zCSZLRadbn\q/sKNQHIjrDjiZ@Q@/SKCdQQBayyH_qlu//@_o^lwobGFMkAbY/hkYxjsHvheJZZKY/PFsFnA\``QaApSX
+Buffer2->3115
+O que vem a seguir? ->66
+O que vem a seguir? ->66
+O que vem a seguir? ->82
+O que vem a seguir? ->66
+O que vem a seguir? ->115
+O que vem a seguir? ->83
+O que vem a seguir? ->64
+O que vem a seguir? ->104
+O que vem a seguir? ->80
+NEW
+Buffer->Slqum`DmAnCvkjs/BKySZv]RnGdFGPutv//B[j]`mvrWUQ@jKt/Rz]Fy\qtuGzNGzB///BR@zCSZLRadbn\q/sKNQHIjrDjiZ@Q@/SKCdQQBayyH_qlu//@_o^lwobGFMkAbY/hkYxjsHvheJZZKY
+Buffer2->PFsFnA\``QaApSX
+maedoceu
+b22 ->PFsFnA\``QaApSX.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->\]MSv[@P`l_vpH]bh//zFXorjnKesAmRMQ//WA_KE\fBxiDXRSv
+Buffer2->2135
+O que vem a seguir? ->122
+O que vem a seguir? ->87
+NEW
+Buffer->\]MSv[@P`l_vpH]bh//zFXorjnKesAmRMQ/
+Buffer2->WA_KE\fBxiDXRSv
+maedoceu
+b22 ->WA_KE\fBxiDXRSv.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->`WCWdEYaqqUbkeu/u^m\GtSvbPdUoRU/lPH[RzAo@KgAVZv/KpfXC`CF_icikFo/CcWYz@CjZNhHAKgOsfGa
+Buffer2->4780
+O que vem a seguir? ->117
+O que vem a seguir? ->108
+O que vem a seguir? ->75
+O que vem a seguir? ->67
+NEW
+Buffer->`WCWdEYaqqUbkeu/u^m\GtSvbPdUoRU/lPH[RzAo@KgAVZv/KpfXC`CF_icikFo
+Buffer2->CcWYz@CjZNhHAKgOsfGa
+maedoceu
+b22 ->CcWYz@CjZNhHAKgOsfGa.
+i=20
+not found
+SET
+SET
+SET
+SET
+DELETE
+DELETE
+Buffer->XgX_QdDsgQZEy_nXy/JjgKoe\k`Ts^ts[/A``uu`Swhn][NAO/l[NmVyfjcbzCIve/XkqbSWepPUnUiG@
+Buffer2->
+O que vem a seguir? ->74
+O que vem a seguir? ->65
+O que vem a seguir? ->108
+O que vem a seguir? ->88
+NEW
+Buffer->XgX_QdDsgQZEy_nXy/JjgKoe\k`Ts^ts[/A``uu`Swhn][NAO/l[NmVyfjcbzCIve
+Buffer2->XkqbSWepPUnUiG@
+maedoceu
+b22 ->XkqbSWepPUnUiG@.
+i=15
+not found
+SET
+SET
+SET
+SET
+DELETE
+Buffer->e[EjeWwoCTQJJAVi///IFM\TW\mH[wP`fr/PVYDfikD_uTDaW`/EEULhOCtztOLLVv//yKQsufCYiQi@ZJB//bQspNLZ[WyGeOsw
+Buffer2->4363
+O que vem a seguir? ->73
+O que vem a seguir? ->80
+O que vem a seguir? ->69
+O que vem a seguir? ->121
+O que vem a seguir? ->98
+NEW
+Buffer->e[EjeWwoCTQJJAVi///IFM\TW\mH[wP`fr/PVYDfikD_uTDaW`/EEULhOCtztOLLVv//yKQsufCYiQi@ZJB/
+Buffer2->bQspNLZ[WyGeOsw
+maedoceu
+b22 ->bQspNLZ[WyGeOsw.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+DELETE
+Buffer->wCyxCfOQ[gz`ZmH/syMVzAEaE@SsSu`bZ//oHNAhuueVftsqDq///AIaTOzBBSf]rchv///ntGRvo@XFjBH^wJ
+Buffer2->6014
+O que vem a seguir? ->115
+O que vem a seguir? ->111
+O que vem a seguir? ->65
+O que vem a seguir? ->110
+NEW
+Buffer->wCyxCfOQ[gz`ZmH/syMVzAEaE@SsSu`bZ//oHNAhuueVftsqDq///AIaTOzBBSf]rchv//
+Buffer2->ntGRvo@XFjBH^wJ
+maedoceu
+b22 ->ntGRvo@XFjBH^wJ.
+i=15
+not found
+DELETE
+Buffer->SzbOeuOYdmyuSFQ/kbDvcDzvQEzKfam/mUniAYgbF[fRH@w/`DP__s_Ruf]RiPv]rchv//
+Buffer2->ntGRvo@XFjBH^wJ
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+O que vem a seguir? ->96
+NEW
+Buffer->SzbOeuOYdmyuSFQ/kbDvcDzvQEzKfam/mUniAYgbF[fRH@w
+Buffer2->`DP__s_Ruf]RiPv]rchv//
+maedoceu
+b22 ->`DP__s_Ruf]RiPv]rchv//.
+i=22
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->_jMcWEOpFPiwHVy/cMkzxuPhotLf`RN/jwv_AUzIcEJY^gj/]mUtgI]aTq[wxky/][o`GopZ`d`FuwO/HIBmyxq\LfwkgXu/aheduvGFfiMkjQh/ZaKz]PIRCeogD\q/r_]iGLuTKub`SeT\\yVDaN
+Buffer2->3140
+O que vem a seguir? ->99
+O que vem a seguir? ->106
+O que vem a seguir? ->93
+O que vem a seguir? ->93
+O que vem a seguir? ->72
+O que vem a seguir? ->97
+O que vem a seguir? ->90
+O que vem a seguir? ->114
+NEW
+Buffer->_jMcWEOpFPiwHVy/cMkzxuPhotLf`RN/jwv_AUzIcEJY^gj/]mUtgI]aTq[wxky/][o`GopZ`d`FuwO/HIBmyxq\LfwkgXu/aheduvGFfiMkjQh/ZaKz]PIRCeogD\q
+Buffer2->r_]iGLuTKub`SeT\\yVDaN
+maedoceu
+b22 ->r_]iGLuTKub`SeT\\yVDaN.
+i=22
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->mXbHwMJHhKpvLfo/fpuLgWcdeqwFWwu/C[RJqax^ki_C]Nn/OqXLtjncOovHaB`/LuL[_s@kGmf\qJi/gAtJ@N@cqSWDgJk/HZlEA]gSr^ikX\zQQ/Xi]VEPw[_PbR[FW///XWOItppCTVMadLP
+Buffer2->590
+O que vem a seguir? ->102
+O que vem a seguir? ->67
+O que vem a seguir? ->79
+O que vem a seguir? ->76
+O que vem a seguir? ->103
+O que vem a seguir? ->72
+O que vem a seguir? ->88
+O que vem a seguir? ->88
+NEW
+Buffer->mXbHwMJHhKpvLfo/fpuLgWcdeqwFWwu/C[RJqax^ki_C]Nn/OqXLtjncOovHaB`/LuL[_s@kGmf\qJi/gAtJ@N@cqSWDgJk/HZlEA]gSr^ikX\zQQ/Xi]VEPw[_PbR[FW//
+Buffer2->XWOItppCTVMadLP
+maedoceu
+b22 ->XWOItppCTVMadLP.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->TzffnYEZ\cOzr@N/ci]i^KAtWwdTUDs/us@jV^^jk_EE^OU/VnZUEUbRaPrtoND/DzmQguJJIv\gMW@/TG[tOMza[liOmnv/y@tGMzyjruRxkCV/qzudolwMmspRuvGY[_AizP
+Buffer2->4171
+O que vem a seguir? ->99
+O que vem a seguir? ->117
+O que vem a seguir? ->86
+O que vem a seguir? ->68
+O que vem a seguir? ->84
+O que vem a seguir? ->121
+O que vem a seguir? ->113
+NEW
+Buffer->TzffnYEZ\cOzr@N/ci]i^KAtWwdTUDs/us@jV^^jk_EE^OU/VnZUEUbRaPrtoND/DzmQguJJIv\gMW@/TG[tOMza[liOmnv/y@tGMzyjruRxkCV
+Buffer2->qzudolwMmspRuvGY[_AizP
+maedoceu
+b22 ->qzudolwMmspRuvGY[_AizP.
+i=22
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+DELETE
+Buffer->XD\`YWJAOQadHc\/X`sVFeurzAIGSSM/RRnctplOp^@OmcS/lhSAgzPiLVyPC`hMf]c[///QVwd@tUkvlkw@_U//YytOuUbXzwmSrPy///@MIUTqCMCPv[@fs//zfptLqwWYViuof_///nmUZP^HbgVeBNQr//pFQyZY`Eht@cLcK
+Buffer2->
+O que vem a seguir? ->88
+O que vem a seguir? ->82
+O que vem a seguir? ->108
+O que vem a seguir? ->81
+O que vem a seguir? ->89
+O que vem a seguir? ->64
+O que vem a seguir? ->122
+O que vem a seguir? ->110
+O que vem a seguir? ->112
+NEW
+Buffer->XD\`YWJAOQadHc\/X`sVFeurzAIGSSM/RRnctplOp^@OmcS/lhSAgzPiLVyPC`hMf]c[///QVwd@tUkvlkw@_U//YytOuUbXzwmSrPy///@MIUTqCMCPv[@fs//zfptLqwWYViuof_///nmUZP^HbgVeBNQr/
+Buffer2->pFQyZY`Eht@cLcK
+maedoceu
+b22 ->pFQyZY`Eht@cLcK.
+i=15
+not found
+DELETE
+Buffer->`sklAHXXObLcQeQ/X`sVFeurzAIGSSM/RRnctplOp^@OmcS/lhSAgzPiLVyPC`hMf]c[///QVwd@tUkvlkw@_U//YytOuUbXzwmSrPy///@MIUTqCMCPv[@fs//zfptLqwWYViuof_///nmUZP^HbgVeBNQr/
+Buffer2->pFQyZY`Eht@cLcK
+O que vem a seguir? ->88
+O que vem a seguir? ->82
+O que vem a seguir? ->108
+O que vem a seguir? ->81
+O que vem a seguir? ->89
+O que vem a seguir? ->64
+O que vem a seguir? ->122
+O que vem a seguir? ->110
+NEW
+Buffer->`sklAHXXObLcQeQ/X`sVFeurzAIGSSM/RRnctplOp^@OmcS/lhSAgzPiLVyPC`hMf]c[///QVwd@tUkvlkw@_U//YytOuUbXzwmSrPy///@MIUTqCMCPv[@fs//zfptLqwWYViuof_//
+Buffer2->nmUZP^HbgVeBNQr/
+maedoceu
+b22 ->nmUZP^HbgVeBNQr/.
+i=16
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->lJhPGZkCIit`Gb`/KGv\[uwnNXUqPhe/rVXLUcPivhB\HIn/[OGgUBZtqXYzcwD/G@oDnKME]MI[dWd/p]DzW^J`CdOu`Vr/CKkQq@av[JSPfrc/GbgyXpwCkTVcLBNyQjYsJhV
+Buffer2->6296
+O que vem a seguir? ->75
+O que vem a seguir? ->114
+O que vem a seguir? ->91
+O que vem a seguir? ->71
+O que vem a seguir? ->112
+O que vem a seguir? ->67
+O que vem a seguir? ->71
+NEW
+Buffer->lJhPGZkCIit`Gb`/KGv\[uwnNXUqPhe/rVXLUcPivhB\HIn/[OGgUBZtqXYzcwD/G@oDnKME]MI[dWd/p]DzW^J`CdOu`Vr/CKkQq@av[JSPfrc
+Buffer2->GbgyXpwCkTVcLBNyQjYsJhV
+maedoceu
+b22 ->GbgyXpwCkTVcLBNyQjYsJhV.
+i=23
+not found
+SET
+SET
+SET
+SET
+DELETE
+Buffer->slUlBn^MBPwGidy/sOmqiyJehbmWw[s`ko//NurXEnBsYsvHSDp///MdUpYwZ_]TZGTv\///RgWAUN`]QgIrXSZ/A`kpiTclrySmwdw
+Buffer2->7720
+O que vem a seguir? ->115
+O que vem a seguir? ->78
+O que vem a seguir? ->77
+O que vem a seguir? ->82
+O que vem a seguir? ->65
+NEW
+Buffer->slUlBn^MBPwGidy/sOmqiyJehbmWw[s`ko//NurXEnBsYsvHSDp///MdUpYwZ_]TZGTv\///RgWAUN`]QgIrXSZ
+Buffer2->A`kpiTclrySmwdw
+maedoceu
+b22 ->A`kpiTclrySmwdw.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->hxPNkXtbhBf`[f@/XleIFd[MD]lZjyS/ESZihIbXUWFbgpl/RCdZDecCLK\RxZJ/pKscaCOEacXP^EJ/CsuxaWWZFVvLPQY/jBUX]JVSL^VXZvH/[mhtih^\YVuofofUPWOcvqB\///eE`xcGepP@biBZz/OHV^F]JOoZquOvp
+Buffer2->1093
+O que vem a seguir? ->88
+O que vem a seguir? ->69
+O que vem a seguir? ->82
+O que vem a seguir? ->112
+O que vem a seguir? ->67
+O que vem a seguir? ->106
+O que vem a seguir? ->91
+O que vem a seguir? ->101
+O que vem a seguir? ->79
+NEW
+Buffer->hxPNkXtbhBf`[f@/XleIFd[MD]lZjyS/ESZihIbXUWFbgpl/RCdZDecCLK\RxZJ/pKscaCOEacXP^EJ/CsuxaWWZFVvLPQY/jBUX]JVSL^VXZvH/[mhtih^\YVuofofUPWOcvqB\///eE`xcGepP@biBZz
+Buffer2->OHV^F]JOoZquOvp
+maedoceu
+b22 ->OHV^F]JOoZquOvp.
+i=15
+not found
+SET
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+DELETE
+Buffer->I_x_fPHEjANRM_wiQ/kXvptrgljuWtOI@///\UF^CHMS[RhcpiC/xBqf\iXzCbL_lKl//mtTLsGXVIob`aQn
+Buffer2->6622
+O que vem a seguir? ->107
+O que vem a seguir? ->92
+O que vem a seguir? ->120
+O que vem a seguir? ->109
+NEW
+Buffer->I_x_fPHEjANRM_wiQ/kXvptrgljuWtOI@///\UF^CHMS[RhcpiC/xBqf\iXzCbL_lKl/
+Buffer2->mtTLsGXVIob`aQn
+maedoceu
+b22 ->mtTLsGXVIob`aQn.
+i=15
+not found
+DELETE
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->_iPW^YZ]Irniblk/ekdmISagocXDcLsb_]/yRwqmUKVC\cbjZA/yBmcmGWVwkaBUAE///zMye`qS@czjK_kK
+Buffer2->8217
+O que vem a seguir? ->101
+O que vem a seguir? ->121
+O que vem a seguir? ->121
+O que vem a seguir? ->122
+NEW
+Buffer->_iPW^YZ]Irniblk/ekdmISagocXDcLsb_]/yRwqmUKVC\cbjZA/yBmcmGWVwkaBUAE//
+Buffer2->zMye`qS@czjK_kK
+maedoceu
+b22 ->zMye`qS@czjK_kK.
+i=15
+not found
+SET
+DELETE
+Buffer->YRc\ghQHqIcNqOe\/uOdPkwlwxq^yZ]T///nXYUMyVYNmfhwkV/CVPpUhWQWufN`zf///JXp^bvVoKFQqCoa/UnZnhTQ`T`EeIIQ
+Buffer2->1137
+O que vem a seguir? ->117
+O que vem a seguir? ->110
+O que vem a seguir? ->67
+O que vem a seguir? ->74
+O que vem a seguir? ->85
+NEW
+Buffer->YRc\ghQHqIcNqOe\/uOdPkwlwxq^yZ]T///nXYUMyVYNmfhwkV/CVPpUhWQWufN`zf///JXp^bvVoKFQqCoa
+Buffer2->UnZnhTQ`T`EeIIQ
+maedoceu
+b22 ->UnZnhTQ`T`EeIIQ.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->Nm\qJRpklskAEaK/Np^T@eEkqwmI_GX/j\b]GkTYdXrWBPw/fgjEtrGnEl]L_zq/]^dldO^XkVeh[bt/p`ZnvXmaWecGpgZbsCZ]XEl//zexIADYhxaPlWFW/OkirNDvLcKyuFYC///pmRFSyoXgOnYv[x/oloVCOEcfNy]iJ\
+Buffer2->4932
+O que vem a seguir? ->78
+O que vem a seguir? ->106
+O que vem a seguir? ->102
+O que vem a seguir? ->93
+O que vem a seguir? ->112
+O que vem a seguir? ->122
+O que vem a seguir? ->79
+O que vem a seguir? ->112
+O que vem a seguir? ->111
+NEW
+Buffer->Nm\qJRpklskAEaK/Np^T@eEkqwmI_GX/j\b]GkTYdXrWBPw/fgjEtrGnEl]L_zq/]^dldO^XkVeh[bt/p`ZnvXmaWecGpgZbsCZ]XEl//zexIADYhxaPlWFW/OkirNDvLcKyuFYC///pmRFSyoXgOnYv[x
+Buffer2->oloVCOEcfNy]iJ\
+maedoceu
+b22 ->oloVCOEcfNy]iJ\.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->Qgr\odGhnvgVuqu/\Xr]s^Z^ttFNU[Q/XTIQtQwNtLYwGU@/ouG[\q]qjuAUFAg/IxC[BwVxFMxK^MZ/lMUAm`s\\wYrk_lw@MjLldj]mI///bppxigXzywdYrB`///XGO]msTl@uwCPmK
+Buffer2->2715
+O que vem a seguir? ->92
+O que vem a seguir? ->88
+O que vem a seguir? ->111
+O que vem a seguir? ->73
+O que vem a seguir? ->108
+O que vem a seguir? ->98
+O que vem a seguir? ->88
+NEW
+Buffer->Qgr\odGhnvgVuqu/\Xr]s^Z^ttFNU[Q/XTIQtQwNtLYwGU@/ouG[\q]qjuAUFAg/IxC[BwVxFMxK^MZ/lMUAm`s\\wYrk_lw@MjLldj]mI///bppxigXzywdYrB`//
+Buffer2->XGO]msTl@uwCPmK
+maedoceu
+b22 ->XGO]msTl@uwCPmK.
+i=15
+not found
+SET
+SET
+DELETE
+SET
+DELETE
+Buffer->EZkSmQUOByIZv]\/inFnSjSGywRDw`A/PmFpOlkWFNgZdDh\pnv^^///WwDXBLrCHBXL@ci///QsQhmEJomPPVkyV/PAY]VY^]HrAdBnF//Xh_eShHa\zwLzIs/ohBSYKUNjjqeIg[
+Buffer2->3689
+O que vem a seguir? ->105
+O que vem a seguir? ->80
+O que vem a seguir? ->87
+O que vem a seguir? ->81
+O que vem a seguir? ->80
+O que vem a seguir? ->88
+O que vem a seguir? ->111
+NEW
+Buffer->EZkSmQUOByIZv]\/inFnSjSGywRDw`A/PmFpOlkWFNgZdDh\pnv^^///WwDXBLrCHBXL@ci///QsQhmEJomPPVkyV/PAY]VY^]HrAdBnF//Xh_eShHa\zwLzIs
+Buffer2->ohBSYKUNjjqeIg[
+maedoceu
+b22 ->ohBSYKUNjjqeIg[.
+i=15
+not found
+SET
+DELETE
+Buffer->aQxvSviBzdBGu[x/_HcmmSyaZcvxrLZ/^nUbd^QtCezMAQw/j`JSD_qWXRplyMJ/T[DikAQAsHDgc`u/Iu@akRIdmnjY^MLY^]HrAdBnF//Xh_eShHa\zwLzIs
+Buffer2->8920
+O que vem a seguir? ->95
+O que vem a seguir? ->94
+O que vem a seguir? ->106
+O que vem a seguir? ->84
+O que vem a seguir? ->73
+O que vem a seguir? ->88
+NEW
+Buffer->aQxvSviBzdBGu[x/_HcmmSyaZcvxrLZ/^nUbd^QtCezMAQw/j`JSD_qWXRplyMJ/T[DikAQAsHDgc`u/Iu@akRIdmnjY^MLY^]HrAdBnF/
+Buffer2->Xh_eShHa\zwLzIs
+maedoceu
+b22 ->Xh_eShHa\zwLzIs.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->TxQiVhaGYEvumWU/nM^`NPxeT`YcFXh/P@NlqLDdaySlibWQ`BDJ/pmELOcMEObPpiJF//ohIw^GheXkaWXfv//oNaZmPqdrsNJF\n///cp]tEHS[TLGJOFp/uf\pNAC^MghhqvX/f_ZGN]KH[jlrMoX/oeEylU\OmHFJjme
+Buffer2->2424
+O que vem a seguir? ->110
+O que vem a seguir? ->80
+O que vem a seguir? ->112
+O que vem a seguir? ->111
+O que vem a seguir? ->111
+O que vem a seguir? ->99
+O que vem a seguir? ->117
+O que vem a seguir? ->102
+O que vem a seguir? ->111
+NEW
+Buffer->TxQiVhaGYEvumWU/nM^`NPxeT`YcFXh/P@NlqLDdaySlibWQ`BDJ/pmELOcMEObPpiJF//ohIw^GheXkaWXfv//oNaZmPqdrsNJF\n///cp]tEHS[TLGJOFp/uf\pNAC^MghhqvX/f_ZGN]KH[jlrMoX
+Buffer2->oeEylU\OmHFJjme
+maedoceu
+b22 ->oeEylU\OmHFJjme.
+i=15
+not found
+DELETE
+Buffer->tkontNZQDg]kQt]/nM^`NPxeT`YcFXh/P@NlqLDdaySlibWQ`BDJ/pmELOcMEObPpiJF//ohIw^GheXkaWXfv//oNaZmPqdrsNJF\n///cp]tEHS[TLGJOFp/uf\pNAC^MghhqvX/f_ZGN]KH[jlrMoX
+Buffer2->oeEylU\OmHFJjme
+O que vem a seguir? ->110
+O que vem a seguir? ->80
+O que vem a seguir? ->112
+O que vem a seguir? ->111
+O que vem a seguir? ->111
+O que vem a seguir? ->99
+O que vem a seguir? ->117
+O que vem a seguir? ->102
+NEW
+Buffer->tkontNZQDg]kQt]/nM^`NPxeT`YcFXh/P@NlqLDdaySlibWQ`BDJ/pmELOcMEObPpiJF//ohIw^GheXkaWXfv//oNaZmPqdrsNJF\n///cp]tEHS[TLGJOFp/uf\pNAC^MghhqvX
+Buffer2->f_ZGN]KH[jlrMoX
+maedoceu
+b22 ->f_ZGN]KH[jlrMoX.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+Buffer->pOifbO_jL^aUCBC/dYuaju\RIsRaFrk[//ffEsIGEaKOmRZyL//ELOXgSMFEkH[zba/]XloeOsBqlzPDus/[\RIJ`ifMEi\oQr/BCvpFyTcBPUlUEi/RqE]pGIbc]z`dV_///bAiFgDq^yX_s[tL//h[LRjPyv_AnrGcw
+Buffer2->9860
+O que vem a seguir? ->100
+O que vem a seguir? ->102
+O que vem a seguir? ->69
+O que vem a seguir? ->93
+O que vem a seguir? ->91
+O que vem a seguir? ->66
+O que vem a seguir? ->82
+O que vem a seguir? ->98
+O que vem a seguir? ->104
+NEW
+Buffer->pOifbO_jL^aUCBC/dYuaju\RIsRaFrk[//ffEsIGEaKOmRZyL//ELOXgSMFEkH[zba/]XloeOsBqlzPDus/[\RIJ`ifMEi\oQr/BCvpFyTcBPUlUEi/RqE]pGIbc]z`dV_///bAiFgDq^yX_s[tL/
+Buffer2->h[LRjPyv_AnrGcw
+maedoceu
+b22 ->h[LRjPyv_AnrGcw.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->YRXM@qYFUBiEQVX/MOPKDn^hU]iAp^WfxfJ//]goqYABmXODgGYZ
+Buffer2->2833
+O que vem a seguir? ->77
+O que vem a seguir? ->93
+NEW
+Buffer->YRXM@qYFUBiEQVX/MOPKDn^hU]iAp^WfxfJ/
+Buffer2->]goqYABmXODgGYZ
+maedoceu
+b22 ->]goqYABmXODgGYZ.
+i=15
+not found
+SET
+DELETE
+SET
+DELETE
+Buffer->NREfHVWLswi]YG^W///SIJpZooGXBQDYuN//UXOCnan\meDXi@M/ntoaUBUL[JzgFXY/rTRpQTnAKBFcP`K//bvDeMzfuEkNnErK///o[qMoEEjDbyzsCf
+Buffer2->3903
+O que vem a seguir? ->83
+O que vem a seguir? ->85
+O que vem a seguir? ->110
+O que vem a seguir? ->114
+O que vem a seguir? ->98
+O que vem a seguir? ->111
+NEW
+Buffer->NREfHVWLswi]YG^W///SIJpZooGXBQDYuN//UXOCnan\meDXi@M/ntoaUBUL[JzgFXY/rTRpQTnAKBFcP`K//bvDeMzfuEkNnErK//
+Buffer2->o[qMoEEjDbyzsCf
+maedoceu
+b22 ->o[qMoEEjDbyzsCf.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->jMnxfIE``^`uXc_oz///wCqdT[wtMIsIQwA//xnE@ekHPc]wIAOg///IfplUBjJzlqlr]V///HqptnUzdSdy]f_^//m_DDZdg[xsEGl_R///LDRqzOvMDOYHAQv//MfBroCEhrqHxvZL
+Buffer2->3793
+O que vem a seguir? ->119
+O que vem a seguir? ->120
+O que vem a seguir? ->73
+O que vem a seguir? ->72
+O que vem a seguir? ->109
+O que vem a seguir? ->76
+O que vem a seguir? ->77
+NEW
+Buffer->jMnxfIE``^`uXc_oz///wCqdT[wtMIsIQwA//xnE@ekHPc]wIAOg///IfplUBjJzlqlr]V///HqptnUzdSdy]f_^//m_DDZdg[xsEGl_R///LDRqzOvMDOYHAQv/
+Buffer2->MfBroCEhrqHxvZL
+maedoceu
+b22 ->MfBroCEhrqHxvZL.
+i=15
+not found
+SET
+DELETE
+Buffer->hQoSgW[[FAeSCtv/^]O_ZsciTdkRgJB/`FZTvqn]CeYhtLqrXjt//[G@jLz[dEzg_afT///sjTJAReTt\EL[Gi
+Buffer2->4302
+O que vem a seguir? ->94
+O que vem a seguir? ->96
+O que vem a seguir? ->91
+O que vem a seguir? ->115
+NEW
+Buffer->hQoSgW[[FAeSCtv/^]O_ZsciTdkRgJB/`FZTvqn]CeYhtLqrXjt//[G@jLz[dEzg_afT//
+Buffer2->sjTJAReTt\EL[Gi
+maedoceu
+b22 ->sjTJAReTt\EL[Gi.
+i=15
+not found
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+DELETE
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->MXRO`KEqWFpOold/VokMelfoCzXyOkG/w\cBxhzcAwCjfsb/[GnKwFgr\wl_HenLnz///YFQSXLrKXdp]HB@///SpGCIWljyXVKOJl
+Buffer2->1596
+O que vem a seguir? ->86
+O que vem a seguir? ->119
+O que vem a seguir? ->91
+O que vem a seguir? ->89
+O que vem a seguir? ->83
+NEW
+Buffer->MXRO`KEqWFpOold/VokMelfoCzXyOkG/w\cBxhzcAwCjfsb/[GnKwFgr\wl_HenLnz///YFQSXLrKXdp]HB@//
+Buffer2->SpGCIWljyXVKOJl
+maedoceu
+b22 ->SpGCIWljyXVKOJl.
+i=15
+not found
+SET
+SET
+SET
+SET
+DELETE
+Buffer->zgZMpTLK\zjwrmn/rvfbovU[YcmhBoC/nUYzUA[`tqnSnfc/YMeQfoiLjv^h\Y\/hu^AmTSWwyxIqud/CFoTfFMCERbiajsnVGDy
+Buffer2->2557
+O que vem a seguir? ->114
+O que vem a seguir? ->110
+O que vem a seguir? ->89
+O que vem a seguir? ->104
+O que vem a seguir? ->67
+NEW
+Buffer->zgZMpTLK\zjwrmn/rvfbovU[YcmhBoC/nUYzUA[`tqnSnfc/YMeQfoiLjv^h\Y\/hu^AmTSWwyxIqud
+Buffer2->CFoTfFMCERbiajsnVGDy
+maedoceu
+b22 ->CFoTfFMCERbiajsnVGDy.
+i=20
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+DELETE
+SET
+SET
+DELETE
+Buffer->yRwWE^XtT^`ukxm/TeKOjmMSXeGEzeb/gxbh^zXi@_W@c@m/vNGrldRjQWczPQyaBim]YK///OZyIBECy`]\oMyv//xDQ[PJqQShgrZPt
+Buffer2->7559
+O que vem a seguir? ->84
+O que vem a seguir? ->103
+O que vem a seguir? ->118
+O que vem a seguir? ->79
+O que vem a seguir? ->120
+NEW
+Buffer->yRwWE^XtT^`ukxm/TeKOjmMSXeGEzeb/gxbh^zXi@_W@c@m/vNGrldRjQWczPQyaBim]YK///OZyIBECy`]\oMyv/
+Buffer2->xDQ[PJqQShgrZPt
+maedoceu
+b22 ->xDQ[PJqQShgrZPt.
+i=15
+not found
+DELETE
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->ueCtEDMGkOhgPMX/BiAp\Zz[FZdAdQe^eesx//`zs\pGKdFlNV_fx/iBOh`E\otV_K^jG/Ts^iTXHKQOp@Bf\
+Buffer2->2029
+O que vem a seguir? ->66
+O que vem a seguir? ->96
+O que vem a seguir? ->105
+O que vem a seguir? ->84
+NEW
+Buffer->ueCtEDMGkOhgPMX/BiAp\Zz[FZdAdQe^eesx//`zs\pGKdFlNV_fx/iBOh`E\otV_K^jG
+Buffer2->Ts^iTXHKQOp@Bf\
+maedoceu
+b22 ->Ts^iTXHKQOp@Bf\.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->haQgFlprjzFixkC/o`jAnwMcELDPaFHFOo//xwtUuFPxQGkajk\//KuJ\bnE^TIUhFte///u`mZlTrjnKOAtwa///s[p]vxk[oPBQrAF//HBNZ`PfwblzFzgo
+Buffer2->9891
+O que vem a seguir? ->111
+O que vem a seguir? ->120
+O que vem a seguir? ->75
+O que vem a seguir? ->117
+O que vem a seguir? ->115
+O que vem a seguir? ->72
+NEW
+Buffer->haQgFlprjzFixkC/o`jAnwMcELDPaFHFOo//xwtUuFPxQGkajk\//KuJ\bnE^TIUhFte///u`mZlTrjnKOAtwa///s[p]vxk[oPBQrAF/
+Buffer2->HBNZ`PfwblzFzgo
+maedoceu
+b22 ->HBNZ`PfwblzFzgo.
+i=15
+not found
+SET
+DELETE
+Buffer->kXDBPq_\HyK@ZlU/Vmn\aPynkqX\ZAF/oSnpLpwFmFf[kPa/\hU@RzhrgpyDlFv/Z^`BqdW_ALfTXl[/dLMJHG\nqMixPv[kXUAcOS^///]sodeWbHNVsPJPT///AOXWLMnztgSxwJ_/EGGFDBalEInzloR
+Buffer2->2932
+O que vem a seguir? ->86
+O que vem a seguir? ->111
+O que vem a seguir? ->92
+O que vem a seguir? ->90
+O que vem a seguir? ->100
+O que vem a seguir? ->93
+O que vem a seguir? ->65
+O que vem a seguir? ->69
+NEW
+Buffer->kXDBPq_\HyK@ZlU/Vmn\aPynkqX\ZAF/oSnpLpwFmFf[kPa/\hU@RzhrgpyDlFv/Z^`BqdW_ALfTXl[/dLMJHG\nqMixPv[kXUAcOS^///]sodeWbHNVsPJPT///AOXWLMnztgSxwJ_
+Buffer2->EGGFDBalEInzloR
+maedoceu
+b22 ->EGGFDBalEInzloR.
+i=15
+not found
+SET
+SET
+DELETE
+Buffer->whxHGi_NX_LvYCHSlI///e_hnXtOw]Fq`rHm///EfyQAWM]lAyErKe//\ylTSdxIGJrWqYw///@`wFOj_z_\@KVVC///FNMHi@mCxyxJRNb//FcVViNOXnbB`Nfl
+Buffer2->1778
+O que vem a seguir? ->101
+O que vem a seguir? ->69
+O que vem a seguir? ->92
+O que vem a seguir? ->64
+O que vem a seguir? ->70
+O que vem a seguir? ->70
+NEW
+Buffer->whxHGi_NX_LvYCHSlI///e_hnXtOw]Fq`rHm///EfyQAWM]lAyErKe//\ylTSdxIGJrWqYw///@`wFOj_z_\@KVVC///FNMHi@mCxyxJRNb/
+Buffer2->FcVViNOXnbB`Nfl
+maedoceu
+b22 ->FcVViNOXnbB`Nfl.
+i=15
+not found
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DELETE
+Buffer->KrDxkb]OfjgqiGb/kUspvWfQ^oxnX_M/oE]MXfGTk`JPyZZ/ztZuMegHDuv^mih/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv//xAzFIsNrHpOA_[j//XkQe`AWZsGJvIHG/gEG]OUOzPeFXwaP
+Buffer2->3631
+O que vem a seguir? ->107
+O que vem a seguir? ->111
+O que vem a seguir? ->122
+O que vem a seguir? ->67
+O que vem a seguir? ->65
+O que vem a seguir? ->96
+O que vem a seguir? ->120
+O que vem a seguir? ->88
+O que vem a seguir? ->103
+NEW
+Buffer->KrDxkb]OfjgqiGb/kUspvWfQ^oxnX_M/oE]MXfGTk`JPyZZ/ztZuMegHDuv^mih/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv//xAzFIsNrHpOA_[j//XkQe`AWZsGJvIHG
+Buffer2->gEG]OUOzPeFXwaP
+maedoceu
+b22 ->gEG]OUOzPeFXwaP.
+i=15
+not found
+DELETE
+Buffer->emCbBcXvajj]sJy/kUspvWfQ^oxnX_M/oE]MXfGTk`JPyZZ/ztZuMegHDuv^mih/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv//xAzFIsNrHpOA_[j//XkQe`AWZsGJvIHG
+Buffer2->gEG]OUOzPeFXwaP
+O que vem a seguir? ->107
+O que vem a seguir? ->111
+O que vem a seguir? ->122
+O que vem a seguir? ->67
+O que vem a seguir? ->65
+O que vem a seguir? ->96
+O que vem a seguir? ->120
+O que vem a seguir? ->88
+NEW
+Buffer->emCbBcXvajj]sJy/kUspvWfQ^oxnX_M/oE]MXfGTk`JPyZZ/ztZuMegHDuv^mih/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv//xAzFIsNrHpOA_[j/
+Buffer2->XkQe`AWZsGJvIHG
+maedoceu
+b22 ->XkQe`AWZsGJvIHG.
+i=15
+not found
+DELETE
+Buffer->KvEvswodNbMYwTo/HQJwclaXCdEUfrD/@SydBf@efjwnfgh/tObnCOnZwixfNbr/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv//xAzFIsNrHpOA_[j/
+Buffer2->XkQe`AWZsGJvIHG
+O que vem a seguir? ->72
+O que vem a seguir? ->64
+O que vem a seguir? ->116
+O que vem a seguir? ->67
+O que vem a seguir? ->65
+O que vem a seguir? ->96
+O que vem a seguir? ->120
+NEW
+Buffer->KvEvswodNbMYwTo/HQJwclaXCdEUfrD/@SydBf@efjwnfgh/tObnCOnZwixfNbr/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv/
+Buffer2->xAzFIsNrHpOA_[j/
+maedoceu
+b22 ->xAzFIsNrHpOA_[j/.
+i=16
+not found
+DELETE
+Buffer->MC@kYyHtptLITJV/N\gRbmgEsrEcuQ\/@SydBf@efjwnfgh/tObnCOnZwixfNbr/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\/`Y[eiVxyuPIZpYv/
+Buffer2->xAzFIsNrHpOA_[j
+O que vem a seguir? ->78
+O que vem a seguir? ->64
+O que vem a seguir? ->116
+O que vem a seguir? ->67
+O que vem a seguir? ->65
+O que vem a seguir? ->96
+NEW
+Buffer->MC@kYyHtptLITJV/N\gRbmgEsrEcuQ\/@SydBf@efjwnfgh/tObnCOnZwixfNbr/CadtKfJWpBoedW^BGpaCyoIw///AwGMTmckwSnt\X\
+Buffer2->`Y[eiVxyuPIZpYv/
+maedoceu
+b22 ->`Y[eiVxyuPIZpYv/.
+i=16
+not found
+DELETE
+Buffer->JwOXp\aPVvSohNo/zojcMlQjDHK^Awr/@wjL^HnsypG]SrV/mEONjw`]mVKVgAr/aeLxDbRexOJAIlf/acoo\YSo[uvfAFuTmckwSnt\X\
+Buffer2->`Y[eiVxyuPIZpYv
+O que vem a seguir? ->122
+O que vem a seguir? ->64
+O que vem a seguir? ->109
+O que vem a seguir? ->97
+O que vem a seguir? ->97
+NEW
+Buffer->JwOXp\aPVvSohNo/zojcMlQjDHK^Awr/@wjL^HnsypG]SrV/mEONjw`]mVKVgAr/aeLxDbRexOJAIlf
+Buffer2->acoo\YSo[uvfAFuTmckwSnt\X\
+maedoceu
+b22 ->acoo\YSo[uvfAFuTmckwSnt\X\.
+i=26
+not found
+DELETE
+Buffer->JDvOsj]XZSu@dtO/zojcMlQjDHK^Awr/@wjL^HnsypG]SrV/mEONjw`]mVKVgAr/aeLxDbRexOJAIlf
+Buffer2->acoo\YSo[uvfAFuTmckwSnt\X\
+O que vem a seguir? ->122
+O que vem a seguir? ->64
+O que vem a seguir? ->109
+O que vem a seguir? ->97
+NEW
+Buffer->JDvOsj]XZSu@dtO/zojcMlQjDHK^Awr/@wjL^HnsypG]SrV/mEONjw`]mVKVgAr
+Buffer2->aeLxDbRexOJAIlf
+maedoceu
+b22 ->aeLxDbRexOJAIlf.
+i=15
+not found
+DELETE
+Buffer->fdWBJ@Ard\bAbkV/zojcMlQjDHK^Awr/@wjL^HnsypG]SrV/mEONjw`]mVKVgAr
+Buffer2->aeLxDbRexOJAIlf
+O que vem a seguir? ->122
+O que vem a seguir? ->64
+O que vem a seguir? ->109
+NEW
+Buffer->fdWBJ@Ard\bAbkV/zojcMlQjDHK^Awr/@wjL^HnsypG]SrV
+Buffer2->mEONjw`]mVKVgAr
+maedoceu
+b22 ->mEONjw`]mVKVgAr.
+i=15
+not found
+DELETE
+DELETE
+Buffer->bYlJ\FwfQRPwAm^/a@FHQKazHIkTchN/ejDGTZgwhKUWW\z
+Buffer2->
+O que vem a seguir? ->97
+O que vem a seguir? ->101
+NEW
+Buffer->bYlJ\FwfQRPwAm^/a@FHQKazHIkTchN
+Buffer2->ejDGTZgwhKUWW\z
+maedoceu
+b22 ->ejDGTZgwhKUWW\z.
+i=15
+not found
+DELETE
+Buffer->LDjRyzpyAAjAYxE/^iPwfzswaooTO_n
+Buffer2->ejDGTZgwhKUWW\z
+O que vem a seguir? ->94
+NEW
+Buffer->LDjRyzpyAAjAYxE
+Buffer2->^iPwfzswaooTO_n
+maedoceu
+b22 ->^iPwfzswaooTO_n.
+i=15
+not found
+DELETE
+Buffer->y^@V_nlPVlTnl`Y/[Qp`m]Z^BbbTgbS
+Buffer2->^iPwfzswaooTO_n
+O que vem a seguir? ->91
+NEW
+Buffer->y^@V_nlPVlTnl`Y
+Buffer2->[Qp`m]Z^BbbTgbS
+maedoceu
+b22 ->[Qp`m]Z^BbbTgbS.
+i=15
+not found
+DELETE
+Buffer->mz@_bRIfSI\lHEW/O@lrpiDQPJHrjwe
+Buffer2->[Qp`m]Z^BbbTgbS
+O que vem a seguir? ->79
+NEW
+Buffer->mz@_bRIfSI\lHEW
+Buffer2->O@lrpiDQPJHrjwe
+maedoceu
+b22 ->O@lrpiDQPJHrjwe.
+i=15
+not found
+DELETE
+DELETE
+Buffer->dGLTEB^OkQXv^bw
+Buffer2->
+NEW
+Buffer->
+Buffer2->dGLTEB^OkQXv^bw
+maedoceu
+b22 ->dGLTEB^OkQXv^bw.
+i=15
+not found
+DELETE
+Buffer->nnAYWL[zsr`kNXw/BrDwHVXeqtgrcuW/EwCZMVr@cqtGUul/Alr^drZr\dCfOJb/msLLzafKZGHgJ`\/locj_v`RgXpskXI/WanhubtV@OZe_ws/AmaXuBgGwAOzCu_/hS]AtgXspRliBgOQe`AWZsGJvIHG
+Buffer2->dGLTEB^OkQXv^bw
+O que vem a seguir? ->66
+O que vem a seguir? ->69
+O que vem a seguir? ->65
+O que vem a seguir? ->109
+O que vem a seguir? ->108
+O que vem a seguir? ->87
+O que vem a seguir? ->65
+O que vem a seguir? ->104
+NEW
+Buffer->nnAYWL[zsr`kNXw/BrDwHVXeqtgrcuW/EwCZMVr@cqtGUul/Alr^drZr\dCfOJb/msLLzafKZGHgJ`\/locj_v`RgXpskXI/WanhubtV@OZe_ws/AmaXuBgGwAOzCu_
+Buffer2->hS]AtgXspRliBgOQe`AWZsGJvIHG
+maedoceu
+b22 ->hS]AtgXspRliBgOQe`AWZsGJvIHG.
+i=28
+not found
+DELETE
+Buffer->ANujgihWCjMAtAK/txTgKlIPgsmep^H/KfsalPYnglIVQDw/CqUPyl_FNKlTvxK/yuefqSmAa\kXKIh/locj_v`RgXpskXI/WanhubtV@OZe_ws/AmaXuBgGwAOzCu_
+Buffer2->hS]AtgXspRliBgOQe`AWZsGJvIHG
+O que vem a seguir? ->116
+O que vem a seguir? ->75
+O que vem a seguir? ->67
+O que vem a seguir? ->121
+O que vem a seguir? ->108
+O que vem a seguir? ->87
+O que vem a seguir? ->65
+NEW
+Buffer->ANujgihWCjMAtAK/txTgKlIPgsmep^H/KfsalPYnglIVQDw/CqUPyl_FNKlTvxK/yuefqSmAa\kXKIh/locj_v`RgXpskXI/WanhubtV@OZe_ws
+Buffer2->AmaXuBgGwAOzCu_
+maedoceu
+b22 ->AmaXuBgGwAOzCu_.
+i=15
+not found
+DELETE
+DELETE
+Buffer->SIVOV]HbcCw`hZg/nptFgLuaoslji@h/qqdWDFokQrcadlf/PlF[lB^Qmv[EoNT/^A`Tvx\TWizvLtj/locj_v`RgXpskXI/WanhubtV@OZe_ws
+Buffer2->
+O que vem a seguir? ->110
+O que vem a seguir? ->113
+O que vem a seguir? ->80
+O que vem a seguir? ->94
+O que vem a seguir? ->108
+O que vem a seguir? ->87
+NEW
+Buffer->SIVOV]HbcCw`hZg/nptFgLuaoslji@h/qqdWDFokQrcadlf/PlF[lB^Qmv[EoNT/^A`Tvx\TWizvLtj/locj_v`RgXpskXI
+Buffer2->WanhubtV@OZe_ws
+maedoceu
+b22 ->WanhubtV@OZe_ws.
+i=15
+not found
+DELETE
+Buffer->gUIzRLIRvpUSBv[/oo`WKhZce@z`kuG/FXpJWHnhrhg]x[T/v_uqVImoVAP\FNd/^A`Tvx\TWizvLtj/locj_v`RgXpskXI
+Buffer2->WanhubtV@OZe_ws
+O que vem a seguir? ->111
+O que vem a seguir? ->70
+O que vem a seguir? ->118
+O que vem a seguir? ->94
+O que vem a seguir? ->108
+NEW
+Buffer->gUIzRLIRvpUSBv[/oo`WKhZce@z`kuG/FXpJWHnhrhg]x[T/v_uqVImoVAP\FNd/^A`Tvx\TWizvLtj
+Buffer2->locj_v`RgXpskXI
+maedoceu
+b22 ->locj_v`RgXpskXI.
+i=15
+not found
+DELETE
+DELETE
+Buffer->hrVyGhvnIljqeAD/QJGLvgfVb@_y\_p/FXpJWHnhrhg]x[T/v_uqVImoVAP\FNd/^A`Tvx\TWizvLtj
+Buffer2->
+O que vem a seguir? ->81
+O que vem a seguir? ->70
+O que vem a seguir? ->118
+O que vem a seguir? ->94
+NEW
+Buffer->hrVyGhvnIljqeAD/QJGLvgfVb@_y\_p/FXpJWHnhrhg]x[T/v_uqVImoVAP\FNd
+Buffer2->^A`Tvx\TWizvLtj
+maedoceu
+b22 ->^A`Tvx\TWizvLtj.
+i=15
+not found
+DELETE
+DELETE
+Buffer->@RlvDblD^eI^Ctc/Gq^qb[YenaKw@Or/qlK_pgnP[^oDsIU/`xrPiLpgjelCnkl/cB[waMb^bdz@XDr/KUcoQQEwunN`zto/EWOLWFQJ_CDNiOG/kqUyqFahbTABaKw/zi@qeZbP^EoqF^nQe`AWZsGJvIHG
+Buffer2->
+O que vem a seguir? ->71
+O que vem a seguir? ->113
+O que vem a seguir? ->96
+O que vem a seguir? ->99
+O que vem a seguir? ->75
+O que vem a seguir? ->69
+O que vem a seguir? ->107
+O que vem a seguir? ->122
+NEW
+Buffer->@RlvDblD^eI^Ctc/Gq^qb[YenaKw@Or/qlK_pgnP[^oDsIU/`xrPiLpgjelCnkl/cB[waMb^bdz@XDr/KUcoQQEwunN`zto/EWOLWFQJ_CDNiOG/kqUyqFahbTABaKw
+Buffer2->zi@qeZbP^EoqF^nQe`AWZsGJvIHG
+maedoceu
+b22 ->zi@qeZbP^EoqF^nQe`AWZsGJvIHG.
+i=28
+not found
+DELETE
+DELETE
+Buffer->kXDBPq_\HyK@ZlU/Vmn\aPynkqX\ZAF/qlK_pgnP[^oDsIU/`xrPiLpgjelCnkl/cB[waMb^bdz@XDr/KUcoQQEwunN`zto/EWOLWFQJ_CDNiOG/kqUyqFahbTABaKw
+Buffer2->
+O que vem a seguir? ->86
+O que vem a seguir? ->113
+O que vem a seguir? ->96
+O que vem a seguir? ->99
+O que vem a seguir? ->75
+O que vem a seguir? ->69
+O que vem a seguir? ->107
+NEW
+Buffer->kXDBPq_\HyK@ZlU/Vmn\aPynkqX\ZAF/qlK_pgnP[^oDsIU/`xrPiLpgjelCnkl/cB[waMb^bdz@XDr/KUcoQQEwunN`zto/EWOLWFQJ_CDNiOG
+Buffer2->kqUyqFahbTABaKw
+maedoceu
+b22 ->kqUyqFahbTABaKw.
+i=15
+not found
+DELETE
+Buffer->AEFWmRJZ\Tci`Vy/JXbyCuYS_\uUIfk/OI_craRWveVQduW/ZCdtI`^^OpdH^Z`/]]NpsHVtMSrlFLR/sTD_upzt`mKirHO/EWOLWFQJ_CDNiOG
+Buffer2->kqUyqFahbTABaKw
+O que vem a seguir? ->74
+O que vem a seguir? ->79
+O que vem a seguir? ->90
+O que vem a seguir? ->93
+O que vem a seguir? ->115
+O que vem a seguir? ->69
+NEW
+Buffer->AEFWmRJZ\Tci`Vy/JXbyCuYS_\uUIfk/OI_craRWveVQduW/ZCdtI`^^OpdH^Z`/]]NpsHVtMSrlFLR/sTD_upzt`mKirHO
+Buffer2->EWOLWFQJ_CDNiOG
+maedoceu
+b22 ->EWOLWFQJ_CDNiOG.
+i=15
+not found
+DELETE
+Buffer->CfrpSRrRleYhD_`/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM/PqIVB_^BEQOzgAU/YD_IEDFEiTNqRtlQe`AWZsGJvIHG
+Buffer2->EWOLWFQJ_CDNiOG
+O que vem a seguir? ->82
+O que vem a seguir? ->119
+O que vem a seguir? ->68
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+O que vem a seguir? ->93
+O que vem a seguir? ->80
+O que vem a seguir? ->89
+NEW
+Buffer->CfrpSRrRleYhD_`/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM/PqIVB_^BEQOzgAU
+Buffer2->YD_IEDFEiTNqRtlQe`AWZsGJvIHG
+maedoceu
+b22 ->YD_IEDFEiTNqRtlQe`AWZsGJvIHG.
+i=28
+not found
+DELETE
+Buffer->QyECOZW\R^bPhen/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM/PqIVB_^BEQOzgAU
+Buffer2->YD_IEDFEiTNqRtlQe`AWZsGJvIHG
+O que vem a seguir? ->82
+O que vem a seguir? ->119
+O que vem a seguir? ->68
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+O que vem a seguir? ->93
+O que vem a seguir? ->80
+NEW
+Buffer->QyECOZW\R^bPhen/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM
+Buffer2->PqIVB_^BEQOzgAU
+maedoceu
+b22 ->PqIVB_^BEQOzgAU.
+i=15
+not found
+DELETE
+Buffer->GecOcgpp]iMjlac/SHMkZUPkU`NdUCs/QQRu][I[Al^@_hm/JIdPvDKi^vyxAWi/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM
+Buffer2->PqIVB_^BEQOzgAU
+O que vem a seguir? ->83
+O que vem a seguir? ->81
+O que vem a seguir? ->74
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+O que vem a seguir? ->93
+NEW
+Buffer->GecOcgpp]iMjlac/SHMkZUPkU`NdUCs/QQRu][I[Al^@_hm/JIdPvDKi^vyxAWi/graMfCPuItuQs`b/kXCfGx^bSxttncC
+Buffer2->]GcOy`\CoEhPHMM
+maedoceu
+b22 ->]GcOy`\CoEhPHMM.
+i=15
+not found
+DELETE
+Buffer->N`KcBMXGaINuzcq/NSsEHdaENHLcklW/oMQOMXsYbsBJwWL/wicWeXhfkhQVlUj/^uxmmPMDEOSVxO`/ogOFfOkb_OBqL[@/IgzQgegwRVS\mCa
+Buffer2->]GcOy`\CoEhPHMM
+O que vem a seguir? ->78
+O que vem a seguir? ->111
+O que vem a seguir? ->119
+O que vem a seguir? ->94
+O que vem a seguir? ->111
+O que vem a seguir? ->73
+NEW
+Buffer->N`KcBMXGaINuzcq/NSsEHdaENHLcklW/oMQOMXsYbsBJwWL/wicWeXhfkhQVlUj/^uxmmPMDEOSVxO`/ogOFfOkb_OBqL[@
+Buffer2->IgzQgegwRVS\mCa
+maedoceu
+b22 ->IgzQgegwRVS\mCa.
+i=15
+not found
+DELETE
+Buffer->CxWcodbae\ROjok/vLRRlgzzVzskCZh/jteqWXRhikvMrlQ/wicWeXhfkhQVlUj/^uxmmPMDEOSVxO`/ogOFfOkb_OBqL[@
+Buffer2->IgzQgegwRVS\mCa
+O que vem a seguir? ->118
+O que vem a seguir? ->106
+O que vem a seguir? ->119
+O que vem a seguir? ->94
+O que vem a seguir? ->111
+NEW
+Buffer->CxWcodbae\ROjok/vLRRlgzzVzskCZh/jteqWXRhikvMrlQ/wicWeXhfkhQVlUj/^uxmmPMDEOSVxO`
+Buffer2->ogOFfOkb_OBqL[@
+maedoceu
+b22 ->ogOFfOkb_OBqL[@.
+i=15
+not found
+DELETE
+Buffer->gUIzRLIRvpUSBv[/vLRRlgzzVzskCZh/jteqWXRhikvMrlQ/wicWeXhfkhQVlUj/^uxmmPMDEOSVxO`
+Buffer2->ogOFfOkb_OBqL[@
+O que vem a seguir? ->118
+O que vem a seguir? ->106
+O que vem a seguir? ->119
+O que vem a seguir? ->94
+NEW
+Buffer->gUIzRLIRvpUSBv[/vLRRlgzzVzskCZh/jteqWXRhikvMrlQ/wicWeXhfkhQVlUj
+Buffer2->^uxmmPMDEOSVxO`
+maedoceu
+b22 ->^uxmmPMDEOSVxO`.
+i=15
+not found
+DELETE
+Buffer->ujlZPoP]mOPERqU/vLRRlgzzVzskCZh/jteqWXRhikvMrlQ/wicWeXhfkhQVlUj
+Buffer2->^uxmmPMDEOSVxO`
+O que vem a seguir? ->118
+O que vem a seguir? ->106
+O que vem a seguir? ->119
+NEW
+Buffer->ujlZPoP]mOPERqU/vLRRlgzzVzskCZh/jteqWXRhikvMrlQ
+Buffer2->wicWeXhfkhQVlUj
+maedoceu
+b22 ->wicWeXhfkhQVlUj.
+i=15
+not found
+DELETE
+Buffer->MsiKVSxIu^]PaYQ/zLv@XQ_xolbh_Ff/jurRcNq`c[_Fl[h/dN[Yio@]LYZRjW`/UTQ]svmFVJjgNHB/BlIktqBRpTbNHM@/@VYvtp_mzqRGJ^T
+Buffer2->wicWeXhfkhQVlUj
+O que vem a seguir? ->122
+O que vem a seguir? ->106
+O que vem a seguir? ->100
+O que vem a seguir? ->85
+O que vem a seguir? ->66
+O que vem a seguir? ->64
+NEW
+Buffer->MsiKVSxIu^]PaYQ/zLv@XQ_xolbh_Ff/jurRcNq`c[_Fl[h/dN[Yio@]LYZRjW`/UTQ]svmFVJjgNHB/BlIktqBRpTbNHM@
+Buffer2->@VYvtp_mzqRGJ^T
+maedoceu
+b22 ->@VYvtp_mzqRGJ^T.
+i=15
+not found
+DELETE
+DELETE
+DELETE
+Buffer->hnBGd_hVxboFWGt/zLv@XQ_xolbh_Ff/jurRcNq`c[_Fl[h/dN[Yio@]LYZRjW`/UTQ]svmFVJjgNHB/BlIktqBRpTbNHM@
+Buffer2->
+O que vem a seguir? ->122
+O que vem a seguir? ->106
+O que vem a seguir? ->100
+O que vem a seguir? ->85
+O que vem a seguir? ->66
+NEW
+Buffer->hnBGd_hVxboFWGt/zLv@XQ_xolbh_Ff/jurRcNq`c[_Fl[h/dN[Yio@]LYZRjW`/UTQ]svmFVJjgNHB
+Buffer2->BlIktqBRpTbNHM@
+maedoceu
+b22 ->BlIktqBRpTbNHM@.
+i=15
+not found
+DELETE
+DELETE
+Buffer->yWxO_Mn\sRrZbkp/fEqxkdXSoKV]wBU/ssBlGacXdCXMAe]/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF/GtrWKrSsnRQz_el/DnJhgUHIG_[WDDU/XySnU`MfEs\BGOHQe`AWZsGJvIHG
+Buffer2->
+O que vem a seguir? ->102
+O que vem a seguir? ->115
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+O que vem a seguir? ->66
+O que vem a seguir? ->71
+O que vem a seguir? ->68
+O que vem a seguir? ->88
+NEW
+Buffer->yWxO_Mn\sRrZbkp/fEqxkdXSoKV]wBU/ssBlGacXdCXMAe]/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF/GtrWKrSsnRQz_el/DnJhgUHIG_[WDDU
+Buffer2->XySnU`MfEs\BGOHQe`AWZsGJvIHG
+maedoceu
+b22 ->XySnU`MfEs\BGOHQe`AWZsGJvIHG.
+i=28
+not found
+DELETE
+Buffer->B_]ZEkwg\_VbRph/fEqxkdXSoKV]wBU/ssBlGacXdCXMAe]/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF/GtrWKrSsnRQz_el/DnJhgUHIG_[WDDU
+Buffer2->XySnU`MfEs\BGOHQe`AWZsGJvIHG
+O que vem a seguir? ->102
+O que vem a seguir? ->115
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+O que vem a seguir? ->66
+O que vem a seguir? ->71
+O que vem a seguir? ->68
+NEW
+Buffer->B_]ZEkwg\_VbRph/fEqxkdXSoKV]wBU/ssBlGacXdCXMAe]/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF/GtrWKrSsnRQz_el
+Buffer2->DnJhgUHIG_[WDDU
+maedoceu
+b22 ->DnJhgUHIG_[WDDU.
+i=15
+not found
+DELETE
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF/GtrWKrSsnRQz_el
+Buffer2->DnJhgUHIG_[WDDU
+O que vem a seguir? ->70
+O que vem a seguir? ->97
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+O que vem a seguir? ->66
+O que vem a seguir? ->71
+NEW
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF
+Buffer2->GtrWKrSsnRQz_el
+maedoceu
+b22 ->GtrWKrSsnRQz_el.
+i=15
+not found
+DELETE
+Buffer->a_jaELCFGUPqIzi/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW/BcmfLkbeb^``tlF
+Buffer2->GtrWKrSsnRQz_el
+O que vem a seguir? ->70
+O que vem a seguir? ->97
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+O que vem a seguir? ->66
+NEW
+Buffer->a_jaELCFGUPqIzi/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW
+Buffer2->BcmfLkbeb^``tlF
+maedoceu
+b22 ->BcmfLkbeb^``tlF.
+i=15
+not found
+DELETE
+Buffer->rzoounR@JX\yhRy/iFqQSNHetIfBf^^/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s/YkboZlyZLAMKyRW
+Buffer2->BcmfLkbeb^``tlF
+O que vem a seguir? ->105
+O que vem a seguir? ->97
+O que vem a seguir? ->83
+O que vem a seguir? ->89
+NEW
+Buffer->rzoounR@JX\yhRy/iFqQSNHetIfBf^^/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s
+Buffer2->YkboZlyZLAMKyRW
+maedoceu
+b22 ->YkboZlyZLAMKyRW.
+i=15
+not found
+DELETE
+Buffer->Qc\ssvEXgfhLP@r/iFqQSNHetIfBf^^/aGSNtlVLa\^grjX/Sv\nQUTAk`QfO[s
+Buffer2->YkboZlyZLAMKyRW
+O que vem a seguir? ->105
+O que vem a seguir? ->97
+O que vem a seguir? ->83
+NEW
+Buffer->Qc\ssvEXgfhLP@r/iFqQSNHetIfBf^^/aGSNtlVLa\^grjX
+Buffer2->Sv\nQUTAk`QfO[s
+maedoceu
+b22 ->Sv\nQUTAk`QfO[s.
+i=15
+not found
+DELETE
+DELETE
+Buffer->j^VaesICUZpX\qh/hrGDEKgzU`Uxt^@/XI@FLUVVWzszpb`/gkl@yJYMFQHGXiH/sNRCgmxAKYcIzGB
+Buffer2->
+O que vem a seguir? ->104
+O que vem a seguir? ->88
+O que vem a seguir? ->103
+O que vem a seguir? ->115
+NEW
+Buffer->j^VaesICUZpX\qh/hrGDEKgzU`Uxt^@/XI@FLUVVWzszpb`/gkl@yJYMFQHGXiH
+Buffer2->sNRCgmxAKYcIzGB
+maedoceu
+b22 ->sNRCgmxAKYcIzGB.
+i=15
+not found
+DELETE
+Buffer->OSl`[EflvyyIpvy/UdnGxhWa`@XrnSu/XI@FLUVVWzszpb`/gkl@yJYMFQHGXiH
+Buffer2->sNRCgmxAKYcIzGB
+O que vem a seguir? ->85
+O que vem a seguir? ->88
+O que vem a seguir? ->103
+NEW
+Buffer->OSl`[EflvyyIpvy/UdnGxhWa`@XrnSu/XI@FLUVVWzszpb`
+Buffer2->gkl@yJYMFQHGXiH
+maedoceu
+b22 ->gkl@yJYMFQHGXiH.
+i=15
+not found
+DELETE
+Buffer->MaHvsFIZsmiGVda/hYNvvikngsOmJcL/FEpyZI^XzQvZBa[
+Buffer2->gkl@yJYMFQHGXiH
+O que vem a seguir? ->104
+O que vem a seguir? ->70
+NEW
+Buffer->MaHvsFIZsmiGVda/hYNvvikngsOmJcL
+Buffer2->FEpyZI^XzQvZBa[
+maedoceu
+b22 ->FEpyZI^XzQvZBa[.
+i=15
+not found
+DELETE
+DELETE
+Buffer->tYdadnnQb^Xvvim/hYNvvikngsOmJcL
+Buffer2->
+O que vem a seguir? ->104
+NEW
+Buffer->tYdadnnQb^Xvvim
+Buffer2->hYNvvikngsOmJcL
+maedoceu
+b22 ->hYNvvikngsOmJcL.
+i=15
+not found
+DELETE
+Buffer->UVAN_y`BWocVSbV/Woy`bFEdnAI@@aZ/AZGgKVNBQiSmatT/Nop`OyZIDnGTn_N/^CP[qiR[keHlX`T
+Buffer2->hYNvvikngsOmJcL
+O que vem a seguir? ->87
+O que vem a seguir? ->65
+O que vem a seguir? ->78
+O que vem a seguir? ->94
+NEW
+Buffer->UVAN_y`BWocVSbV/Woy`bFEdnAI@@aZ/AZGgKVNBQiSmatT/Nop`OyZIDnGTn_N
+Buffer2->^CP[qiR[keHlX`T
+maedoceu
+b22 ->^CP[qiR[keHlX`T.
+i=15
+not found
+DELETE
+Buffer->xlgU[mZC`JElxNK/hZeaLaUI@^wardS/AZGgKVNBQiSmatT/Nop`OyZIDnGTn_N
+Buffer2->^CP[qiR[keHlX`T
+O que vem a seguir? ->104
+O que vem a seguir? ->65
+O que vem a seguir? ->78
+NEW
+Buffer->xlgU[mZC`JElxNK/hZeaLaUI@^wardS/AZGgKVNBQiSmatT
+Buffer2->Nop`OyZIDnGTn_N
+maedoceu
+b22 ->Nop`OyZIDnGTn_N.
+i=15
+not found
+DELETE
+DELETE
+Buffer->ns_gVx_EaYlN`^y/fX_exc]WiOaawR`/`FZ^zZghTbBP_zq/WJYakTJ`[bbJcA^/nwmiDFkaZFN]S@p
+Buffer2->
+O que vem a seguir? ->102
+O que vem a seguir? ->96
+O que vem a seguir? ->87
+O que vem a seguir? ->110
+NEW
+Buffer->ns_gVx_EaYlN`^y/fX_exc]WiOaawR`/`FZ^zZghTbBP_zq/WJYakTJ`[bbJcA^
+Buffer2->nwmiDFkaZFN]S@p
+maedoceu
+b22 ->nwmiDFkaZFN]S@p.
+i=15
+not found
+DELETE
+Buffer->AV]jCQNIcGVhFwo/[SqqqDObfaIbkIg/sSN[]IiIOMKBmjk/HnCBaBxoueAvHs[/pR[aphZ[ongexJs/CiITUffBSGPURpm
+Buffer2->nwmiDFkaZFN]S@p
+O que vem a seguir? ->91
+O que vem a seguir? ->115
+O que vem a seguir? ->72
+O que vem a seguir? ->112
+O que vem a seguir? ->67
+NEW
+Buffer->AV]jCQNIcGVhFwo/[SqqqDObfaIbkIg/sSN[]IiIOMKBmjk/HnCBaBxoueAvHs[/pR[aphZ[ongexJs
+Buffer2->CiITUffBSGPURpm
+maedoceu
+b22 ->CiITUffBSGPURpm.
+i=15
+not found
+DELETE
+Buffer->GRwKdsNvwzf_cAs/eV]_efyp\q\bCEL/CFKAvdWOxOuSeLb/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAe/PAfRpMwROqQldbJ/NHHkJz^vbWfuxtZ
+Buffer2->CiITUffBSGPURpm
+O que vem a seguir? ->101
+O que vem a seguir? ->67
+O que vem a seguir? ->84
+O que vem a seguir? ->81
+O que vem a seguir? ->80
+O que vem a seguir? ->78
+NEW
+Buffer->GRwKdsNvwzf_cAs/eV]_efyp\q\bCEL/CFKAvdWOxOuSeLb/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAe/PAfRpMwROqQldbJ
+Buffer2->NHHkJz^vbWfuxtZ
+maedoceu
+b22 ->NHHkJz^vbWfuxtZ.
+i=15
+not found
+DELETE
+Buffer->ZS[rPk`g_Gi`pWH/LbA@wQC`[vQVtek/l^yVToLFe\PbuNz/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAe/PAfRpMwROqQldbJ
+Buffer2->NHHkJz^vbWfuxtZ
+O que vem a seguir? ->76
+O que vem a seguir? ->108
+O que vem a seguir? ->84
+O que vem a seguir? ->81
+O que vem a seguir? ->80
+NEW
+Buffer->ZS[rPk`g_Gi`pWH/LbA@wQC`[vQVtek/l^yVToLFe\PbuNz/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAe
+Buffer2->PAfRpMwROqQldbJ
+maedoceu
+b22 ->PAfRpMwROqQldbJ.
+i=15
+not found
+DELETE
+Buffer->TPno_^lKC_Csg@D/LbA@wQC`[vQVtek/l^yVToLFe\PbuNz/T[dBNiNpZdIrj[u/QUcjqJFKovXAOAe
+Buffer2->PAfRpMwROqQldbJ
+O que vem a seguir? ->76
+O que vem a seguir? ->108
+O que vem a seguir? ->84
+O que vem a seguir? ->81
+NEW
+Buffer->TPno_^lKC_Csg@D/LbA@wQC`[vQVtek/l^yVToLFe\PbuNz/T[dBNiNpZdIrj[u
+Buffer2->QUcjqJFKovXAOAe
+maedoceu
+b22 ->QUcjqJFKovXAOAe.
+i=15
+not found
+DELETE
+Buffer->CdMbsyMfjgHwbXR/dogySJSfRZCHxHG/jwUJBtxT\OkDeTB/T[dBNiNpZdIrj[u
+Buffer2->QUcjqJFKovXAOAe
+O que vem a seguir? ->100
+O que vem a seguir? ->106
+O que vem a seguir? ->84
+NEW
+Buffer->CdMbsyMfjgHwbXR/dogySJSfRZCHxHG/jwUJBtxT\OkDeTB
+Buffer2->T[dBNiNpZdIrj[u
+maedoceu
+b22 ->T[dBNiNpZdIrj[u.
+i=15
+not found
+DELETE
+DELETE
+Buffer->ANujgihWCjMAtAK/txTgKlIPgsmep^H/jwUJBtxT\OkDeTB
+Buffer2->
+O que vem a seguir? ->116
+O que vem a seguir? ->106
+NEW
+Buffer->ANujgihWCjMAtAK/txTgKlIPgsmep^H
+Buffer2->jwUJBtxT\OkDeTB
+maedoceu
+b22 ->jwUJBtxT\OkDeTB.
+i=15
+not found
+DELETE
+Buffer->mEOtPLDNSeBfmBc/rjyQJbc]shAmIjw/FlVJHoiMLCvDj`p
+Buffer2->jwUJBtxT\OkDeTB
+O que vem a seguir? ->114
+O que vem a seguir? ->70
+NEW
+Buffer->mEOtPLDNSeBfmBc/rjyQJbc]shAmIjw
+Buffer2->FlVJHoiMLCvDj`p
+maedoceu
+b22 ->FlVJHoiMLCvDj`p.
+i=15
+not found
+DELETE
+Buffer->XYuHtut]HtEB\dn/AsgfOGzQuhc@Vvy/@IcVkp[pIznJ`b]/QwkJUcgR@EyecJr/]WSgV^hBLAg_Pv_/`ATmACX`jzfxQK]/RhSW_JPxJAkiiL]/`klrg_DyQjYsJhV
+Buffer2->FlVJHoiMLCvDj`p
+O que vem a seguir? ->65
+O que vem a seguir? ->64
+O que vem a seguir? ->81
+O que vem a seguir? ->93
+O que vem a seguir? ->96
+O que vem a seguir? ->82
+O que vem a seguir? ->96
+NEW
+Buffer->XYuHtut]HtEB\dn/AsgfOGzQuhc@Vvy/@IcVkp[pIznJ`b]/QwkJUcgR@EyecJr/]WSgV^hBLAg_Pv_/`ATmACX`jzfxQK]/RhSW_JPxJAkiiL]
+Buffer2->`klrg_DyQjYsJhV
+maedoceu
+b22 ->`klrg_DyQjYsJhV.
+i=15
+not found
+DELETE
+Buffer->YjfFQjDKogvubQy/GueHuUeZKpsC_gk/jnXP^GYIwubFkjV/Bj@uQ@K^qD_RFdg/TAWAlzQIZBkNsqH/WJVLah\dmUyXzZS/FFDcmzUpkZRycy\/EBTkYujozRmjlxE
+Buffer2->`klrg_DyQjYsJhV
+O que vem a seguir? ->71
+O que vem a seguir? ->106
+O que vem a seguir? ->66
+O que vem a seguir? ->84
+O que vem a seguir? ->87
+O que vem a seguir? ->70
+O que vem a seguir? ->69
+NEW
+Buffer->YjfFQjDKogvubQy/GueHuUeZKpsC_gk/jnXP^GYIwubFkjV/Bj@uQ@K^qD_RFdg/TAWAlzQIZBkNsqH/WJVLah\dmUyXzZS/FFDcmzUpkZRycy\
+Buffer2->EBTkYujozRmjlxE
+maedoceu
+b22 ->EBTkYujozRmjlxE.
+i=15
+not found
+DELETE
+Buffer->SyNtPf_^p[emAnL/GueHuUeZKpsC_gk/jnXP^GYIwubFkjV/Bj@uQ@K^qD_RFdg/TAWAlzQIZBkNsqH/WJVLah\dmUyXzZS/FFDcmzUpkZRycy\
+Buffer2->EBTkYujozRmjlxE
+O que vem a seguir? ->71
+O que vem a seguir? ->106
+O que vem a seguir? ->66
+O que vem a seguir? ->84
+O que vem a seguir? ->87
+O que vem a seguir? ->70
+NEW
+Buffer->SyNtPf_^p[emAnL/GueHuUeZKpsC_gk/jnXP^GYIwubFkjV/Bj@uQ@K^qD_RFdg/TAWAlzQIZBkNsqH/WJVLah\dmUyXzZS
+Buffer2->FFDcmzUpkZRycy\
+maedoceu
+b22 ->FFDcmzUpkZRycy\.
+i=15
+not found
+DELETE
+Buffer->qrt@HLzBT_LezXx/WO[b[NfaPhYmZps/SmlOfyJ[dLq`uta/zqXriMtCOJ^IVMr/[SqiNdMdSXltDjz/`NwjEsVO_d`b@zr
+Buffer2->FFDcmzUpkZRycy\
+O que vem a seguir? ->87
+O que vem a seguir? ->83
+O que vem a seguir? ->122
+O que vem a seguir? ->91
+O que vem a seguir? ->96
+NEW
+Buffer->qrt@HLzBT_LezXx/WO[b[NfaPhYmZps/SmlOfyJ[dLq`uta/zqXriMtCOJ^IVMr/[SqiNdMdSXltDjz
+Buffer2->`NwjEsVO_d`b@zr
+maedoceu
+b22 ->`NwjEsVO_d`b@zr.
+i=15
+not found
+DELETE
+DELETE
+Buffer->N]CjnVSKFM_TZlk/WO[b[NfaPhYmZps/SmlOfyJ[dLq`uta/zqXriMtCOJ^IVMr/[SqiNdMdSXltDjz
+Buffer2->
+O que vem a seguir? ->87
+O que vem a seguir? ->83
+O que vem a seguir? ->122
+O que vem a seguir? ->91
+NEW
+Buffer->N]CjnVSKFM_TZlk/WO[b[NfaPhYmZps/SmlOfyJ[dLq`uta/zqXriMtCOJ^IVMr
+Buffer2->[SqiNdMdSXltDjz
+maedoceu
+b22 ->[SqiNdMdSXltDjz.
+i=15
+not found
+DELETE
+Buffer->\VNGETcVje_`cle/hPmpVQEiBziXdoK/LyheDSNhjpL@pFo/]zCZrMMoFGLESzK
+Buffer2->[SqiNdMdSXltDjz
+O que vem a seguir? ->104
+O que vem a seguir? ->76
+O que vem a seguir? ->93
+NEW
+Buffer->\VNGETcVje_`cle/hPmpVQEiBziXdoK/LyheDSNhjpL@pFo
+Buffer2->]zCZrMMoFGLESzK
+maedoceu
+b22 ->]zCZrMMoFGLESzK.
+i=15
+not found
+DELETE
+Buffer->lhc^K]RKS]iGzoG/td\vKkcoIij^^zU/LyheDSNhjpL@pFo
+Buffer2->]zCZrMMoFGLESzK
+O que vem a seguir? ->116
+O que vem a seguir? ->76
+NEW
+Buffer->lhc^K]RKS]iGzoG/td\vKkcoIij^^zU
+Buffer2->LyheDSNhjpL@pFo
+maedoceu
+b22 ->LyheDSNhjpL@pFo.
+i=15
+not found
+DELETE
+DELETE
+Buffer->U@wBxT[tyL`eLsG/td\vKkcoIij^^zU
+Buffer2->
+O que vem a seguir? ->116
+NEW
+Buffer->U@wBxT[tyL`eLsG
+Buffer2->td\vKkcoIij^^zU
+maedoceu
+b22 ->td\vKkcoIij^^zU.
+i=15
+not found
+DELETE
+Buffer->iKCAlBfWFefeNFD/VMuO^VgPDvZ`YdQ/UtevI[OsLBhWBZZ/PEk[rE]ZflQYaBF/LNbefUvzRwMh@rP/[Ncw^fC]nroUOOd/TXoDmMpMqzBGqF[
+Buffer2->td\vKkcoIij^^zU
+O que vem a seguir? ->86
+O que vem a seguir? ->85
+O que vem a seguir? ->80
+O que vem a seguir? ->76
+O que vem a seguir? ->91
+O que vem a seguir? ->84
+NEW
+Buffer->iKCAlBfWFefeNFD/VMuO^VgPDvZ`YdQ/UtevI[OsLBhWBZZ/PEk[rE]ZflQYaBF/LNbefUvzRwMh@rP/[Ncw^fC]nroUOOd
+Buffer2->TXoDmMpMqzBGqF[
+maedoceu
+b22 ->TXoDmMpMqzBGqF[.
+i=15
+not found
+DELETE
+Buffer->LMCgemx@TFBvHjM/VgNpIIuHB`QZbPg/ZWzUKyzjvch`drA/PEk[rE]ZflQYaBF/LNbefUvzRwMh@rP/[Ncw^fC]nroUOOd
+Buffer2->TXoDmMpMqzBGqF[
+O que vem a seguir? ->86
+O que vem a seguir? ->90
+O que vem a seguir? ->80
+O que vem a seguir? ->76
+O que vem a seguir? ->91
+NEW
+Buffer->LMCgemx@TFBvHjM/VgNpIIuHB`QZbPg/ZWzUKyzjvch`drA/PEk[rE]ZflQYaBF/LNbefUvzRwMh@rP
+Buffer2->[Ncw^fC]nroUOOd
+maedoceu
+b22 ->[Ncw^fC]nroUOOd.
+i=15
+not found
+DELETE
+Buffer->tyyYMhCfxzmbQLV/VgNpIIuHB`QZbPg/ZWzUKyzjvch`drA/PEk[rE]ZflQYaBF/LNbefUvzRwMh@rP
+Buffer2->[Ncw^fC]nroUOOd
+O que vem a seguir? ->86
+O que vem a seguir? ->90
+O que vem a seguir? ->80
+O que vem a seguir? ->76
+NEW
+Buffer->tyyYMhCfxzmbQLV/VgNpIIuHB`QZbPg/ZWzUKyzjvch`drA/PEk[rE]ZflQYaBF
+Buffer2->LNbefUvzRwMh@rP
+maedoceu
+b22 ->LNbefUvzRwMh@rP.
+i=15
+not found
+DELETE
+Buffer->XUcyNRPBniI_aGj/XhPH`WHo^kuzmWK/Wy_djiVI_DZEzuW/amrBd]WJXDqEqxy
+Buffer2->LNbefUvzRwMh@rP
+O que vem a seguir? ->88
+O que vem a seguir? ->87
+O que vem a seguir? ->97
+NEW
+Buffer->XUcyNRPBniI_aGj/XhPH`WHo^kuzmWK/Wy_djiVI_DZEzuW
+Buffer2->amrBd]WJXDqEqxy
+maedoceu
+b22 ->amrBd]WJXDqEqxy.
+i=15
+not found
+DELETE
+Buffer->hTbhhJq[GXje^aD/XhPH`WHo^kuzmWK/Wy_djiVI_DZEzuW
+Buffer2->amrBd]WJXDqEqxy
+O que vem a seguir? ->88
+O que vem a seguir? ->87
+NEW
+Buffer->hTbhhJq[GXje^aD/XhPH`WHo^kuzmWK
+Buffer2->Wy_djiVI_DZEzuW
+maedoceu
+b22 ->Wy_djiVI_DZEzuW.
+i=15
+not found
+DELETE
+Buffer->\B\OjZWlg[g]YOT/bK^l^ftlr`lquIl/apQsnRMO[sCI]S]/TGf`SxImrulrXFr/XBpzBEfkwqcjsRt/MyO\IlnkIXvbDPp/iFhQJRLCFwbOFHg
+Buffer2->Wy_djiVI_DZEzuW
+O que vem a seguir? ->98
+O que vem a seguir? ->97
+O que vem a seguir? ->84
+O que vem a seguir? ->88
+O que vem a seguir? ->77
+O que vem a seguir? ->105
+NEW
+Buffer->\B\OjZWlg[g]YOT/bK^l^ftlr`lquIl/apQsnRMO[sCI]S]/TGf`SxImrulrXFr/XBpzBEfkwqcjsRt/MyO\IlnkIXvbDPp
+Buffer2->iFhQJRLCFwbOFHg
+maedoceu
+b22 ->iFhQJRLCFwbOFHg.
+i=15
+not found
+DELETE
+Buffer->@IIqCY\XMxQmPt\/bK^l^ftlr`lquIl/apQsnRMO[sCI]S]/TGf`SxImrulrXFr/XBpzBEfkwqcjsRt/MyO\IlnkIXvbDPp
+Buffer2->iFhQJRLCFwbOFHg
+O que vem a seguir? ->98
+O que vem a seguir? ->97
+O que vem a seguir? ->84
+O que vem a seguir? ->88
+O que vem a seguir? ->77
+NEW
+Buffer->@IIqCY\XMxQmPt\/bK^l^ftlr`lquIl/apQsnRMO[sCI]S]/TGf`SxImrulrXFr/XBpzBEfkwqcjsRt
+Buffer2->MyO\IlnkIXvbDPp
+maedoceu
+b22 ->MyO\IlnkIXvbDPp.
+i=15
+not found
+DELETE
+DELETE
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/wYpaCrdlCbHpLVh/XmyiuDobFpUgAav/W^BEKmXnHGarPNA
+Buffer2->
+O que vem a seguir? ->67
+O que vem a seguir? ->119
+O que vem a seguir? ->88
+O que vem a seguir? ->87
+NEW
+Buffer->IDpL\ME_AmvNyDu/CYBbOa[EI`nvb\l/wYpaCrdlCbHpLVh/XmyiuDobFpUgAav
+Buffer2->W^BEKmXnHGarPNA
+maedoceu
+b22 ->W^BEKmXnHGarPNA.
+i=15
+not found
+DELETE
+Buffer->I_x_fPHEjANRM_w/AKvu\xrMsrciWDe/oNUrSHdieVcjgIt/fK\jLBGtITPyFuF
+Buffer2->W^BEKmXnHGarPNA
+O que vem a seguir? ->65
+O que vem a seguir? ->111
+O que vem a seguir? ->102
+NEW
+Buffer->I_x_fPHEjANRM_w/AKvu\xrMsrciWDe/oNUrSHdieVcjgIt
+Buffer2->fK\jLBGtITPyFuF
+maedoceu
+b22 ->fK\jLBGtITPyFuF.
+i=15
+not found
+DELETE
+Buffer->lRIbay_fMgd[\^X/G^loMhcDyZk^DUC/HVbaApalvh\fWSS/rC@Y[D`Y^erdKKt/UCJX_[JexEPgm_Y/toXZFrJtiWjgmVx/LXlldiAJtjCMvEH
+Buffer2->fK\jLBGtITPyFuF
+O que vem a seguir? ->71
+O que vem a seguir? ->72
+O que vem a seguir? ->114
+O que vem a seguir? ->85
+O que vem a seguir? ->116
+O que vem a seguir? ->76
+NEW
+Buffer->lRIbay_fMgd[\^X/G^loMhcDyZk^DUC/HVbaApalvh\fWSS/rC@Y[D`Y^erdKKt/UCJX_[JexEPgm_Y/toXZFrJtiWjgmVx
+Buffer2->LXlldiAJtjCMvEH
+maedoceu
+b22 ->LXlldiAJtjCMvEH.
+i=15
+not found
+DELETE
+Buffer->jmpOWU`fPdoLFfs/rwbCJhwxAQ^E_BH/hATHrdTudV^YFhH/rC@Y[D`Y^erdKKt/UCJX_[JexEPgm_Y/toXZFrJtiWjgmVx
+Buffer2->LXlldiAJtjCMvEH
+O que vem a seguir? ->114
+O que vem a seguir? ->104
+O que vem a seguir? ->114
+O que vem a seguir? ->85
+O que vem a seguir? ->116
+NEW
+Buffer->jmpOWU`fPdoLFfs/rwbCJhwxAQ^E_BH/hATHrdTudV^YFhH/rC@Y[D`Y^erdKKt/UCJX_[JexEPgm_Y
+Buffer2->toXZFrJtiWjgmVx
+maedoceu
+b22 ->toXZFrJtiWjgmVx.
+i=15
+not found
+DELETE
+Buffer->zLPFhgGWHCKqGbx/rwbCJhwxAQ^E_BH/hATHrdTudV^YFhH/rC@Y[D`Y^erdKKt/UCJX_[JexEPgm_Y
+Buffer2->toXZFrJtiWjgmVx
+O que vem a seguir? ->114
+O que vem a seguir? ->104
+O que vem a seguir? ->114
+O que vem a seguir? ->85
+NEW
+Buffer->zLPFhgGWHCKqGbx/rwbCJhwxAQ^E_BH/hATHrdTudV^YFhH/rC@Y[D`Y^erdKKt
+Buffer2->UCJX_[JexEPgm_Y
+maedoceu
+b22 ->UCJX_[JexEPgm_Y.
+i=15
+not found
+DELETE
+Buffer->XjyYXRyFDrXJITJ/iXwhdy_yeKWZqpb/Qispinl^DIiQEQ`/pCVtU\KTtzGV[qG
+Buffer2->UCJX_[JexEPgm_Y
+O que vem a seguir? ->105
+O que vem a seguir? ->81
+O que vem a seguir? ->112
+NEW
+Buffer->XjyYXRyFDrXJITJ/iXwhdy_yeKWZqpb/Qispinl^DIiQEQ`
+Buffer2->pCVtU\KTtzGV[qG
+maedoceu
+b22 ->pCVtU\KTtzGV[qG.
+i=15
+not found
+DELETE
+Buffer->eCNnGedRE_xVt\]/eT@sPvAhTpajrse/BWLkAC`VQCCPvD\
+Buffer2->pCVtU\KTtzGV[qG
+O que vem a seguir? ->101
+O que vem a seguir? ->66
+NEW
+Buffer->eCNnGedRE_xVt\]/eT@sPvAhTpajrse
+Buffer2->BWLkAC`VQCCPvD\
+maedoceu
+b22 ->BWLkAC`VQCCPvD\.
+i=15
+not found
+DELETE
+Buffer->AmMUtPIlnwIGZXw/yxdnFnCuX[DDeU^/sgwXFnIEpnhsRIr/xFLOqPg\Ebe_QYa/uJ]FevRUsWhHpnf/\`EomVEif]eMiJx/dqyagyu^ATg^A\_/Mntu_yR^wQHmiwS/mUSf^XifRF_C[Oa/EdLMrjGVi]Gi\pHG]OUOzPeFXwaP
+Buffer2->BWLkAC`VQCCPvD\
+O que vem a seguir? ->121
+O que vem a seguir? ->115
+O que vem a seguir? ->120
+O que vem a seguir? ->117
+O que vem a seguir? ->92
+O que vem a seguir? ->100
+O que vem a seguir? ->77
+O que vem a seguir? ->109
+O que vem a seguir? ->69
+NEW
+Buffer->AmMUtPIlnwIGZXw/yxdnFnCuX[DDeU^/sgwXFnIEpnhsRIr/xFLOqPg\Ebe_QYa/uJ]FevRUsWhHpnf/\`EomVEif]eMiJx/dqyagyu^ATg^A\_/Mntu_yR^wQHmiwS/mUSf^XifRF_C[Oa
+Buffer2->EdLMrjGVi]Gi\pHG]OUOzPeFXwaP
+maedoceu
+b22 ->EdLMrjGVi]Gi\pHG]OUOzPeFXwaP.
+i=28
+not found
+DELETE
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD/flfbpxrlLRtwyHp/IX@VDt[FFsjgDd_
+Buffer2->
+O que vem a seguir? ->65
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+O que vem a seguir? ->78
+O que vem a seguir? ->102
+O que vem a seguir? ->73
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD/flfbpxrlLRtwyHp
+Buffer2->IX@VDt[FFsjgDd_
+maedoceu
+b22 ->IX@VDt[FFsjgDd_.
+i=15
+not found
+DELETE
+Buffer->C^UrgjCnkL^Tb_b/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD/flfbpxrlLRtwyHp
+Buffer2->IX@VDt[FFsjgDd_
+O que vem a seguir? ->65
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+O que vem a seguir? ->78
+O que vem a seguir? ->102
+NEW
+Buffer->C^UrgjCnkL^Tb_b/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD
+Buffer2->flfbpxrlLRtwyHp
+maedoceu
+b22 ->flfbpxrlLRtwyHp.
+i=15
+not found
+DELETE
+Buffer->ca@ajyB_UZYJiKl/gphWNMzfjvV@la^/bEHVjn^h_OCrOO^/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V/NK[werfODBiWcPD
+Buffer2->flfbpxrlLRtwyHp
+O que vem a seguir? ->103
+O que vem a seguir? ->98
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+O que vem a seguir? ->78
+NEW
+Buffer->ca@ajyB_UZYJiKl/gphWNMzfjvV@la^/bEHVjn^h_OCrOO^/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V
+Buffer2->NK[werfODBiWcPD
+maedoceu
+b22 ->NK[werfODBiWcPD.
+i=15
+not found
+DELETE
+Buffer->lhc^K]RKS]iGzoG/td\vKkcoIij^^zU/uopWMeqtqQpikNx/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH/VgNCqPwaenaRD@V
+Buffer2->NK[werfODBiWcPD
+O que vem a seguir? ->116
+O que vem a seguir? ->117
+O que vem a seguir? ->107
+O que vem a seguir? ->72
+O que vem a seguir? ->86
+NEW
+Buffer->lhc^K]RKS]iGzoG/td\vKkcoIij^^zU/uopWMeqtqQpikNx/kF@JGFcbfHHcbCZ/HZoWAvRYYF^IBtH
+Buffer2->VgNCqPwaenaRD@V
+maedoceu
+b22 ->VgNCqPwaenaRD@V.
+i=15
+not found
+DELETE
+Buffer->ob]fqAd@ffhHf@K/ineAOIeiBedaFOo/xwtUuFPxQGkajk\/KuJ\bnE^TIUhFte/HZoWAvRYYF^IBtH
+Buffer2->VgNCqPwaenaRD@V
+O que vem a seguir? ->105
+O que vem a seguir? ->120
+O que vem a seguir? ->75
+O que vem a seguir? ->72
+NEW
+Buffer->ob]fqAd@ffhHf@K/ineAOIeiBedaFOo/xwtUuFPxQGkajk\/KuJ\bnE^TIUhFte
+Buffer2->HZoWAvRYYF^IBtH
+maedoceu
+b22 ->HZoWAvRYYF^IBtH.
+i=15
+not found
+DELETE
+Buffer->ZV@k`ZNYmqELucs/IrNwUkKkHMqHdu]/EgRxIYhxow`NGsv/YpfkChfv[Ae[OY`
+Buffer2->HZoWAvRYYF^IBtH
+O que vem a seguir? ->73
+O que vem a seguir? ->69
+O que vem a seguir? ->89
+NEW
+Buffer->ZV@k`ZNYmqELucs/IrNwUkKkHMqHdu]/EgRxIYhxow`NGsv
+Buffer2->YpfkChfv[Ae[OY`
+maedoceu
+b22 ->YpfkChfv[Ae[OY`.
+i=15
+not found
+DELETE
+Buffer->ndnideyZwZ_NYgL/HnHaqny]UR_xL\S/AivZ]Hkd\Wwctxf
+Buffer2->YpfkChfv[Ae[OY`
+O que vem a seguir? ->72
+O que vem a seguir? ->65
+NEW
+Buffer->ndnideyZwZ_NYgL/HnHaqny]UR_xL\S
+Buffer2->AivZ]Hkd\Wwctxf
+maedoceu
+b22 ->AivZ]Hkd\Wwctxf.
+i=15
+not found
+DELETE
+Buffer->^lgGEww_m_GD@tR/u`ZpQ^LLmPMxUq@/`QuKv`_`qggR^hb
+Buffer2->AivZ]Hkd\Wwctxf
+O que vem a seguir? ->117
+O que vem a seguir? ->96
+NEW
+Buffer->^lgGEww_m_GD@tR/u`ZpQ^LLmPMxUq@
+Buffer2->`QuKv`_`qggR^hb
+maedoceu
+b22 ->`QuKv`_`qggR^hb.
+i=15
+not found
+DELETE
+Buffer->eVuGGPTDgeME[rq/IEjlUJYaaREhWiA/cMWjfrTRGZxb]Xj/sA@@ggtb]GPp^Dr
+Buffer2->`QuKv`_`qggR^hb
+O que vem a seguir? ->73
+O que vem a seguir? ->99
+O que vem a seguir? ->115
+NEW
+Buffer->eVuGGPTDgeME[rq/IEjlUJYaaREhWiA/cMWjfrTRGZxb]Xj
+Buffer2->sA@@ggtb]GPp^Dr
+maedoceu
+b22 ->sA@@ggtb]GPp^Dr.
+i=15
+not found
+DELETE
+Buffer->UNhhWWPQZIXtwuV/YCqTtEJgeDn`RxX/YlJbqQve`FFOHAo/ZbO^qLuLmA@o`N]
+Buffer2->sA@@ggtb]GPp^Dr
+O que vem a seguir? ->89
+O que vem a seguir? ->89
+O que vem a seguir? ->90
+NEW
+Buffer->UNhhWWPQZIXtwuV/YCqTtEJgeDn`RxX/YlJbqQve`FFOHAo
+Buffer2->ZbO^qLuLmA@o`N]
+maedoceu
+b22 ->ZbO^qLuLmA@o`N].
+i=15
+not found
+DELETE
+Buffer->vdKBGoprFLIRhWp/JoGTvIJyTPicGuH/eBwlPeYwbstTIMG/YogHwqyk[TqQUnR
+Buffer2->ZbO^qLuLmA@o`N]
+O que vem a seguir? ->74
+O que vem a seguir? ->101
+O que vem a seguir? ->89
+NEW
+Buffer->vdKBGoprFLIRhWp/JoGTvIJyTPicGuH/eBwlPeYwbstTIMG
+Buffer2->YogHwqyk[TqQUnR
+maedoceu
+b22 ->YogHwqyk[TqQUnR.
+i=15
+not found
+DELETE
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX/gALPbVWW[PZ^FCG
+Buffer2->YogHwqyk[TqQUnR
+O que vem a seguir? ->70
+O que vem a seguir? ->97
+O que vem a seguir? ->103
+NEW
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX
+Buffer2->gALPbVWW[PZ^FCG
+maedoceu
+b22 ->gALPbVWW[PZ^FCG.
+i=15
+not found
+DELETE
+Buffer->nB@ApqNPweviYoY/FeamiLn^ZmBBEDZ/aGSNtlVLa\^grjX
+Buffer2->gALPbVWW[PZ^FCG
+O que vem a seguir? ->70
+O que vem a seguir? ->97
+NEW
+Buffer->nB@ApqNPweviYoY/FeamiLn^ZmBBEDZ
+Buffer2->aGSNtlVLa\^grjX
+maedoceu
+b22 ->aGSNtlVLa\^grjX.
+i=15
+not found
+DELETE
+Buffer->_lHTuPvxGLPXH`J/pTFXmlnAc_cVOV]
+Buffer2->aGSNtlVLa\^grjX
+O que vem a seguir? ->112
+NEW
+Buffer->_lHTuPvxGLPXH`J
+Buffer2->pTFXmlnAc_cVOV]
+maedoceu
+b22 ->pTFXmlnAc_cVOV].
+i=15
+not found
+DELETE
+Buffer->SWh@f^kSAdXrfgv/FeamiLn^ZmBBEDZ
+Buffer2->pTFXmlnAc_cVOV]
+O que vem a seguir? ->70
+NEW
+Buffer->SWh@f^kSAdXrfgv
+Buffer2->FeamiLn^ZmBBEDZ
+maedoceu
+b22 ->FeamiLn^ZmBBEDZ.
+i=15
+not found
+DELETE
+Buffer->qDOMAnVGoK]JAxl/nHOmbjG[d\jFBn`
+Buffer2->FeamiLn^ZmBBEDZ
+O que vem a seguir? ->110
+NEW
+Buffer->qDOMAnVGoK]JAxl
+Buffer2->nHOmbjG[d\jFBn`
+maedoceu
+b22 ->nHOmbjG[d\jFBn`.
+i=15
+not found
+DELETE
+Buffer->fCdO`BVUNWQo^V`/WmDudDWouf@PnmN
+Buffer2->nHOmbjG[d\jFBn`
+O que vem a seguir? ->87
+NEW
+Buffer->fCdO`BVUNWQo^V`
+Buffer2->WmDudDWouf@PnmN
+maedoceu
+b22 ->WmDudDWouf@PnmN.
+i=15
+not found
+DELETE
+Buffer->tvpTBRG[vL\j@q`/YrIZGi^^MZETJpS/cpNZgXWrYWTerfE
+Buffer2->WmDudDWouf@PnmN
+O que vem a seguir? ->89
+O que vem a seguir? ->99
+NEW
+Buffer->tvpTBRG[vL\j@q`/YrIZGi^^MZETJpS
+Buffer2->cpNZgXWrYWTerfE
+maedoceu
+b22 ->cpNZgXWrYWTerfE.
+i=15
+not found
+DELETE
+Buffer->MC@kYyHtptLITJV/YrIZGi^^MZETJpS
+Buffer2->cpNZgXWrYWTerfE
+O que vem a seguir? ->89
+NEW
+Buffer->MC@kYyHtptLITJV
+Buffer2->YrIZGi^^MZETJpS
+maedoceu
+b22 ->YrIZGi^^MZETJpS.
+i=15
+not found
+DELETE
+Buffer->kSuWg]xkfaGijan/ThhODjGBePTcsjN/CT[xKm]ttXby]lP/vkjhhbRzZgL@J`p
+Buffer2->YrIZGi^^MZETJpS
+O que vem a seguir? ->84
+O que vem a seguir? ->67
+O que vem a seguir? ->118
+NEW
+Buffer->kSuWg]xkfaGijan/ThhODjGBePTcsjN/CT[xKm]ttXby]lP
+Buffer2->vkjhhbRzZgL@J`p
+maedoceu
+b22 ->vkjhhbRzZgL@J`p.
+i=15
+not found
+DELETE
+Buffer->dzFkEYygKYSvxwt/b`zHKSmRCmwGcwA/w_rD\hHXi_vedDQ/gnIRIOhP^vmVMIu/TcNzazFx`oiIpNW
+Buffer2->vkjhhbRzZgL@J`p
+O que vem a seguir? ->98
+O que vem a seguir? ->119
+O que vem a seguir? ->103
+O que vem a seguir? ->84
+NEW
+Buffer->dzFkEYygKYSvxwt/b`zHKSmRCmwGcwA/w_rD\hHXi_vedDQ/gnIRIOhP^vmVMIu
+Buffer2->TcNzazFx`oiIpNW
+maedoceu
+b22 ->TcNzazFx`oiIpNW.
+i=15
+not found
+DELETE
+Buffer->ZkylK[@gNOrlKrB/Q[HpiBiVkkS@Ans/RwIRullxfJ`dASV/qVHfZjax`WVYPzw/sY[DCjzj@eieXtY/uTIzCNdN`RLlLgH/LsfC`YMfEEh_\eg
+Buffer2->TcNzazFx`oiIpNW
+O que vem a seguir? ->81
+O que vem a seguir? ->82
+O que vem a seguir? ->113
+O que vem a seguir? ->115
+O que vem a seguir? ->117
+O que vem a seguir? ->76
+NEW
+Buffer->ZkylK[@gNOrlKrB/Q[HpiBiVkkS@Ans/RwIRullxfJ`dASV/qVHfZjax`WVYPzw/sY[DCjzj@eieXtY/uTIzCNdN`RLlLgH
+Buffer2->LsfC`YMfEEh_\eg
+maedoceu
+b22 ->LsfC`YMfEEh_\eg.
+i=15
+not found
+DELETE
+Buffer->UC@EcidKQXiAqN_/tlIHLVji^_cbnmp/CBsdWWjfjspedgB/^YNENdQAMvJkeai/sY[DCjzj@eieXtY/uTIzCNdN`RLlLgH
+Buffer2->LsfC`YMfEEh_\eg
+O que vem a seguir? ->116
+O que vem a seguir? ->67
+O que vem a seguir? ->94
+O que vem a seguir? ->115
+O que vem a seguir? ->117
+NEW
+Buffer->UC@EcidKQXiAqN_/tlIHLVji^_cbnmp/CBsdWWjfjspedgB/^YNENdQAMvJkeai/sY[DCjzj@eieXtY
+Buffer2->uTIzCNdN`RLlLgH
+maedoceu
+b22 ->uTIzCNdN`RLlLgH.
+i=15
+not found
+DELETE
+Buffer->mCk`W]WIM[UY^_G/tlIHLVji^_cbnmp/CBsdWWjfjspedgB/^YNENdQAMvJkeai/sY[DCjzj@eieXtY
+Buffer2->uTIzCNdN`RLlLgH
+O que vem a seguir? ->116
+O que vem a seguir? ->67
+O que vem a seguir? ->94
+O que vem a seguir? ->115
+NEW
+Buffer->mCk`W]WIM[UY^_G/tlIHLVji^_cbnmp/CBsdWWjfjspedgB/^YNENdQAMvJkeai
+Buffer2->sY[DCjzj@eieXtY
+maedoceu
+b22 ->sY[DCjzj@eieXtY.
+i=15
+not found
+DELETE
+Buffer->upWVKNRNoNtsHkB/tlIHLVji^_cbnmp/CBsdWWjfjspedgB/^YNENdQAMvJkeai
+Buffer2->sY[DCjzj@eieXtY
+O que vem a seguir? ->116
+O que vem a seguir? ->67
+O que vem a seguir? ->94
+NEW
+Buffer->upWVKNRNoNtsHkB/tlIHLVji^_cbnmp/CBsdWWjfjspedgB
+Buffer2->^YNENdQAMvJkeai
+maedoceu
+b22 ->^YNENdQAMvJkeai.
+i=15
+not found
+DELETE
+DELETE
+Buffer->NdgaynBdg_^gyNS/ARX]@iPsXwlgC]J/aH_Em][UpDj`YbI/E_FbLhFgaktsAWh
+Buffer2->
+O que vem a seguir? ->65
+O que vem a seguir? ->97
+O que vem a seguir? ->69
+NEW
+Buffer->NdgaynBdg_^gyNS/ARX]@iPsXwlgC]J/aH_Em][UpDj`YbI
+Buffer2->E_FbLhFgaktsAWh
+maedoceu
+b22 ->E_FbLhFgaktsAWh.
+i=15
+not found
+DELETE
+Buffer->^ZLiGzYcvJC@w_F/fyXu^P^PbMSLzPC/pDIrnoIMrYhCF^Z/jorhVJNRz_Cpohc/F`Gt_O_dRwFHxCu/tVA^jWk`mgIgThJ
+Buffer2->E_FbLhFgaktsAWh
+O que vem a seguir? ->102
+O que vem a seguir? ->112
+O que vem a seguir? ->106
+O que vem a seguir? ->70
+O que vem a seguir? ->116
+NEW
+Buffer->^ZLiGzYcvJC@w_F/fyXu^P^PbMSLzPC/pDIrnoIMrYhCF^Z/jorhVJNRz_Cpohc/F`Gt_O_dRwFHxCu
+Buffer2->tVA^jWk`mgIgThJ
+maedoceu
+b22 ->tVA^jWk`mgIgThJ.
+i=15
+not found
+DELETE
+DELETE
+Buffer->UpnHWXjvKvLX`UC/IqBQ]CAOwF]OOqD/pzY_tLoyCKAFIvC/jorhVJNRz_Cpohc/F`Gt_O_dRwFHxCu
+Buffer2->
+O que vem a seguir? ->73
+O que vem a seguir? ->112
+O que vem a seguir? ->106
+O que vem a seguir? ->70
+NEW
+Buffer->UpnHWXjvKvLX`UC/IqBQ]CAOwF]OOqD/pzY_tLoyCKAFIvC/jorhVJNRz_Cpohc
+Buffer2->F`Gt_O_dRwFHxCu
+maedoceu
+b22 ->F`Gt_O_dRwFHxCu.
+i=15
+not found
+DELETE
+Buffer->`yFIYI@cDgA@KPO/]tg@[oqTWAuE]KM/hVZNOw[ilDgSCt\/PpFLSPbWgHUJKvb/jRWN[\nLgDWnTNJ
+Buffer2->F`Gt_O_dRwFHxCu
+O que vem a seguir? ->93
+O que vem a seguir? ->104
+O que vem a seguir? ->80
+O que vem a seguir? ->106
+NEW
+Buffer->`yFIYI@cDgA@KPO/]tg@[oqTWAuE]KM/hVZNOw[ilDgSCt\/PpFLSPbWgHUJKvb
+Buffer2->jRWN[\nLgDWnTNJ
+maedoceu
+b22 ->jRWN[\nLgDWnTNJ.
+i=15
+not found
+DELETE
+DELETE
+Buffer->ob]fqAd@ffhHf@K/]tg@[oqTWAuE]KM/hVZNOw[ilDgSCt\/PpFLSPbWgHUJKvb
+Buffer2->
+O que vem a seguir? ->93
+O que vem a seguir? ->104
+O que vem a seguir? ->80
+NEW
+Buffer->ob]fqAd@ffhHf@K/]tg@[oqTWAuE]KM/hVZNOw[ilDgSCt\
+Buffer2->PpFLSPbWgHUJKvb
+maedoceu
+b22 ->PpFLSPbWgHUJKvb.
+i=15
+not found
+DELETE
+Buffer->PJwGJFQ@mRCIbav/SAkiAycVZAcPbfb/KThw[vW^BPyXNhI/msq_MZiyutxBor[/Xve@lbCUwelSV_s/ePQKaMiPfEc\VwV/v@e[vWPZerFWrwY/[OYpL\mADDEHlOb
+Buffer2->PpFLSPbWgHUJKvb
+O que vem a seguir? ->83
+O que vem a seguir? ->75
+O que vem a seguir? ->109
+O que vem a seguir? ->88
+O que vem a seguir? ->101
+O que vem a seguir? ->118
+O que vem a seguir? ->91
+NEW
+Buffer->PJwGJFQ@mRCIbav/SAkiAycVZAcPbfb/KThw[vW^BPyXNhI/msq_MZiyutxBor[/Xve@lbCUwelSV_s/ePQKaMiPfEc\VwV/v@e[vWPZerFWrwY
+Buffer2->[OYpL\mADDEHlOb
+maedoceu
+b22 ->[OYpL\mADDEHlOb.
+i=15
+not found
+DELETE
+Buffer->YwrkcpppVDeQVmW/YuMzYcO\bZQSDBm/KThw[vW^BPyXNhI/msq_MZiyutxBor[/Xve@lbCUwelSV_s/ePQKaMiPfEc\VwV/v@e[vWPZerFWrwY
+Buffer2->[OYpL\mADDEHlOb
+O que vem a seguir? ->89
+O que vem a seguir? ->75
+O que vem a seguir? ->109
+O que vem a seguir? ->88
+O que vem a seguir? ->101
+O que vem a seguir? ->118
+NEW
+Buffer->YwrkcpppVDeQVmW/YuMzYcO\bZQSDBm/KThw[vW^BPyXNhI/msq_MZiyutxBor[/Xve@lbCUwelSV_s/ePQKaMiPfEc\VwV
+Buffer2->v@e[vWPZerFWrwY
+maedoceu
+b22 ->v@e[vWPZerFWrwY.
+i=15
+not found
+DELETE
+Buffer->dIYmFunVHLqG]K_/ukuWnipXEfg^eko/KThw[vW^BPyXNhI/msq_MZiyutxBor[/Xve@lbCUwelSV_s/ePQKaMiPfEc\VwV
+Buffer2->v@e[vWPZerFWrwY
+O que vem a seguir? ->117
+O que vem a seguir? ->75
+O que vem a seguir? ->109
+O que vem a seguir? ->88
+O que vem a seguir? ->101
+NEW
+Buffer->dIYmFunVHLqG]K_/ukuWnipXEfg^eko/KThw[vW^BPyXNhI/msq_MZiyutxBor[/Xve@lbCUwelSV_s
+Buffer2->ePQKaMiPfEc\VwV
+maedoceu
+b22 ->ePQKaMiPfEc\VwV.
+i=15
+not found
+DELETE
+Buffer->LaDmKwChDz[N`qy/@`]ydSlLbEErRPz/QTk[jpMdzo_F_s]/`^[sLhJnd\kD[mc/WgdUgDzAr_DmtSb
+Buffer2->ePQKaMiPfEc\VwV
+O que vem a seguir? ->64
+O que vem a seguir? ->81
+O que vem a seguir? ->96
+O que vem a seguir? ->87
+NEW
+Buffer->LaDmKwChDz[N`qy/@`]ydSlLbEErRPz/QTk[jpMdzo_F_s]/`^[sLhJnd\kD[mc
+Buffer2->WgdUgDzAr_DmtSb
+maedoceu
+b22 ->WgdUgDzAr_DmtSb.
+i=15
+not found
+DELETE
+Buffer->fsdDEkYqFSGrDPR/CYWvNtONtJIFKCS/QTk[jpMdzo_F_s]/`^[sLhJnd\kD[mc
+Buffer2->WgdUgDzAr_DmtSb
+O que vem a seguir? ->67
+O que vem a seguir? ->81
+O que vem a seguir? ->96
+NEW
+Buffer->fsdDEkYqFSGrDPR/CYWvNtONtJIFKCS/QTk[jpMdzo_F_s]
+Buffer2->`^[sLhJnd\kD[mc
+maedoceu
+b22 ->`^[sLhJnd\kD[mc.
+i=15
+not found
+DELETE
+Buffer->^lSrxSuZxEJkUF\/[vusReNawEsQIQq/T`f`_HOg`^Ja`wf/ZQLQy_fGaen@EDv
+Buffer2->`^[sLhJnd\kD[mc
+O que vem a seguir? ->91
+O que vem a seguir? ->84
+O que vem a seguir? ->90
+NEW
+Buffer->^lSrxSuZxEJkUF\/[vusReNawEsQIQq/T`f`_HOg`^Ja`wf
+Buffer2->ZQLQy_fGaen@EDv
+maedoceu
+b22 ->ZQLQy_fGaen@EDv.
+i=15
+not found
+DELETE
+DELETE
+Buffer->tvpTBRG[vL\j@q`/YrIZGi^^MZETJpS/cpNZgXWrYWTerfE/RdSvGpEsx@a_ZFs/vCV[VX]Xl[VSph@/okgw@xtuDYCWrqK
+Buffer2->
+O que vem a seguir? ->89
+O que vem a seguir? ->99
+O que vem a seguir? ->82
+O que vem a seguir? ->118
+O que vem a seguir? ->111
+NEW
+Buffer->tvpTBRG[vL\j@q`/YrIZGi^^MZETJpS/cpNZgXWrYWTerfE/RdSvGpEsx@a_ZFs/vCV[VX]Xl[VSph@
+Buffer2->okgw@xtuDYCWrqK
+maedoceu
+b22 ->okgw@xtuDYCWrqK.
+i=15
+not found
+DELETE
+Buffer->gCyZlsHXAXYR]xg/MLoZDlLPeWF\HBG/aZde@bKuDqwYgVb/RdSvGpEsx@a_ZFs/vCV[VX]Xl[VSph@
+Buffer2->okgw@xtuDYCWrqK
+O que vem a seguir? ->77
+O que vem a seguir? ->97
+O que vem a seguir? ->82
+O que vem a seguir? ->118
+NEW
+Buffer->gCyZlsHXAXYR]xg/MLoZDlLPeWF\HBG/aZde@bKuDqwYgVb/RdSvGpEsx@a_ZFs
+Buffer2->vCV[VX]Xl[VSph@
+maedoceu
+b22 ->vCV[VX]Xl[VSph@.
+i=15
+not found
+DELETE
+Buffer->N^Zx\eegOYXAMdL/cvWknVYIYj`sBaf/tmFJPHOQo^sGWVA/RsrB@AcHcnirUxr/dncrrINvMxRGRVO
+Buffer2->vCV[VX]Xl[VSph@
+O que vem a seguir? ->99
+O que vem a seguir? ->116
+O que vem a seguir? ->82
+O que vem a seguir? ->100
+NEW
+Buffer->N^Zx\eegOYXAMdL/cvWknVYIYj`sBaf/tmFJPHOQo^sGWVA/RsrB@AcHcnirUxr
+Buffer2->dncrrINvMxRGRVO
+maedoceu
+b22 ->dncrrINvMxRGRVO.
+i=15
+not found
+DELETE
+Buffer->jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX/CIaBav[`ZTVcTCz/RsrB@AcHcnirUxr
+Buffer2->dncrrINvMxRGRVO
+O que vem a seguir? ->72
+O que vem a seguir? ->67
+O que vem a seguir? ->82
+NEW
+Buffer->jUm`rcWn@lVLfFP/H[tPvuNvnHW^[fX/CIaBav[`ZTVcTCz
+Buffer2->RsrB@AcHcnirUxr
+maedoceu
+b22 ->RsrB@AcHcnirUxr.
+i=15
+not found
+DELETE
+Buffer->osdLYaagxDYN_Ad/RA`NUtRjVLmxFGk/gkSboIv@rkKdoEw/eccOpeh^BonqGyJ/SjUxACEUfsTsjrv/GHJBL[wYQsOHsh@
+Buffer2->RsrB@AcHcnirUxr
+O que vem a seguir? ->82
+O que vem a seguir? ->103
+O que vem a seguir? ->101
+O que vem a seguir? ->83
+O que vem a seguir? ->71
+NEW
+Buffer->osdLYaagxDYN_Ad/RA`NUtRjVLmxFGk/gkSboIv@rkKdoEw/eccOpeh^BonqGyJ/SjUxACEUfsTsjrv
+Buffer2->GHJBL[wYQsOHsh@
+maedoceu
+b22 ->GHJBL[wYQsOHsh@.
+i=15
+not found
+DELETE
+Buffer->Xx^k]hxImq^@pM`/A_U]lCJiyOFHwDM/rEnzYDKwxfhqQJ[/eccOpeh^BonqGyJ/SjUxACEUfsTsjrv
+Buffer2->GHJBL[wYQsOHsh@
+O que vem a seguir? ->65
+O que vem a seguir? ->114
+O que vem a seguir? ->101
+O que vem a seguir? ->83
+NEW
+Buffer->Xx^k]hxImq^@pM`/A_U]lCJiyOFHwDM/rEnzYDKwxfhqQJ[/eccOpeh^BonqGyJ
+Buffer2->SjUxACEUfsTsjrv
+maedoceu
+b22 ->SjUxACEUfsTsjrv.
+i=15
+not found
+DELETE
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U/kF@JGFcbfHHcbCZ
+Buffer2->
+O que vem a seguir? ->65
+O que vem a seguir? ->99
+O que vem a seguir? ->107
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/cov^fSNXk@LtI^U
+Buffer2->kF@JGFcbfHHcbCZ
+maedoceu
+b22 ->kF@JGFcbfHHcbCZ.
+i=15
+not found
+DELETE
+Buffer->iKCAlBfWFefeNFD/VMuO^VgPDvZ`YdQ/UtevI[OsLBhWBZZ
+Buffer2->kF@JGFcbfHHcbCZ
+O que vem a seguir? ->86
+O que vem a seguir? ->85
+NEW
+Buffer->iKCAlBfWFefeNFD/VMuO^VgPDvZ`YdQ
+Buffer2->UtevI[OsLBhWBZZ
+maedoceu
+b22 ->UtevI[OsLBhWBZZ.
+i=15
+not found
+DELETE
+Buffer->rzoounR@JX\yhRy/iFqQSNHetIfBf^^/BwtIGQVGx]EpwK@/vCrr@\wCimkpVOx
+Buffer2->UtevI[OsLBhWBZZ
+O que vem a seguir? ->105
+O que vem a seguir? ->66
+O que vem a seguir? ->118
+NEW
+Buffer->rzoounR@JX\yhRy/iFqQSNHetIfBf^^/BwtIGQVGx]EpwK@
+Buffer2->vCrr@\wCimkpVOx
+maedoceu
+b22 ->vCrr@\wCimkpVOx.
+i=15
+not found
+DELETE
+Buffer->hTbhhJq[GXje^aD/rhVcUmWW\i@]rJ_/HMMcwnI@C\vgzw_/`kYbuw\\\rrMOHg/oXh]HlYNxHPPE`T/`sdOHi@PmSbvZcb
+Buffer2->vCrr@\wCimkpVOx
+O que vem a seguir? ->114
+O que vem a seguir? ->72
+O que vem a seguir? ->96
+O que vem a seguir? ->111
+O que vem a seguir? ->96
+NEW
+Buffer->hTbhhJq[GXje^aD/rhVcUmWW\i@]rJ_/HMMcwnI@C\vgzw_/`kYbuw\\\rrMOHg/oXh]HlYNxHPPE`T
+Buffer2->`sdOHi@PmSbvZcb
+maedoceu
+b22 ->`sdOHi@PmSbvZcb.
+i=15
+not found
+DELETE
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/HMMcwnI@C\vgzw_/`kYbuw\\\rrMOHg/oXh]HlYNxHPPE`T
+Buffer2->`sdOHi@PmSbvZcb
+O que vem a seguir? ->65
+O que vem a seguir? ->72
+O que vem a seguir? ->96
+O que vem a seguir? ->111
+NEW
+Buffer->f@SkPO[ClpTCqTi/ARxxYY^Ik]PTwjj/HMMcwnI@C\vgzw_/`kYbuw\\\rrMOHg
+Buffer2->oXh]HlYNxHPPE`T
+maedoceu
+b22 ->oXh]HlYNxHPPE`T.
+i=15
+not found
+DELETE
+Buffer->H[RwwXvngU[ys`a/Yl\JYQlDehVbnPh/rEsoTAHfQGHujXg/]vGDKE[xj`cL\qE/nbAPfZrtvQsyOWN/LINhHbTMLA[Uac^/E^aypVqB@pFppOP
+Buffer2->oXh]HlYNxHPPE`T
+O que vem a seguir? ->89
+O que vem a seguir? ->114
+O que vem a seguir? ->93
+O que vem a seguir? ->110
+O que vem a seguir? ->76
+O que vem a seguir? ->69
+NEW
+Buffer->H[RwwXvngU[ys`a/Yl\JYQlDehVbnPh/rEsoTAHfQGHujXg/]vGDKE[xj`cL\qE/nbAPfZrtvQsyOWN/LINhHbTMLA[Uac^
+Buffer2->E^aypVqB@pFppOP
+maedoceu
+b22 ->E^aypVqB@pFppOP.
+i=15
+not found
+DELETE
+Buffer->p@rTnK]Fo`NajPP/Yl\JYQlDehVbnPh/rEsoTAHfQGHujXg/]vGDKE[xj`cL\qE/nbAPfZrtvQsyOWN/LINhHbTMLA[Uac^
+Buffer2->E^aypVqB@pFppOP
+O que vem a seguir? ->89
+O que vem a seguir? ->114
+O que vem a seguir? ->93
+O que vem a seguir? ->110
+O que vem a seguir? ->76
+NEW
+Buffer->p@rTnK]Fo`NajPP/Yl\JYQlDehVbnPh/rEsoTAHfQGHujXg/]vGDKE[xj`cL\qE/nbAPfZrtvQsyOWN
+Buffer2->LINhHbTMLA[Uac^
+maedoceu
+b22 ->LINhHbTMLA[Uac^.
+i=15
+not found
+DELETE
+Buffer->UpnHWXjvKvLX`UC/IqBQ]CAOwF]OOqD/pzY_tLoyCKAFIvC/hYwTcimNwrzJ]hi/_HqXL^tw@vgvq`f/^GFa]pzodTBxxEw/yFUUSUOjuR_MRqn/]cEZr`tTVQxyuys/kkarqRZ]XCgxO\W/gAC\OLqzVKPyxKVG]OUOzPeFXwaP
+Buffer2->LINhHbTMLA[Uac^
+O que vem a seguir? ->73
+O que vem a seguir? ->112
+O que vem a seguir? ->104
+O que vem a seguir? ->95
+O que vem a seguir? ->94
+O que vem a seguir? ->121
+O que vem a seguir? ->93
+O que vem a seguir? ->107
+O que vem a seguir? ->103
+NEW
+Buffer->UpnHWXjvKvLX`UC/IqBQ]CAOwF]OOqD/pzY_tLoyCKAFIvC/hYwTcimNwrzJ]hi/_HqXL^tw@vgvq`f/^GFa]pzodTBxxEw/yFUUSUOjuR_MRqn/]cEZr`tTVQxyuys/kkarqRZ]XCgxO\W
+Buffer2->gAC\OLqzVKPyxKVG]OUOzPeFXwaP
+maedoceu
+b22 ->gAC\OLqzVKPyxKVG]OUOzPeFXwaP.
+i=28
+not found
+DELETE
+Buffer->NOODhxsfCB`FIGi/BAYfKVkVAedhwwD/bpaxlG@OblQhwrI/jwwk\VrgM]SuPDG/SyowSW`r[FsZ`mh/^GFa]pzodTBxxEw/yFUUSUOjuR_MRqn/]cEZr`tTVQxyuys/kkarqRZ]XCgxO\W
+Buffer2->gAC\OLqzVKPyxKVG]OUOzPeFXwaP
+O que vem a seguir? ->66
+O que vem a seguir? ->98
+O que vem a seguir? ->106
+O que vem a seguir? ->83
+O que vem a seguir? ->94
+O que vem a seguir? ->121
+O que vem a seguir? ->93
+O que vem a seguir? ->107
+NEW
+Buffer->NOODhxsfCB`FIGi/BAYfKVkVAedhwwD/bpaxlG@OblQhwrI/jwwk\VrgM]SuPDG/SyowSW`r[FsZ`mh/^GFa]pzodTBxxEw/yFUUSUOjuR_MRqn/]cEZr`tTVQxyuys
+Buffer2->kkarqRZ]XCgxO\W
+maedoceu
+b22 ->kkarqRZ]XCgxO\W.
+i=15
+not found
+DELETE
+DELETE
+Buffer->aKeUKRYvSmYORjF/BAYfKVkVAedhwwD/bpaxlG@OblQhwrI/jwwk\VrgM]SuPDG/SyowSW`r[FsZ`mh/^GFa]pzodTBxxEw/yFUUSUOjuR_MRqn/]cEZr`tTVQxyuys
+Buffer2->
+O que vem a seguir? ->66
+O que vem a seguir? ->98
+O que vem a seguir? ->106
+O que vem a seguir? ->83
+O que vem a seguir? ->94
+O que vem a seguir? ->121
+O que vem a seguir? ->93
+NEW
+Buffer->aKeUKRYvSmYORjF/BAYfKVkVAedhwwD/bpaxlG@OblQhwrI/jwwk\VrgM]SuPDG/SyowSW`r[FsZ`mh/^GFa]pzodTBxxEw/yFUUSUOjuR_MRqn
+Buffer2->]cEZr`tTVQxyuys
+maedoceu
+b22 ->]cEZr`tTVQxyuys.
+i=15
+not found
+DELETE
+Buffer->FqmOuRGZusbFkQk/\wyAuV`EuUVTGJQ/XjOILIRSEEaO^wa/g\_\QNLkW^OQTMw/riGczSdhhSc[djM/dNKwhTLBoOwQlFH/yFUUSUOjuR_MRqn
+Buffer2->]cEZr`tTVQxyuys
+O que vem a seguir? ->92
+O que vem a seguir? ->88
+O que vem a seguir? ->103
+O que vem a seguir? ->114
+O que vem a seguir? ->100
+O que vem a seguir? ->121
+NEW
+Buffer->FqmOuRGZusbFkQk/\wyAuV`EuUVTGJQ/XjOILIRSEEaO^wa/g\_\QNLkW^OQTMw/riGczSdhhSc[djM/dNKwhTLBoOwQlFH
+Buffer2->yFUUSUOjuR_MRqn
+maedoceu
+b22 ->yFUUSUOjuR_MRqn.
+i=15
+not found
+DELETE
+DELETE
+Buffer->qjPlLdzwfluot[y/ziBkZfdMxJqCjTh/XjOILIRSEEaO^wa/g\_\QNLkW^OQTMw/riGczSdhhSc[djM/dNKwhTLBoOwQlFH
+Buffer2->
+O que vem a seguir? ->122
+O que vem a seguir? ->88
+O que vem a seguir? ->103
+O que vem a seguir? ->114
+O que vem a seguir? ->100
+NEW
+Buffer->qjPlLdzwfluot[y/ziBkZfdMxJqCjTh/XjOILIRSEEaO^wa/g\_\QNLkW^OQTMw/riGczSdhhSc[djM
+Buffer2->dNKwhTLBoOwQlFH
+maedoceu
+b22 ->dNKwhTLBoOwQlFH.
+i=15
+not found
+DELETE
+Buffer->NzfJ_UzuOPchvyG/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhS/g[PcouWegqPtk@i/QvOp]kmMjxB][Xa
+Buffer2->dNKwhTLBoOwQlFH
+O que vem a seguir? ->70
+O que vem a seguir? ->71
+O que vem a seguir? ->103
+O que vem a seguir? ->81
+NEW
+Buffer->NzfJ_UzuOPchvyG/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhS/g[PcouWegqPtk@i
+Buffer2->QvOp]kmMjxB][Xa
+maedoceu
+b22 ->QvOp]kmMjxB][Xa.
+i=15
+not found
+DELETE
+Buffer->DAtJBrBDoNir@[s/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhS/g[PcouWegqPtk@i
+Buffer2->QvOp]kmMjxB][Xa
+O que vem a seguir? ->70
+O que vem a seguir? ->71
+O que vem a seguir? ->103
+NEW
+Buffer->DAtJBrBDoNir@[s/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhS
+Buffer2->g[PcouWegqPtk@i
+maedoceu
+b22 ->g[PcouWegqPtk@i.
+i=15
+not found
+DELETE
+Buffer->BNr@_cuGvUdtiiU/FUOj_[^A\[ozbuv/Gi]zevMfgOFhHhS
+Buffer2->g[PcouWegqPtk@i
+O que vem a seguir? ->70
+O que vem a seguir? ->71
+NEW
+Buffer->BNr@_cuGvUdtiiU/FUOj_[^A\[ozbuv
+Buffer2->Gi]zevMfgOFhHhS
+maedoceu
+b22 ->Gi]zevMfgOFhHhS.
+i=15
+not found
+DELETE
+Buffer->Iaav`bUKH`Hy]Oi/aj^dxscEERtmNZ@/zRgghd^qJ]rAEWH/iomZhAEgBhvL^Qf/yiMbRHe]vFA][Vg/qT]Fl_ZlTrPhyGK/SFdj@PJYSEmJ^hy/dbZpYhbvaUKg^cD
+Buffer2->Gi]zevMfgOFhHhS
+O que vem a seguir? ->97
+O que vem a seguir? ->122
+O que vem a seguir? ->105
+O que vem a seguir? ->121
+O que vem a seguir? ->113
+O que vem a seguir? ->83
+O que vem a seguir? ->100
+NEW
+Buffer->Iaav`bUKH`Hy]Oi/aj^dxscEERtmNZ@/zRgghd^qJ]rAEWH/iomZhAEgBhvL^Qf/yiMbRHe]vFA][Vg/qT]Fl_ZlTrPhyGK/SFdj@PJYSEmJ^hy
+Buffer2->dbZpYhbvaUKg^cD
+maedoceu
+b22 ->dbZpYhbvaUKg^cD.
+i=15
+not found
+DELETE
+DELETE
+Buffer->zCJOYqg`ilOH_mW/aj^dxscEERtmNZ@/zRgghd^qJ]rAEWH/iomZhAEgBhvL^Qf/yiMbRHe]vFA][Vg/qT]Fl_ZlTrPhyGK/SFdj@PJYSEmJ^hy
+Buffer2->
+O que vem a seguir? ->97
+O que vem a seguir? ->122
+O que vem a seguir? ->105
+O que vem a seguir? ->121
+O que vem a seguir? ->113
+O que vem a seguir? ->83
+NEW
+Buffer->zCJOYqg`ilOH_mW/aj^dxscEERtmNZ@/zRgghd^qJ]rAEWH/iomZhAEgBhvL^Qf/yiMbRHe]vFA][Vg/qT]Fl_ZlTrPhyGK
+Buffer2->SFdj@PJYSEmJ^hy
+maedoceu
+b22 ->SFdj@PJYSEmJ^hy.
+i=15
+not found
+DELETE
+Buffer->HXLps[@ZcrpPkxX/@TXODfxmFFl@Xrj/PWfPJbv\IO[\JcM/UrsuZAwoXa[msTL/h[owDBnGnLtpioM/j\OhKgmpwRj`hji/TI_Wy]pph@^lipn/lcYfxjkWRgJGcCl/@mnVGH\vHgprpRz/_MdTOlU[GYao_eiG]OUOzPeFXwaP
+Buffer2->SFdj@PJYSEmJ^hy
+O que vem a seguir? ->64
+O que vem a seguir? ->80
+O que vem a seguir? ->85
+O que vem a seguir? ->104
+O que vem a seguir? ->106
+O que vem a seguir? ->84
+O que vem a seguir? ->108
+O que vem a seguir? ->64
+O que vem a seguir? ->95
+NEW
+Buffer->HXLps[@ZcrpPkxX/@TXODfxmFFl@Xrj/PWfPJbv\IO[\JcM/UrsuZAwoXa[msTL/h[owDBnGnLtpioM/j\OhKgmpwRj`hji/TI_Wy]pph@^lipn/lcYfxjkWRgJGcCl/@mnVGH\vHgprpRz
+Buffer2->_MdTOlU[GYao_eiG]OUOzPeFXwaP
+maedoceu
+b22 ->_MdTOlU[GYao_eiG]OUOzPeFXwaP.
+i=28
+not found
+DELETE
+Buffer->EZkSmQUOByIZv]\/inFnSjSGywRDw`A/PmFpOlkWFNgZdDh/IujeAnysBhixb_m/GgCVvw@SIVqvaU`/IShKJpdxLS`w^xw/YlKQYl\^UwoIyQQ/Xi]VEPw[_PbR[FW/@mnVGH\vHgprpRz
+Buffer2->_MdTOlU[GYao_eiG]OUOzPeFXwaP
+O que vem a seguir? ->105
+O que vem a seguir? ->80
+O que vem a seguir? ->73
+O que vem a seguir? ->71
+O que vem a seguir? ->73
+O que vem a seguir? ->89
+O que vem a seguir? ->88
+O que vem a seguir? ->64
+NEW
+Buffer->EZkSmQUOByIZv]\/inFnSjSGywRDw`A/PmFpOlkWFNgZdDh/IujeAnysBhixb_m/GgCVvw@SIVqvaU`/IShKJpdxLS`w^xw/YlKQYl\^UwoIyQQ/Xi]VEPw[_PbR[FW
+Buffer2->@mnVGH\vHgprpRz
+maedoceu
+b22 ->@mnVGH\vHgprpRz.
+i=15
+not found
+DELETE
+Buffer->RqUIzwcHI@M^bkR/pg_uMMrVWHYGhfY/Sn`CPPCPxCT[N^c/\Py[ZzLevlcwE^c/]TTJpXuqFjwepel/mrSdctvgYSFIafs/fEIJZfeAClm]EMz/hCFVVQcRS\sduAf
+Buffer2->@mnVGH\vHgprpRz
+O que vem a seguir? ->112
+O que vem a seguir? ->83
+O que vem a seguir? ->92
+O que vem a seguir? ->93
+O que vem a seguir? ->109
+O que vem a seguir? ->102
+O que vem a seguir? ->104
+NEW
+Buffer->RqUIzwcHI@M^bkR/pg_uMMrVWHYGhfY/Sn`CPPCPxCT[N^c/\Py[ZzLevlcwE^c/]TTJpXuqFjwepel/mrSdctvgYSFIafs/fEIJZfeAClm]EMz
+Buffer2->hCFVVQcRS\sduAf
+maedoceu
+b22 ->hCFVVQcRS\sduAf.
+i=15
+not found
+DELETE
+Buffer->ZS[rPk`g_Gi`pWH/pg_uMMrVWHYGhfY/Sn`CPPCPxCT[N^c/\Py[ZzLevlcwE^c/]TTJpXuqFjwepel/mrSdctvgYSFIafs/fEIJZfeAClm]EMz
+Buffer2->hCFVVQcRS\sduAf
+O que vem a seguir? ->112
+O que vem a seguir? ->83
+O que vem a seguir? ->92
+O que vem a seguir? ->93
+O que vem a seguir? ->109
+O que vem a seguir? ->102
+NEW
+Buffer->ZS[rPk`g_Gi`pWH/pg_uMMrVWHYGhfY/Sn`CPPCPxCT[N^c/\Py[ZzLevlcwE^c/]TTJpXuqFjwepel/mrSdctvgYSFIafs
+Buffer2->fEIJZfeAClm]EMz
+maedoceu
+b22 ->fEIJZfeAClm]EMz.
+i=15
+not found
+DELETE
+Buffer->pkanMZ^Rcm`[Nii/ifffWj`iiHMUV@m/AGp^jX_ITnNDIBA/\Py[ZzLevlcwE^c/]TTJpXuqFjwepel/mrSdctvgYSFIafs
+Buffer2->fEIJZfeAClm]EMz
+O que vem a seguir? ->105
+O que vem a seguir? ->65
+O que vem a seguir? ->92
+O que vem a seguir? ->93
+O que vem a seguir? ->109
+NEW
+Buffer->pkanMZ^Rcm`[Nii/ifffWj`iiHMUV@m/AGp^jX_ITnNDIBA/\Py[ZzLevlcwE^c/]TTJpXuqFjwepel
+Buffer2->mrSdctvgYSFIafs
+maedoceu
+b22 ->mrSdctvgYSFIafs.
+i=15
+not found
+DELETE
+DELETE
+Buffer->TFpDvaQjqqpviuG/]Rord_MnVLBi\ha/rYVkWukfZX_eOoR/zoHhYFuwAfrQ[rR/tY]aGCwbaQAJjVT/@pYiXH@Uo^FFNww/zEa[LqirjGVw_CV/]zJMx\ViAgKtdom
+Buffer2->
+O que vem a seguir? ->93
+O que vem a seguir? ->114
+O que vem a seguir? ->122
+O que vem a seguir? ->116
+O que vem a seguir? ->64
+O que vem a seguir? ->122
+O que vem a seguir? ->93
+NEW
+Buffer->TFpDvaQjqqpviuG/]Rord_MnVLBi\ha/rYVkWukfZX_eOoR/zoHhYFuwAfrQ[rR/tY]aGCwbaQAJjVT/@pYiXH@Uo^FFNww/zEa[LqirjGVw_CV
+Buffer2->]zJMx\ViAgKtdom
+maedoceu
+b22 ->]zJMx\ViAgKtdom.
+i=15
+not found
+DELETE
+Buffer->]@vM[[nMlLfxedF/]Rord_MnVLBi\ha/rYVkWukfZX_eOoR/zoHhYFuwAfrQ[rR/tY]aGCwbaQAJjVT/@pYiXH@Uo^FFNww/zEa[LqirjGVw_CV
+Buffer2->]zJMx\ViAgKtdom
+O que vem a seguir? ->93
+O que vem a seguir? ->114
+O que vem a seguir? ->122
+O que vem a seguir? ->116
+O que vem a seguir? ->64
+O que vem a seguir? ->122
+NEW
+Buffer->]@vM[[nMlLfxedF/]Rord_MnVLBi\ha/rYVkWukfZX_eOoR/zoHhYFuwAfrQ[rR/tY]aGCwbaQAJjVT/@pYiXH@Uo^FFNww
+Buffer2->zEa[LqirjGVw_CV
+maedoceu
+b22 ->zEa[LqirjGVw_CV.
+i=15
+not found
+DELETE
+Buffer->QK[bu\MWzfBgp\n/BpOGOuDUAxjbx`g/\AyUhsvLyRo\Hxk/aEGe]eqfYzHeBLF/zWlp^dmjleAlHJH/@pYiXH@Uo^FFNww
+Buffer2->zEa[LqirjGVw_CV
+O que vem a seguir? ->66
+O que vem a seguir? ->92
+O que vem a seguir? ->97
+O que vem a seguir? ->122
+O que vem a seguir? ->64
+NEW
+Buffer->QK[bu\MWzfBgp\n/BpOGOuDUAxjbx`g/\AyUhsvLyRo\Hxk/aEGe]eqfYzHeBLF/zWlp^dmjleAlHJH
+Buffer2->@pYiXH@Uo^FFNww
+maedoceu
+b22 ->@pYiXH@Uo^FFNww.
+i=15
+not found
+DELETE
+Buffer->U_RA@BBu\SKq`bh/zFXorjnKesAmRMQ/\AyUhsvLyRo\Hxk/aEGe]eqfYzHeBLF/zWlp^dmjleAlHJH
+Buffer2->@pYiXH@Uo^FFNww
+O que vem a seguir? ->122
+O que vem a seguir? ->92
+O que vem a seguir? ->97
+O que vem a seguir? ->122
+NEW
+Buffer->U_RA@BBu\SKq`bh/zFXorjnKesAmRMQ/\AyUhsvLyRo\Hxk/aEGe]eqfYzHeBLF
+Buffer2->zWlp^dmjleAlHJH
+maedoceu
+b22 ->zWlp^dmjleAlHJH.
+i=15
+not found
+DELETE
+Buffer->IpiuyNCrBa_vKmI/Vy]eM_bG\gxmF\i/\AyUhsvLyRo\Hxk/aEGe]eqfYzHeBLF
+Buffer2->zWlp^dmjleAlHJH
+O que vem a seguir? ->86
+O que vem a seguir? ->92
+O que vem a seguir? ->97
+NEW
+Buffer->IpiuyNCrBa_vKmI/Vy]eM_bG\gxmF\i/\AyUhsvLyRo\Hxk
+Buffer2->aEGe]eqfYzHeBLF
+maedoceu
+b22 ->aEGe]eqfYzHeBLF.
+i=15
+not found
+DELETE
+DELETE
+Buffer->yDbTCAfwKPJGaTW/tuQBdBK_gkzGCX]/\AyUhsvLyRo\Hxk
+Buffer2->
+O que vem a seguir? ->116
+O que vem a seguir? ->92
+NEW
+Buffer->yDbTCAfwKPJGaTW/tuQBdBK_gkzGCX]
+Buffer2->\AyUhsvLyRo\Hxk
+maedoceu
+b22 ->\AyUhsvLyRo\Hxk.
+i=15
+not found
+DELETE
+Buffer->WBxVIoQhOWunaCI/NJbNYJtjoSQu_BD/VMlUPmhXKf`spn\/T^cNSGrLiZdtTpv/MnWsjsND@Ja^JpS
+Buffer2->\AyUhsvLyRo\Hxk
+O que vem a seguir? ->78
+O que vem a seguir? ->86
+O que vem a seguir? ->84
+O que vem a seguir? ->77
+NEW
+Buffer->WBxVIoQhOWunaCI/NJbNYJtjoSQu_BD/VMlUPmhXKf`spn\/T^cNSGrLiZdtTpv
+Buffer2->MnWsjsND@Ja^JpS
+maedoceu
+b22 ->MnWsjsND@Ja^JpS.
+i=15
+not found
+DELETE
+Buffer->nitpuxLnsP`_XxF/AyyFYeeskGJmSYq/FAKvqH`dnExQVXz/wCpl\\ToN@PWgP_
+Buffer2->MnWsjsND@Ja^JpS
+O que vem a seguir? ->65
+O que vem a seguir? ->70
+O que vem a seguir? ->119
+NEW
+Buffer->nitpuxLnsP`_XxF/AyyFYeeskGJmSYq/FAKvqH`dnExQVXz
+Buffer2->wCpl\\ToN@PWgP_
+maedoceu
+b22 ->wCpl\\ToN@PWgP_.
+i=15
+not found
+DELETE
+Buffer->emCbBcXvajj]sJy/SvklGDrOJCOfsdr/WzKsbZbCZ@Xsjnn/daMnRt]^xTameuw
+Buffer2->wCpl\\ToN@PWgP_
+O que vem a seguir? ->83
+O que vem a seguir? ->87
+O que vem a seguir? ->100
+NEW
+Buffer->emCbBcXvajj]sJy/SvklGDrOJCOfsdr/WzKsbZbCZ@Xsjnn
+Buffer2->daMnRt]^xTameuw
+maedoceu
+b22 ->daMnRt]^xTameuw.
+i=15
+not found
+DELETE
+DELETE
+DELETE
+Buffer->n_Sx_uBmiqoVAb^/olNScbA^\uinzHa/INzmOxBwQAkRehR
+Buffer2->
+O que vem a seguir? ->111
+O que vem a seguir? ->73
+NEW
+Buffer->n_Sx_uBmiqoVAb^/olNScbA^\uinzHa
+Buffer2->INzmOxBwQAkRehR
+maedoceu
+b22 ->INzmOxBwQAkRehR.
+i=15
+not found
+DELETE
+Buffer->x@DFFnuV`]fRgmm/@pDhzVevlT`ECRZ
+Buffer2->INzmOxBwQAkRehR
+O que vem a seguir? ->64
+NEW
+Buffer->x@DFFnuV`]fRgmm
+Buffer2->@pDhzVevlT`ECRZ
+maedoceu
+b22 ->@pDhzVevlT`ECRZ.
+i=15
+not found
+DELETE
+Buffer->f[srUSp^Gc@iLii/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE
+Buffer2->@pDhzVevlT`ECRZ
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+NEW
+Buffer->f[srUSp^Gc@iLii/kqucWa__uSBMaaU
+Buffer2->m^zRYNjHL@SrOqE
+maedoceu
+b22 ->m^zRYNjHL@SrOqE.
+i=15
+not found
+DELETE
+Buffer->MjMHxljwWuoanVc/QgyqvtuaPzMiUeW/ZPeV@LnK[D]hVOl/n^GQuk]KOddnpBu/_RhmNyPXLlIoPRv
+Buffer2->m^zRYNjHL@SrOqE
+O que vem a seguir? ->81
+O que vem a seguir? ->90
+O que vem a seguir? ->110
+O que vem a seguir? ->95
+NEW
+Buffer->MjMHxljwWuoanVc/QgyqvtuaPzMiUeW/ZPeV@LnK[D]hVOl/n^GQuk]KOddnpBu
+Buffer2->_RhmNyPXLlIoPRv
+maedoceu
+b22 ->_RhmNyPXLlIoPRv.
+i=15
+not found
+DELETE
+Buffer->sDuRwiYu]`zMUlV/QgyqvtuaPzMiUeW/ZPeV@LnK[D]hVOl/n^GQuk]KOddnpBu
+Buffer2->_RhmNyPXLlIoPRv
+O que vem a seguir? ->81
+O que vem a seguir? ->90
+O que vem a seguir? ->110
+NEW
+Buffer->sDuRwiYu]`zMUlV/QgyqvtuaPzMiUeW/ZPeV@LnK[D]hVOl
+Buffer2->n^GQuk]KOddnpBu
+maedoceu
+b22 ->n^GQuk]KOddnpBu.
+i=15
+not found
+DELETE
+Buffer->YgIzOk^PxkDVNzr/oaHyBjsTzbkCf_I/ZPeV@LnK[D]hVOl
+Buffer2->n^GQuk]KOddnpBu
+O que vem a seguir? ->111
+O que vem a seguir? ->90
+NEW
+Buffer->YgIzOk^PxkDVNzr/oaHyBjsTzbkCf_I
+Buffer2->ZPeV@LnK[D]hVOl
+maedoceu
+b22 ->ZPeV@LnK[D]hVOl.
+i=15
+not found
+DELETE
+Buffer->SzbOeuOYdmyuSFQ/kbDvcDzvQEzKfam
+Buffer2->ZPeV@LnK[D]hVOl
+O que vem a seguir? ->107
+NEW
+Buffer->SzbOeuOYdmyuSFQ
+Buffer2->kbDvcDzvQEzKfam
+maedoceu
+b22 ->kbDvcDzvQEzKfam.
+i=15
+not found
+DELETE
+DELETE
+Buffer->KPhIN_fOBmOfOYR/NEU@rvIuFHWwDfr/rMB^]cJaulEJFuT/t^WjC@sCqjPaNqw/bZLXvMDvqPOVAKn
+Buffer2->
+O que vem a seguir? ->78
+O que vem a seguir? ->114
+O que vem a seguir? ->116
+O que vem a seguir? ->98
+NEW
+Buffer->KPhIN_fOBmOfOYR/NEU@rvIuFHWwDfr/rMB^]cJaulEJFuT/t^WjC@sCqjPaNqw
+Buffer2->bZLXvMDvqPOVAKn
+maedoceu
+b22 ->bZLXvMDvqPOVAKn.
+i=15
+not found
+DELETE
+Buffer->GM_oQvMtsDZcNfv/NEU@rvIuFHWwDfr/rMB^]cJaulEJFuT/t^WjC@sCqjPaNqw
+Buffer2->bZLXvMDvqPOVAKn
+O que vem a seguir? ->78
+O que vem a seguir? ->114
+O que vem a seguir? ->116
+NEW
+Buffer->GM_oQvMtsDZcNfv/NEU@rvIuFHWwDfr/rMB^]cJaulEJFuT
+Buffer2->t^WjC@sCqjPaNqw
+maedoceu
+b22 ->t^WjC@sCqjPaNqw.
+i=15
+not found
+DELETE
+Buffer->uwhjso\fZVYbNoV/pYi]jfjK@QBHJvb/OMlsGiYx[MUSeMT/OPqBA_oiVYAFllt/rJWuZbAbbQIvHLg/gxatSdjQQ\DWhVp
+Buffer2->t^WjC@sCqjPaNqw
+O que vem a seguir? ->112
+O que vem a seguir? ->79
+O que vem a seguir? ->79
+O que vem a seguir? ->114
+O que vem a seguir? ->103
+NEW
+Buffer->uwhjso\fZVYbNoV/pYi]jfjK@QBHJvb/OMlsGiYx[MUSeMT/OPqBA_oiVYAFllt/rJWuZbAbbQIvHLg
+Buffer2->gxatSdjQQ\DWhVp
+maedoceu
+b22 ->gxatSdjQQ\DWhVp.
+i=15
+not found
+DELETE
+Buffer->nnAYWL[zsr`kNXw/BrDwHVXeqtgrcuW/EwCZMVr@cqtGUul/Alr^drZr\dCfOJb/rJWuZbAbbQIvHLg
+Buffer2->gxatSdjQQ\DWhVp
+O que vem a seguir? ->66
+O que vem a seguir? ->69
+O que vem a seguir? ->65
+O que vem a seguir? ->114
+NEW
+Buffer->nnAYWL[zsr`kNXw/BrDwHVXeqtgrcuW/EwCZMVr@cqtGUul/Alr^drZr\dCfOJb
+Buffer2->rJWuZbAbbQIvHLg
+maedoceu
+b22 ->rJWuZbAbbQIvHLg.
+i=15
+not found
+DELETE
+Buffer->NpVT\MtDcAoUkti/`fjSekGewvPEhTu/_dRzN`hzUvn^i`K/mTZjKcqVowaBPzu
+Buffer2->rJWuZbAbbQIvHLg
+O que vem a seguir? ->96
+O que vem a seguir? ->95
+O que vem a seguir? ->109
+NEW
+Buffer->NpVT\MtDcAoUkti/`fjSekGewvPEhTu/_dRzN`hzUvn^i`K
+Buffer2->mTZjKcqVowaBPzu
+maedoceu
+b22 ->mTZjKcqVowaBPzu.
+i=15
+not found
+DELETE
+Buffer->rI@AMVfEvULIZM]/fY`sSEDwATxwrfE/_dRzN`hzUvn^i`K
+Buffer2->mTZjKcqVowaBPzu
+O que vem a seguir? ->102
+O que vem a seguir? ->95
+NEW
+Buffer->rI@AMVfEvULIZM]/fY`sSEDwATxwrfE
+Buffer2->_dRzN`hzUvn^i`K
+maedoceu
+b22 ->_dRzN`hzUvn^i`K.
+i=15
+not found
+DELETE
+DELETE
+Buffer->ukJb[yr@Ke`iqpe/eogGZfmOPIaZzRB/UvZYNZPXGGkk\^m/IfyDON\Xi]s]JVI/EtByCNIEm`ALNSL
+Buffer2->
+O que vem a seguir? ->101
+O que vem a seguir? ->85
+O que vem a seguir? ->73
+O que vem a seguir? ->69
+NEW
+Buffer->ukJb[yr@Ke`iqpe/eogGZfmOPIaZzRB/UvZYNZPXGGkk\^m/IfyDON\Xi]s]JVI
+Buffer2->EtByCNIEm`ALNSL
+maedoceu
+b22 ->EtByCNIEm`ALNSL.
+i=15
+not found
+DELETE
+Buffer->f[srUSp^Gc@iLii/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE/u[aj[NSYWCz`uMm/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuy/tffO]IHDfUb`OXI/cS]nhSQtZYMjDKjG]OUOzPeFXwaP
+Buffer2->EtByCNIEm`ALNSL
+O que vem a seguir? ->107
+O que vem a seguir? ->109
+O que vem a seguir? ->117
+O que vem a seguir? ->120
+O que vem a seguir? ->72
+O que vem a seguir? ->83
+O que vem a seguir? ->87
+O que vem a seguir? ->116
+O que vem a seguir? ->99
+NEW
+Buffer->f[srUSp^Gc@iLii/kqucWa__uSBMaaU/m^zRYNjHL@SrOqE/u[aj[NSYWCz`uMm/xNFcv_kMbPoPCY`/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuy/tffO]IHDfUb`OXI
+Buffer2->cS]nhSQtZYMjDKjG]OUOzPeFXwaP
+maedoceu
+b22 ->cS]nhSQtZYMjDKjG]OUOzPeFXwaP.
+i=28
+not found
+DELETE
+Buffer->WEpvezgADbY]klQ/RDxNIqGYtDQvenJ/NCpo@[l]SeAPKLh/KB`if]A^eQlge]p/qQfvdbiSUfHKsoi/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuy/tffO]IHDfUb`OXI
+Buffer2->cS]nhSQtZYMjDKjG]OUOzPeFXwaP
+O que vem a seguir? ->82
+O que vem a seguir? ->78
+O que vem a seguir? ->75
+O que vem a seguir? ->113
+O que vem a seguir? ->72
+O que vem a seguir? ->83
+O que vem a seguir? ->87
+O que vem a seguir? ->116
+NEW
+Buffer->WEpvezgADbY]klQ/RDxNIqGYtDQvenJ/NCpo@[l]SeAPKLh/KB`if]A^eQlge]p/qQfvdbiSUfHKsoi/HWac@D\xrCnfEjZ/SZrthhVa``@shOR/WqSpBlYe_[wuPuy
+Buffer2->tffO]IHDfUb`OXI
+maedoceu
+b22 ->tffO]IHDfUb`OXI.
+i=15
+not found
+DELETE
+DELETE
+Buffer->CfrpSRrRleYhD_`/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM/PqIVB_^BEQOzgAU/YD_IEDFEiTNqRtl
+Buffer2->
+O que vem a seguir? ->82
+O que vem a seguir? ->119
+O que vem a seguir? ->68
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+O que vem a seguir? ->93
+O que vem a seguir? ->80
+O que vem a seguir? ->89
+NEW
+Buffer->CfrpSRrRleYhD_`/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM/PqIVB_^BEQOzgAU
+Buffer2->YD_IEDFEiTNqRtl
+maedoceu
+b22 ->YD_IEDFEiTNqRtl.
+i=15
+not found
+DELETE
+Buffer->gwOpwSmQwqXnCVf/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM/PqIVB_^BEQOzgAU
+Buffer2->YD_IEDFEiTNqRtl
+O que vem a seguir? ->82
+O que vem a seguir? ->119
+O que vem a seguir? ->68
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+O que vem a seguir? ->93
+O que vem a seguir? ->80
+NEW
+Buffer->gwOpwSmQwqXnCVf/Ru]WdPSNivXeuAO/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM
+Buffer2->PqIVB_^BEQOzgAU
+maedoceu
+b22 ->PqIVB_^BEQOzgAU.
+i=15
+not found
+DELETE
+Buffer->fBwi[OhFTdcouwo/sKeYoBeiayt^wnb/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC/]GcOy`\CoEhPHMM
+Buffer2->PqIVB_^BEQOzgAU
+O que vem a seguir? ->115
+O que vem a seguir? ->119
+O que vem a seguir? ->68
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+O que vem a seguir? ->93
+NEW
+Buffer->fBwi[OhFTdcouwo/sKeYoBeiayt^wnb/wGdPOqGsvXpfDmm/D_EkWOP]^SGccxe/graMfCPuItuQs`b/kXCfGx^bSxttncC
+Buffer2->]GcOy`\CoEhPHMM
+maedoceu
+b22 ->]GcOy`\CoEhPHMM.
+i=15
+not found
+DELETE
+Buffer->RkYT@Mw_q@kLC[\/F]NuznIfkGMIzZ\/ctoSwpznDXHk@]p/]H\\Mju[wIfGERs/graMfCPuItuQs`b/kXCfGx^bSxttncC
+Buffer2->]GcOy`\CoEhPHMM
+O que vem a seguir? ->70
+O que vem a seguir? ->99
+O que vem a seguir? ->93
+O que vem a seguir? ->103
+O que vem a seguir? ->107
+NEW
+Buffer->RkYT@Mw_q@kLC[\/F]NuznIfkGMIzZ\/ctoSwpznDXHk@]p/]H\\Mju[wIfGERs/graMfCPuItuQs`b
+Buffer2->kXCfGx^bSxttncC
+maedoceu
+b22 ->kXCfGx^bSxttncC.
+i=15
+not found
+DELETE
+Buffer->qnryo^FSVPyu\HG/WXOAapWijThOEmD/IiO\fqNdXxVBmxU/mNrVuTr^[rXqPEy/graMfCPuItuQs`b
+Buffer2->kXCfGx^bSxttncC
+O que vem a seguir? ->87
+O que vem a seguir? ->73
+O que vem a seguir? ->109
+O que vem a seguir? ->103
+NEW
+Buffer->qnryo^FSVPyu\HG/WXOAapWijThOEmD/IiO\fqNdXxVBmxU/mNrVuTr^[rXqPEy
+Buffer2->graMfCPuItuQs`b
+maedoceu
+b22 ->graMfCPuItuQs`b.
+i=15
+not found
+DELETE
+Buffer->nSAzQ\mrabjelP]/WXOAapWijThOEmD/IiO\fqNdXxVBmxU/mNrVuTr^[rXqPEy
+Buffer2->graMfCPuItuQs`b
+O que vem a seguir? ->87
+O que vem a seguir? ->73
+O que vem a seguir? ->109
+NEW
+Buffer->nSAzQ\mrabjelP]/WXOAapWijThOEmD/IiO\fqNdXxVBmxU
+Buffer2->mNrVuTr^[rXqPEy
+maedoceu
+b22 ->mNrVuTr^[rXqPEy.
+i=15
+not found
+DELETE
+Buffer->fsdDEkYqFSGrDPR/CYWvNtONtJIFKCS/GhOXazfpEBcLNaj
+Buffer2->mNrVuTr^[rXqPEy
+O que vem a seguir? ->67
+O que vem a seguir? ->71
+NEW
+Buffer->fsdDEkYqFSGrDPR/CYWvNtONtJIFKCS
+Buffer2->GhOXazfpEBcLNaj
+maedoceu
+b22 ->GhOXazfpEBcLNaj.
+i=15
+not found
+DELETE
+Buffer->D_K[TPuOBdpLOnL/OIdPy]QmeEZDVT[/JiszZrJdHb`ko^F
+Buffer2->GhOXazfpEBcLNaj
+O que vem a seguir? ->79
+O que vem a seguir? ->74
+NEW
+Buffer->D_K[TPuOBdpLOnL/OIdPy]QmeEZDVT[
+Buffer2->JiszZrJdHb`ko^F
+maedoceu
+b22 ->JiszZrJdHb`ko^F.
+i=15
+not found
+DELETE
+Buffer->IzaBKGM\CTTJrPX/F[dKEiukdqqOAmy
+Buffer2->JiszZrJdHb`ko^F
+O que vem a seguir? ->70
+NEW
+Buffer->IzaBKGM\CTTJrPX
+Buffer2->F[dKEiukdqqOAmy
+maedoceu
+b22 ->F[dKEiukdqqOAmy.
+i=15
+not found
+DELETE
+DELETE
+DELETE
+Buffer->a[iawBOr[YLvWWn/[xVfJxV\UBaadUt/vCErLHOtQZfxDBt/SdkGBK^W@VXlr_N/UeP[Rk]UWqZMmhB/h@VoXFGLghlqRot/cyCyeBnCbw[Oqcv/`oyoo[QszSKIc_R
+Buffer2->
+O que vem a seguir? ->91
+O que vem a seguir? ->118
+O que vem a seguir? ->83
+O que vem a seguir? ->85
+O que vem a seguir? ->104
+O que vem a seguir? ->99
+O que vem a seguir? ->96
+NEW
+Buffer->a[iawBOr[YLvWWn/[xVfJxV\UBaadUt/vCErLHOtQZfxDBt/SdkGBK^W@VXlr_N/UeP[Rk]UWqZMmhB/h@VoXFGLghlqRot/cyCyeBnCbw[Oqcv
+Buffer2->`oyoo[QszSKIc_R
+maedoceu
+b22 ->`oyoo[QszSKIc_R.
+i=15
+not found
+DELETE
+Buffer->nimFrxiUsyOiegQ/lJ[DvYrcK@W`I]u/zfo@Nvqv@bZqLlq/euqRtatgyQY@fKZ/]^ZxjfGcPl^QPOw/afxYfKWITKXuW^W/cyCyeBnCbw[Oqcv
+Buffer2->`oyoo[QszSKIc_R
+O que vem a seguir? ->108
+O que vem a seguir? ->122
+O que vem a seguir? ->101
+O que vem a seguir? ->93
+O que vem a seguir? ->97
+O que vem a seguir? ->99
+NEW
+Buffer->nimFrxiUsyOiegQ/lJ[DvYrcK@W`I]u/zfo@Nvqv@bZqLlq/euqRtatgyQY@fKZ/]^ZxjfGcPl^QPOw/afxYfKWITKXuW^W
+Buffer2->cyCyeBnCbw[Oqcv
+maedoceu
+b22 ->cyCyeBnCbw[Oqcv.
+i=15
+not found
+DELETE
+Buffer->^cEneHSl`CPSaaq/@Kn@mM^AUX^@uIE/jdTBIOURO^ax`IF/ZaWRPOuuhB]aTLT/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ/R`sKF_JCszlwPXm/CAjg]cwmLAx@zztG]OUOzPeFXwaP
+Buffer2->cyCyeBnCbw[Oqcv
+O que vem a seguir? ->64
+O que vem a seguir? ->106
+O que vem a seguir? ->90
+O que vem a seguir? ->86
+O que vem a seguir? ->67
+O que vem a seguir? ->115
+O que vem a seguir? ->79
+O que vem a seguir? ->82
+O que vem a seguir? ->67
+NEW
+Buffer->^cEneHSl`CPSaaq/@Kn@mM^AUX^@uIE/jdTBIOURO^ax`IF/ZaWRPOuuhB]aTLT/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ/R`sKF_JCszlwPXm
+Buffer2->CAjg]cwmLAx@zztG]OUOzPeFXwaP
+maedoceu
+b22 ->CAjg]cwmLAx@zztG]OUOzPeFXwaP.
+i=28
+not found
+DELETE
+Buffer->r\kVIIvFZwYUkBj/@Kn@mM^AUX^@uIE/jdTBIOURO^ax`IF/ZaWRPOuuhB]aTLT/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ/R`sKF_JCszlwPXm
+Buffer2->CAjg]cwmLAx@zztG]OUOzPeFXwaP
+O que vem a seguir? ->64
+O que vem a seguir? ->106
+O que vem a seguir? ->90
+O que vem a seguir? ->86
+O que vem a seguir? ->67
+O que vem a seguir? ->115
+O que vem a seguir? ->79
+O que vem a seguir? ->82
+NEW
+Buffer->r\kVIIvFZwYUkBj/@Kn@mM^AUX^@uIE/jdTBIOURO^ax`IF/ZaWRPOuuhB]aTLT/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ
+Buffer2->R`sKF_JCszlwPXm
+maedoceu
+b22 ->R`sKF_JCszlwPXm.
+i=15
+not found
+DELETE
+Buffer->MXRO`KEqWFpOold/VokMelfoCzXyOkG/w\cBxhzcAwCjfsb/[GnKwFgr\wl_Hen/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza/OLjUqvBAypjpMyZ
+Buffer2->R`sKF_JCszlwPXm
+O que vem a seguir? ->86
+O que vem a seguir? ->119
+O que vem a seguir? ->91
+O que vem a seguir? ->86
+O que vem a seguir? ->67
+O que vem a seguir? ->115
+O que vem a seguir? ->79
+NEW
+Buffer->MXRO`KEqWFpOold/VokMelfoCzXyOkG/w\cBxhzcAwCjfsb/[GnKwFgr\wl_Hen/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza
+Buffer2->OLjUqvBAypjpMyZ
+maedoceu
+b22 ->OLjUqvBAypjpMyZ.
+i=15
+not found
+DELETE
+Buffer->ffJVRrJlmh@l]fL/LnbcoHgZTCIasMo/EBnHKgrF]dAmGKw/[GnKwFgr\wl_Hen/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG/sIjsKtt@nr@ddza
+Buffer2->OLjUqvBAypjpMyZ
+O que vem a seguir? ->76
+O que vem a seguir? ->69
+O que vem a seguir? ->91
+O que vem a seguir? ->86
+O que vem a seguir? ->67
+O que vem a seguir? ->115
+NEW
+Buffer->ffJVRrJlmh@l]fL/LnbcoHgZTCIasMo/EBnHKgrF]dAmGKw/[GnKwFgr\wl_Hen/VPxoVMrd@_etgPJ/CSnJWQMouP@DBbG
+Buffer2->sIjsKtt@nr@ddza
+maedoceu
+b22 ->sIjsKtt@nr@ddza.
+i=15
+not found
+DELETE
+Buffer->uLHexCmtPWOcYvc/evkm_RCJuJGFr`[/jSMa^\DO\iB[pT^/v[n@KPPKFmYD\iv/ICcCHQmUoE[bfQb/l^VCefMzkP@hW_b
+Buffer2->sIjsKtt@nr@ddza
+O que vem a seguir? ->101
+O que vem a seguir? ->106
+O que vem a seguir? ->118
+O que vem a seguir? ->73
+O que vem a seguir? ->108
+NEW
+Buffer->uLHexCmtPWOcYvc/evkm_RCJuJGFr`[/jSMa^\DO\iB[pT^/v[n@KPPKFmYD\iv/ICcCHQmUoE[bfQb
+Buffer2->l^VCefMzkP@hW_b
+maedoceu
+b22 ->l^VCefMzkP@hW_b.
+i=15
+not found
+DELETE
+Buffer->mEOtPLDNSeBfmBc/evkm_RCJuJGFr`[/jSMa^\DO\iB[pT^/v[n@KPPKFmYD\iv/ICcCHQmUoE[bfQb
+Buffer2->l^VCefMzkP@hW_b
+O que vem a seguir? ->101
+O que vem a seguir? ->106
+O que vem a seguir? ->118
+O que vem a seguir? ->73
+NEW
+Buffer->mEOtPLDNSeBfmBc/evkm_RCJuJGFr`[/jSMa^\DO\iB[pT^/v[n@KPPKFmYD\iv
+Buffer2->ICcCHQmUoE[bfQb
+maedoceu
+b22 ->ICcCHQmUoE[bfQb.
+i=15
+not found
+DELETE
+DELETE
+Buffer->vjdmVpzgTE@DMWa/hd^hWmYzxRSwtOj/XsMaoUYpBAPcKfX/WOMXEz@LN[S_@JE/ac[JIOuKDIFIWSj/LYRlhwVV\ojUUlW
+Buffer2->
+O que vem a seguir? ->104
+O que vem a seguir? ->88
+O que vem a seguir? ->87
+O que vem a seguir? ->97
+O que vem a seguir? ->76
+NEW
+Buffer->vjdmVpzgTE@DMWa/hd^hWmYzxRSwtOj/XsMaoUYpBAPcKfX/WOMXEz@LN[S_@JE/ac[JIOuKDIFIWSj
+Buffer2->LYRlhwVV\ojUUlW
+maedoceu
+b22 ->LYRlhwVV\ojUUlW.
+i=15
+not found
+DELETE
+DELETE
+Buffer->a_jaELCFGUPqIzi/qkmpcpstFRJLQre/xoVawzflxJF__eX/sDtzMbPB@RYJ`js/sTJaQUzXupNRhxZ/LyK^PEBoHZDJjvP/YCKgRB[jo_bEcbW
+Buffer2->
+O que vem a seguir? ->113
+O que vem a seguir? ->120
+O que vem a seguir? ->115
+O que vem a seguir? ->115
+O que vem a seguir? ->76
+O que vem a seguir? ->89
+NEW
+Buffer->a_jaELCFGUPqIzi/qkmpcpstFRJLQre/xoVawzflxJF__eX/sDtzMbPB@RYJ`js/sTJaQUzXupNRhxZ/LyK^PEBoHZDJjvP
+Buffer2->YCKgRB[jo_bEcbW
+maedoceu
+b22 ->YCKgRB[jo_bEcbW.
+i=15
+not found
+PRINT
+DELETE
+PRINT
+LIST
+QUIT
+==11179== 
+==11179== HEAP SUMMARY:
+==11179==     in use at exit: 0 bytes in 0 blocks
+==11179==   total heap usage: 24,022 allocs, 24,022 frees, 839,827 bytes allocated
+==11179== 
+==11179== All heap blocks were freed -- no leaks are possible
+==11179== 
+==11179== For lists of detected and suppressed errors, rerun with: -s
+==11179== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
