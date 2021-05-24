@@ -68,7 +68,7 @@ comp* initComp(mother* M){
 	*(c1->valor) = ZERO;
 	myStrCpy(c1->nome,bf);
 	c1->motherComp=getBuffComp(M->bf);
-	addToHash(M->h,c1); /* Adiciona à Hash, inicializando c1->nextValue*/
+	c1->nextValue = NULL;
 	c1->prof=getCompProf(c1);
 	return c1;
 }
@@ -81,14 +81,15 @@ unsigned short getCompProf(comp* c1){
 		c1 = c1->motherComp;
 	}
 	return out;
+
 }
 
 mother* initMother(){
 	char control=ZERO;
 	mother* M = (mother*) malloc(sizeof(mother));
 	M->bf = initBuffer();
-	M->h = initHash();
 	M->motherRoot = initHead(&control);
+	M->h = initHash();
 	return M;
 }
 
@@ -370,7 +371,7 @@ comp* insertAll(avlHead* root, mother* M){
 	char exists=ZERO;
 	root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
-        	root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
+		root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
 		(root->occ)+=ONE;
 	}
 	return getBuffComp(M->bf);
@@ -440,6 +441,7 @@ comp* delete1(comp* root, char* exists, buff* bf){
 		}
 		/* Guardar a ocupacao da antiga root, para a apagar depois*/
                 occToBuff(aux->occ,bf);
+		compToBuff(aux,bf);
 	}
 	root = AVLbalance(root,ONE);
         return root;
@@ -490,11 +492,14 @@ comp* delete2(comp* root, buff* bf){
 
 /* Delete de um componente das duas AVL's
  * O nome do componente para apagar esta no buffer*/
-avlHead* deleteComp(avlHead *head, buff *bf){
+avlHead* deleteComp(avlHead *head, mother *M){
 	char exists = ONE; /*controla se o que queremos apagar existe*/
-	head->rootAlfa = delete1(head->rootAlfa,&exists,bf);
+	head->rootAlfa = delete1(head->rootAlfa,&exists,M->bf);
 	if (exists){
-		head->rootOrder = delete2(head->rootOrder,bf);
+		if (!compValNull(getBuffComp(M->bf))){
+			removeFromHash(getBuffComp(M->bf), M->h);
+		}
+		head->rootOrder = delete2(head->rootOrder,M->bf);
 	} else {
 		printf("not found\n");
 	}
@@ -542,6 +547,18 @@ void printCompVal(comp *c1){
 void printCompName(comp* c1){
 	printf("%s\n",c1->nome);
 }
+
+
+/* Imprime o caminho do componente*/
+void printPath(comp* c1){
+	if (c1->motherComp != NULL){
+		printPath(c1->motherComp);
+	}
+	printf("/");
+	printf("%s",c1->nome);
+}
+
+
 
 /* Devolve ponteiro para a componente final do caminho 
  * no buffer da mother
@@ -714,5 +731,6 @@ void freeCompR(comp *c1){
 void freeMother(mother *M){
 	freeBuffer(M->bf);
 	freeHead(M->motherRoot);
+	freeHash(M->h);
 	free(M);
 }

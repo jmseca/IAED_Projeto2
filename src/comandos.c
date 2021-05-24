@@ -84,8 +84,10 @@ void handleSet(mother *M){
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
-
-
+	
+	cpath->nextValue = getFirstHashEl(M->h, cpath);
+	M->h = addToHash(M->h,cpath);
+	
 }
 
 
@@ -145,13 +147,13 @@ void handleList(mother *M){
 /* Responsavel pela execucao do programa no comando "search"
  * Devolve o primeiro caminho com o valor recebido no stdin*/
 void handleSearch(mother *M){
+	comp* path;
 	resetBuff(M->bf);
 	valToBuff(M->bf);
-	buffStart(M->bf); /* fazer reset à condicao de paragem*/
-	avlSortOrderStop(findValueR,M->motherRoot->rootOrder,M->bf);	
-	if (!buffCheckStop(M->bf)){ /*nao encontrou caminho*/
-		printf("not found\n");
-	}
+	path = getItem(M->bf->bigBuff2,M);
+	printPath(path);
+	printf("\n"); /*abstracao depois*/
+
 }
 
 
@@ -174,7 +176,7 @@ void handleDelete(mother *M){
 			/*Agr passa-se o valor do componente para bigBuff*/
 			strcpy(M->bf->bigBuff,M->bf->bigBuff2);
 			setSizeBuffStart(M->bf,ZERO);
-			head = deleteComp(head,M->bf);
+			head = deleteComp(head,M);
 		}
         }
 

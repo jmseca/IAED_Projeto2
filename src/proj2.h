@@ -51,6 +51,7 @@
 
 #define HASH_SIZE 3571 /*500º Primo*/
 
+#define APAGAR "lá vão duas"
 
 /*STRUCTS*/
 
@@ -127,15 +128,19 @@ void myPrint(char* s1, unsigned short start, unsigned short end);
 
 hash* initHash();
 
-void addToHash(hash *h,comp* c1);
+hash* addToHash(hash *h,comp* c1);
 
-unsigned long hashU(char *v, int M);
+comp* getFirstHashEl(hash *h, comp* c1);
+
+unsigned long hashU(char *v, unsigned long M);
 
 long coef(comp* c1,comp* c2);
 
 char compInsertOrder(comp *c1, comp *c2);
 
-comp* getItem(char* value,hash *h,mother *M);
+comp* getItem(char* value,mother *M);
+
+void freeHash(hash* h);
 
 void removeFromHash(comp* c1, hash* h);
 
@@ -224,7 +229,7 @@ comp* delete1(comp* root, char* exists, buff* bf);
 
 comp* delete2(comp* root, buff* bf);
 
-avlHead* deleteComp(avlHead *head, buff *bf);
+avlHead* deleteComp(avlHead *head, mother *M);
 
 void compNewValue(comp* c1, mother* M);
 
@@ -233,6 +238,8 @@ short compValNull(comp *c1);
 void printCompVal(comp *c1);
 
 void printCompName(comp* c1);
+
+void printPath(comp* c1);
 
 comp* getPathComp(short modo, mother* M);
 
