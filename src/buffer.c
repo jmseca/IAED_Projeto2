@@ -11,7 +11,6 @@
 /* ============================================================================
  * Buffer (buff)
  *
- *  - char* command (guarda o comando a executar)
  *  - char* bigBuff (guarda a instrucao para alem do comando)
  *  - unsigned short start (indice onde se comeca a analisar bigBuff)
  *  - unsigned short end (indice onde se para de analisar bigBuff)
@@ -34,6 +33,26 @@ buff* initBuffer(){
 	return bf;
 }
 
+
+/* O ponteiro do buffer para nodes passa a apontar para "c1"*/
+void nodeToBuff(node c1, buff* bf){
+	bf->c = c1;
+}
+
+/* Devolve o ponteiro de componente guardado no buffer*/
+comp* getBuffNode(buff* bf){
+	return bf->c;
+}
+
+/*Devolve Buffer2*/
+char* getBuff2(buff* bf){
+	return bf->bigBuff2;
+}
+
+/*Copia o que esta no buffer2 para o buffer2*/
+void cpyBuffs(buff* bf){
+	strcpy(M->bf->bigBuff,M->bf->bigBuff2);
+}
 
 /* Guarda no buffer o comando recebido pelo input*/
 void commandToBuff(buff *bf){
@@ -105,15 +124,7 @@ void setSizeBuffStart(buff* bf,char modo){
 }
 
 
-/* O ponteiro do buffer para componentes passa a apontar para "c1"*/
-void compToBuff(comp* c1, buff* bf){
-	bf->c = c1;
-}
 
-/* Devolve o ponteiro de componente guardado no buffer*/
-comp* getBuffComp(buff* bf){
-	return bf->c;
-}
 
 
 /* insere uma "occ" na occ do buffer*/

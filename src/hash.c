@@ -2,18 +2,20 @@
  * Ficheiro: hash.c
  * Autor: Joao Fonseca
  * Descricao: Implementacao de uma Tabela de Dispersao
- * de componentes
+ * de nodes pelos seus valores (que são strings).
+ * Para colisões, utiliza a resolução por encadeamento 
+ * externo
 */
 
 #include "proj2.h"
 
-
+/*Inicializa uma Hash Table*/
 hash* initHash(){ 
 	hash* h;
 	unsigned long i;
 	h = (hash*) malloc(sizeof(hash));
 	h->hSize = HASH_SIZE;
-	h->tabela = (comp**) malloc(HASH_SIZE*(sizeof(comp*)));
+	h->tabela = (node*) malloc(HASH_SIZE*(sizeof(node)));
 	/*Colocar os Valores a NULL*/
 	for (i=0;i<HASH_SIZE;i++){
 		*(h->tabela +i)= NULL;
@@ -21,20 +23,26 @@ hash* initHash(){
 	return h;
 }
 
+/*Devolve o tamanho da Hash*/
+unsigned long getHashSize(hash* h){
+	return h->hSize;
+}
 
-
-hash* addToHash(hash *h,comp* c1){
+/* Adiciona um node à hash*/
+hash* addToHash(hash *h,node c1){
 	unsigned long ind;
-	ind = hashU(c1->valor,h->hSize); /*Dps abstracao*/
+	ind = hashU(getValue(c1),h->hSize); /*Dps abstracao*/
 	h->tabela[ind] = c1;
 	return h;
 	
 }
 
-comp* getFirstHashEl(hash *h, comp* c1){
+/* Devolve o primeiro elemento da hash, no mesmo indice
+ * que o node "c1"*/
+node getFirstHashEl(hash *h, node c1){
 	unsigned long ind;
-	comp* cout;
-	ind = hashU(c1->valor,h->hSize); /*Dps abstracao*/
+	node cout;
+	ind = hashU(getValue(c1),h->hSize); /*Dps abstracao*/
         cout = h->tabela[ind];
 	return cout;
 }
@@ -44,7 +52,7 @@ comp* getFirstHashEl(hash *h, comp* c1){
 
 
 
-
+/*Função Hash*/
 unsigned long hashU(char *v, unsigned long M){
 	unsigned long h, a = 31415, b = 27183;
 	for (h=0; *v != '\0'; a=(a*b)&(M-1)){
@@ -59,33 +67,33 @@ unsigned long hashU(char *v, unsigned long M){
 /*Funcao auxiliar do compInsertOrder,verifica qual a
  * componente que vem antes, quanto ja estao na mesma profundidade
  * de caminho (podem ate ja corresponder a um componente "pai")*/
-long coef(comp* c1,comp* c2){
+long coef(node c1,node c2){
 	static long res;
-	if (c1->prof==ZERO){ /*a de c2 tambem sera*/
-		return c1->occ - c2->occ;		
+	if (getProf(c1)==ZERO){ /*a de c2 tambem sera*/
+		return compareOrder(getOrder(c1),getOrder(c2));		
 	} else {
-		res = coef(c1->motherComp,c2->motherComp);
+		res = coef(getMotherNode(c1),getMotherNode(c2));
 		if (!res){
-			res = c1->occ-c2->occ;
+			res = compareOrder(getOrder(c1),getOrder(c2));
 		}
 		return res;
 	}
 }
 
-/* Compara a ordem de insercao de c1, com c2
+/* Compara  c1 com c2 pelo order
  * Devolve 1 se c1 vem antes de c2 e 0 caso contrario*/
-char compInsertOrder(comp *c1, comp *c2){
-	unsigned short pc1 = c1->prof,pc2 = c2->prof; 
+char compInsertOrder(node c1, node c2){
+	unsigned short pc1 = getProf(c1),pc2 = getProf(c2); 
 	char c = ONE; /* var control*/
 	long res;
 	while (pc1<pc2){
-		c2 = c2->motherComp;
+		c2 = getMotherNode(c2);
 		pc2--;
 	}
 	if (pc1 > pc2){
 		c=ZERO;
 		while(pc1>pc2){
-			c1 = c1->motherComp;
+			c1 = getMotherNode(c1);
 			pc1--;	
 		}
 	}
@@ -99,51 +107,41 @@ char compInsertOrder(comp *c1, comp *c2){
 	}
 }
 
-
-comp* getItem(char* value,mother *M){
-	comp* out;
+/*Devolve o primeiro node com valor "value"*/
+node getItem(char* value,mother *M){
+	node out;
 	unsigned long ind;
-	M->bf->c = NULL;
+	nodeToBuff(NULL,getMotherBuff(M));
 	if (!nullStr(value)){
-		ind = hashU(value,M->h->hSize);
-		out = *(M->h->tabela + ind);
+		ind = hashU(value,getHashSize(getMotherHash(M)));
+		out = *(getMotherHash(M)->tabela + ind);
 		while (out!=NULL){
-			if (!strcmp(value,out->valor)){
-				if (M->bf->c==NULL || compInsertOrder(out,M->bf->c)){
+			if (!strcmp(value,getValue(out))){
+				if (M->bf->c==NULL || 
+				compInsertOrder(out,
+				getBuffNode(getMotherBuff(M)))){
 					M->bf->c = out;
 				}
 			}
-			out = out->nextValue;
+			out = getNextValue(out);
 		}
 	}
-	return M->bf->c;
+	return getBuffNode(getMotherBuff(M));
 }
 
-
+/* Faz free à Hash*/
 void freeHash(hash* h){
 	free(h->tabela);
 	free(h);
 }
 
-comp* removeFromHashAux(comp *c1, comp *c2){
-        if (c1==NULL){
-		return NULL;
-	}
-	if (c1==c2){ /*apontam para a mesma componente*/
-                return c2->nextValue;
-        } else {
-                c1->nextValue = removeFromHashAux(c1->nextValue,c2);
-        }
-	return c1;
-}
-
-
-
-void removeFromHash(comp* c1, hash* h){
+/* Remove um node da Hash*/
+void removeFromHash(node c1, hash* h){
 	unsigned long ind;
-	comp* out;
+	node out;
         ind = hashU(c1->valor,h->hSize);
 	out = *(h->tabela + ind);
 	out = removeFromHashAux(out,c1);
+	/* removeFromHashAux esta em componentes.c*/
 }
 

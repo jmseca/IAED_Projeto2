@@ -27,9 +27,6 @@
 #define ONE 1
 
 /*Tamanhos de alguns tipos de dados*/
-#define SHORT 2
-#define INT 4
-#define LONG 8
 #define AVLHEAD 24
 #define COMP 96
 
@@ -49,18 +46,35 @@
 #define SEARCH 427
 #define DELETE 410
 
+/* Tamanho da Hash Table que vamos usar*/
 #define HASH_SIZE 3571 /*500º Primo*/
 
-#define APAGAR "FGsxL@bOZGfNLGV"
-#define APAGAR2 "1517"
 
 /*STRUCTS*/
+
+typedef struct componente {
+        char* nome;
+        char* valor;
+        unsigned long occ;
+        unsigned short alfaHeight;
+        unsigned short orderHeight;
+        struct componente *alfaRight;
+        struct componente *alfaLeft;
+        struct componente *orderRight;
+        struct componente *orderLeft;
+        avlHead* follow;
+        struct componente *motherComp;
+        struct componente *nextValue;
+        unsigned short prof;
+} comp;
+
+typedef struct comp* node;
 
 typedef struct {
         char* command;
         char* bigBuff; 
 	char* bigBuff2;
-	struct componente *c;
+	node c;
 	unsigned short start;
 	unsigned short end;
 	unsigned long occ;
@@ -68,28 +82,13 @@ typedef struct {
 
 typedef struct {
 	unsigned long occ;
-	struct componente *rootAlfa;
-	struct componente *rootOrder;
+	node rootAlfa;
+	node rootOrder;
 } avlHead;
 
-typedef struct componente {
-	char* nome;
-	char* valor;
-	unsigned long occ;
-	unsigned short alfaHeight;
-	unsigned short orderHeight;
-	struct componente *alfaRight;
-	struct componente *alfaLeft;
-	struct componente *orderRight;
-	struct componente *orderLeft;
-	avlHead* follow;
-	struct componente *motherComp;
-	struct componente *nextValue;
-	unsigned short prof;
-} comp;
 
 typedef struct {
-        comp **tabela;
+        node *tabela;
         unsigned long hSize;
 } hash;
 
