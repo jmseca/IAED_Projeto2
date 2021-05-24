@@ -84,8 +84,11 @@ void handleSet(mother *M){
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
-	if (!compValNull(cpath)){	
-		cpath->nextValue = getFirstHashEl(M->h, cpath);
+	if (!compValNull(cpath)){
+		if (cpath->nextValue != NULL){ /*ja foi inserido*/
+			removeFromHash(cpath,getMotherHash(M));	
+		}	
+		cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
 		M->h = addToHash(getMotherHash(M),cpath);
 	}
 	
