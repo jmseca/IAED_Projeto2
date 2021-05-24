@@ -1,8 +1,7 @@
 /*
  * Ficheiro: comandos.c
  * Autor: Joao Fonseca
- * Descricao: Definicao das funcoes que tratam de cada comando,
- * tal como as suas funcoes auxiliares.
+ * Descricao: Definicao das funcoes que tratam de cada comando.
  *
 */
 
@@ -62,6 +61,8 @@ void handleHelp(){
 
 
 /*==========    QUIT    ==========*/
+
+
 /*Funcao responsavel por terminar o programa corretamente*/
 void handleQuit(mother *M){
         cleanWhite();
@@ -74,8 +75,6 @@ void handleQuit(mother *M){
  *sempre que o comando "set" e recebido no stdin*/
 void handleSet(mother *M){
         node cpath;
-	/* Controla se o progama teve erros (apesar de nao se aplicar)
-	char succ=ONE; */
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
 
@@ -90,9 +89,7 @@ void handleSet(mother *M){
 		}	
 		cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
 		M->h = addToHash(getMotherHash(M),cpath);
-	}
-	
-	
+	}	
 }
 
 
@@ -104,7 +101,7 @@ void handleSet(mother *M){
 void handlePrint(mother *M){
 	cleanWhite();
 	resetBuff(getMotherBuff(M));
-	avlSortOrderDeep(printMaster,M->motherRoot->rootOrder);
+	avlSortOrderDeep(printMaster,getMotherHead(M)->rootOrder);
 }
 
 

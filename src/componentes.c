@@ -38,7 +38,7 @@
 node initComp(mother* M){
 	node c1;
 	char control = ZERO;
-	buff* bf = M->bf;
+	buff* bf = getMotherBuff(M);
 	unsigned int vSize = getVsize(bf);
 	c1 = (node) myMalloc(COMP,ONE,&control);
 	c1->nome = (char*) myMalloc(ONE,vSize,&control);
@@ -108,12 +108,12 @@ void compNewValue(node c1, mother* M){
 		endProgram(M);
 	}
 	c1->valor = safe;
-	strcpy(c1->valor,M->bf->bigBuff2);
+	strcpy(c1->valor,getBuff2(getMotherBuff(M)));
 }
 
 /* Verifica se existe valor associado a componente*/
 char compValNull(node c1){
-	return (*(c1->valor))=='\0';
+	return (*(c1->valor))==ZERO;
 }
 
 
@@ -123,22 +123,21 @@ void printCompVal(node c1){
 	if (compValNull(c1)){
 		printf(NO_DATA);
 	} else {
-		printf("%s\n",c1->valor);
+		printf(SN,c1->valor);
 	}
 }
 
 /* Imprime o nome da componente*/
 void printCompName(node c1){
-	printf("%s\n",c1->nome);
+	printf(SN,c1->nome);
 }
 
-/* Imprime o caminho do componente*/
+/* Imprime o caminho do componente sem \n*/
 void printPath(node c1){
 	if (c1->motherComp != NULL){
 		printPath(c1->motherComp);
 	}
-	printf("/");
-	printf("%s",c1->nome);
+	printf(_S,c1->nome);
 }
 
 /* Imprime o caminho de uma componente, 
@@ -152,7 +151,6 @@ void printMaster(node c1){
 		avlSortOrderDeep(printMaster,c1->follow->rootOrder);
 	}
 }
-
 
 
 /* Devolve ponteiro para a componente final do caminho 

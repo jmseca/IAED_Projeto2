@@ -11,7 +11,8 @@
 /* ============================================================================
  * Buffer (buff)
  *
- *  - char* bigBuff (guarda a instrucao para alem do comando)
+ *  - char* bigBuff  |
+ *  - char* bigBuff2 |- guardam istrucoes,valores, nomes, ...
  *  - unsigned short start (indice onde se comeca a analisar bigBuff)
  *  - unsigned short end (indice onde se para de analisar bigBuff)
  *  - unsigned long (guardar occ de uma componente, quando necessario)
@@ -66,14 +67,14 @@ unsigned short getBuffEnd(buff* bf){
 }
 
 
-/*Copia o que esta no buffer2 para o buffer2*/
+/*Copia o que esta no bifBuff2 para o bigBuff*/
 void cpyBuffs(buff* bf){
 	strcpy(bf->bigBuff,bf->bigBuff2);
 }
 
 /* Guarda no buffer o comando recebido pelo input*/
 void commandToBuff(buff *bf){
-	scanf("%s",bf->bigBuff);
+	scanf(S,bf->bigBuff);
 	
 }
 
@@ -101,7 +102,7 @@ void pathToBuff(buff *bf, short modoB){
 		}
 			
 	} else {
-		scanf("%s",bf->bigBuff);
+		scanf(S,bf->bigBuff);
 	}
 }
 
@@ -112,13 +113,13 @@ void valToBuff(buff *bf){
 
 /* Coloca bigBuff a Null String*/
 void resetBuff(buff *bf){
-	*(bf->bigBuff) = '\0';
-	*(bf->bigBuff2) = '\0';
+	*(bf->bigBuff) = ZERO;
+	*(bf->bigBuff2) = ZERO;
 }
 
 /* Verifica se bigBuff e Null ou nao*/
 short nullBuff(buff* bf){
-	return *(bf->bigBuff)=='\0';
+	return *(bf->bigBuff)==ZERO;
 }
 
 
@@ -144,12 +145,12 @@ void setSizeBuffStart(buff* bf,char modo){
 
 
 
-/* insere uma "occ" na occ do buffer*/
+/* insere um order na occ do buffer*/
 void orderToBuff(unsigned long occ, buff* bf){
 	bf->occ = occ;
 }
 
-/* Devolve a occ do buffer*/
+/* Devolve a order do buffer*/
 unsigned long buffOrder(buff* bf){
 	return bf->occ;
 }
@@ -162,7 +163,7 @@ void freeBuffer(buff *bf){
 }
 
 
-/* Retira a ultima componente de bigBuff1 e
+/* Retira a ultima componente de bigBuff e
  * coloca-la no bigBuff2 (importante para o "delete")*/
 void buffSwitchComp(buff* bf){
         unsigned short i=0;
@@ -187,3 +188,10 @@ void buffSwitchComp(buff* bf){
 		i--;
         }
 }
+
+
+
+
+
+
+
