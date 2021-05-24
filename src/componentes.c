@@ -121,7 +121,7 @@ char compValNull(node c1){
 /* Imprime o valor de uma componente se existir*/
 void printCompVal(node c1){
 	if (compValNull(c1)){
-		printf("no data\n");
+		printf(NO_DATA);
 	} else {
 		printf("%s\n",c1->valor);
 	}
@@ -170,7 +170,7 @@ node getPathComp(short modo, mother* M){
 		if (modo){
 			c1 = findComp(root->rootAlfa, ONE, getMotherBuff(M));
 			if (c1==NULL){
-				printf("not found\n");
+				printf(NOT_FOUND);
                         	break;
 			}
 		} else {
@@ -199,7 +199,7 @@ avlHead* getDeleteAVL(mother* M){
 			getMotherBuff(M)->end = findSepar(path,getMBuffStart(M));
 			c1 = findComp(root->rootAlfa, ONE, getMotherBuff(M));
                 	if (c1==NULL){
-                        	printf("not found\n");
+                        	printf(NOT_FOUND);
 				return NULL;
                 	}
 			root = c1->follow;

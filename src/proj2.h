@@ -24,6 +24,11 @@
         "search: Procura o caminho dado um valor.\n"\
         "delete: Apaga um caminho e todos os subcaminhos.\n"
 
+/*Mensagens de erro*/
+#define NOT_FOUND "not found\n"
+#define NO_DATA "no data\n"
+
+
 /*0 e 1*/
 #define ZERO 0
 #define ONE 1
@@ -46,7 +51,7 @@
 #define DELETE 410
 
 /* Tamanho da Hash Table que vamos usar*/
-#define HASH_SIZE 104729 
+#define HASH_SIZE 100003 
 
 
 /*STRUCTS*/

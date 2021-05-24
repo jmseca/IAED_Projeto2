@@ -156,7 +156,7 @@ void handleSearch(mother *M){
 	valToBuff(getMotherBuff(M));
 	path = getItem( getBuff2(getMotherBuff(M)) ,M);
 	if (path==NULL){
-		printf("not found\n");
+		printf(NOT_FOUND);
 	} else {
 		printPath(path);
 		printf("\n"); 

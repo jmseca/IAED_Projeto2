@@ -23,6 +23,36 @@ hash* initHash(){
 	return h;
 }
 
+
+
+
+/* ReHash try
+void resizeHash(mother* M){
+	node* safe;
+	unsigned long oldSize,i,ind;
+	oldSize = getHashSize(getMotherHash(M));
+	ind = newHashSize(getMotherHash(M));
+	safe = (node*) realloc(getMotherHash(M)->tabela,sizeof(node)*ind);
+	if (safe==NULL){ 	
+		endProgram(M);
+	}
+	for (i=0;i<oldSize;i++){
+		getMotherHash(M)->tabela[i] = reHash(getMotherHash(M)->tabela[i],getMotherHash(M));
+	}
+}
+
+void reHash(node c1, hash* h){
+	static node aux;
+	while (c1!=NULL){
+		aux = c1;
+		c1 = getNextValue(c1);
+		removeFromHash(aux,h);
+		aux->nextValue = getFirstHashEl(getMotherHash(M), cpath);
+		M->h = addToHash
+	}
+}
+*/
+
 /*Devolve o tamanho da Hash*/
 unsigned long getHashSize(hash* h){
 	return h->hSize;
