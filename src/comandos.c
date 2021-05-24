@@ -99,7 +99,8 @@ void handleSet(mother *M){
 void handlePrint(mother *M){
 	cleanWhite();
 	resetBuff(M->bf);
-	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);
+	/*avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);*/
+	avlSortOrderDeep2(printMaster,M->motherRoot->rootOrder);
 }
 
 

@@ -554,6 +554,16 @@ void printPath(comp* c1){
 	printf("%s",c1->nome);
 }
 
+void printMaster(comp* c1){
+	if (!compValNull(c1)){
+		printPath(c1);
+		printf(" %s\n",c1->valor);
+	}
+	if ((c1->follow->occ)){ /*tem componentes filho*/
+		avlSortOrderDeep2(printMaster,c1->follow->rootOrder);
+	}
+}
+
 
 
 /* Devolve ponteiro para a componente final do caminho 
@@ -630,6 +640,15 @@ void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf){
         avlSortOrderDeep(f,c1->orderLeft,bf);
         (*f)(c1,bf);
         avlSortOrderDeep(f,c1->orderRight,bf);
+}
+
+/* Travessia in-order da AVL por criacao, com uma funcao a correr
+ * Sem condicao de paragem*/
+void avlSortOrderDeep2(void (*f)(comp*),comp* c1){
+        if (c1==NULL) return;
+        avlSortOrderDeep2(f,c1->orderLeft);
+        (*f)(c1);
+        avlSortOrderDeep2(f,c1->orderRight);
 }
 
 /* Travessia in-order da AVL por criacao, com uma funcao a correr

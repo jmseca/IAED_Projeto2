@@ -242,6 +242,8 @@ void printCompName(comp* c1);
 
 void printPath(comp* c1);
 
+void printMaster(comp* c1);
+
 comp* getPathComp(short modo, mother* M);
 
 avlHead* getDeleteAVL(mother* M);
@@ -249,6 +251,8 @@ avlHead* getDeleteAVL(mother* M);
 void avlSortAlfa(void (*f)(comp*),comp* c1);
 
 void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf);
+
+void avlSortOrderDeep2(void (*f)(comp*),comp* c1);
 
 void avlSortOrderStop(void (*f)(comp*,buff*),comp* c1,buff* bf);
 
