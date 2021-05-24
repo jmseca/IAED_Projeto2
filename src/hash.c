@@ -33,11 +33,12 @@ unsigned long getHashSize(hash* h){
 /* Adiciona um node à hash*/
 hash* addToHash(hash *h,node c1){
 	unsigned long ind;
-	ind = hashU(getValue(c1),h->hSize); 
+	ind = hashU(getValue(c1),getHashSize(h)); 
 	h->tabela[ind] = c1;
 	return h;
-	
 }
+
+
 
 /* Devolve o primeiro elemento da hash, no mesmo indice
  * que o node "c1"*/
@@ -51,13 +52,10 @@ node getFirstHashEl(hash *h, node c1){
 
 
 
-
-
-
 /*Função Hash*/
 unsigned long hashU(char *v, unsigned long M){
 	unsigned long h, a = A, b = B;
-	for (h=0; *v != '\0'; a=(a*b)&(M-1)){
+	for (h=0; *v != '\0'; a=(a*b)&(M-ONE)){
 		h = ((a*h) + (*v))%M;
 		v++;
 	}
@@ -119,8 +117,7 @@ node getItem(char* value,mother *M){
 		out = *(getMotherHash(M)->tabela + ind);
 		while (out!=NULL){
 			if (!strcmp(value,getValue(out))){
-
-				if (M->bf->c==NULL    || 
+				if (getBuffNode((getMotherBuff(M)))==NULL    || 
 			!compInsertOrder(out,getBuffNode(getMotherBuff(M)))){
 
 					nodeToBuff(out,getMotherBuff(M));
@@ -142,13 +139,14 @@ void freeHash(hash* h){
 void removeFromHash(node c1, hash* h){
 	unsigned long ind;
 	node out;
+	if (c1==NULL) return;
         ind = hashU(getValue(c1),h->hSize);
 	out = *(h->tabela + ind);
 	if (c1==out){
         	*(h->tabela + ind) = getNextValue(c1);
 		return;
 	}
-	out = removeFromHashAux(out,c1);
+	*(h->tabela + ind) = removeFromHashAux(out,c1);
 	/* removeFromHashAux esta em componentes.c*/
 }
 

@@ -63,6 +63,7 @@
 #define A 31415
 #define B 27183
 
+#define APAGAR 3934506
 
 /*STRUCTS*/
 
@@ -84,6 +85,7 @@ typedef struct componente {
 
 
 typedef struct componente* node;
+
 
 typedef struct {
         char* bigBuff; 
@@ -112,6 +114,7 @@ typedef struct {
 	avlHead *motherRoot;
 	hash* h;
 } mother;
+
 
 /*Complement*/
 

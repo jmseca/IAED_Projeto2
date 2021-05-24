@@ -77,6 +77,8 @@ void handleSet(mother *M){
         node cpath;
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
+	node apagar;
+	
 	pathToBuff(getMotherBuff(M),modoB);
 	nodeToBuff(NULL,getMotherBuff(M)); /*para colocar no 1º componente*/
 	cpath = getPathComp(modo,M);
@@ -90,6 +92,12 @@ void handleSet(mother *M){
 	
 	cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
 	M->h = addToHash(getMotherHash(M),cpath);
+
+	apagar = M->h->tabela[APAGAR];
+	while(apagar!=NULL){
+		printf("-> %s\n",apagar->nome);
+		apagar = getNextValue(apagar);
+	}
 
 }
 
@@ -176,8 +184,8 @@ void handleDelete(mother *M){
 		free(getMotherHead(M));
 		M->motherRoot = initHead(&modoB);
         } else {
-		buffSwitchComp(M->bf);
-                head = getDeleteAVL(M);
+		buffSwitchComp(M->bf);	
+		head = getDeleteAVL(M);
 		if (head!=NULL){
 			/*Agr passa-se o valor do componente para bigBuff*/
 			cpyBuffs(getMotherBuff(M));	

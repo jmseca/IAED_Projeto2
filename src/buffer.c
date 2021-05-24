@@ -172,6 +172,7 @@ void buffSwitchComp(buff* bf){
         for (;bf->bigBuff[i]!='\0';i++){
                 if (bf->bigBuff[i]=='/' && notEndPath(bf->bigBuff[i+1])){
                         a=i;
+			
                 }
         }
         if (a==ZERO && bf->bigBuff[a] != '/'){
@@ -185,8 +186,7 @@ void buffSwitchComp(buff* bf){
         while (bf->bigBuff2[--i]=='/'){
                 /*so quero o nome do componente (sem '/')*/
                 bf->bigBuff2[i]='\0';
-		i--;
-        }
+        } 
 }
 
 

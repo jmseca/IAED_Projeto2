@@ -412,8 +412,12 @@ avlHead* deleteComp(avlHead *head, mother *M){
         } else {
                 printf(NOT_FOUND);
         }
+
         return head;
 }
+
+
+
 
 /* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
 void freeHead(avlHead *head){
