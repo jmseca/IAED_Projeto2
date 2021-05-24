@@ -45,20 +45,19 @@ void commandToBuff(buff *bf){
  * modoB indica se e para verificar se ha path ou nao*/
 void pathToBuff(buff *bf, short modoB){
 	char c;
-	unsigned short i=1;
+	unsigned short i=0;
 	bf->start = 0;
 	bf->end = 0;	
 	if (modoB){ /*verificar se o stdin nao esta "vazio"*/
 		c = cleanWhite();
 		if (c!='\n'){
-			if (c!='/'){
-				*(bf->bigBuff) = c;
-			} else {i=0;}
-			while ((c=getchar())!='\n'){
-				if (c!='/'){
-					*(bf->bigBuff +i) = c;
-					i++;
-				}	
+			while (c=='/'){
+				c = getchar();
+			} 
+			while (c!='\n'){
+				*(bf->bigBuff +i) = c;
+				i++;
+				c=getchar();	
 			}
 			*(bf->bigBuff +i)='\0';
 		} else {

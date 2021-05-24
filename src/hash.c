@@ -62,15 +62,12 @@ unsigned long hashU(char *v, unsigned long M){
 long coef(comp* c1,comp* c2){
 	static long res;
 	if (c1->prof==ZERO){ /*a de c2 tambem sera*/
-		/*printf("c1Occ=%ld\tc2Occ=%ld\n",c1->occ,c2->occ);
-		printf("first names\nc1->%s\nc2->%s\n",c1->nome,c2->nome);*/
 		return c1->occ - c2->occ;		
 	} else {
 		res = coef(c1->motherComp,c2->motherComp);
 		if (!res){
 			res = c1->occ-c2->occ;
 		}
-	       	/*printf("resMid funct = %ld\n",res);*/	
 		return res;
 	}
 }
@@ -81,9 +78,6 @@ char compInsertOrder(comp *c1, comp *c2){
 	unsigned short pc1 = c1->prof,pc2 = c2->prof; 
 	char c = ONE; /* var control*/
 	long res;
-	/*if (!strcmp(c1->valor,APAGAR2)){	
-		printf("Quem são eles?\nNew->%s\nOld->%s\n",c1->nome,c2->nome);
-	}*/
 	while (pc1<pc2){
 		c2 = c2->motherComp;
 		pc2--;
@@ -115,29 +109,25 @@ comp* getItem(char* value,mother *M){
 	while (out!=NULL){
 		if (!strcmp(value,out->valor)){
 			if (M->bf->c==NULL || compInsertOrder(out,M->bf->c)){
-				/*printf("Fica aqui?\n");*/
 				M->bf->c = out;
 			}
-			/*printf("Ou só aqui?");*/
 		}
 		out = out->nextValue;
-
 	}
 	return M->bf->c;
 }
 
 
 void freeHash(hash* h){
-	/*unsigned long i;
-	for (i=0;i<h->hSize;i++){
-		free(h->tabela[i]);
-	}*/
 	free(h->tabela);
 	free(h);
 }
 
 comp* removeFromHashAux(comp *c1, comp *c2){
-        if (c1==c2){ /*apontam para a mesma componente*/
+        if (c1==NULL){
+		return NULL;
+	}
+	if (c1==c2){ /*apontam para a mesma componente*/
                 return c2->nextValue;
         } else {
                 c1->nextValue = removeFromHashAux(c1->nextValue,c2);
