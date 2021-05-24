@@ -29,4 +29,6 @@ HASH
 
 - Se eu fizer Delete, o q faço aos meninos da Hash? (tenho de apagar como nas lista D:)
 
-- Nao esquecer do NULL  no M->c antes de comecarmos o insert no SET 
+- Nao esquecer do NULL  no M->c antes de comecarmos o insert no SET
+
+. 

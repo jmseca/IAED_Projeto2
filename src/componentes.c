@@ -529,10 +529,6 @@ short compValNull(comp *c1){
 }
 
 
-/* Verifica se o valor "value" eh igual ao valor da componente "c1"*/
-char sameValue(char* value, comp* c1){
-	return  !strcmp(value,c1->valor);
-}
 
 /* Imprime o valor de uma componente se existir*/
 void printCompVal(comp *c1){
@@ -691,21 +687,6 @@ void printCompsR(comp* c1, buff* bf){
 	removeFromBuff(bf);
 		
 }
-
-/* Tenta encontrar o caminho com o mesmo valor encontrado no buffer*/
-void findValueR(comp* c1, buff* bf){
-        addToBuff(bf,c1);
-        if (sameValue(bf->bigBuff2,c1)){ /* tem valor pretendido*/
-                printf("%s\n",bf->bigBuff);
-		buffStop(bf);
-        } else {
-		if ((c1->follow->occ)){ /*tem componentes filho*/
-                	avlSortOrderStop(findValueR,c1->follow->rootOrder,bf);
-        	} 
-	}
-        removeFromBuff(bf);
-}
-
 
 
 /* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
