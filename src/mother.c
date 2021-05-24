@@ -4,6 +4,9 @@
  * Descricao: Implementacao da estrutura mother.
 */
 
+
+#include "proj2.h"
+
 /*Inicializa uma mother*/
 mother* initMother(){
         char control=ZERO;
@@ -27,8 +30,20 @@ hash* getMotherHash(mother* M){
 
 /*Devolve a avlHead da mother*/
 avlHead* getMotherHead(mother* M){
-	return H->motherRoot;
+	return M->motherRoot;
 }
+
+/*Devolve o start do buffer*/
+unsigned short getMBuffStart(mother* M){
+	return getBuffStart(getMotherBuff(M));
+}
+
+/*Devolve o end do buffer*/
+unsigned short getMBuffEnd(mother* M){
+        return getBuffEnd(getMotherBuff(M));
+}
+
+
 
 /*Faz free à mother*/
 void freeMother(mother *M){

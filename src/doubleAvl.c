@@ -36,10 +36,10 @@ avlHead* initHead(char* control){
  * modo 0->ordenada por order*/
 unsigned short height(node h, char modo){
         if (h == NULL) return 0;
-        if (modo)
+        if (modo){
                 return h->alfaHeight;
-        else
-		return h->orderHeight;
+	}
+	return h->orderHeight;
 }
 
 
@@ -169,7 +169,7 @@ int balance(node h, char modo) {
 /* Verifica se e necessario fazer rotates numa arvore dependendo do modo*/
 node AVLbalance(node h, char modo){
         int balanceFactor, hleft, hright;
-        node *left,*right;
+        node left,right;
         if (h == NULL) {
                 return h;
         }
@@ -198,7 +198,7 @@ node AVLbalance(node h, char modo){
 
 
 /* Funcao responsavel por indicar o caminho a funcao findComp*/
-short findFunc(node *c1,char modo, buff* bf){
+short findFunc(node c1,char modo, buff* bf){
         short res;
         if (modo){ /* comparar nomes*/
                 res = compareAlfaBuff(getAlfa(c1),bf);
@@ -266,15 +266,15 @@ node insertComp(node root, char modo,char* exists, mother* M){
         static short res;
         if (root == NULL){
                 if (modo){ /*só se cria a componente quando modo=1*/
-                        compToBuff(initComp(M),getMotherBuff(M));
+                        nodeToBuff(initComp(M),getMotherBuff(M));
                 }
-                return getBuffComp(getMotherBuff(M));
+                return getBuffNode(getMotherBuff(M));
         }
         if (modo){
                 res = findFunc(root,modo,getMotherBuff(M));
                 if (!res){
                         *exists = ONE;
-                        compToBuff(root,getMotherBuff(M));
+                        nodeToBuff(root,getMotherBuff(M));
                         return root;
                 }
                 else if (res>0){
@@ -304,7 +304,7 @@ node insertAll(avlHead* root, mother* M){
                 root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
                 (root->occ)+=ONE;
         }
-        return getBuffComp(getMotherBuff(M));
+        return getBuffNode(getMotherBuff(M));
 }
 
 
@@ -357,7 +357,7 @@ node delete1(node root, char* exists, buff* bf){
                 aux = root;
                 if (root->alfaLeft!=NULL && root->alfaRight!=NULL){
                         root = max(root->alfaLeft,ONE);
-                        compareAlfa(getAlfaB(bf),getAlfa(root));
+                        cpyAlfa(bf,getAlfa(root));
                         setSizeBuffStart(bf,ZERO);
                         root->alfaLeft = deleteAux(aux->alfaLeft,ONE,bf);
                         root->alfaRight = deleteAux(aux->alfaRight,ONE,bf);
@@ -397,7 +397,7 @@ node delete2(node root, buff* bf){
                 aux = root;
                 if (root->orderLeft!=NULL && root->orderRight!=NULL){
                         root = max(root->orderLeft,ZERO);
-                        occToBuff(root->occ,bf);
+                        orderToBuff(root->occ,bf);
                         root->orderLeft = deleteAux(aux->orderLeft,ZERO,bf);
                         root->orderRight = deleteAux(aux->orderRight,ZERO,bf);
                 } else {
@@ -459,33 +459,11 @@ void avlSortAlfa(void (*f)(node),node c1){
 
 /* Travessia in-order da AVL por criacao, com uma funcao a correr
  * Sem condicao de paragem*/
-void avlSortOrderDeep2(void (*f)(node),node c1){
+void avlSortOrderDeep(void (*f)(node),node c1){
         if (c1==NULL) return;
-        avlSortOrderDeep2(f,c1->orderLeft);
+        avlSortOrderDeep(f,c1->orderLeft);
         (*f)(c1);
-        avlSortOrderDeep2(f,c1->orderRight);
-}
-
-/* Travessia in-order da AVL por criacao, com uma funcao a correr
- * Com condicao de paragem, indicada no buffer*/
-void avlSortOrderStop(void (*f)(node,buff*),node c1,buff* bf){
-        if (c1==NULL || buffCheckStop(bf)) {
-                return;
-        }
-        avlSortOrderStop(f,c1->orderLeft,bf);
-        (*f)(c1,bf);
-        avlSortOrderStop(f,c1->orderRight,bf);
-}
-
-
-
-/* Travessia post-order da AVL alfabetica, com uma funcao a correr*/
-void avlPostAlfa(void (*f)(node),node c1){
-        if (c1==NULL) return;
-        avlPostAlfa(f,c1->alfaLeft);
-        avlPostAlfa(f,c1->alfaRight);
-        (*f)(c1);
-
+        avlSortOrderDeep(f,c1->orderRight);
 }
 
 /* Travessia post-order da AVL por criacao, com uma funcao a correr*/

@@ -80,7 +80,7 @@ void handleSet(mother *M){
 	char modoB=ZERO; /*Vai haver um path no stdin*/
 
 	pathToBuff(M->bf,modoB);
-	nodeToBuff(NULL,getMotherBuff(M))
+	nodeToBuff(NULL,getMotherBuff(M));
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
@@ -101,7 +101,7 @@ void handleSet(mother *M){
 void handlePrint(mother *M){
 	cleanWhite();
 	resetBuff(getMotherBuff(M));
-	avlSortOrderDeep2(printMaster,M->motherRoot->rootOrder);
+	avlSortOrderDeep(printMaster,M->motherRoot->rootOrder);
 }
 
 

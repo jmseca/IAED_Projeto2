@@ -40,18 +40,35 @@ void nodeToBuff(node c1, buff* bf){
 }
 
 /* Devolve o ponteiro de componente guardado no buffer*/
-comp* getBuffNode(buff* bf){
+node getBuffNode(buff* bf){
 	return bf->c;
 }
+
+/*Devolve Buffer*/
+char* getBuff(buff* bf){
+        return bf->bigBuff;
+}
+
 
 /*Devolve Buffer2*/
 char* getBuff2(buff* bf){
 	return bf->bigBuff2;
 }
 
+/*Devolve o start*/
+unsigned short getBuffStart(buff* bf){
+	return bf->start;
+}
+
+/*Devolve o end*/
+unsigned short getBuffEnd(buff* bf){
+        return bf->end;
+}
+
+
 /*Copia o que esta no buffer2 para o buffer2*/
 void cpyBuffs(buff* bf){
-	strcpy(M->bf->bigBuff,M->bf->bigBuff2);
+	strcpy(bf->bigBuff,bf->bigBuff2);
 }
 
 /* Guarda no buffer o comando recebido pelo input*/
@@ -128,30 +145,12 @@ void setSizeBuffStart(buff* bf,char modo){
 
 
 /* insere uma "occ" na occ do buffer*/
-void occToBuff(unsigned long occ, buff* bf){
+void orderToBuff(unsigned long occ, buff* bf){
 	bf->occ = occ;
 }
 
-
-/* Inicializar a variavel do buffer que servira como
- * condicao de paragem*/
-void buffStart(buff* bf){
-	occToBuff(ZERO,bf);
-}
-
-/* Colocar no buffer o valor que corresponde a condicao de paragem*/
-void buffStop(buff* bf){
-        occToBuff(ONE,bf);
-}
-
-
-/* Usado como condicao de paragem*/
-char buffCheckStop(buff* bf){
-	return bf->occ == ONE;
-}
-
 /* Devolve a occ do buffer*/
-unsigned long getBuffOcc(buff* bf){
+unsigned long buffOrder(buff* bf){
 	return bf->occ;
 }
 
@@ -161,32 +160,6 @@ void freeBuffer(buff *bf){
 	free(bf->bigBuff2);
 	free(bf);
 }
-
-
-
-/* Adiciona ao bigBuff o nome da componente no fim*/
-void addToBuff(buff* bf, comp* c1){
-	unsigned short i=0;
-	unsigned short a=0;
-	for (;bf->bigBuff[i]!='\0';i++){;}
-	bf->bigBuff[i++] = '/';
-	do {
-		bf->bigBuff[i++] = c1->nome[a];
-	} while (c1->nome[a++] != '\0');
-}
-
-
-
-/* Retira a ultima componente de BigBuff*/
-void removeFromBuff(buff* bf){
-	unsigned short i=0;
-	unsigned short a=0;
-	for (;bf->bigBuff[i]!='\0';i++){
-		if (bf->bigBuff[i]=='/')  a=i;
-	}
-	bf->bigBuff[a] = '\0';
-}
-
 
 
 /* Retira a ultima componente de bigBuff1 e

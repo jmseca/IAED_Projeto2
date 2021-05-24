@@ -5,7 +5,9 @@
  * funcoes, as definicoes dos struct e as constantes.
 */
 
-#pragma once
+#ifndef _PROJ_2_
+#define _PROJ_2_
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,9 +31,6 @@
 /*Tamanhos de alguns tipos de dados*/
 #define AVLHEAD 24
 #define COMP 96
-
-/*Tamanho maximo de uma string que identifica um comando (inclui '\0')*/
-#define MAX_COMMAND_SIZE 7
 
 /*Tamanho para o buffer que ira receber o caminho/valor (inclui '\0')*/
 #define BUFF_SIZE 65532
@@ -62,16 +61,16 @@ typedef struct componente {
         struct componente *alfaLeft;
         struct componente *orderRight;
         struct componente *orderLeft;
-        avlHead* follow;
+        struct head *follow;
         struct componente *motherComp;
         struct componente *nextValue;
         unsigned short prof;
 } comp;
 
-typedef struct comp* node;
+
+typedef struct componente* node;
 
 typedef struct {
-        char* command;
         char* bigBuff; 
 	char* bigBuff2;
 	node c;
@@ -80,7 +79,7 @@ typedef struct {
 	unsigned long occ;
 } buff ;
 
-typedef struct {
+typedef struct head {
 	unsigned long occ;
 	node rootAlfa;
 	node rootOrder;
@@ -122,35 +121,101 @@ unsigned short findSepar(char* path, unsigned short ind);
 void myStrCpy(char* dest, buff* bf);
 
 short myStrCmp(char* s1, buff* bf);
-
-/*DELETE*/
+/*for testing*/
 void myPrint(char* s1, unsigned short start, unsigned short end);
+
+
+/*Componentes (e Node)*/
+
+node initComp(mother* M);
+
+unsigned short calculProf(node c1);
+
+avlHead* getCompFollow(node c1);
+
+void freePreComp(node c1);
+
+void compNewValue(node c1, mother* M);
+
+char compValNull(node c1);
+
+void printCompVal(node c1);
+
+void printCompName(node c1);
+
+void printPath(node c1);
+
+void printMaster(node c1);
+
+node getPathComp(short modo, mother* M);
+
+avlHead* getDeleteAVL(mother* M);
+
+void freeCompR(node c1);
+
+/*--node--*/
+
+unsigned long getOrder(node c1);
+
+char* getAlfa(node c1);
+
+char* getValue(node c1);
+
+short compareAlfaBuff(char* alfa,buff* bf);
+
+void cpyAlfa(buff* bf, char *alfa);
+
+char compareOrder(unsigned long order1, unsigned long order2);
+
+unsigned short getProf(node c1);
+
+node getMotherNode(node c1);
+
+node getNextValue(node c1);
+
+node removeFromHashAux(node c1, node c2);
+
 
 /*Hash*/
 
 hash* initHash();
 
-hash* addToHash(hash *h,comp* c1);
+unsigned long getHashSize(hash* h);
 
-comp* getFirstHashEl(hash *h, comp* c1);
+hash* addToHash(hash *h,node c1);
+
+node getFirstHashEl(hash *h, node c1);
 
 unsigned long hashU(char *v, unsigned long M);
 
-long coef(comp* c1,comp* c2);
+long coef(node c1,node c2);
 
-char compInsertOrder(comp *c1, comp *c2);
+char compInsertOrder(node c1, node c2);
 
-comp* getItem(char* value,mother *M);
+node getItem(char* value,mother *M);
 
 void freeHash(hash* h);
 
-void removeFromHash(comp* c1, hash* h);
+void removeFromHash(node c1, hash* h);
 
-comp* removeFromHashAux(comp *c1, comp *c2);
 
 /*Buffer*/
 
 buff* initBuffer();
+
+void nodeToBuff(node c1, buff* bf);
+
+node getBuffNode(buff* bf);
+
+char* getBuff(buff* bf);
+
+char* getBuff2(buff* bf);
+
+unsigned short getBuffStart(buff* bf);
+
+unsigned short getBuffEnd(buff* bf);
+
+void cpyBuffs(buff* bf);
 
 void commandToBuff(buff *bf);
 
@@ -166,25 +231,11 @@ unsigned int getVsize(buff* bf);
 
 void setSizeBuffStart(buff* bf,char modo);
 
-void compToBuff(comp* c1, buff* bf);
+void orderToBuff(unsigned long occ, buff* bf);
 
-comp* getBuffComp(buff* bf);
-
-void occToBuff(unsigned long occ, buff* bf);
-
-void buffStart(buff* bf);
-
-void buffStop(buff* bf);
-
-char buffCheckStop(buff* bf);
-
-unsigned long getBuffOcc(buff* bf);
+unsigned long buffOrder(buff* bf);
 
 void freeBuffer(buff *bf);
-
-void addToBuff(buff* bf, comp* c1);
-
-void removeFromBuff(buff* bf);
 
 void buffSwitchComp(buff* bf);
 
@@ -193,83 +244,60 @@ void buffSwitchComp(buff* bf);
 
 avlHead* initHead(char* control);
 
-comp* initComp(mother* M);
+unsigned short height(node h, char modo);
 
-unsigned short getCompProf(comp* c1);
+node rotL(node h, char modo);
 
-mother* initMother();
+node rotR(node h, char modo);
 
-void freePreComp(comp *c1);
+node max(node h, char modo);
 
-unsigned short height(comp* h, char modo);
+node rotLR(node h,char modo);
 
-comp* rotL(comp* h, char modo);
+node rotRL(node h, char modo);
 
-comp* rotR(comp* h, char modo);
+int balance(node h, char modo);
 
-comp* max(comp* h, char modo);
+node AVLbalance(node h, char modo);
 
-comp* rotLR(comp* h,char modo);
+short findFunc(node c1, char modo, buff* bf);
 
-comp* rotRL(comp* h, char modo);
+node findComp(node root, char modo, buff* bf);
 
-int balance(comp* h, char modo);
+node insertComp(node root, char modo,char* exists, mother* M);
 
-comp* AVLbalance(comp* h, char modo);
+node insertAll(avlHead* root, mother* M);
 
-short findFunc(comp *c1, char modo, buff* bf);
+node deleteAux(node c1, char modo, buff* bf);
 
-comp* findComp(comp* root, char modo, buff* bf);
+node delete1(node  root, char* exists, buff* bf);
 
-comp* insertComp(comp* root, char modo,char* exists, mother* M);
-
-comp* insertAll(avlHead* root, mother* M);
-
-comp* deleteAux(comp *c1, char modo, buff* bf);
-
-comp* delete1(comp* root, char* exists, buff* bf);
-
-comp* delete2(comp* root, buff* bf);
+node delete2(node root, buff* bf);
 
 avlHead* deleteComp(avlHead *head, mother *M);
 
-void compNewValue(comp* c1, mother* M);
+void avlSortAlfa(void (*f)(node),node c1);
 
-short compValNull(comp *c1);
+void avlSortOrderDeep(void (*f)(node),node c1);
 
-void printCompVal(comp *c1);
-
-void printCompName(comp* c1);
-
-void printPath(comp* c1);
-
-void printMaster(comp* c1);
-
-comp* getPathComp(short modo, mother* M);
-
-avlHead* getDeleteAVL(mother* M);
-
-void avlSortAlfa(void (*f)(comp*),comp* c1);
-
-void avlSortOrderDeep(void (*f)(comp*,buff*),comp* c1,buff* bf);
-
-void avlSortOrderDeep2(void (*f)(comp*),comp* c1);
-
-void avlSortOrderStop(void (*f)(comp*,buff*),comp* c1,buff* bf);
-
-void avlPostAlfa(void (*f)(comp*),comp* c1); 
-
-void avlPostOrder(void (*f)(comp*),comp* c1);
-
-void printComp(comp *c1, buff *bf);
-
-void printCompsR(comp* c1, buff* bf);
-
-void findValueR(comp* c1, buff* bf);
+void avlPostOrder(void (*f)(node),node c1);
 
 void freeHead(avlHead *head);
 
-void freeCompR(comp *c1);
+
+/*Mother*/
+
+mother* initMother();
+
+buff* getMotherBuff(mother* M);
+
+hash* getMotherHash(mother* M);
+
+avlHead* getMotherHead(mother* M);
+
+unsigned short getMBuffStart(mother* M);
+
+unsigned short getMBuffEnd(mother* M);
 
 void freeMother(mother *M);
 
@@ -294,3 +322,6 @@ void handleList(mother *M);
 void handleSearch(mother *M);
 
 void handleDelete(mother *M);
+
+
+#endif

@@ -25,15 +25,6 @@ void* myMalloc(short typeSize, unsigned int vSize, char* control){
 		case ONE: /*char*/
 			p = (char*) malloc(ONE*vSize);
 			break;
-		case SHORT:
-			p = (short*) malloc(SHORT*vSize);
-			break;
-		case INT:
-			p = (int*) malloc(INT*vSize);
-			break;
-		case LONG:
-			p = (long*) malloc(LONG*vSize);
-			break;
 		case AVLHEAD:
 			p = (avlHead*) malloc(AVLHEAD*vSize);
 			break;

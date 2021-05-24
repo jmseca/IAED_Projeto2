@@ -35,12 +35,12 @@
 
 
 /* Inicializa uma componente, alocando memoria*/
-comp* initComp(mother* M){
-	comp* c1;
+node initComp(mother* M){
+	node c1;
 	char control = ZERO;
 	buff* bf = M->bf;
 	unsigned int vSize = getVsize(bf);
-	c1 = (comp*) myMalloc(COMP,ONE,&control);
+	c1 = (node) myMalloc(COMP,ONE,&control);
 	c1->nome = (char*) myMalloc(ONE,vSize,&control);
 	c1->valor = (char*) myMalloc(ONE,ONE,&control);
 	c1->follow = initHead(&control);
@@ -52,19 +52,19 @@ comp* initComp(mother* M){
 	c1->alfaLeft = NULL;
 	c1->orderRight = NULL;
 	c1->orderLeft = NULL;
-	c1->occ = getBuffOcc(getMotherBuff(M)); /* occ guardada no buffer*/
+	c1->occ = buffOrder(getMotherBuff(M)); /* occ guardada no buffer*/
 	c1->alfaHeight = ONE;
 	c1->orderHeight = ONE;
 	*(c1->valor) = ZERO;
 	myStrCpy(c1->nome,bf);
-	c1->motherComp=getBuffComp(getMotherBuff(M));
+	c1->motherComp=getBuffNode(getMotherBuff(M));
 	c1->nextValue = NULL;
 	c1->prof=calculProf(c1);
 	return c1;
 }
 
 /*Devolve a profundidade dos caminhos a que se encontra a componente*/
-unsigned short calculProf(comp* c1){
+unsigned short calculProf(node c1){
 	unsigned short out = ZERO;
 	while(c1->motherComp!=NULL){
 		out++;
@@ -75,14 +75,14 @@ unsigned short calculProf(comp* c1){
 }
 
 /*Devolve a avlHead dos seus componentes "filho"*/
-avlHead* getCompFollow(comp* c1){
+avlHead* getCompFollow(node c1){
 	return c1->follow;
 }
 
 
 
 /* Faz free a uma componente que deu erro no malloc*/
-void freePreComp(comp *c1){
+void freePreComp(node c1){
 	/*Se houve erro, pelo menos c1->follow e NULL*/
 	if ((c1->valor)!=NULL){
 		free(c1->valor);
@@ -95,7 +95,7 @@ void freePreComp(comp *c1){
 
 
 /* Atribui um novo valor a uma componente*/
-void compNewValue(comp* c1, mother* M){
+void compNewValue(node c1, mother* M){
 	unsigned int dim = strlen(M->bf->bigBuff2);
 	char* safe;
 	dim++; /*incluir espaco para '\0'*/
@@ -110,14 +110,14 @@ void compNewValue(comp* c1, mother* M){
 }
 
 /* Verifica se existe valor associado a componente*/
-char compValNull(comp *c1){
+char compValNull(node c1){
 	return (*(c1->valor))=='\0';
 }
 
 
 
 /* Imprime o valor de uma componente se existir*/
-void printCompVal(comp *c1){
+void printCompVal(node c1){
 	if (compValNull(c1)){
 		printf("no data\n");
 	} else {
@@ -126,13 +126,12 @@ void printCompVal(comp *c1){
 }
 
 /* Imprime o nome da componente*/
-void printCompName(comp* c1){
+void printCompName(node c1){
 	printf("%s\n",c1->nome);
 }
 
-
 /* Imprime o caminho do componente*/
-void printPath(comp* c1){
+void printPath(node c1){
 	if (c1->motherComp != NULL){
 		printPath(c1->motherComp);
 	}
@@ -142,13 +141,13 @@ void printPath(comp* c1){
 
 /* Imprime o caminho de uma componente, 
  * e de todos os seus "filhos" (se tiver)*/
-void printMaster(comp* c1){
+void printMaster(node c1){
 	if (!compValNull(c1)){
 		printPath(c1);
 		printf(" %s\n",c1->valor);
 	}
 	if ((c1->follow->occ)){ /*tem componentes filho*/
-		avlSortOrderDeep2(printMaster,c1->follow->rootOrder);
+		avlSortOrderDeep(printMaster,c1->follow->rootOrder);
 	}
 }
 
@@ -158,16 +157,16 @@ void printMaster(comp* c1){
  * no buffer da mother
  * modo '0'-se o caminho nao existir, cria um novo
  * modo '1'-se nao existir, nao cria */
-comp* getPathComp(short modo, mother* M){
-	char* path = M->bf->bigBuff;
-	avlHead* root = M->motherRoot;
-	comp* c1;
-	pathClean(path,&(M->bf->start));
-	occToBuff(root->occ,M->bf);
-	while (*(path+(M->bf->start))!='\0'){
-		M->bf->end = findSepar(path,M->bf->start);
+node getPathComp(short modo, mother* M){
+	char* path = getBuff(getMotherBuff(M));
+	avlHead* root = getMotherHead(M);
+	node c1;
+	pathClean(path,&(getMotherBuff(M)->start));
+	orderToBuff(root->occ,getMotherBuff(M));
+	while (*(path+(getMBuffStart(M)))!='\0'){
+		getMotherBuff(M)->end = findSepar(path,getMBuffStart(M));
 		if (modo){
-			c1 = findComp(root->rootAlfa, ONE, M->bf);
+			c1 = findComp(root->rootAlfa, ONE, getMotherBuff(M));
 			if (c1==NULL){
 				printf("not found\n");
                         	break;
@@ -176,9 +175,9 @@ comp* getPathComp(short modo, mother* M){
 			c1 = insertAll(root,M);
 		}
 		root = c1->follow;
-		occToBuff(root->occ,M->bf);
-		M->bf->start = M->bf->end;
-		pathClean(path,&(M->bf->start));
+		orderToBuff(root->occ,getMotherBuff(M));
+                getMotherBuff(M)->start = getMBuffEnd(M);
+                pathClean(path,&(getMotherBuff(M)->start));
 	
 	}
 	return c1;
@@ -188,22 +187,22 @@ comp* getPathComp(short modo, mother* M){
  * Semelhante a anterior, mas devolve-se um tipo diff
  * (Em cima, se devolvesse "root", nao chegava a "c1" depois)*/
 avlHead* getDeleteAVL(mother* M){
-	char* path = M->bf->bigBuff;
-	comp* c1;
-	avlHead* root = M->motherRoot;
-	if (!nullBuff(M->bf)){
-        	pathClean(path,&(M->bf->start));
-		while (*(path+(M->bf->start))!='\0'){
+	char* path = getBuff(getMotherBuff(M));
+	node c1;
+	avlHead* root = getMotherHead(M);
+	if (!nullBuff(getMotherBuff(M))){
+        	pathClean(path,&(getMotherBuff(M)->start));
+		while (*(path+(getMBuffStart(M)))!='\0'){
 
-			M->bf->end = findSepar(path,M->bf->start);
-			c1 = findComp(root->rootAlfa, ONE, M->bf);
+			getMotherBuff(M)->end = findSepar(path,getMBuffStart(M));
+			c1 = findComp(root->rootAlfa, ONE, getMotherBuff(M));
                 	if (c1==NULL){
                         	printf("not found\n");
 				return NULL;
                 	}
 			root = c1->follow;
-                	M->bf->start = M->bf->end;
-                	pathClean(path,&(M->bf->start));
+                	getMotherBuff(M)->start = getMBuffEnd(M);
+                	pathClean(path,&(getMotherBuff(M)->start));
 		}
 	}
 	return root;
@@ -212,34 +211,8 @@ avlHead* getDeleteAVL(mother* M){
 
 
 
-
-
-
-/* Imprime o caminho da componente e o seu valor
- * Parte do caminho esta guardado no buffer*/
-void printComp(comp *c1, buff *bf){
-	printf("%s ",bf->bigBuff); /*O caminho que esta para tras*/
-        printf("%s\n",c1->valor);
-}
-
-
-/*Imprime as componentes recursivamente*/
-void printCompsR(comp* c1, buff* bf){
-	addToBuff(bf,c1);
-	if (!(compValNull(c1))){ /* tem valor*/
-		printComp(c1,bf);	
-	}
-	if ((c1->follow->occ)){ /*tem componentes filho*/
-		avlSortOrderDeep(printCompsR,c1->follow->rootOrder,bf);
-	}
-	removeFromBuff(bf);
-		
-}
-
-
-
 /* free a uma componente e dos seus constituintes, recursivamente*/
-void freeCompR(comp *c1){
+void freeCompR(node c1){
 	freeHead(c1->follow);
 	free(c1->valor);
 	free(c1->nome);
@@ -268,6 +241,11 @@ char* getValue(node c1){
 /*Compara o alfa de um node com o guardado no buffer*/
 short compareAlfaBuff(char* alfa,buff* bf){
 	return myStrCmp(alfa,bf);
+}
+
+/*Copia alfa para o buffer (bigbuff)*/
+void cpyAlfa(buff* bf, char *alfa){
+	strcpy(bf->bigBuff,alfa);
 }
 
 /*Compara dois order's*/
