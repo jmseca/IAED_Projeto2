@@ -66,7 +66,7 @@ unsigned long hashU(char *v, unsigned long M){
 
 /*Funcao auxiliar do compInsertOrder,verifica qual a
  * componente que vem antes, quanto ja estao na mesma profundidade
- * de caminho (podem ate ja corresponder a um componente "pai")*/
+ * de caminho (podem ate ja corresponder a um componente "mae")*/
 long coef(node c1,node c2){
 	static long res;
 	if (getProf(c1)==ZERO){ /*a de c2 tambem sera*/
@@ -81,17 +81,17 @@ long coef(node c1,node c2){
 }
 
 /* Compara  c1 com c2 pelo order
- * Devolve 1 se c1 vem antes de c2 e 0 caso contrario*/
+ * Devolve 0 se c1 vem antes de c2 e 1 caso contrario*/
 char compInsertOrder(node c1, node c2){
 	unsigned short pc1 = getProf(c1),pc2 = getProf(c2); 
-	char c = ONE; /* var control*/
+	char c = ZERO; /* var control*/
 	long res;
 	while (pc1<pc2){
 		c2 = getMotherNode(c2);
 		pc2--;
 	}
 	if (pc1 > pc2){
-		c=ZERO;
+		c=ONE;
 		while(pc1>pc2){
 			c1 = getMotherNode(c1);
 			pc1--;	
@@ -99,11 +99,11 @@ char compInsertOrder(node c1, node c2){
 	}
 	res = coef(c1,c2);
 	if (res>ZERO){
-		return ZERO;
+		return ONE;
 	} else if (!res){
 		return c;
 	} else {
-		return ONE;
+		return ZERO;
 	}
 }
 
@@ -118,9 +118,9 @@ node getItem(char* value,mother *M){
 		while (out!=NULL){
 			if (!strcmp(value,getValue(out))){
 				if (M->bf->c==NULL || 
-				compInsertOrder(out,
+				!compInsertOrder(out,
 				getBuffNode(getMotherBuff(M)))){
-					M->bf->c = out;
+					nodeToBuff(out,getMotherBuff(M));
 				}
 			}
 			out = getNextValue(out);

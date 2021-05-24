@@ -33,7 +33,7 @@
 #define COMP 96
 
 /*Tamanho para o buffer que ira receber o caminho/valor (inclui '\0')*/
-#define BUFF_SIZE 65532
+#define BUFF_SIZE 65533
 
 /*Comandos ID*/
 #define HELP 425
@@ -46,7 +46,7 @@
 #define DELETE 410
 
 /* Tamanho da Hash Table que vamos usar*/
-#define HASH_SIZE 3571 /*500º Primo*/
+#define HASH_SIZE 104729 
 
 
 /*STRUCTS*/

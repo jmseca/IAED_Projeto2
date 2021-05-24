@@ -66,9 +66,11 @@ node initComp(mother* M){
 /*Devolve a profundidade dos caminhos a que se encontra a componente*/
 unsigned short calculProf(node c1){
 	unsigned short out = ZERO;
-	while(c1->motherComp!=NULL){
-		out++;
-		c1 = c1->motherComp;
+	if (c1!=NULL){
+		while(c1->motherComp!=NULL){
+			out++;
+			c1 = c1->motherComp;
+		}
 	}
 	return out;
 

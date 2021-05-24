@@ -159,7 +159,7 @@ void handleSearch(mother *M){
 		printf("not found\n");
 	} else {
 		printPath(path);
-		printf("\n"); /*abstracao depois*/
+		printf("\n"); 
 	}
 
 }
