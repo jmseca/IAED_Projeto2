@@ -281,7 +281,7 @@ node removeFromHashAux(node c1, node c2){
                 return NULL;
         }
         if (c1==c2){ /*apontam para a mesma componente*/
-                return getNextValue(c2);
+		return getNextValue(c1);
         } else {
                 c1->nextValue = removeFromHashAux(c1->nextValue,c2);
         }

@@ -77,19 +77,20 @@ void handleSet(mother *M){
         node cpath;
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
-
-	pathToBuff(M->bf,modoB);
-	nodeToBuff(NULL,getMotherBuff(M));
+	pathToBuff(getMotherBuff(M),modoB);
+	nodeToBuff(NULL,getMotherBuff(M)); /*para colocar no 1º componente*/
 	cpath = getPathComp(modo,M);
-	valToBuff(M->bf);
-	compNewValue(cpath,M);
+	valToBuff(getMotherBuff(M));
+	
 	if (!compValNull(cpath)){
-		if (cpath->nextValue != NULL){ /*ja foi inserido*/
-			removeFromHash(cpath,getMotherHash(M));	
-		}	
-		cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
-		M->h = addToHash(getMotherHash(M),cpath);
-	}	
+		removeFromHash(cpath,getMotherHash(M));
+	}
+	
+	compNewValue(cpath,M);
+	
+	cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
+	M->h = addToHash(getMotherHash(M),cpath);
+
 }
 
 

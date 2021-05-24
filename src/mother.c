@@ -7,6 +7,16 @@
 
 #include "proj2.h"
 
+/* ===========================================================================
+ * Mother
+ *
+ * - buff* bf 			(buffer que vai guardar varias coisas)
+ * - avlHead* motherRoot 	(a raiz das AVL's do programa)
+ * - hash* h 			(Hash table que guarda os valores)  
+ * =========================================================================*/
+
+
+
 /*Inicializa uma mother*/
 mother* initMother(){
         char control=ZERO;

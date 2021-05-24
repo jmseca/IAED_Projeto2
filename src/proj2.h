@@ -63,6 +63,7 @@
 #define A 31415
 #define B 27183
 
+
 /*STRUCTS*/
 
 typedef struct componente {

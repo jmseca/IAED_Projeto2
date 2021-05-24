@@ -119,6 +119,7 @@ node getItem(char* value,mother *M){
 		out = *(getMotherHash(M)->tabela + ind);
 		while (out!=NULL){
 			if (!strcmp(value,getValue(out))){
+
 				if (M->bf->c==NULL    || 
 			!compInsertOrder(out,getBuffNode(getMotherBuff(M)))){
 
@@ -143,7 +144,12 @@ void removeFromHash(node c1, hash* h){
 	node out;
         ind = hashU(getValue(c1),h->hSize);
 	out = *(h->tabela + ind);
+	if (c1==out){
+        	*(h->tabela + ind) = getNextValue(c1);
+		return;
+	}
 	out = removeFromHashAux(out,c1);
 	/* removeFromHashAux esta em componentes.c*/
 }
+
 

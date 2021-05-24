@@ -237,7 +237,7 @@ node findComp(node root, char modo, buff* bf){
 }
 
 
-/* Insere a componente com as caracteristicas guardadas no buffer,
+/* Insere o node com as caracteristicas guardadas no buffer,
  * faz os rotates necessarios. Devolve um pointer para a componente inserida
  * Se ja existir devolve o seu ponteiro
  * modo 1 -> procurar por nome
@@ -282,7 +282,7 @@ node insertAll(avlHead* root, mother* M){
         root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
                 root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
-                (root->occ)+=ONE;
+                (root->occ)+=ONE; /*Ocupacao da avl aumentou*/
         }
         return getBuffNode(getMotherBuff(M));
 }
