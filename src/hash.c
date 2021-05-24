@@ -103,16 +103,18 @@ char compInsertOrder(comp *c1, comp *c2){
 comp* getItem(char* value,mother *M){
 	comp* out;
 	unsigned long ind;
-	ind = hashU(value,M->h->hSize);
-	out = *(M->h->tabela + ind);
 	M->bf->c = NULL;
-	while (out!=NULL){
-		if (!strcmp(value,out->valor)){
-			if (M->bf->c==NULL || compInsertOrder(out,M->bf->c)){
-				M->bf->c = out;
+	if (!nullStr(value)){
+		ind = hashU(value,M->h->hSize);
+		out = *(M->h->tabela + ind);
+		while (out!=NULL){
+			if (!strcmp(value,out->valor)){
+				if (M->bf->c==NULL || compInsertOrder(out,M->bf->c)){
+					M->bf->c = out;
+				}
 			}
+			out = out->nextValue;
 		}
-		out = out->nextValue;
 	}
 	return M->bf->c;
 }

@@ -277,8 +277,8 @@ short findFunc(comp *c1,char modo, buff* bf){
 		res = (bf->occ)>(c1->occ) ? 1 : -1;
 		res = (bf->occ)==(c1->occ) ? 0 : res;
 	}
-/*
-	if (modo){
+
+/*	if (modo){
 		if (res<0){
 			printf("LLL\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
 		} else if (res>0){

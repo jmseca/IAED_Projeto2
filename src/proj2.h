@@ -112,6 +112,8 @@ short notWhite(char c);
 
 char notEndPath(char c);
 
+char nullStr(char* str);
+
 short inputGetNameW(char out[]);
 
 void pathClean(char* path, unsigned short *ind);
