@@ -357,7 +357,7 @@ node delete1(node root, char* exists, buff* bf){
                 aux = root;
                 if (root->alfaLeft!=NULL && root->alfaRight!=NULL){
                         root = max(root->alfaLeft,ONE);
-                        cpyAlfa(bf,getAlfa(root));
+                        cpyAlfa(bf,getAlfa(root)); /*copia o Alfa para o buff*/
                         setSizeBuffStart(bf,ZERO);
                         root->alfaLeft = deleteAux(aux->alfaLeft,ONE,bf);
                         root->alfaRight = deleteAux(aux->alfaRight,ONE,bf);

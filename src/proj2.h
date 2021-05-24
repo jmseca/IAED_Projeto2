@@ -51,7 +51,7 @@
 #define DELETE 410
 
 /* Tamanho da Hash Table que vamos usar*/
-#define HASH_SIZE 100003 
+#define HASH_SIZE 1000003 
 
 
 /*STRUCTS*/

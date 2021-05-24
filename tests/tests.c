@@ -3,13 +3,25 @@
 #include <stdio.h>
 
 
+int* f(int* a){
+	if (a==NULL){
+		return NULL;
+	}
+	*a = 3;
+	return a;
+}
+
 
 int main(){
-	char a[20] = "Bom dia";
-	short n=0;
+	int *v = (int*) malloc(sizeof(int));
+	int *s = (int*) malloc(sizeof(int)); 
+	v=NULL;
+	s = NULL;
 
-	printf("%c\n",*(a + n++));
-	printf("%c\n",*(a+n));
+	s = f(v);
+	v = f(s);
+
 	
 	return 0;
+	
 }
