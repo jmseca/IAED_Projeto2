@@ -51,7 +51,8 @@
 
 #define HASH_SIZE 3571 /*500º Primo*/
 
-#define APAGAR "lá vão duas"
+#define APAGAR "FGsxL@bOZGfNLGV"
+#define APAGAR2 "1517"
 
 /*STRUCTS*/
 
