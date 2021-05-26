@@ -18,8 +18,6 @@ void endProgram(mother* M){
 /* Funcao que corre o malloc e verifica se ainda ha memoria disponivel
  *Se nao houver, "control" guarda essa informacao*/
 void* myMalloc(short typeSize, unsigned int vSize, char* control){
-	/*Add condicao se for preciso para unsigned
-	 * e no fim apagar os que nao sao necessarios*/
 	void *p;
 	switch (typeSize){
 		case ONE: /*char*/

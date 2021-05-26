@@ -1,9 +1,2 @@
 
-- Ver q tipos de malloc faço, para ponderar mudar unsigned int para unsigned short
-
-- Mensagens de erros nos defines
-
-- Ver onde uso myStrCpy (ha um no initComp, se for o unico podemos dizer q serve para isso)
-
-- Apagar a mensagem de aviso do delete2 se tudo correr bem
 

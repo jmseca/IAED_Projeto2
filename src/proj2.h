@@ -63,8 +63,6 @@
 #define A 31415
 #define B 27183
 
-#define APAGAR 3934506
-
 /*STRUCTS*/
 
 typedef struct componente {

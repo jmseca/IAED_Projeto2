@@ -160,7 +160,7 @@ void printMaster(node c1){
 node getPathComp(short modo, mother* M){
 	char* path = getBuff(getMotherBuff(M));
 	avlHead* root = getMotherHead(M);
-	node c1;
+	node c1=NULL;
 	pathClean(path,&(getMotherBuff(M)->start));
 	orderToBuff(root->occ,getMotherBuff(M));
 	while (*(path+(getMBuffStart(M)))!='\0'){
@@ -283,7 +283,7 @@ node removeFromHashAux(node c1, node c2){
         if (c1==c2){ /*apontam para a mesma componente*/
 		return getNextValue(c1);
         } else {
-                c1->nextValue = removeFromHashAux(c1->nextValue,c2);
+		c1 = removeFromHashAux(c1->nextValue,c2);
         }
         return c1;
 }
