@@ -17,7 +17,7 @@ short commandId(char* str){
 /* Funcao que, com base no comando indicado, direciona a execucao
  *do programa para realizar o comando pretendido
  * Tambem indica se o programa ja acabou (1) ou nao (0)*/
-void checkCommand(mother *M, char* control){
+void checkCommand(mother *M, char* control,unsigned int *number){
 	short id = commandId(M->bf->bigBuff);
 	switch (id){
 		case HELP:
@@ -48,6 +48,7 @@ void checkCommand(mother *M, char* control){
 		default:
 			printf("Erro Fatal - checkCommand\n");
 	}
+	*number=1+*number;
 
 }
 
@@ -175,9 +176,10 @@ void handleDelete(mother *M){
         char modoB=ONE; /*Pode nao haver um path no stdin*/
         pathToBuff(getMotherBuff(M),modoB);	
         if (nullBuff(getMotherBuff(M))){ /*"delete" invocado sem argumentos*/
-                avlPostOrder(freeCompR,getMotherHead(M)->rootOrder);
+                avlPostOrder(freeCompR,getMotherHead(M)->rootOrder,getMotherHash(M));
 		modoB = ZERO; /*reutilizacao da var*/
 		free(getMotherHead(M));
+		freeHashTable(getMotherHash(M));
 		M->motherRoot = initHead(&modoB);
         } else {
 		buffSwitchComp(M->bf);	

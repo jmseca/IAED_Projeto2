@@ -389,8 +389,8 @@ node delete2(node root, buff* bf){
                                 root = root->orderLeft;
                         }
                 }
-                /* Agr apagamos o componente*/
-                freeCompR(aux);
+                /*Para depois apagar*/
+                nodeToBuff(aux,bf);
         }
         root = AVLbalance(root,ZERO);
         return root;
@@ -409,6 +409,7 @@ avlHead* deleteComp(avlHead *head, mother *M){
                         removeFromHash(getBuffNode(getMotherBuff(M)), getMotherHash(M));
                 }
                 head->rootOrder = delete2(head->rootOrder,getMotherBuff(M));
+		freeCompR(getBuffNode(getMotherBuff(M)),getMotherHash(M)); /*apagar*/
         } else {
                 printf(NOT_FOUND);
         }
@@ -420,9 +421,9 @@ avlHead* deleteComp(avlHead *head, mother *M){
 
 
 /* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
-void freeHead(avlHead *head){
+void freeHead(avlHead *head, hash* h){
         if (head->occ){ /*tem componentes filho*/
-                avlPostOrder(freeCompR,head->rootOrder);
+                avlPostOrder(freeCompR,head->rootOrder, h);
         }
         free(head);
 
@@ -451,12 +452,12 @@ void avlSortOrderDeep(void (*f)(node),node c1){
 }
 
 /* Travessia post-order da AVL por criacao, com uma funcao a correr*/
-void avlPostOrder(void (*f)(node),node c1){
+void avlPostOrder(void (*f)(node,hash*),node c1,hash* h){
         if (c1==NULL){
                 return;
         }
-        avlPostOrder(f,c1->orderLeft);
-        avlPostOrder(f,c1->orderRight);
-        (*f)(c1);
+        avlPostOrder(f,c1->orderLeft,h);
+        avlPostOrder(f,c1->orderRight,h);
+        (*f)(c1,h);
 }
 

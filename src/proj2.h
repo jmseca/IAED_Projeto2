@@ -63,6 +63,8 @@
 #define A 31415
 #define B 27183
 
+#define APAGAR 3682525
+
 /*STRUCTS*/
 
 typedef struct componente {
@@ -167,7 +169,7 @@ node getPathComp(short modo, mother* M);
 
 avlHead* getDeleteAVL(mother* M);
 
-void freeCompR(node c1);
+void freeCompR(node c1, hash* h);
 
 /*--node--*/
 
@@ -211,6 +213,8 @@ char compInsertOrder(node c1, node c2);
 node getItem(char* value,mother *M);
 
 void freeHash(hash* h);
+
+void freeHashTable(hash* h);
 
 void removeFromHash(node c1, hash* h);
 
@@ -296,9 +300,9 @@ void avlSortAlfa(void (*f)(node),node c1);
 
 void avlSortOrderDeep(void (*f)(node),node c1);
 
-void avlPostOrder(void (*f)(node),node c1);
+void avlPostOrder(void (*f)(node,hash*),node c1,hash* h);
 
-void freeHead(avlHead *head);
+void freeHead(avlHead *head, hash* h);
 
 
 /*Mother*/
@@ -321,7 +325,7 @@ void freeMother(mother *M);
 
 short commandId(char* str);
 
-void checkCommand(mother* M,char* control);
+void checkCommand(mother* M,char* control, unsigned int *number);
 
 void handleHelp();
 

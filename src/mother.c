@@ -58,7 +58,7 @@ unsigned short getMBuffEnd(mother* M){
 /*Faz free à mother*/
 void freeMother(mother *M){
         freeBuffer(M->bf);
-        freeHead(M->motherRoot);
+        freeHead(M->motherRoot,M->h);
         freeHash(M->h);
         free(M);
 }
