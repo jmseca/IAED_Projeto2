@@ -25,15 +25,6 @@ void* myMalloc(short typeSize, unsigned int vSize, char* control){
 		case ONE: /*char*/
 			p = (char*) malloc(ONE*vSize);
 			break;
-		case SHORT:
-			p = (short*) malloc(SHORT*vSize);
-			break;
-		case INT:
-			p = (int*) malloc(INT*vSize);
-			break;
-		case LONG:
-			p = (long*) malloc(LONG*vSize);
-			break;
 		case AVLHEAD:
 			p = (avlHead*) malloc(AVLHEAD*vSize);
 			break;
@@ -137,13 +128,17 @@ short myStrCmp(char* s1, buff* bf){
 		i++;
 		start++;
 	}
-	if (!out){
-		/*Verificar se s2 nao é subStr*/
-		out =*(s1+i)-ZERO;
+	if (!out && *(s1+i)!=ZERO){
+		/*String do buffer e mais pequena*/
+		return -1; 
 	}
 	return out;
 }
 
+
+char nullStr(char* str){
+	return *(str)==ZERO;
+}
 
 /*APAGAR SE FOR O CASO*/
 void myPrint(char* s1, unsigned short start, unsigned short end){

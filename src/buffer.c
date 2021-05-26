@@ -11,7 +11,6 @@
 /* ============================================================================
  * Buffer (buff)
  *
- *  - char* command (guarda o comando a executar)
  *  - char* bigBuff (guarda a instrucao para alem do comando)
  *  - unsigned short start (indice onde se comeca a analisar bigBuff)
  *  - unsigned short end (indice onde se para de analisar bigBuff)
@@ -35,6 +34,43 @@ buff* initBuffer(){
 }
 
 
+/* O ponteiro do buffer para nodes passa a apontar para "c1"*/
+void nodeToBuff(node c1, buff* bf){
+	bf->c = c1;
+}
+
+/* Devolve o ponteiro de componente guardado no buffer*/
+node getBuffNode(buff* bf){
+	return bf->c;
+}
+
+/*Devolve Buffer*/
+char* getBuff(buff* bf){
+        return bf->bigBuff;
+}
+
+
+/*Devolve Buffer2*/
+char* getBuff2(buff* bf){
+	return bf->bigBuff2;
+}
+
+/*Devolve o start*/
+unsigned short getBuffStart(buff* bf){
+	return bf->start;
+}
+
+/*Devolve o end*/
+unsigned short getBuffEnd(buff* bf){
+        return bf->end;
+}
+
+
+/*Copia o que esta no buffer2 para o buffer2*/
+void cpyBuffs(buff* bf){
+	strcpy(bf->bigBuff,bf->bigBuff2);
+}
+
 /* Guarda no buffer o comando recebido pelo input*/
 void commandToBuff(buff *bf){
 	scanf("%s",bf->bigBuff);
@@ -45,16 +81,19 @@ void commandToBuff(buff *bf){
  * modoB indica se e para verificar se ha path ou nao*/
 void pathToBuff(buff *bf, short modoB){
 	char c;
-	unsigned short i=1;
+	unsigned short i=0;
 	bf->start = 0;
 	bf->end = 0;	
 	if (modoB){ /*verificar se o stdin nao esta "vazio"*/
 		c = cleanWhite();
 		if (c!='\n'){
-			*(bf->bigBuff) = c;
-			while ((c=getchar())!='\n'){
+			while (c=='/'){
+				c = getchar();
+			} 
+			while (c!='\n'){
 				*(bf->bigBuff +i) = c;
-				i++;	
+				i++;
+				c=getchar();	
 			}
 			*(bf->bigBuff +i)='\0';
 		} else {
@@ -102,42 +141,16 @@ void setSizeBuffStart(buff* bf,char modo){
 }
 
 
-/* O ponteiro do buffer para componentes passa a apontar para "c1"*/
-void compToBuff(comp* c1, buff* bf){
-	bf->c = c1;
-}
 
-/* Devolve o ponteiro de componente guardado no buffer*/
-comp* getBuffComp(buff* bf){
-	return bf->c;
-}
 
 
 /* insere uma "occ" na occ do buffer*/
-void occToBuff(unsigned long occ, buff* bf){
+void orderToBuff(unsigned long occ, buff* bf){
 	bf->occ = occ;
 }
 
-
-/* Inicializar a variavel do buffer que servira como
- * condicao de paragem*/
-void buffStart(buff* bf){
-	occToBuff(ZERO,bf);
-}
-
-/* Colocar no buffer o valor que corresponde a condicao de paragem*/
-void buffStop(buff* bf){
-        occToBuff(ONE,bf);
-}
-
-
-/* Usado como condicao de paragem*/
-char buffCheckStop(buff* bf){
-	return bf->occ == ONE;
-}
-
 /* Devolve a occ do buffer*/
-unsigned long getBuffOcc(buff* bf){
+unsigned long buffOrder(buff* bf){
 	return bf->occ;
 }
 
@@ -147,32 +160,6 @@ void freeBuffer(buff *bf){
 	free(bf->bigBuff2);
 	free(bf);
 }
-
-
-
-/* Adiciona ao bigBuff o nome da componente no fim*/
-void addToBuff(buff* bf, comp* c1){
-	unsigned short i=0;
-	unsigned short a=0;
-	for (;bf->bigBuff[i]!='\0';i++){;}
-	bf->bigBuff[i++] = '/';
-	do {
-		bf->bigBuff[i++] = c1->nome[a];
-	} while (c1->nome[a++] != '\0');
-}
-
-
-
-/* Retira a ultima componente de BigBuff*/
-void removeFromBuff(buff* bf){
-	unsigned short i=0;
-	unsigned short a=0;
-	for (;bf->bigBuff[i]!='\0';i++){
-		if (bf->bigBuff[i]=='/')  a=i;
-	}
-	bf->bigBuff[a] = '\0';
-}
-
 
 
 /* Retira a ultima componente de bigBuff1 e

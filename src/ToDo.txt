@@ -3,13 +3,7 @@
 
 - Mensagens de erros nos defines
 
-- Para nao repetir codigo, fazer o printCompVal sem if's (colocar os if's nos handles)
-assim podemos usar o printCompVal no printComp no comando Print
-
-- Dps para a abstracao fazer funcoes para o M (mother) em vez de ->...->...->....
-
 - Ver onde uso myStrCpy (ha um no initComp, se for o unico podemos dizer q serve para isso)
 
 - Apagar a mensagem de aviso do delete2 se tudo correr bem
 
-- TWO e THREE pq uso na Hash

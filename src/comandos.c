@@ -73,19 +73,26 @@ void handleQuit(mother *M){
 /* Funcao responsavel por adicionar ou modificar um valor de um caminho,
  *sempre que o comando "set" e recebido no stdin*/
 void handleSet(mother *M){
-        comp *cpath;
+        node cpath;
 	/* Controla se o progama teve erros (apesar de nao se aplicar)
 	char succ=ONE; */
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
 
 	pathToBuff(M->bf,modoB);
-
+	nodeToBuff(NULL,getMotherBuff(M));
 	cpath = getPathComp(modo,M);
 	valToBuff(M->bf);
 	compNewValue(cpath,M);
-
-
+	if (!compValNull(cpath)){
+		if (cpath->nextValue != NULL){ /*ja foi inserido*/
+			removeFromHash(cpath,getMotherHash(M));	
+		}	
+		cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
+		M->h = addToHash(getMotherHash(M),cpath);
+	}
+	
+	
 }
 
 
@@ -96,8 +103,8 @@ void handleSet(mother *M){
  * recebe a instrucao "print"*/
 void handlePrint(mother *M){
 	cleanWhite();
-	resetBuff(M->bf);
-	avlSortOrderDeep(printCompsR,M->motherRoot->rootOrder,M->bf);
+	resetBuff(getMotherBuff(M));
+	avlSortOrderDeep(printMaster,M->motherRoot->rootOrder);
 }
 
 
@@ -106,11 +113,10 @@ void handlePrint(mother *M){
 /* Imprime o valor assocido ao caminho quando o programa recebe
  *a instrucao "find"*/
 void handleFind(mother* M){
-	comp* cpath;
-	/*char succ=ONE; Controla se o programa teve erros*/
+	node cpath;
 	char modo=ONE; /* Se o caminho nao existir, ha erro*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
-	pathToBuff(M->bf,modoB);
+	pathToBuff(getMotherBuff(M),modoB);
 	cpath = getPathComp(modo,M);
 	if (cpath!=NULL){
 		printCompVal(cpath);
@@ -124,17 +130,17 @@ void handleFind(mother* M){
 /* Responsavel pela execucao do programa no comando "list"
  * Lista todos os componentes imediatos de um subcaminho*/
 void handleList(mother *M){
-	comp *cpath;
+	node cpath;
 	char modo=ONE;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
-	pathToBuff(M->bf,modoB);
-	if (nullBuff(M->bf)){ /*"list" invocado sem argumentos*/
-		avlSortAlfa(printCompName,M->motherRoot->rootAlfa);	
+	pathToBuff(getMotherBuff(M),modoB);
+	if (nullBuff(getMotherBuff(M))){ /*"list" invocado sem argumentos*/
+		avlSortAlfa(printCompName,getMotherHead(M)->rootAlfa);	
 		/*Se for null, entao ja se verificou que nao havia mais input*/
 	} else {
 		cpath = getPathComp(modo,M);
 		if (cpath!=NULL){
-			avlSortAlfa(printCompName,cpath->follow->rootAlfa);
+			avlSortAlfa(printCompName,getCompFollow(cpath)->rootAlfa);
 		}
 	}
 
@@ -145,13 +151,17 @@ void handleList(mother *M){
 /* Responsavel pela execucao do programa no comando "search"
  * Devolve o primeiro caminho com o valor recebido no stdin*/
 void handleSearch(mother *M){
-	resetBuff(M->bf);
-	valToBuff(M->bf);
-	buffStart(M->bf); /* fazer reset à condicao de paragem*/
-	avlSortOrderStop(findValueR,M->motherRoot->rootOrder,M->bf);	
-	if (!buffCheckStop(M->bf)){ /*nao encontrou caminho*/
-		printf("not found\n");
+	node path;
+	resetBuff(getMotherBuff(M));
+	valToBuff(getMotherBuff(M));
+	path = getItem( getBuff2(getMotherBuff(M)) ,M);
+	if (path==NULL){
+		printf(NOT_FOUND);
+	} else {
+		printPath(path);
+		printf("\n"); 
 	}
+
 }
 
 
@@ -161,20 +171,20 @@ void handleSearch(mother *M){
 void handleDelete(mother *M){
 	avlHead *head;
         char modoB=ONE; /*Pode nao haver um path no stdin*/
-        pathToBuff(M->bf,modoB);	
-        if (nullBuff(M->bf)){ /*"delete" invocado sem argumentos*/
-                avlPostOrder(freeCompR,M->motherRoot->rootOrder);
+        pathToBuff(getMotherBuff(M),modoB);	
+        if (nullBuff(getMotherBuff(M))){ /*"delete" invocado sem argumentos*/
+                avlPostOrder(freeCompR,getMotherHead(M)->rootOrder);
 		modoB = ZERO; /*reutilizacao da var*/
-		free(M->motherRoot);
+		free(getMotherHead(M));
 		M->motherRoot = initHead(&modoB);
         } else {
 		buffSwitchComp(M->bf);
                 head = getDeleteAVL(M);
 		if (head!=NULL){
 			/*Agr passa-se o valor do componente para bigBuff*/
-			strcpy(M->bf->bigBuff,M->bf->bigBuff2);
-			setSizeBuffStart(M->bf,ZERO);
-			head = deleteComp(head,M->bf);
+			cpyBuffs(getMotherBuff(M));	
+			setSizeBuffStart(getMotherBuff(M),ZERO);
+			head = deleteComp(head,M);
 		}
         }
 
