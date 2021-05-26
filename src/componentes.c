@@ -212,8 +212,11 @@ avlHead* getDeleteAVL(mother* M){
 
 
 /* free a uma componente e dos seus constituintes, recursivamente*/
-void freeCompR(node c1){
-	freeHead(c1->follow);
+void freeCompR(node c1, hash* h){
+	freeHead(c1->follow,h);
+	if (!compValNull(c1)){
+		removeFromHash(c1, h);
+	}
 	free(c1->valor);
 	free(c1->nome);
 	free(c1);

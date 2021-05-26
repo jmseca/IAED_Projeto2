@@ -2,4 +2,4 @@
 
 
 
-gcc -o proj2 *.c  -ansi -pedantic  -g -fsanitize=address  -Wall -Werror -Wextra
+gcc -o proj2 *.c  -ansi -pedantic  -g   -Wall -Werror -Wextra

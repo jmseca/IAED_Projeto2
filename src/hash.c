@@ -135,6 +135,16 @@ void freeHash(hash* h){
 	free(h);
 }
 
+
+void freeHashTable(hash* h){
+	unsigned long size = getHashSize(h);
+	unsigned long i;
+	for(i=0;i<size;i++){
+		h->tabela[i] = NULL;
+	}
+}
+
+
 /* Remove um node da Hash*/
 void removeFromHash(node c1, hash* h){
 	unsigned long ind;
@@ -146,6 +156,7 @@ void removeFromHash(node c1, hash* h){
         	*(h->tabela + ind) = getNextValue(c1);
 		return;
 	}
+
 	*(h->tabela + ind) = removeFromHashAux(out,c1);
 	/* removeFromHashAux esta em componentes.c*/
 }
