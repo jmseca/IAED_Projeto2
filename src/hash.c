@@ -25,34 +25,6 @@ hash* initHash(){
 
 
 
-
-/* ReHash try
-void resizeHash(mother* M){
-	node* safe;
-	unsigned long oldSize,i,ind;
-	oldSize = getHashSize(getMotherHash(M));
-	ind = newHashSize(getMotherHash(M));
-	safe = (node*) realloc(getMotherHash(M)->tabela,sizeof(node)*ind);
-	if (safe==NULL){ 	
-		endProgram(M);
-	}
-	for (i=0;i<oldSize;i++){
-		getMotherHash(M)->tabela[i] = reHash(getMotherHash(M)->tabela[i],getMotherHash(M));
-	}
-}
-
-void reHash(node c1, hash* h){
-	static node aux;
-	while (c1!=NULL){
-		aux = c1;
-		c1 = getNextValue(c1);
-		removeFromHash(aux,h);
-		aux->nextValue = getFirstHashEl(getMotherHash(M), cpath);
-		M->h = addToHash
-	}
-}
-*/
-
 /*Devolve o tamanho da Hash*/
 unsigned long getHashSize(hash* h){
 	return h->hSize;
@@ -61,31 +33,29 @@ unsigned long getHashSize(hash* h){
 /* Adiciona um node à hash*/
 hash* addToHash(hash *h,node c1){
 	unsigned long ind;
-	ind = hashU(getValue(c1),h->hSize); /*Dps abstracao*/
+	ind = hashU(getValue(c1),getHashSize(h)); 
 	h->tabela[ind] = c1;
 	return h;
-	
 }
+
+
 
 /* Devolve o primeiro elemento da hash, no mesmo indice
  * que o node "c1"*/
 node getFirstHashEl(hash *h, node c1){
 	unsigned long ind;
 	node cout;
-	ind = hashU(getValue(c1),h->hSize); /*Dps abstracao*/
+	ind = hashU(getValue(c1),h->hSize); 
         cout = h->tabela[ind];
 	return cout;
 }
 
 
 
-
-
-
 /*Função Hash*/
 unsigned long hashU(char *v, unsigned long M){
-	unsigned long h, a = 31415, b = 27183;
-	for (h=0; *v != '\0'; a=(a*b)&(M-1)){
+	unsigned long h, a = A, b = B;
+	for (h=0; *v != '\0'; a=(a*b)&(M-ONE)){
 		h = ((a*h) + (*v))%M;
 		v++;
 	}
@@ -130,10 +100,10 @@ char compInsertOrder(node c1, node c2){
 	res = coef(c1,c2);
 	if (res>ZERO){
 		return ONE;
-	} else if (!res){
-		return c;
-	} else {
+	} else if (res<ZERO){
 		return ZERO;
+	} else {
+		return c;
 	}
 }
 
@@ -147,9 +117,9 @@ node getItem(char* value,mother *M){
 		out = *(getMotherHash(M)->tabela + ind);
 		while (out!=NULL){
 			if (!strcmp(value,getValue(out))){
-				if (M->bf->c==NULL || 
-				!compInsertOrder(out,
-				getBuffNode(getMotherBuff(M)))){
+				if (getBuffNode((getMotherBuff(M)))==NULL    || 
+			!compInsertOrder(out,getBuffNode(getMotherBuff(M)))){
+
 					nodeToBuff(out,getMotherBuff(M));
 				}
 			}
@@ -169,9 +139,15 @@ void freeHash(hash* h){
 void removeFromHash(node c1, hash* h){
 	unsigned long ind;
 	node out;
-        ind = hashU(c1->valor,h->hSize);
+	if (c1==NULL) return;
+        ind = hashU(getValue(c1),h->hSize);
 	out = *(h->tabela + ind);
-	out = removeFromHashAux(out,c1);
+	if (c1==out){
+        	*(h->tabela + ind) = getNextValue(c1);
+		return;
+	}
+	*(h->tabela + ind) = removeFromHashAux(out,c1);
 	/* removeFromHashAux esta em componentes.c*/
 }
+
 

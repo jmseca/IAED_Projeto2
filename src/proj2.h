@@ -28,6 +28,12 @@
 #define NOT_FOUND "not found\n"
 #define NO_DATA "no data\n"
 
+/*Mensagens usadas para stdou*/
+#define SN "%s\n"
+#define _SN " %s\n" 
+#define _S "/%s" 
+#define S_ "%s "
+#define S "%s"
 
 /*0 e 1*/
 #define ZERO 0
@@ -51,8 +57,11 @@
 #define DELETE 410
 
 /* Tamanho da Hash Table que vamos usar*/
-#define HASH_SIZE 1000003 
+#define HASH_SIZE 5000011 
 
+/*Constantes para a função hash*/
+#define A 31415
+#define B 27183
 
 /*STRUCTS*/
 
@@ -74,6 +83,7 @@ typedef struct componente {
 
 
 typedef struct componente* node;
+
 
 typedef struct {
         char* bigBuff; 
@@ -102,6 +112,7 @@ typedef struct {
 	avlHead *motherRoot;
 	hash* h;
 } mother;
+
 
 /*Complement*/
 

@@ -18,8 +18,6 @@ void endProgram(mother* M){
 /* Funcao que corre o malloc e verifica se ainda ha memoria disponivel
  *Se nao houver, "control" guarda essa informacao*/
 void* myMalloc(short typeSize, unsigned int vSize, char* control){
-	/*Add condicao se for preciso para unsigned
-	 * e no fim apagar os que nao sao necessarios*/
 	void *p;
 	switch (typeSize){
 		case ONE: /*char*/
@@ -107,9 +105,9 @@ unsigned short findSepar(char* path, unsigned short ind){
 /*Copia a string que esta identificada no buffer para "dest"*/
 void myStrCpy(char* dest, buff* bf){
 	unsigned short i=0;
-	char* src = bf->bigBuff;
-	unsigned short start =bf->start;
-	unsigned short end = bf->end;
+	char* src = getBuff(bf);
+	unsigned short start = getBuffStart(bf);
+	unsigned short end = getBuffEnd(bf);
 	for(;start<end;start++){
 		*(dest+i) = *(src+start);
 		i++;
@@ -119,9 +117,9 @@ void myStrCpy(char* dest, buff* bf){
 /* Compara a string que esta identificada no buffer com "s1"*/
 short myStrCmp(char* s1, buff* bf){
 	unsigned short i=0;
-	char* s2 = bf->bigBuff;
-        unsigned short start =bf->start;
-        unsigned short end = bf->end;
+	char* s2 = getBuff(bf);
+        unsigned short start = getBuffStart(bf);
+        unsigned short end = getBuffEnd(bf);
 	short out=0;
 	while (start<end && !out){
 		out = *(s2+start) - *(s1+i);

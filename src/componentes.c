@@ -38,7 +38,7 @@
 node initComp(mother* M){
 	node c1;
 	char control = ZERO;
-	buff* bf = M->bf;
+	buff* bf = getMotherBuff(M);
 	unsigned int vSize = getVsize(bf);
 	c1 = (node) myMalloc(COMP,ONE,&control);
 	c1->nome = (char*) myMalloc(ONE,vSize,&control);
@@ -108,12 +108,12 @@ void compNewValue(node c1, mother* M){
 		endProgram(M);
 	}
 	c1->valor = safe;
-	strcpy(c1->valor,M->bf->bigBuff2);
+	strcpy(c1->valor,getBuff2(getMotherBuff(M)));
 }
 
 /* Verifica se existe valor associado a componente*/
 char compValNull(node c1){
-	return (*(c1->valor))=='\0';
+	return (*(c1->valor))==ZERO;
 }
 
 
@@ -123,22 +123,21 @@ void printCompVal(node c1){
 	if (compValNull(c1)){
 		printf(NO_DATA);
 	} else {
-		printf("%s\n",c1->valor);
+		printf(SN,c1->valor);
 	}
 }
 
 /* Imprime o nome da componente*/
 void printCompName(node c1){
-	printf("%s\n",c1->nome);
+	printf(SN,c1->nome);
 }
 
-/* Imprime o caminho do componente*/
+/* Imprime o caminho do componente sem \n*/
 void printPath(node c1){
 	if (c1->motherComp != NULL){
 		printPath(c1->motherComp);
 	}
-	printf("/");
-	printf("%s",c1->nome);
+	printf(_S,c1->nome);
 }
 
 /* Imprime o caminho de uma componente, 
@@ -154,7 +153,6 @@ void printMaster(node c1){
 }
 
 
-
 /* Devolve ponteiro para a componente final do caminho 
  * no buffer da mother
  * modo '0'-se o caminho nao existir, cria um novo
@@ -162,7 +160,7 @@ void printMaster(node c1){
 node getPathComp(short modo, mother* M){
 	char* path = getBuff(getMotherBuff(M));
 	avlHead* root = getMotherHead(M);
-	node c1;
+	node c1=NULL;
 	pathClean(path,&(getMotherBuff(M)->start));
 	orderToBuff(root->occ,getMotherBuff(M));
 	while (*(path+(getMBuffStart(M)))!='\0'){
@@ -283,9 +281,9 @@ node removeFromHashAux(node c1, node c2){
                 return NULL;
         }
         if (c1==c2){ /*apontam para a mesma componente*/
-                return getNextValue(c2);
+		return getNextValue(c1);
         } else {
-                c1->nextValue = removeFromHashAux(c1->nextValue,c2);
+		c1 = removeFromHashAux(c1->nextValue,c2);
         }
         return c1;
 }

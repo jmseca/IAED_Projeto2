@@ -12,9 +12,9 @@
 /* ============================================================================
  * avlHead
  *
- * -unsigned long occ
- * -componente* rootAlfa (avl ordenada por alfa)
- * -componente* rootOrder (avl ordenada por order)
+ * -unsigned long occ 		(ocupacao da avl)
+ * -componente* rootAlfa 	(avl ordenada por alfa)
+ * -componente* rootOrder 	(avl ordenada por order)
  ============================================================================*/
 
 
@@ -206,26 +206,6 @@ short findFunc(node c1,char modo, buff* bf){
                 res = compareOrder(buffOrder(bf),getOrder(c1));
 
         }
-
-/*      if (modo){
-                if (res<0){
-                        printf("LLL\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
-                } else if (res>0){
-                        printf("RRR\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
-                } else {
-                        printf("000\tComp(%s)  Buff(%s)\n",c1->nome,bf->bigBuff);
-                }
-        } else {
-                if (res<0){
-                        printf("LLL\tComp(%ld)  Buff(%ld)\n",c1->occ,bf->occ);
-                } else if (res>0){
-                        printf("RRR\tComp(%ld)  Buff(%ld)\n",c1->occ,bf->occ);
-                } else {
-                        printf("000\tComp(%ld)  Buff(%ld)\n",c1->occ,bf->occ);
-                }
-
-        }
-*/
         return res;
 }
 
@@ -257,7 +237,7 @@ node findComp(node root, char modo, buff* bf){
 }
 
 
-/* Insere a componente com as caracteristicas guardadas no buffer,
+/* Insere o node com as caracteristicas guardadas no buffer,
  * faz os rotates necessarios. Devolve um pointer para a componente inserida
  * Se ja existir devolve o seu ponteiro
  * modo 1 -> procurar por nome
@@ -302,7 +282,7 @@ node insertAll(avlHead* root, mother* M){
         root->rootAlfa = insertComp(root->rootAlfa,ONE,&exists,M);
         if (!exists){ /* Se a componente ainda nao existir*/
                 root->rootOrder=insertComp(root->rootOrder,ZERO,&exists,M);
-                (root->occ)+=ONE;
+                (root->occ)+=ONE; /*Ocupacao da avl aumentou*/
         }
         return getBuffNode(getMotherBuff(M));
 }
@@ -370,7 +350,7 @@ node delete1(node root, char* exists, buff* bf){
                                 root = root->alfaLeft;
                         }
                 }
-                /* Guardar a ocupacao da antiga root, para a apagar depois*/
+                /* Guardar o order da antiga root, para a apagar depois*/
                 orderToBuff(getOrder(aux),bf);
                 nodeToBuff(aux,bf);
         }
@@ -430,10 +410,14 @@ avlHead* deleteComp(avlHead *head, mother *M){
                 }
                 head->rootOrder = delete2(head->rootOrder,getMotherBuff(M));
         } else {
-                printf("not found\n");
+                printf(NOT_FOUND);
         }
+
         return head;
 }
+
+
+
 
 /* Faz free a uma avlHead, depois de o fazer para os seus componentes*/
 void freeHead(avlHead *head){

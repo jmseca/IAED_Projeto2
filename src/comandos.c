@@ -1,8 +1,7 @@
 /*
  * Ficheiro: comandos.c
  * Autor: Joao Fonseca
- * Descricao: Definicao das funcoes que tratam de cada comando,
- * tal como as suas funcoes auxiliares.
+ * Descricao: Definicao das funcoes que tratam de cada comando.
  *
 */
 
@@ -62,6 +61,8 @@ void handleHelp(){
 
 
 /*==========    QUIT    ==========*/
+
+
 /*Funcao responsavel por terminar o programa corretamente*/
 void handleQuit(mother *M){
         cleanWhite();
@@ -74,25 +75,26 @@ void handleQuit(mother *M){
  *sempre que o comando "set" e recebido no stdin*/
 void handleSet(mother *M){
         node cpath;
-	/* Controla se o progama teve erros (apesar de nao se aplicar)
-	char succ=ONE; */
 	char modo=ZERO; /* Se o caminho nao existir, cria*/
 	char modoB=ZERO; /*Vai haver um path no stdin*/
-
-	pathToBuff(M->bf,modoB);
-	nodeToBuff(NULL,getMotherBuff(M));
+	
+	pathToBuff(getMotherBuff(M),modoB);
+	nodeToBuff(NULL,getMotherBuff(M)); /*para colocar no 1º componente*/
 	cpath = getPathComp(modo,M);
-	valToBuff(M->bf);
-	compNewValue(cpath,M);
+	valToBuff(getMotherBuff(M));
+	if (cpath==NULL){
+		return;
+	}
 	if (!compValNull(cpath)){
-		if (cpath->nextValue != NULL){ /*ja foi inserido*/
-			removeFromHash(cpath,getMotherHash(M));	
-		}	
-		cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
-		M->h = addToHash(getMotherHash(M),cpath);
+		removeFromHash(cpath,getMotherHash(M));
 	}
 	
+	compNewValue(cpath,M);
 	
+	cpath->nextValue = getFirstHashEl(getMotherHash(M), cpath);
+	M->h = addToHash(getMotherHash(M),cpath);
+
+
 }
 
 
@@ -104,7 +106,7 @@ void handleSet(mother *M){
 void handlePrint(mother *M){
 	cleanWhite();
 	resetBuff(getMotherBuff(M));
-	avlSortOrderDeep(printMaster,M->motherRoot->rootOrder);
+	avlSortOrderDeep(printMaster,getMotherHead(M)->rootOrder);
 }
 
 
@@ -178,8 +180,8 @@ void handleDelete(mother *M){
 		free(getMotherHead(M));
 		M->motherRoot = initHead(&modoB);
         } else {
-		buffSwitchComp(M->bf);
-                head = getDeleteAVL(M);
+		buffSwitchComp(M->bf);	
+		head = getDeleteAVL(M);
 		if (head!=NULL){
 			/*Agr passa-se o valor do componente para bigBuff*/
 			cpyBuffs(getMotherBuff(M));	
